@@ -2,11 +2,12 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### This repository is to store work done on the Group Project for CS6232 ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Teams members are:
+* Lauren Strom
+* Phillip Thomas
+* Justin Miller
 
 ### How do I get set up? ###
 
