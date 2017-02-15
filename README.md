@@ -9,22 +9,12 @@ This application is intended to be a Healthcare Database Management System.
 * Phillip Thomas
 * Justin Miller
 
-### This  ###
+### This project will be developed using Agile Princples  ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
+* Scrum Master: TBD
+* Product Owner: TB
+* Development duties will be shared equally with all group members
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Any team member can be contacted about this application
