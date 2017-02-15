@@ -1,6 +1,6 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This application is intended to be a Healthcare Database Management System.
 
 ### This repository is to store work done on the Group Project for CS6232 ###
 
@@ -9,7 +9,7 @@ This README would normally document whatever steps are necessary to get your app
 * Phillip Thomas
 * Justin Miller
 
-### How do I get set up? ###
+### This  ###
 
 * Summary of set up
 * Configuration
