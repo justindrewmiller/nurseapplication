@@ -16,5 +16,11 @@ namespace UWG_Healthcare
         {
             InitializeComponent();
         }
+
+        // Exits the application
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
