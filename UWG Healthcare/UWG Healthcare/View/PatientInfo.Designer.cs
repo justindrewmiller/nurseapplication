@@ -47,10 +47,10 @@
             this.txtState = new System.Windows.Forms.TextBox();
             this.lblAppointment = new System.Windows.Forms.Label();
             this.cboAppointments = new System.Windows.Forms.ComboBox();
-            this.lblResults = new System.Windows.Forms.Label();
+            this.lblVisits = new System.Windows.Forms.Label();
             this.cboResults = new System.Windows.Forms.ComboBox();
             this.btnAppointments = new System.Windows.Forms.Button();
-            this.btnResults = new System.Windows.Forms.Button();
+            this.btnVisits = new System.Windows.Forms.Button();
             this.lblTests = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnTests = new System.Windows.Forms.Button();
@@ -220,14 +220,14 @@
             this.cboAppointments.Size = new System.Drawing.Size(179, 21);
             this.cboAppointments.TabIndex = 37;
             // 
-            // lblResults
+            // lblVisits
             // 
-            this.lblResults.AutoSize = true;
-            this.lblResults.Location = new System.Drawing.Point(37, 378);
-            this.lblResults.Name = "lblResults";
-            this.lblResults.Size = new System.Drawing.Size(45, 13);
-            this.lblResults.TabIndex = 38;
-            this.lblResults.Text = "Results:";
+            this.lblVisits.AutoSize = true;
+            this.lblVisits.Location = new System.Drawing.Point(37, 378);
+            this.lblVisits.Name = "lblVisits";
+            this.lblVisits.Size = new System.Drawing.Size(45, 13);
+            this.lblVisits.TabIndex = 38;
+            this.lblVisits.Text = "Results:";
             // 
             // cboResults
             // 
@@ -246,14 +246,14 @@
             this.btnAppointments.Text = "Get Appointment";
             this.btnAppointments.UseVisualStyleBackColor = true;
             // 
-            // btnResults
+            // btnVisits
             // 
-            this.btnResults.Location = new System.Drawing.Point(327, 369);
-            this.btnResults.Name = "btnResults";
-            this.btnResults.Size = new System.Drawing.Size(97, 23);
-            this.btnResults.TabIndex = 41;
-            this.btnResults.Text = "Get Result";
-            this.btnResults.UseVisualStyleBackColor = true;
+            this.btnVisits.Location = new System.Drawing.Point(327, 369);
+            this.btnVisits.Name = "btnVisits";
+            this.btnVisits.Size = new System.Drawing.Size(97, 23);
+            this.btnVisits.TabIndex = 41;
+            this.btnVisits.Text = "Get Visit";
+            this.btnVisits.UseVisualStyleBackColor = true;
             // 
             // lblTests
             // 
@@ -280,6 +280,7 @@
             this.btnTests.TabIndex = 44;
             this.btnTests.Text = "Get Result";
             this.btnTests.UseVisualStyleBackColor = true;
+            this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
             // 
             // btnModify
             // 
@@ -309,10 +310,10 @@
             this.Controls.Add(this.btnTests);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblTests);
-            this.Controls.Add(this.btnResults);
+            this.Controls.Add(this.btnVisits);
             this.Controls.Add(this.btnAppointments);
             this.Controls.Add(this.cboResults);
-            this.Controls.Add(this.lblResults);
+            this.Controls.Add(this.lblVisits);
             this.Controls.Add(this.cboAppointments);
             this.Controls.Add(this.lblAppointment);
             this.Controls.Add(this.txtState);
@@ -360,10 +361,10 @@
         private System.Windows.Forms.TextBox txtState;
         private System.Windows.Forms.Label lblAppointment;
         private System.Windows.Forms.ComboBox cboAppointments;
-        private System.Windows.Forms.Label lblResults;
+        private System.Windows.Forms.Label lblVisits;
         private System.Windows.Forms.ComboBox cboResults;
         private System.Windows.Forms.Button btnAppointments;
-        private System.Windows.Forms.Button btnResults;
+        private System.Windows.Forms.Button btnVisits;
         private System.Windows.Forms.Label lblTests;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnTests;

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UWG_Healthcare.View
 {
-    public partial class PatientInfo : Form
+    public partial class VisitInfo : Form
     {
-        public PatientInfo()
+        public VisitInfo()
         {
             InitializeComponent();
-        }
-
-        private void btnTests_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

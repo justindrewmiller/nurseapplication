@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\HealthcareController.cs" />
+    <Compile Include="View\Appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Appointment.Designer.cs">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,21 @@
     <Compile Include="View\SearchPatient.Designer.cs">
       <DependentUpon>SearchPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VisitInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VisitInfo.Designer.cs">
+      <DependentUpon>VisitInfo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Appointment.resx">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CreateAppointment.resx">
       <DependentUpon>CreateAppointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SearchPatient.resx">
       <DependentUpon>SearchPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VisitInfo.resx">
+      <DependentUpon>VisitInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
