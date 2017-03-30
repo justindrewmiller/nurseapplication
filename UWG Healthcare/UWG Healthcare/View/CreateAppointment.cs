@@ -16,5 +16,15 @@ namespace UWG_Healthcare
         {
             InitializeComponent();
         }
+
+        private void lblUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
