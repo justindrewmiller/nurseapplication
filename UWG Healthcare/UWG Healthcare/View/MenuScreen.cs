@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace UWG_Healthcare.View
 {
-    public partial class Appointment : Form
+    public partial class MenuScreen : Form
     {
-        public Appointment()
+        public MenuScreen()
         {
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnCreateAppointment_Click(object sender, EventArgs e)
         {
-            MenuScreen menu = new MenuScreen();
-            menu.MdiParent = this.MdiParent;
-            menu.Show();
+            CreateAppointment newApt = new CreateAppointment();
+            newApt.MdiParent = this.MdiParent;
+            newApt.Show();
             this.Close();
         }
     }

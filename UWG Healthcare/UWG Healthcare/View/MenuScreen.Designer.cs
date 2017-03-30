@@ -1,6 +1,6 @@
 ﻿namespace UWG_Healthcare.View
 {
-    partial class Menu
+    partial class MenuScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,7 @@
             this.btnCreateAppointment.TabIndex = 0;
             this.btnCreateAppointment.Text = "Create Appointment";
             this.btnCreateAppointment.UseVisualStyleBackColor = true;
+            this.btnCreateAppointment.Click += new System.EventHandler(this.btnCreateAppointment_Click);
             // 
             // btnSearch
             // 

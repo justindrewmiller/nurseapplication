@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblNewPatient = new System.Windows.Forms.Label();
             this.lblPatientSSN = new System.Windows.Forms.Label();
@@ -42,6 +43,10 @@
             this.cboDoctor = new System.Windows.Forms.ComboBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.txtReasons = new System.Windows.Forms.RichTextBox();
+            this.drList = new UWG_Healthcare.DrList();
+            this.drListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.drList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -116,6 +121,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // chkYes
             // 
@@ -150,7 +156,7 @@
             this.cboDoctor.FormattingEnabled = true;
             this.cboDoctor.Location = new System.Drawing.Point(139, 125);
             this.cboDoctor.Name = "cboDoctor";
-            this.cboDoctor.Size = new System.Drawing.Size(150, 21);
+            this.cboDoctor.Size = new System.Drawing.Size(182, 21);
             this.cboDoctor.TabIndex = 11;
             // 
             // txtTime
@@ -167,6 +173,16 @@
             this.txtReasons.Size = new System.Drawing.Size(150, 96);
             this.txtReasons.TabIndex = 13;
             this.txtReasons.Text = "";
+            // 
+            // drList
+            // 
+            this.drList.DataSetName = "DrList";
+            this.drList.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // drListBindingSource
+            // 
+            this.drListBindingSource.DataSource = this.drList;
+            this.drListBindingSource.Position = 0;
             // 
             // CreateAppointment
             // 
@@ -189,6 +205,8 @@
             this.Controls.Add(this.lblUserName);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
+            ((System.ComponentModel.ISupportInitialize)(this.drList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +228,7 @@
         private System.Windows.Forms.ComboBox cboDoctor;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.RichTextBox txtReasons;
+        private DrList drList;
+        private System.Windows.Forms.BindingSource drListBindingSource;
     }
 }

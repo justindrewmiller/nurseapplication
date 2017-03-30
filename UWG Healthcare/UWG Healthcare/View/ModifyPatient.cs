@@ -16,5 +16,10 @@ namespace UWG_Healthcare
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

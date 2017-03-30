@@ -111,12 +111,13 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(154, 377);
+            this.btnClose.Location = new System.Drawing.Point(251, 378);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblUserName
             // 
