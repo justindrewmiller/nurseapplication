@@ -16,5 +16,10 @@ namespace UWG_Healthcare.View
         {
             InitializeComponent();
         }
+
+        private void Test_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
