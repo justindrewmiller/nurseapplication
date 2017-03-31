@@ -1,5 +1,6 @@
 ﻿using HealthcareData;
 using HealthcareData.DAL;
+using HealthcareData.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,16 +31,17 @@ namespace UWG_Healthcare.View
             this.Close();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        public void btnLogin_Click(object sender, EventArgs e)
         {
+            UserInfo ui = new UserInfo();
             string UserName = txtUserName.Text;
             string Password = txtPassword.Text;
             if (Controller.HealthcareController.ValidLogin(UserName, Password))
             {
-                MenuScreen menu = new MenuScreen();
-                menu.MdiParent = this.MdiParent;
-                menu.Show();
-                this.Close();
+                ui.userID = Controller.HealthcareController.GetUserInfo(UserName, Password);
+               this.Visible = false;
+                MainContainer mc = new MainContainer(ui);
+                mc.Show();
             } else
             {
                 lblInvalid.Text = "Username or password was invalid";

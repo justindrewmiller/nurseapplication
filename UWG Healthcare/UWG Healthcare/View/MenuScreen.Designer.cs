@@ -101,7 +101,7 @@
             this.btnRecordResults.Text = "Record Test Results";
             this.btnRecordResults.UseVisualStyleBackColor = true;
             // 
-            // Menu
+            // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +113,8 @@
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnCreateAppointment);
-            this.Name = "Menu";
+            this.Name = "MenuScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();

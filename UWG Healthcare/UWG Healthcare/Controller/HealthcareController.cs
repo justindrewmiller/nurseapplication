@@ -15,5 +15,10 @@ namespace UWG_Healthcare.Controller
         {
             return UsersDAL.ValidLogin(UserName, Password);
         }
+
+        public static String GetUserInfo(string UserName, string Password)
+        {
+            return UsersDAL.GetUserInfo(UserName, Password);
+        }
     }
 }

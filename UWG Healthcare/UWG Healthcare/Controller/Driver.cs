@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UWG_Healthcare.View;
 
 namespace UWG_Healthcare
 {
@@ -16,7 +17,7 @@ namespace UWG_Healthcare
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainContainer());
+            Application.Run(new LogIn());
         }
     }
 }

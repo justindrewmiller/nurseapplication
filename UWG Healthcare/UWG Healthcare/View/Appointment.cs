@@ -19,10 +19,10 @@ namespace UWG_Healthcare.View
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            MenuScreen menu = new MenuScreen();
-            menu.MdiParent = this.MdiParent;
-            menu.Show();
-            this.Close();
+            //MenuScreen menu = new MenuScreen();
+            //menu.MdiParent = this.MdiParent;
+            //menu.Show();
+            //this.Close();
         }
     }
 }

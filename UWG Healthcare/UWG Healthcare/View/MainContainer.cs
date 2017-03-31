@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UWG_Healthcare.Controller;
 using UWG_Healthcare.View;
 
 namespace UWG_Healthcare
@@ -16,10 +17,14 @@ namespace UWG_Healthcare
     {
 
         UserInfo userID;
-        public MainContainer()
+
+        private HealthcareController inController;
+        public MainContainer(UserInfo info)
         {
-            userID = null;
+            userID = info;
             InitializeComponent();
+            inController = new HealthcareController();
+            lblUserID.Text = lblUserID.Text + info.userID;
         }
 
         // Exits the application
@@ -64,15 +69,10 @@ namespace UWG_Healthcare
         LogIn logIn;
         private void MainContainer_Load(object sender, EventArgs e)
         {
-            if (logIn == null)
-            {
-                logIn = new View.LogIn();
-                logIn.MdiParent = this;
-                logIn.FormClosed += new FormClosedEventHandler(logIn_FormClosed);
-                logIn.Show();
-            }
-            else
-                logIn.Activate();
+            MenuScreen ms = new MenuScreen(userID);
+            ms.MdiParent = this;
+            ms.Show();
+            
         }
 
         private void logIn_FormClosed(object sender, FormClosedEventArgs e)
@@ -82,16 +82,9 @@ namespace UWG_Healthcare
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-            {
-                if (Application.OpenForms[i].Name != "MainContainer")
-                    Application.OpenForms[i].Close();
-            }
-            this.userID = null;
-            logIn = new View.LogIn();
-            logIn.MdiParent = this;
-            logIn.FormClosed += new FormClosedEventHandler(logIn_FormClosed);
-            logIn.Show();
+            this.Close();
+            LogIn li = new LogIn();
+            li.Show();
         }
     }
 }
