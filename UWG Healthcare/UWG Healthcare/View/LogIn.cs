@@ -19,7 +19,6 @@ namespace UWG_Healthcare.View
             InitializeComponent();
         }
 
-        WolfHealthcareDataSet loginData = new WolfHealthcareDataSet();
  
         private void LogIn_Load(object sender, EventArgs e)
         {

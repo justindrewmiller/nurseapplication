@@ -43,9 +43,7 @@
             this.cboDoctor = new System.Windows.Forms.ComboBox();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.txtReasons = new System.Windows.Forms.RichTextBox();
-            this.drList = new UWG_Healthcare.DrList();
             this.drListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.drList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,12 +174,9 @@
             // 
             // drList
             // 
-            this.drList.DataSetName = "DrList";
-            this.drList.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // drListBindingSource
             // 
-            this.drListBindingSource.DataSource = this.drList;
             this.drListBindingSource.Position = 0;
             // 
             // CreateAppointment
@@ -205,7 +200,6 @@
             this.Controls.Add(this.lblUserName);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
-            ((System.ComponentModel.ISupportInitialize)(this.drList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,7 +222,6 @@
         private System.Windows.Forms.ComboBox cboDoctor;
         private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.RichTextBox txtReasons;
-        private DrList drList;
         private System.Windows.Forms.BindingSource drListBindingSource;
     }
 }
