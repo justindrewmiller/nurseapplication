@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthcareData.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,10 @@ namespace UWG_Healthcare
 {
     public partial class CreateAppointment : Form
     {
-        public CreateAppointment()
+        public CreateAppointment(UserInfo info)
         {
             InitializeComponent();
-        }
-
-        private void lblUserName_Click(object sender, EventArgs e)
-        {
-
+            lblUserName.Text = info.userID;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthcareData.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace UWG_Healthcare
 {
     public partial class SearchPatient : Form
     {
-        public SearchPatient()
+        public SearchPatient(UserInfo info)
         {
             InitializeComponent();
+            lblUserName.Text = info.userID;
         }
     }
 }

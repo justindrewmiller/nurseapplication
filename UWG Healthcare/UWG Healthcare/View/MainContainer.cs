@@ -52,7 +52,7 @@ namespace UWG_Healthcare
         // Contains form to Create New Appointment
         private void createAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateAppointment ca = new CreateAppointment();
+            CreateAppointment ca = new CreateAppointment(userID);
             ca.MdiParent = this;
             ca.Show();
         }
@@ -60,7 +60,7 @@ namespace UWG_Healthcare
         // Contains form to Search for Patient or Appointment
         private void searchPatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchPatient sp = new SearchPatient();
+            SearchPatient sp = new SearchPatient(userID);
             sp.MdiParent = this;
             sp.Show();
 

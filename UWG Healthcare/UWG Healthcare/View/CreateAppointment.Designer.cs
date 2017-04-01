@@ -55,7 +55,6 @@
             this.lblUserName.Size = new System.Drawing.Size(115, 13);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "UserNamePlaceHolder";
-            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
             // 
             // lblNewPatient
             // 
@@ -171,13 +170,6 @@
             this.txtReasons.Size = new System.Drawing.Size(150, 96);
             this.txtReasons.TabIndex = 13;
             this.txtReasons.Text = "";
-            // 
-            // drList
-            // 
-            // 
-            // drListBindingSource
-            // 
-            this.drListBindingSource.Position = 0;
             // 
             // CreateAppointment
             // 

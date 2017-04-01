@@ -13,16 +13,18 @@ namespace UWG_Healthcare.View
 {
     public partial class MenuScreen : Form
     {
+        UserInfo userID;
         public MenuScreen(UserInfo info)
         {
             InitializeComponent();
             lblUserName.Text = info.userID;
+            userID = info;
         }
 
         private void btnCreateAppointment_Click(object sender, EventArgs e)
         {
 
-            CreateAppointment newApt = new CreateAppointment();
+            CreateAppointment newApt = new CreateAppointment(userID);
             newApt.MdiParent = this.MdiParent;
             newApt.Show();
             this.Close();
