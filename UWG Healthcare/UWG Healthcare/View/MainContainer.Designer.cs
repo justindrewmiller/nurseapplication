@@ -40,6 +40,7 @@
             this.searchPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblUserID = new System.Windows.Forms.Label();
+            this.menuScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +67,14 @@
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.logOutToolStripMenuItem.Text = "Log In/Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -83,7 +84,8 @@
             this.registerNewPatientToolStripMenuItem,
             this.modifyPatientProfileToolStripMenuItem,
             this.createAppointmentToolStripMenuItem,
-            this.searchPatientToolStripMenuItem});
+            this.searchPatientToolStripMenuItem,
+            this.menuScreenToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -130,6 +132,13 @@
             this.lblUserID.TabIndex = 3;
             this.lblUserID.Text = "User Currently Logged In: ";
             // 
+            // menuScreenToolStripMenuItem
+            // 
+            this.menuScreenToolStripMenuItem.Name = "menuScreenToolStripMenuItem";
+            this.menuScreenToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.menuScreenToolStripMenuItem.Text = "Menu Screen";
+            this.menuScreenToolStripMenuItem.Click += new System.EventHandler(this.menuScreenToolStripMenuItem_Click);
+            // 
             // MainContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +172,7 @@
         private System.Windows.Forms.ToolStripMenuItem createAppointmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchPatientToolStripMenuItem;
         private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.ToolStripMenuItem menuScreenToolStripMenuItem;
     }
 }
 

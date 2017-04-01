@@ -18,7 +18,7 @@ namespace HealthcareData.DAL
             Boolean isValid;
             UserInfo ui = new UserInfo();
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=DESKTOP-FDKRONK;Initial Catalog=CS6232-g2;Integrated Security=True";
+            con.ConnectionString = "Data Source=localhost;Initial Catalog=CS6232-g2;Integrated Security=True";
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + Password + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);

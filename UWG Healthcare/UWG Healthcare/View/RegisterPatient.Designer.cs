@@ -47,12 +47,14 @@
             this.txtZip = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.cboState = new System.Windows.Forms.ComboBox();
+            this.txtDOB = new System.Windows.Forms.TextBox();
+            this.lblDOB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblfname
             // 
             this.lblfname.AutoSize = true;
-            this.lblfname.Location = new System.Drawing.Point(39, 57);
+            this.lblfname.Location = new System.Drawing.Point(44, 35);
             this.lblfname.Name = "lblfname";
             this.lblfname.Size = new System.Drawing.Size(60, 13);
             this.lblfname.TabIndex = 0;
@@ -62,7 +64,7 @@
             // lbllname
             // 
             this.lbllname.AutoSize = true;
-            this.lbllname.Location = new System.Drawing.Point(39, 92);
+            this.lbllname.Location = new System.Drawing.Point(44, 70);
             this.lbllname.Name = "lbllname";
             this.lbllname.Size = new System.Drawing.Size(61, 13);
             this.lbllname.TabIndex = 1;
@@ -71,7 +73,7 @@
             // lblssn
             // 
             this.lblssn.AutoSize = true;
-            this.lblssn.Location = new System.Drawing.Point(39, 123);
+            this.lblssn.Location = new System.Drawing.Point(44, 101);
             this.lblssn.Name = "lblssn";
             this.lblssn.Size = new System.Drawing.Size(32, 13);
             this.lblssn.TabIndex = 2;
@@ -80,7 +82,7 @@
             // lblstreet
             // 
             this.lblstreet.AutoSize = true;
-            this.lblstreet.Location = new System.Drawing.Point(39, 155);
+            this.lblstreet.Location = new System.Drawing.Point(44, 133);
             this.lblstreet.Name = "lblstreet";
             this.lblstreet.Size = new System.Drawing.Size(38, 13);
             this.lblstreet.TabIndex = 3;
@@ -89,7 +91,7 @@
             // lblcity
             // 
             this.lblcity.AutoSize = true;
-            this.lblcity.Location = new System.Drawing.Point(39, 186);
+            this.lblcity.Location = new System.Drawing.Point(44, 164);
             this.lblcity.Name = "lblcity";
             this.lblcity.Size = new System.Drawing.Size(27, 13);
             this.lblcity.TabIndex = 4;
@@ -98,7 +100,7 @@
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(39, 260);
+            this.lblState.Location = new System.Drawing.Point(44, 238);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(35, 13);
             this.lblState.TabIndex = 5;
@@ -107,7 +109,7 @@
             // lblzip
             // 
             this.lblzip.AutoSize = true;
-            this.lblzip.Location = new System.Drawing.Point(37, 224);
+            this.lblzip.Location = new System.Drawing.Point(42, 202);
             this.lblzip.Name = "lblzip";
             this.lblzip.Size = new System.Drawing.Size(53, 13);
             this.lblzip.TabIndex = 6;
@@ -116,7 +118,7 @@
             // lblphone
             // 
             this.lblphone.AutoSize = true;
-            this.lblphone.Location = new System.Drawing.Point(39, 297);
+            this.lblphone.Location = new System.Drawing.Point(44, 275);
             this.lblphone.Name = "lblphone";
             this.lblphone.Size = new System.Drawing.Size(51, 13);
             this.lblphone.TabIndex = 7;
@@ -124,7 +126,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(54, 351);
+            this.btnSubmit.Location = new System.Drawing.Point(54, 343);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 8;
@@ -133,7 +135,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(212, 351);
+            this.btnCancel.Location = new System.Drawing.Point(212, 343);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 9;
@@ -151,49 +153,49 @@
             // 
             // txtFName
             // 
-            this.txtFName.Location = new System.Drawing.Point(126, 54);
+            this.txtFName.Location = new System.Drawing.Point(131, 32);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(139, 20);
             this.txtFName.TabIndex = 11;
             // 
             // txtLName
             // 
-            this.txtLName.Location = new System.Drawing.Point(126, 89);
+            this.txtLName.Location = new System.Drawing.Point(131, 67);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(139, 20);
             this.txtLName.TabIndex = 12;
             // 
             // txtSSN
             // 
-            this.txtSSN.Location = new System.Drawing.Point(126, 123);
+            this.txtSSN.Location = new System.Drawing.Point(131, 101);
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.Size = new System.Drawing.Size(139, 20);
             this.txtSSN.TabIndex = 13;
             // 
             // txtStreet
             // 
-            this.txtStreet.Location = new System.Drawing.Point(126, 155);
+            this.txtStreet.Location = new System.Drawing.Point(131, 133);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(209, 20);
             this.txtStreet.TabIndex = 14;
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(125, 189);
+            this.txtCity.Location = new System.Drawing.Point(130, 167);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(210, 20);
             this.txtCity.TabIndex = 15;
             // 
             // txtZip
             // 
-            this.txtZip.Location = new System.Drawing.Point(125, 224);
+            this.txtZip.Location = new System.Drawing.Point(130, 202);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(139, 20);
             this.txtZip.TabIndex = 16;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(125, 294);
+            this.txtPhone.Location = new System.Drawing.Point(130, 272);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(139, 20);
             this.txtPhone.TabIndex = 17;
@@ -201,16 +203,34 @@
             // cboState
             // 
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(125, 260);
+            this.cboState.Location = new System.Drawing.Point(130, 238);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(139, 21);
             this.cboState.TabIndex = 18;
+            // 
+            // txtDOB
+            // 
+            this.txtDOB.Location = new System.Drawing.Point(130, 307);
+            this.txtDOB.Name = "txtDOB";
+            this.txtDOB.Size = new System.Drawing.Size(139, 20);
+            this.txtDOB.TabIndex = 20;
+            // 
+            // lblDOB
+            // 
+            this.lblDOB.AutoSize = true;
+            this.lblDOB.Location = new System.Drawing.Point(44, 310);
+            this.lblDOB.Name = "lblDOB";
+            this.lblDOB.Size = new System.Drawing.Size(33, 13);
+            this.lblDOB.TabIndex = 19;
+            this.lblDOB.Text = "DOB:";
             // 
             // RegisterPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 398);
+            this.Controls.Add(this.txtDOB);
+            this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.cboState);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtZip);
@@ -258,5 +278,7 @@
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.ComboBox cboState;
+        private System.Windows.Forms.TextBox txtDOB;
+        private System.Windows.Forms.Label lblDOB;
     }
 }

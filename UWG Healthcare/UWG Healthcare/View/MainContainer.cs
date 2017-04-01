@@ -86,5 +86,12 @@ namespace UWG_Healthcare
             LogIn li = new LogIn();
             li.Show();
         }
+
+        private void menuScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuScreen ms = new MenuScreen(userID);
+            ms.MdiParent = this;
+            ms.Show();
+        }
     }
 }
