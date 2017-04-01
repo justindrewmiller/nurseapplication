@@ -55,6 +55,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search Patients";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnRegister
             // 
@@ -64,6 +65,7 @@
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "Register New Patient";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnLogOut
             // 
@@ -91,6 +93,7 @@
             this.btnOrderTests.TabIndex = 6;
             this.btnOrderTests.Text = "Order Tests";
             this.btnOrderTests.UseVisualStyleBackColor = true;
+            this.btnOrderTests.Click += new System.EventHandler(this.btnOrderTests_Click);
             // 
             // btnRecordResults
             // 

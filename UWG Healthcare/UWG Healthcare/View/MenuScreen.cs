@@ -29,5 +29,29 @@ namespace UWG_Healthcare.View
             newApt.Show();
             this.Close();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterPatient newPat = new RegisterPatient(userID);
+            newPat.MdiParent = this.MdiParent;
+            newPat.Show();
+            this.Close();
+        }
+
+        private void btnOrderTests_Click(object sender, EventArgs e)
+        {
+            Test newTest = new Test();
+            newTest.MdiParent = this.MdiParent;
+            newTest.Show();
+            this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchPatient newSearch = new SearchPatient(userID);
+            newSearch.MdiParent = this.MdiParent;
+            newSearch.Show();
+            this.Close();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthcareData.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace UWG_Healthcare
 {
     public partial class RegisterPatient : Form
     {
-        public RegisterPatient()
+        UserInfo userID;
+        public RegisterPatient(UserInfo info)
         {
             InitializeComponent();
+            userID = info;
+            lblUserName.Text = info.userID;
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {

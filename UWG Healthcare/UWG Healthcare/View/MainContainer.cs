@@ -36,7 +36,7 @@ namespace UWG_Healthcare
         // Contains form to Register New Patient
         private void registerNewPatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterPatient rp = new RegisterPatient();
+            RegisterPatient rp = new RegisterPatient(userID);
             rp.MdiParent = this;
             rp.Show();
         }
