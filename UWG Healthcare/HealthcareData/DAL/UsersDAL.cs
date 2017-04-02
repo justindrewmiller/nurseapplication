@@ -12,13 +12,11 @@ namespace HealthcareData.DAL
     public class UsersDAL
     {
         // ValidLogin returns true or false depending if the UserID and Password combination matches.
-        //REMEMBER TO CHANGE DATASOURCE TO YOUR SERVER AND MAKE SURE INITIAL CATALOG IS CS6232-G2 FOR OUR DATABASE.
         public static bool ValidLogin(string UserID, string Password)
         {
             Boolean isValid;
             UserInfo ui = new UserInfo();
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=localhost;Initial Catalog=CS6232-g2;Integrated Security=True";
+            SqlConnection con = HealthCareUWGDBConnection.GetConnection();
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + Password + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);

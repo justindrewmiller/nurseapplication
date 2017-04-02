@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthcareData.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,38 +11,42 @@ namespace HealthcareData.DAL
     class PatientDAL
     {
 
-        //public static int AddIncident(Incident incident)
-        //{
-        //    SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
-        //    string insertStatement =
-        //        "INSERT Incidents " +
-        //          "(CustomerID, ProductCode, DateOpened, Title, Description) " +
-        //        "VALUES (@CustomerID, @ProductCode, @DateOpened, @Title, @Description)";
-        //    SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
-        //    insertCommand.Parameters.AddWithValue("@CustomerID", incident.CustomerID);
-        //    insertCommand.Parameters.AddWithValue("@ProductCode", incident.ProductCode);
-        //    insertCommand.Parameters.AddWithValue("@DateOpened", incident.DateOpened);
-        //    insertCommand.Parameters.AddWithValue("@Title", incident.Title);
-        //    insertCommand.Parameters.AddWithValue("@Description", incident.Description);
-        //    try
-        //    {
-        //        connection.Open();
+        public static int AddPerson(Person person)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string insertStatement =
+                "INSERT Person " +
+                  "(DOB, FName, LName, Street, City, State, ZipCode, PhoneNum, SSN) " +
+                "VALUES (@DOB, @FName, @LName, @Street, @City, @State, @ZipCode, @PhoneNum, @SSN)";
+            SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
+            insertCommand.Parameters.AddWithValue("@DOB", person.DOB);
+            insertCommand.Parameters.AddWithValue("@FName", person.FName);
+            insertCommand.Parameters.AddWithValue("@LName", person.LName);
+            insertCommand.Parameters.AddWithValue("@Street", person.Street);
+            insertCommand.Parameters.AddWithValue("@City", person.City);
+            insertCommand.Parameters.AddWithValue("@State", person.State);
+            insertCommand.Parameters.AddWithValue("@ZipCode", person.ZipCode);
+            insertCommand.Parameters.AddWithValue("@PhoneNum", person.PhoneNum);
+            insertCommand.Parameters.AddWithValue("@SSN", person.SSN);
+            try
+            {
+                connection.Open();
 
-        //        insertCommand.ExecuteNonQuery();
-        //        string selectStatement =
-        //            "SELECT IDENT_CURRENT('Incidents') FROM Incidents";
-        //        SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-        //        int incidentID = Convert.ToInt32(selectCommand.ExecuteScalar());
-        //        return incidentID;
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        connection.Close();
-        //    }
-        //}
+                insertCommand.ExecuteNonQuery();
+                string selectStatement =
+                    "SELECT IDENT_CURRENT('Person') FROM Person";
+                SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+                int incidentID = Convert.ToInt32(selectCommand.ExecuteScalar());
+                return incidentID;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
