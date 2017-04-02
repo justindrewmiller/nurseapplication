@@ -42,6 +42,7 @@ namespace HealthcareData.DAL
             }
         }
 
+        // Inserts into the Person table
         public static int AddPerson(Person person)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
@@ -80,6 +81,7 @@ namespace HealthcareData.DAL
             }
         }
 
+        // Gets the Gets the Patient's information via the Person ID
         public static Person GetPatient(int personID)
         {
             Person person = new Person();
@@ -98,7 +100,8 @@ namespace HealthcareData.DAL
                 if (reader.Read())
                 {
                     person.PersonID = (int)reader["PersonID"];
-                    person.DOB = reader["DOB"].ToString();
+                    //Stores formatted date into DOB
+                    person.DOB = String.Format("{0:yyyy-MM-dd}", reader["DOB"]);
                     person.FName = reader["FName"].ToString();
                     person.LName = reader["LName"].ToString();
                     person.Street = reader["Street"].ToString();
@@ -125,6 +128,7 @@ namespace HealthcareData.DAL
             return person;
         }
 
+        // Updates the Patient's information
         public static bool UpdatePatient(Person oldPerson, Person newPerson)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();

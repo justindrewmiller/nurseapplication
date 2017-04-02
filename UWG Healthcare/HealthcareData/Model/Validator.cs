@@ -78,7 +78,7 @@ namespace HealthcareData.Model
             }
             return true;
         }
-        // Checks that the SSN contains 9 digits
+        // Checks that the PhoneNum contains 10 digits
         public static bool IsValidPhonNum(Control control)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
@@ -87,6 +87,26 @@ namespace HealthcareData.Model
                 if (!Regex.IsMatch(textBox.Text, @"^\d{10}$"))
                 {
                     MessageBox.Show(textBox.Tag.ToString() + " must contain 10 digits", Title);
+                    textBox.Focus();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return true;
+        }
+
+        // Checks that the PhoneNum contains 10 digits
+        public static bool IsValidDOB(Control control)
+        {
+            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
+            {
+                TextBox textBox = (TextBox)control;
+                if (!Regex.IsMatch(textBox.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+                {
+                    MessageBox.Show(textBox.Tag.ToString() + " must be in yyyy-mm-dd", Title);
                     textBox.Focus();
                     return false;
                 }

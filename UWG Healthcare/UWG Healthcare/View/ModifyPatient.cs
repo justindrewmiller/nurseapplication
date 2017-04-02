@@ -179,7 +179,9 @@ namespace UWG_Healthcare
                 Validator.IsPresent(txtState) &&
                 Validator.IsPresent(txtZip) &&
                 Validator.IsPresent(txtPhone) &&
-                Validator.IsPresent(txtDOB))
+                Validator.IsValidPhonNum(txtPhone) &&
+                Validator.IsPresent(txtDOB) &&
+                Validator.IsValidDOB(txtDOB))
             {
                 return true;
 
