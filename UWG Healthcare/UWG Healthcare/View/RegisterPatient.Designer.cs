@@ -158,6 +158,7 @@
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(139, 20);
             this.txtFName.TabIndex = 11;
+            this.txtFName.Tag = "First Name";
             // 
             // txtLName
             // 
@@ -165,6 +166,7 @@
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(139, 20);
             this.txtLName.TabIndex = 12;
+            this.txtLName.Tag = "Last Name";
             // 
             // txtSSN
             // 
@@ -172,6 +174,7 @@
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.Size = new System.Drawing.Size(139, 20);
             this.txtSSN.TabIndex = 13;
+            this.txtSSN.Tag = "State";
             // 
             // txtStreet
             // 
@@ -179,6 +182,7 @@
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(209, 20);
             this.txtStreet.TabIndex = 14;
+            this.txtStreet.Tag = "Street";
             // 
             // txtCity
             // 
@@ -186,6 +190,7 @@
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(210, 20);
             this.txtCity.TabIndex = 15;
+            this.txtCity.Tag = "City";
             // 
             // txtZip
             // 
@@ -193,6 +198,7 @@
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(139, 20);
             this.txtZip.TabIndex = 16;
+            this.txtZip.Tag = "Zip Code";
             // 
             // txtPhone
             // 
@@ -200,6 +206,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(139, 20);
             this.txtPhone.TabIndex = 17;
+            this.txtPhone.Tag = "Phone Number";
             // 
             // cboState
             // 
@@ -208,6 +215,7 @@
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(139, 21);
             this.cboState.TabIndex = 18;
+            this.cboState.Tag = "State";
             // 
             // txtDOB
             // 
@@ -215,6 +223,7 @@
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(139, 20);
             this.txtDOB.TabIndex = 20;
+            this.txtDOB.Tag = "Date of Birth";
             // 
             // lblDOB
             // 

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HealthcareData.Model
 {   // Class that is used to validate information.
-    class Validator
+    public class Validator
     {
         private static string title = "Entry Error";
 

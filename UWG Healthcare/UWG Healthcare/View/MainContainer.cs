@@ -44,7 +44,7 @@ namespace UWG_Healthcare
         // Contains form to Modify Patient
         private void modifyPatientProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModifyPatient mp = new ModifyPatient();
+            ModifyPatient mp = new ModifyPatient(userID);
             mp.MdiParent = this;
             mp.Show();
         }

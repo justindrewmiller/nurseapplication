@@ -32,6 +32,27 @@ namespace UWG_Healthcare
             this.Close();
         }
 
+        private bool isValidData()
+        {
+            if (Validator.IsPresent(txtDOB) &&
+                Validator.IsPresent(txtFName) &&
+                Validator.IsPresent(txtLName) &&
+                Validator.IsPresent(txtStreet) &&
+                Validator.IsPresent(txtCity) &&
+                Validator.IsPresent(cboState) &&
+                Validator.IsPresent(txtZip) &&
+                Validator.IsPresent(txtPhone) &&
+                Validator.IsPresent(txtSSN))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         // Stores the information from textboxes and combo boxes into variables.
         private void PutPersonData(Person person)
         {
@@ -48,26 +69,29 @@ namespace UWG_Healthcare
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            person = new Person();
-            patient = new Patient();
-            this.PutPersonData(person);
-            try
+            if (isValidData())
             {
-                //Inserts the Person into the table and stores PersonID
-                person.PersonID = inController.AddPerson(person);
-                //Passes PersonID from Person to Patient
-                patient.PersonID = person.PersonID;
-                //Inserts Patient by using PersonID
-                inController.AddPatient(patient);
-                MessageBox.Show("The patient was successfully added.");
-                this.Close();
+                person = new Person();
+                patient = new Patient();
+                this.PutPersonData(person);
+                try
+                {
+                    //Inserts the Person into the table and stores PersonID
+                    person.PersonID = inController.AddPerson(person);
+                    //Passes PersonID from Person to Patien
+                    patient.PersonID = person.PersonID;
+                    //Inserts Patient by using PersonID
+                    inController.AddPatient(patient);
+                    MessageBox.Show("The patient was successfully added.");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-        }
 
+        }
     }
-    }
+}
 
