@@ -66,7 +66,6 @@ namespace UWG_Healthcare
 
         }
 
-        LogIn logIn;
         private void MainContainer_Load(object sender, EventArgs e)
         {
             MenuScreen ms = new MenuScreen(userID);
@@ -77,7 +76,6 @@ namespace UWG_Healthcare
 
         private void logIn_FormClosed(object sender, FormClosedEventArgs e)
         {
-            logIn = null;
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)

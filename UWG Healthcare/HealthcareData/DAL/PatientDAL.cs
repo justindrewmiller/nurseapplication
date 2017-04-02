@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HealthcareData.DAL
 {
-    class PatientDAL
+    public class PatientDAL
     {
 
         public static int AddPerson(Person person)
@@ -36,8 +36,8 @@ namespace HealthcareData.DAL
                 string selectStatement =
                     "SELECT IDENT_CURRENT('Person') FROM Person";
                 SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-                int incidentID = Convert.ToInt32(selectCommand.ExecuteScalar());
-                return incidentID;
+                int personID = Convert.ToInt32(selectCommand.ExecuteScalar());
+                return personID;
             }
             catch (SqlException ex)
             {
@@ -48,5 +48,6 @@ namespace HealthcareData.DAL
                 connection.Close();
             }
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using HealthcareData.Model;
+﻿using HealthcareData.DAL;
+using HealthcareData.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace UWG_Healthcare.Controller
 {
     class PatientController
     {
-    }
 
-    // Adds the incident
-    public int AddPerson(Person person)
-    {
-        return PatientDAL.AddPerson(person));
+        // Adds the person
+        public int AddPerson(Person person)
+        {
+            return PatientDAL.AddPerson(person);
+        }
     }
 }

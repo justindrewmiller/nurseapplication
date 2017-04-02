@@ -10,7 +10,7 @@ namespace HealthcareData.Model
     //basic person class that can basic person objects
     public class Person
     {
-        public string PersonID { get; set; }
+        public int PersonID { get; set; }
 
         public string DOB { get; set; }
 

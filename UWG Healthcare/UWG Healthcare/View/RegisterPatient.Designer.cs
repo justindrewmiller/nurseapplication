@@ -59,7 +59,6 @@
             this.lblfname.Size = new System.Drawing.Size(60, 13);
             this.lblfname.TabIndex = 0;
             this.lblfname.Text = "First Name:";
-            this.lblfname.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbllname
             // 
@@ -132,6 +131,7 @@
             this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 
@@ -141,6 +141,7 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblUserName
             // 

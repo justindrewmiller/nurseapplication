@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\HealthcareController.cs" />
+    <Compile Include="Controller\PatientController.cs" />
     <Compile Include="View\Appointment.cs">
       <SubType>Form</SubType>
     </Compile>

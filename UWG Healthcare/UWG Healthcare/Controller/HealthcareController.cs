@@ -20,5 +20,6 @@ namespace UWG_Healthcare.Controller
         {
             return UsersDAL.GetUserInfo(UserName, Password);
         }
+
     }
 }
