@@ -11,6 +11,36 @@ namespace HealthcareData.DAL
     public class PatientDAL
     {
 
+        public static int AddPatient(Patient patient)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string insertStatement =
+                "INSERT Patients " +
+                  "(PersonID) " +
+                "VALUES (@PersonID)";
+            SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
+            insertCommand.Parameters.AddWithValue("@PersonID", patient.PersonID);
+            try
+            {
+                connection.Open();
+
+                insertCommand.ExecuteNonQuery();
+                string selectStatement =
+                    "SELECT IDENT_CURRENT('Patients') FROM Patients";
+                SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+                int patientID = Convert.ToInt32(selectCommand.ExecuteScalar());
+                return patientID;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public static int AddPerson(Person person)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
@@ -48,6 +78,5 @@ namespace HealthcareData.DAL
                 connection.Close();
             }
         }
-
     }
 }

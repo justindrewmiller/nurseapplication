@@ -17,6 +17,7 @@ namespace UWG_Healthcare
         public UserInfo userID;
         private PatientController inController;
         public Person person;
+        public Patient patient;
 
         public RegisterPatient(UserInfo info)
         {
@@ -48,11 +49,17 @@ namespace UWG_Healthcare
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             person = new Person();
+            patient = new Patient();
             this.PutPersonData(person);
             try
             {
+                //Inserts the Person into the table and stores PersonID
                 person.PersonID = inController.AddPerson(person);
-                MessageBox.Show("The person was successfully added.");
+                //Passes PersonID from Person to Patient
+                patient.PersonID = person.PersonID;
+                //Inserts Patient by using PersonID
+                inController.AddPatient(patient);
+                MessageBox.Show("The patient was successfully added.");
                 this.Close();
             }
             catch (Exception ex)

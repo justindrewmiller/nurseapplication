@@ -16,5 +16,11 @@ namespace UWG_Healthcare.Controller
         {
             return PatientDAL.AddPerson(person);
         }
+
+        // Adds the patient
+        public int AddPatient(Patient patient)
+        {
+            return PatientDAL.AddPatient(patient);
+        }
     }
 }
