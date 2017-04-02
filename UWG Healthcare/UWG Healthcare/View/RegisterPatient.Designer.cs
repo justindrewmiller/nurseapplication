@@ -46,9 +46,9 @@
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtZip = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.cboState = new System.Windows.Forms.ComboBox();
             this.txtDOB = new System.Windows.Forms.TextBox();
             this.lblDOB = new System.Windows.Forms.Label();
+            this.txtState = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblfname
@@ -174,7 +174,7 @@
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.Size = new System.Drawing.Size(139, 20);
             this.txtSSN.TabIndex = 13;
-            this.txtSSN.Tag = "State";
+            this.txtSSN.Tag = "SSN";
             // 
             // txtStreet
             // 
@@ -208,15 +208,6 @@
             this.txtPhone.TabIndex = 17;
             this.txtPhone.Tag = "Phone Number";
             // 
-            // cboState
-            // 
-            this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(130, 238);
-            this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(139, 21);
-            this.cboState.TabIndex = 18;
-            this.cboState.Tag = "State";
-            // 
             // txtDOB
             // 
             this.txtDOB.Location = new System.Drawing.Point(130, 307);
@@ -234,14 +225,22 @@
             this.lblDOB.TabIndex = 19;
             this.lblDOB.Text = "DOB:";
             // 
+            // txtState
+            // 
+            this.txtState.Location = new System.Drawing.Point(130, 238);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(139, 20);
+            this.txtState.TabIndex = 44;
+            this.txtState.Tag = "State";
+            // 
             // RegisterPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 398);
+            this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.lblDOB);
-            this.Controls.Add(this.cboState);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtZip);
             this.Controls.Add(this.txtCity);
@@ -287,8 +286,8 @@
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Label lblDOB;
+        private System.Windows.Forms.TextBox txtState;
     }
 }

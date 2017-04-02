@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UWG_Healthcare.Controller;
@@ -34,15 +35,16 @@ namespace UWG_Healthcare
 
         private bool isValidData()
         {
-            if (Validator.IsPresent(txtDOB) &&
-                Validator.IsPresent(txtFName) &&
+            if (Validator.IsPresent(txtFName) &&
                 Validator.IsPresent(txtLName) &&
+                Validator.IsPresent(txtSSN) &&
+                Validator.IsValidSSN(txtSSN) &&
                 Validator.IsPresent(txtStreet) &&
                 Validator.IsPresent(txtCity) &&
-                Validator.IsPresent(cboState) &&
+                Validator.IsPresent(txtState) &&
                 Validator.IsPresent(txtZip) &&
                 Validator.IsPresent(txtPhone) &&
-                Validator.IsPresent(txtSSN))
+                Validator.IsPresent(txtDOB))
             {
                 return true;
 
@@ -61,10 +63,11 @@ namespace UWG_Healthcare
             person.LName = txtLName.Text;
             person.Street = txtStreet.Text;
             person.City = txtCity.Text;
-            person.State = cboState.Text;
+            person.State = txtState.Text;
             person.ZipCode = txtZip.Text;
             person.PhoneNum = txtPhone.Text;
             person.SSN = txtSSN.Text;
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

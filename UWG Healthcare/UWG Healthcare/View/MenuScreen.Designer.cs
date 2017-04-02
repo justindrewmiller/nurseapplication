@@ -31,7 +31,6 @@
             this.btnCreateAppointment = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
             this.btnOrderTests = new System.Windows.Forms.Button();
             this.btnRecordResults = new System.Windows.Forms.Button();
@@ -66,15 +65,6 @@
             this.btnRegister.Text = "Register New Patient";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Location = new System.Drawing.Point(241, 415);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(112, 23);
-            this.btnLogOut.TabIndex = 4;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
             // 
             // lblUserName
             // 
@@ -112,7 +102,6 @@
             this.Controls.Add(this.btnRecordResults);
             this.Controls.Add(this.btnOrderTests);
             this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnCreateAppointment);
@@ -129,7 +118,6 @@
         private System.Windows.Forms.Button btnCreateAppointment;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Button btnOrderTests;
         private System.Windows.Forms.Button btnRecordResults;

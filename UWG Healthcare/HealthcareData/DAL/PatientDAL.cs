@@ -152,6 +152,7 @@ namespace HealthcareData.DAL
             updateCommand.Parameters.AddWithValue("@NewSSN", newPerson.SSN);
 
             updateCommand.Parameters.AddWithValue("@OldPersonID", oldPerson.PersonID);
+            
             updateCommand.Parameters.AddWithValue("@OldDOB", oldPerson.DOB);
             updateCommand.Parameters.AddWithValue("@OldFName", oldPerson.FName);
             updateCommand.Parameters.AddWithValue("@OldLName", oldPerson.LName);

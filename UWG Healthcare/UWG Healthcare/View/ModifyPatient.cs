@@ -33,27 +33,32 @@ namespace UWG_Healthcare
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             {
-                Person newPerson = new Person();
-                newPerson.PersonID = person.PersonID;
+                if (isValidData())
+                {
+                    Person newPerson = new Person();
+                    newPerson.PersonID = person.PersonID;
 
 
-                this.PutPersonData(newPerson);
-                try
-                {
-                    if (!inController.UpdatePatient(person, newPerson))
+                    this.PutPersonData(newPerson);
+                    try
                     {
-                        MessageBox.Show("Another user has updated or " +
-                            "deleted that incident.", "Database Error");
-                        this.DialogResult = DialogResult.Retry;
+                        if (!inController.UpdatePatient(person, newPerson))
+                        {
+                            MessageBox.Show("Another user has updated or " +
+                                "deleted that incident.", "Database Error");
+                            this.DialogResult = DialogResult.Retry;
+                        }
+                        else
+                        {
+                            person = newPerson;
+                            MessageBox.Show("Patient was modified.", "Successful Modification");
+                            this.Close();
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        person = newPerson;
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
             }
         }
@@ -80,12 +85,22 @@ namespace UWG_Healthcare
                 if (person == null)
                 {
 
-                    MessageBox.Show("No Patient found with this ID. " +
-                    "Please try again.", "Patient Not Found");
+                    this.personDoesntExist();
                 }
                 else
                 {
                     this.DisplayPerson();
+                    btnSubmit.Enabled = true;
+                    btnCancel.Enabled = true;
+                    txtFName.Enabled = true;
+                    txtLName.Enabled = true;
+                    txtSSN.Enabled = true;
+                    txtStreet.Enabled = true;
+                    txtCity.Enabled = true;
+                    txtZip.Enabled = true;
+                    txtState.Enabled = true;
+                    txtPhone.Enabled = true;
+                    txtDOB.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -103,7 +118,7 @@ namespace UWG_Healthcare
             txtStreet.Text = person.Street;
             txtCity.Text = person.City;
             txtZip.Text = person.ZipCode;
-            cboState.Text = person.State;
+            txtState.Text = person.State;
             txtPhone.Text = person.PhoneNum;
             txtDOB.Text = person.DOB;
         }
@@ -116,9 +131,63 @@ namespace UWG_Healthcare
             person.Street = txtStreet.Text;
             person.City = txtCity.Text;
             person.ZipCode = txtZip.Text;
-            person.State = cboState.Text;
+            person.State = txtState.Text;
             person.PhoneNum = txtPhone.Text;
             person.DOB = txtDOB.Text;
+        }
+
+        private void personDoesntExist()
+        {
+            btnSubmit.Enabled = false;
+            btnCancel.Enabled = false;
+            txtFName.Text = "";
+            txtLName.Text = "";
+            txtSSN.Text = "";
+            txtStreet.Text = "";
+            txtCity.Text = "";
+            txtState.Text = "";
+            txtPhone.Text = "";
+            txtDOB.Text = "";
+            MessageBox.Show("No Patient found with this ID. " +
+            "Please try again.", "Patient Not Found");
+
+        }
+
+        private void ModifyPatient_Load(object sender, EventArgs e)
+        {
+            btnSubmit.Enabled = false;
+            btnCancel.Enabled = false;
+            txtFName.Enabled = false;
+            txtLName.Enabled = false;
+            txtSSN.Enabled = false;
+            txtStreet.Enabled = false;
+            txtCity.Enabled = false;
+            txtZip.Enabled = false;
+            txtState.Enabled = false;
+            txtPhone.Enabled = false;
+            txtDOB.Enabled = false;
+        }
+
+        private bool isValidData()
+        {
+            if (Validator.IsPresent(txtFName) &&
+                Validator.IsPresent(txtLName) &&
+                Validator.IsPresent(txtSSN) &&
+                Validator.IsValidSSN(txtSSN) &&
+                Validator.IsPresent(txtStreet) &&
+                Validator.IsPresent(txtCity) &&
+                Validator.IsPresent(txtState) &&
+                Validator.IsPresent(txtZip) &&
+                Validator.IsPresent(txtPhone) &&
+                Validator.IsPresent(txtDOB))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

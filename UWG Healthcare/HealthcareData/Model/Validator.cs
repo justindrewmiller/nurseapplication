@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,6 +49,26 @@ namespace HealthcareData.Model
                 {
                     MessageBox.Show(comboBox.Tag.ToString() + " is a required field.", Title);
                     comboBox.Focus();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return true;
+        }
+
+        // Checks that the information is present
+        public static bool IsValidSSN(Control control)
+        {
+            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
+            {
+                TextBox textBox = (TextBox)control;
+                if (!Regex.IsMatch(textBox.Text, @"^\d{9}$"))
+                {
+                    MessageBox.Show(textBox.Tag.ToString() + " must contain 9 numbers only", Title);
+                    textBox.Focus();
                     return false;
                 }
                 else

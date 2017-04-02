@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboState = new System.Windows.Forms.ComboBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtZip = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -52,15 +51,8 @@
             this.getButton = new System.Windows.Forms.Button();
             this.txtDOB = new System.Windows.Forms.TextBox();
             this.lblDOB = new System.Windows.Forms.Label();
+            this.txtState = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // cboState
-            // 
-            this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(136, 269);
-            this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(139, 21);
-            this.cboState.TabIndex = 37;
             // 
             // txtPhone
             // 
@@ -68,6 +60,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(139, 20);
             this.txtPhone.TabIndex = 36;
+            this.txtPhone.Tag = "Phone Number";
             // 
             // txtZip
             // 
@@ -75,6 +68,7 @@
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(139, 20);
             this.txtZip.TabIndex = 35;
+            this.txtZip.Tag = "Zip Code";
             // 
             // txtCity
             // 
@@ -82,6 +76,7 @@
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(210, 20);
             this.txtCity.TabIndex = 34;
+            this.txtCity.Tag = "City";
             // 
             // txtStreet
             // 
@@ -89,6 +84,7 @@
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(209, 20);
             this.txtStreet.TabIndex = 33;
+            this.txtStreet.Tag = "Street";
             // 
             // txtSSN
             // 
@@ -96,6 +92,7 @@
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.Size = new System.Drawing.Size(139, 20);
             this.txtSSN.TabIndex = 32;
+            this.txtSSN.Tag = "SSN";
             // 
             // txtLName
             // 
@@ -103,6 +100,7 @@
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(139, 20);
             this.txtLName.TabIndex = 31;
+            this.txtLName.Tag = "Last Name";
             // 
             // txtFName
             // 
@@ -110,6 +108,7 @@
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(139, 20);
             this.txtFName.TabIndex = 30;
+            this.txtFName.Tag = "First Name";
             // 
             // lblUserName
             // 
@@ -218,6 +217,7 @@
             this.txtPersonID.Name = "txtPersonID";
             this.txtPersonID.Size = new System.Drawing.Size(62, 20);
             this.txtPersonID.TabIndex = 39;
+            this.txtPersonID.Tag = "Person ID";
             // 
             // lblPersonID
             // 
@@ -255,17 +255,25 @@
             this.lblDOB.TabIndex = 41;
             this.lblDOB.Text = "DOB:";
             // 
+            // txtState
+            // 
+            this.txtState.Location = new System.Drawing.Point(136, 269);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(139, 20);
+            this.txtState.TabIndex = 43;
+            this.txtState.Tag = "State";
+            // 
             // ModifyPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 407);
+            this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.getButton);
             this.Controls.Add(this.txtPersonID);
             this.Controls.Add(this.lblPersonID);
-            this.Controls.Add(this.cboState);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtZip);
             this.Controls.Add(this.txtCity);
@@ -286,14 +294,13 @@
             this.Controls.Add(this.lblfname);
             this.Name = "ModifyPatient";
             this.Text = "Modify Patient";
+            this.Load += new System.EventHandler(this.ModifyPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.TextBox txtCity;
@@ -317,5 +324,6 @@
         private System.Windows.Forms.Button getButton;
         private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Label lblDOB;
+        private System.Windows.Forms.TextBox txtState;
     }
 }
