@@ -63,7 +63,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DB\cs6232-g2database.sql" />
+    <Content Include="DB\cs6232-g2sampledata.sql" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
