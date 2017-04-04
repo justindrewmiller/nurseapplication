@@ -89,7 +89,9 @@ Insert into TestResults (TestCode, TestDate, Result, ApptID) VALUES (2, '2016-11
 Insert into TestResults (TestCode, TestDate, Result, ApptID) VALUES (3, '2016-11-24', 'normal',7); 
 Insert into TestResults (TestCode, TestDate, Result, ApptID) VALUES (2, '2016-11-14', 'abnormal', 8);
 
-
+insert into UserInfo (username, password, DoctorID) values ('smith1', '', 1); 
+insert into UserInfo (username, password, NurseID) values ('superman1', '', 1);
+insert into UserInfo (username, password, AdminID) values ('clark1', '', 1);
 
 
 
