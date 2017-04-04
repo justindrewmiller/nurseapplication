@@ -1,4 +1,4 @@
-﻿namespace UWG_Healthcare
+﻿namespace UWG_Healthcare.View
 {
     partial class CreateAppointment
     {
@@ -28,171 +28,122 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.lblNewPatient = new System.Windows.Forms.Label();
-            this.lblPatientSSN = new System.Windows.Forms.Label();
-            this.lblDr = new System.Windows.Forms.Label();
-            this.lblTimeScheduled = new System.Windows.Forms.Label();
-            this.lblReasons = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.chkYes = new System.Windows.Forms.CheckBox();
-            this.chkNo = new System.Windows.Forms.CheckBox();
-            this.txtSSN = new System.Windows.Forms.TextBox();
-            this.cboDoctor = new System.Windows.Forms.ComboBox();
-            this.txtTime = new System.Windows.Forms.TextBox();
-            this.txtReasons = new System.Windows.Forms.RichTextBox();
-            this.drListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.drListBindingSource)).BeginInit();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblReason = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
+            this.txtDoctor = new System.Windows.Forms.TextBox();
+            this.lblDoctor = new System.Windows.Forms.Label();
+            this.txtPatientName = new System.Windows.Forms.TextBox();
+            this.lblPatientName = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(12, 9);
+            this.lblUserName.Location = new System.Drawing.Point(37, 26);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(115, 13);
-            this.lblUserName.TabIndex = 0;
+            this.lblUserName.TabIndex = 18;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
-            // lblNewPatient
+            // richTextBox1
             // 
-            this.lblNewPatient.AutoSize = true;
-            this.lblNewPatient.Location = new System.Drawing.Point(12, 52);
-            this.lblNewPatient.Name = "lblNewPatient";
-            this.lblNewPatient.Size = new System.Drawing.Size(68, 13);
-            this.lblNewPatient.TabIndex = 1;
-            this.lblNewPatient.Text = "New Patient:";
+            this.richTextBox1.Location = new System.Drawing.Point(148, 231);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(203, 109);
+            this.richTextBox1.TabIndex = 17;
+            this.richTextBox1.Text = "";
             // 
-            // lblPatientSSN
+            // textBox1
             // 
-            this.lblPatientSSN.AutoSize = true;
-            this.lblPatientSSN.Location = new System.Drawing.Point(12, 87);
-            this.lblPatientSSN.Name = "lblPatientSSN";
-            this.lblPatientSSN.Size = new System.Drawing.Size(68, 13);
-            this.lblPatientSSN.TabIndex = 2;
-            this.lblPatientSSN.Text = "Patient SSN:";
+            this.textBox1.Location = new System.Drawing.Point(148, 178);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(203, 20);
+            this.textBox1.TabIndex = 16;
             // 
-            // lblDr
+            // lblReason
             // 
-            this.lblDr.AutoSize = true;
-            this.lblDr.Location = new System.Drawing.Point(12, 125);
-            this.lblDr.Name = "lblDr";
-            this.lblDr.Size = new System.Drawing.Size(42, 13);
-            this.lblDr.TabIndex = 3;
-            this.lblDr.Text = "Doctor:";
+            this.lblReason.AutoSize = true;
+            this.lblReason.Location = new System.Drawing.Point(73, 234);
+            this.lblReason.Name = "lblReason";
+            this.lblReason.Size = new System.Drawing.Size(44, 13);
+            this.lblReason.TabIndex = 15;
+            this.lblReason.Text = "Reason";
             // 
-            // lblTimeScheduled
+            // lblDateTime
             // 
-            this.lblTimeScheduled.AutoSize = true;
-            this.lblTimeScheduled.Location = new System.Drawing.Point(12, 165);
-            this.lblTimeScheduled.Name = "lblTimeScheduled";
-            this.lblTimeScheduled.Size = new System.Drawing.Size(87, 13);
-            this.lblTimeScheduled.TabIndex = 4;
-            this.lblTimeScheduled.Text = "Time Scheduled:";
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Location = new System.Drawing.Point(46, 181);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(77, 13);
+            this.lblDateTime.TabIndex = 14;
+            this.lblDateTime.Text = "Date and Time";
             // 
-            // lblReasons
+            // txtDoctor
             // 
-            this.lblReasons.AutoSize = true;
-            this.lblReasons.Location = new System.Drawing.Point(12, 204);
-            this.lblReasons.Name = "lblReasons";
-            this.lblReasons.Size = new System.Drawing.Size(89, 13);
-            this.lblReasons.TabIndex = 5;
-            this.lblReasons.Text = "Reasons for Visit:";
+            this.txtDoctor.Location = new System.Drawing.Point(148, 123);
+            this.txtDoctor.Name = "txtDoctor";
+            this.txtDoctor.ReadOnly = true;
+            this.txtDoctor.Size = new System.Drawing.Size(203, 20);
+            this.txtDoctor.TabIndex = 13;
             // 
-            // btnSubmit
+            // lblDoctor
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(52, 341);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 6;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.lblDoctor.AutoSize = true;
+            this.lblDoctor.Location = new System.Drawing.Point(46, 126);
+            this.lblDoctor.Name = "lblDoctor";
+            this.lblDoctor.Size = new System.Drawing.Size(87, 13);
+            this.lblDoctor.TabIndex = 12;
+            this.lblDoctor.Text = "Attending Doctor";
             // 
-            // btnCancel
+            // txtPatientName
             // 
-            this.btnCancel.Location = new System.Drawing.Point(204, 341);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.txtPatientName.Location = new System.Drawing.Point(148, 73);
+            this.txtPatientName.Name = "txtPatientName";
+            this.txtPatientName.ReadOnly = true;
+            this.txtPatientName.Size = new System.Drawing.Size(203, 20);
+            this.txtPatientName.TabIndex = 11;
             // 
-            // chkYes
+            // lblPatientName
             // 
-            this.chkYes.AutoSize = true;
-            this.chkYes.Location = new System.Drawing.Point(156, 52);
-            this.chkYes.Name = "chkYes";
-            this.chkYes.Size = new System.Drawing.Size(44, 17);
-            this.chkYes.TabIndex = 8;
-            this.chkYes.Text = "Yes";
-            this.chkYes.UseVisualStyleBackColor = true;
-            this.chkYes.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.lblPatientName.AutoSize = true;
+            this.lblPatientName.Location = new System.Drawing.Point(52, 76);
+            this.lblPatientName.Name = "lblPatientName";
+            this.lblPatientName.Size = new System.Drawing.Size(71, 13);
+            this.lblPatientName.TabIndex = 10;
+            this.lblPatientName.Text = "Patient Name";
             // 
-            // chkNo
+            // btnClose
             // 
-            this.chkNo.AutoSize = true;
-            this.chkNo.Location = new System.Drawing.Point(221, 52);
-            this.chkNo.Name = "chkNo";
-            this.chkNo.Size = new System.Drawing.Size(40, 17);
-            this.chkNo.TabIndex = 9;
-            this.chkNo.Text = "No";
-            this.chkNo.UseVisualStyleBackColor = true;
-            // 
-            // txtSSN
-            // 
-            this.txtSSN.Location = new System.Drawing.Point(139, 84);
-            this.txtSSN.Name = "txtSSN";
-            this.txtSSN.Size = new System.Drawing.Size(150, 20);
-            this.txtSSN.TabIndex = 10;
-            // 
-            // cboDoctor
-            // 
-            this.cboDoctor.FormattingEnabled = true;
-            this.cboDoctor.Location = new System.Drawing.Point(139, 125);
-            this.cboDoctor.Name = "cboDoctor";
-            this.cboDoctor.Size = new System.Drawing.Size(182, 21);
-            this.cboDoctor.TabIndex = 11;
-            // 
-            // txtTime
-            // 
-            this.txtTime.Location = new System.Drawing.Point(139, 165);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(150, 20);
-            this.txtTime.TabIndex = 12;
-            // 
-            // txtReasons
-            // 
-            this.txtReasons.Location = new System.Drawing.Point(139, 204);
-            this.txtReasons.Name = "txtReasons";
-            this.txtReasons.Size = new System.Drawing.Size(150, 96);
-            this.txtReasons.TabIndex = 13;
-            this.txtReasons.Text = "";
+            this.btnClose.Location = new System.Drawing.Point(295, 362);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // CreateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 376);
-            this.Controls.Add(this.txtReasons);
-            this.Controls.Add(this.txtTime);
-            this.Controls.Add(this.cboDoctor);
-            this.Controls.Add(this.txtSSN);
-            this.Controls.Add(this.chkNo);
-            this.Controls.Add(this.chkYes);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.lblReasons);
-            this.Controls.Add(this.lblTimeScheduled);
-            this.Controls.Add(this.lblDr);
-            this.Controls.Add(this.lblPatientSSN);
-            this.Controls.Add(this.lblNewPatient);
+            this.ClientSize = new System.Drawing.Size(414, 414);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblReason);
+            this.Controls.Add(this.lblDateTime);
+            this.Controls.Add(this.txtDoctor);
+            this.Controls.Add(this.lblDoctor);
+            this.Controls.Add(this.txtPatientName);
+            this.Controls.Add(this.lblPatientName);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
-            ((System.ComponentModel.ISupportInitialize)(this.drListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,19 +152,14 @@
         #endregion
 
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label lblNewPatient;
-        private System.Windows.Forms.Label lblPatientSSN;
-        private System.Windows.Forms.Label lblDr;
-        private System.Windows.Forms.Label lblTimeScheduled;
-        private System.Windows.Forms.Label lblReasons;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.CheckBox chkYes;
-        private System.Windows.Forms.CheckBox chkNo;
-        private System.Windows.Forms.TextBox txtSSN;
-        private System.Windows.Forms.ComboBox cboDoctor;
-        private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.RichTextBox txtReasons;
-        private System.Windows.Forms.BindingSource drListBindingSource;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblReason;
+        private System.Windows.Forms.Label lblDateTime;
+        private System.Windows.Forms.TextBox txtDoctor;
+        private System.Windows.Forms.Label lblDoctor;
+        private System.Windows.Forms.TextBox txtPatientName;
+        private System.Windows.Forms.Label lblPatientName;
+        private System.Windows.Forms.Button btnClose;
     }
 }
