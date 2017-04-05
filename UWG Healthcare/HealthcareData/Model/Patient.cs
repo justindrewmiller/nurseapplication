@@ -8,6 +8,8 @@ namespace HealthcareData.Model
 {
     public class Patient : Person
     {
-        public string PatientID { get; set; }
+        public int PatientID { get; set; }
+
+        public string FullName { get; set; }
     }
 }

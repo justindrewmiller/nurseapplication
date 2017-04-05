@@ -16,7 +16,7 @@ namespace HealthcareData.DAL
             List<Doctor> docList = new List<Doctor>();
 
             string selectStatement =
-                "SELECT p.PersonID, d.DoctorID, p.FName, p.LName " +
+                "SELECT p.PersonID, d.DoctorID, p.FName +' ' + p.LName AS  'FullName' " +
                 "FROM Person p JOIN Doctors d " +
                 "ON p.PersonID = d.PersonID";
 
@@ -35,8 +35,7 @@ namespace HealthcareData.DAL
                                Doctor doctor = new Doctor();
                                 doctor.PersonID = (int)reader["PersonID"];
                                 doctor.DoctorID = (int)reader["DoctorID"];
-                                doctor.FName = reader["FName"].ToString();
-                                doctor.FName = reader["LName"].ToString();
+                                doctor.FullName = reader["FullName"].ToString();
                                 docList.Add(doctor);
                             }
                         }

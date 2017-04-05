@@ -34,5 +34,11 @@ namespace UWG_Healthcare.Controller
         {
             return PatientDAL.GetPatient(personID);
         }
+
+        // Gets the Patients list
+        public List<Patient> GetPatients()
+        {
+            return PatientDAL.GetPatients();
+        }
     }
 }

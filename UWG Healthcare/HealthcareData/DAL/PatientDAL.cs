@@ -12,7 +12,53 @@ namespace HealthcareData.DAL
     public class PatientDAL
     {
 
-        public static int AddPatient(Patient patient)
+        // Gets the the doctor objects
+        public static List<Patient> GetPatients()
+        {
+            List<Patient> patientList = new List<Patient>();
+
+            string selectStatement =
+                "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName' " +
+                "FROM Person p JOIN Patients pt " +
+                "ON p.PersonID = pt.PersonID";
+
+            try
+            {
+                using (SqlConnection connection = HealthCareUWGDBConnection.GetConnection())
+                {
+                    connection.Open();
+
+                    using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                    {
+                        using (SqlDataReader reader = selectCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Patient patient = new Patient();
+                                patient.PersonID = (int)reader["PersonID"];
+                                patient.PatientID = (int)reader["PatientID"];
+                                patient.FullName = reader["FullName"].ToString();
+                                patientList.Add(patient);
+                            }
+                        }
+                    }
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return patientList;
+        }
+
+    public static int AddPatient(Patient patient)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string insertStatement =

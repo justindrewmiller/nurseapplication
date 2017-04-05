@@ -30,14 +30,15 @@
         {
             this.lblUserName = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblReason = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.txtDoctor = new System.Windows.Forms.TextBox();
             this.lblDoctor = new System.Windows.Forms.Label();
-            this.txtPatientName = new System.Windows.Forms.TextBox();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.cmbDoctorList = new System.Windows.Forms.ComboBox();
+            this.cmbPatientList = new System.Windows.Forms.ComboBox();
+            this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -52,19 +53,11 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(148, 231);
+            this.richTextBox1.MaxLength = 200;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(203, 109);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(148, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 16;
             // 
             // lblReason
             // 
@@ -84,30 +77,14 @@
             this.lblDateTime.TabIndex = 14;
             this.lblDateTime.Text = "Date and Time";
             // 
-            // txtDoctor
-            // 
-            this.txtDoctor.Location = new System.Drawing.Point(148, 123);
-            this.txtDoctor.Name = "txtDoctor";
-            this.txtDoctor.ReadOnly = true;
-            this.txtDoctor.Size = new System.Drawing.Size(203, 20);
-            this.txtDoctor.TabIndex = 13;
-            // 
             // lblDoctor
             // 
             this.lblDoctor.AutoSize = true;
             this.lblDoctor.Location = new System.Drawing.Point(46, 126);
             this.lblDoctor.Name = "lblDoctor";
-            this.lblDoctor.Size = new System.Drawing.Size(87, 13);
+            this.lblDoctor.Size = new System.Drawing.Size(42, 13);
             this.lblDoctor.TabIndex = 12;
-            this.lblDoctor.Text = "Attending Doctor";
-            // 
-            // txtPatientName
-            // 
-            this.txtPatientName.Location = new System.Drawing.Point(148, 73);
-            this.txtPatientName.Name = "txtPatientName";
-            this.txtPatientName.ReadOnly = true;
-            this.txtPatientName.Size = new System.Drawing.Size(203, 20);
-            this.txtPatientName.TabIndex = 11;
+            this.lblDoctor.Text = "Doctor:";
             // 
             // lblPatientName
             // 
@@ -120,27 +97,65 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(295, 362);
+            this.btnClose.Location = new System.Drawing.Point(226, 362);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // cmbDoctorList
+            // 
+            this.cmbDoctorList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDoctorList.FormattingEnabled = true;
+            this.cmbDoctorList.Location = new System.Drawing.Point(148, 123);
+            this.cmbDoctorList.Name = "cmbDoctorList";
+            this.cmbDoctorList.Size = new System.Drawing.Size(203, 21);
+            this.cmbDoctorList.TabIndex = 20;
+            // 
+            // cmbPatientList
+            // 
+            this.cmbPatientList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPatientList.FormattingEnabled = true;
+            this.cmbPatientList.Location = new System.Drawing.Point(148, 68);
+            this.cmbPatientList.Name = "cmbPatientList";
+            this.cmbPatientList.Size = new System.Drawing.Size(203, 21);
+            this.cmbPatientList.TabIndex = 21;
+            // 
+            // dtpDateTime
+            // 
+            this.dtpDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateTime.Location = new System.Drawing.Point(148, 175);
+            this.dtpDateTime.Name = "dtpDateTime";
+            this.dtpDateTime.Size = new System.Drawing.Size(200, 20);
+            this.dtpDateTime.TabIndex = 22;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(103, 362);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 23;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // CreateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 414);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.dtpDateTime);
+            this.Controls.Add(this.cmbPatientList);
+            this.Controls.Add(this.cmbDoctorList);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblReason);
             this.Controls.Add(this.lblDateTime);
-            this.Controls.Add(this.txtDoctor);
             this.Controls.Add(this.lblDoctor);
-            this.Controls.Add(this.txtPatientName);
             this.Controls.Add(this.lblPatientName);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
@@ -153,13 +168,14 @@
 
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblReason;
         private System.Windows.Forms.Label lblDateTime;
-        private System.Windows.Forms.TextBox txtDoctor;
         private System.Windows.Forms.Label lblDoctor;
-        private System.Windows.Forms.TextBox txtPatientName;
         private System.Windows.Forms.Label lblPatientName;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ComboBox cmbDoctorList;
+        private System.Windows.Forms.ComboBox cmbPatientList;
+        private System.Windows.Forms.DateTimePicker dtpDateTime;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
