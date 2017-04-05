@@ -8,8 +8,8 @@ namespace HealthcareData.Model
 {
     public class Doctor : Person
     {
-
-        public string DoctorID { get; set; }
+        public int DoctorID { get; set; }
+        
 
         //Must be array as doctor can have multiple specialities
         public Array Speciality { get; set; }
