@@ -14,20 +14,28 @@ namespace UWG_Healthcare.View
 {
     public partial class CreateAppointment : Form
     {
+        public Appointment newAppointment;
         public UserInfo userID;
         private DoctorController doctorController;
         private PatientController patientController;
-        //Doctor doctor;
+        private AppointmentController appointmentController;
+
         public CreateAppointment(UserInfo info)
         {
             InitializeComponent();
             doctorController = new DoctorController();
-            patientController = new Controller.PatientController();
+            patientController = new PatientController();
+            appointmentController = new AppointmentController();
             userID = info;
             lblUserName.Text = userID.userID;
+        }
+
+        private void CreateAppointment_Load(object sender, EventArgs e)
+        {
             this.LoadComboBox();
             cmbDoctorList.SelectedIndex = -1;
             cmbPatientList.SelectedIndex = -1;
+
         }
 
         // Loads the Doctor information into comboboxes
@@ -53,6 +61,16 @@ namespace UWG_Healthcare.View
             }
         }
 
+        // Stores the information from textboxes and combo boxes into variables.
+        private void PutIncidentData(Appointment appointment)
+        {
+            appointment.PatientID = (int)cmbPatientList.SelectedValue;
+            appointment.DoctorID = (int)cmbDoctorList.SelectedValue;
+            appointment.apptDateTime = dtpDateTime.Text;
+            appointment.Reason = txtReason.Text;
+        }
+
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -60,6 +78,18 @@ namespace UWG_Healthcare.View
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            newAppointment = new Appointment();
+            this.PutIncidentData(newAppointment);
+            try
+            {
+                newAppointment.ApptID = appointmentController.CreateAppointment(newAppointment);
+                MessageBox.Show("The appointment was successfully created.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
 
         }
     }

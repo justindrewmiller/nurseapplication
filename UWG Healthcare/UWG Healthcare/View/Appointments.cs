@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UWG_Healthcare.View
 {
-    public partial class Appointment : Form
+    public partial class Appointments : Form
     {
-        public Appointment()
+        public Appointments()
         {
             InitializeComponent();
         }

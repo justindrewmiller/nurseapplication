@@ -8,11 +8,11 @@ namespace HealthcareData.Model
 {
     public class Appointment
     {
-        public string ApptID { get; set; }
+        public int ApptID { get; set; }
 
-        public string PatientID { get; set; }
+        public int PatientID { get; set; }
 
-        public string DoctorID { get; set; }
+        public int DoctorID { get; set; }
 
         public string apptDateTime { get; set; }
 

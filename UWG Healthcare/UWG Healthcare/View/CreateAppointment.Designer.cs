@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblUserName = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtReason = new System.Windows.Forms.RichTextBox();
             this.lblReason = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblDoctor = new System.Windows.Forms.Label();
@@ -50,14 +50,14 @@
             this.lblUserName.TabIndex = 18;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
-            // richTextBox1
+            // txtReason
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(148, 231);
-            this.richTextBox1.MaxLength = 200;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(203, 109);
-            this.richTextBox1.TabIndex = 17;
-            this.richTextBox1.Text = "";
+            this.txtReason.Location = new System.Drawing.Point(148, 231);
+            this.txtReason.MaxLength = 200;
+            this.txtReason.Name = "txtReason";
+            this.txtReason.Size = new System.Drawing.Size(203, 109);
+            this.txtReason.TabIndex = 17;
+            this.txtReason.Text = "";
             // 
             // lblReason
             // 
@@ -152,13 +152,14 @@
             this.Controls.Add(this.cmbDoctorList);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtReason);
             this.Controls.Add(this.lblReason);
             this.Controls.Add(this.lblDateTime);
             this.Controls.Add(this.lblDoctor);
             this.Controls.Add(this.lblPatientName);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
+            this.Load += new System.EventHandler(this.CreateAppointment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,7 +168,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtReason;
         private System.Windows.Forms.Label lblReason;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Label lblDoctor;
