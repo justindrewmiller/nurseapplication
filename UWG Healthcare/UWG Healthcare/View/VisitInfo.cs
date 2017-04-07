@@ -17,7 +17,7 @@ namespace UWG_Healthcare.View
             InitializeComponent();
         }
 
-        private void lblDiagnosis_Click(object sender, EventArgs e)
+        private void VisitInfo_Load(object sender, EventArgs e)
         {
 
         }

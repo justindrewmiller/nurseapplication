@@ -38,9 +38,11 @@
             // 
             // btnCreateAppointment
             // 
-            this.btnCreateAppointment.Location = new System.Drawing.Point(61, 73);
+            this.btnCreateAppointment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAppointment.Location = new System.Drawing.Point(46, 62);
+            this.btnCreateAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateAppointment.Name = "btnCreateAppointment";
-            this.btnCreateAppointment.Size = new System.Drawing.Size(202, 23);
+            this.btnCreateAppointment.Size = new System.Drawing.Size(269, 39);
             this.btnCreateAppointment.TabIndex = 0;
             this.btnCreateAppointment.Text = "Create Appointment";
             this.btnCreateAppointment.UseVisualStyleBackColor = true;
@@ -48,9 +50,11 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(61, 138);
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(46, 109);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(202, 23);
+            this.btnSearch.Size = new System.Drawing.Size(269, 36);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search Patients";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -58,9 +62,11 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(61, 197);
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Location = new System.Drawing.Point(46, 153);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(202, 23);
+            this.btnRegister.Size = new System.Drawing.Size(269, 36);
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "Register New Patient";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -69,17 +75,21 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(13, 13);
+            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(17, 16);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(115, 13);
+            this.lblUserName.Size = new System.Drawing.Size(181, 23);
             this.lblUserName.TabIndex = 5;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
             // btnOrderTests
             // 
-            this.btnOrderTests.Location = new System.Drawing.Point(61, 254);
+            this.btnOrderTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderTests.Location = new System.Drawing.Point(46, 197);
+            this.btnOrderTests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOrderTests.Name = "btnOrderTests";
-            this.btnOrderTests.Size = new System.Drawing.Size(202, 23);
+            this.btnOrderTests.Size = new System.Drawing.Size(269, 40);
             this.btnOrderTests.TabIndex = 6;
             this.btnOrderTests.Text = "Order Tests";
             this.btnOrderTests.UseVisualStyleBackColor = true;
@@ -87,24 +97,27 @@
             // 
             // btnRecordResults
             // 
-            this.btnRecordResults.Location = new System.Drawing.Point(61, 314);
+            this.btnRecordResults.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecordResults.Location = new System.Drawing.Point(46, 245);
+            this.btnRecordResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRecordResults.Name = "btnRecordResults";
-            this.btnRecordResults.Size = new System.Drawing.Size(202, 23);
+            this.btnRecordResults.Size = new System.Drawing.Size(269, 33);
             this.btnRecordResults.TabIndex = 7;
             this.btnRecordResults.Text = "Record Test Results";
             this.btnRecordResults.UseVisualStyleBackColor = true;
             // 
             // MenuScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 450);
+            this.ClientSize = new System.Drawing.Size(353, 308);
             this.Controls.Add(this.btnRecordResults);
             this.Controls.Add(this.btnOrderTests);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnCreateAppointment);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
