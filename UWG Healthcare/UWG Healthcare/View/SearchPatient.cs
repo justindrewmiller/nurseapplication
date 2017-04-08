@@ -18,5 +18,25 @@ namespace UWG_Healthcare
             InitializeComponent();
             lblUserName.Text = info.userID;
         }
+
+        private void SearchPatient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSearchName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

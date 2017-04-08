@@ -29,128 +29,144 @@
         private void InitializeComponent()
         {
             this.lblUserName = new System.Windows.Forms.Label();
-            this.lblSearchName = new System.Windows.Forms.Label();
+            this.lblSearchFName = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtFName = new System.Windows.Forms.TextBox();
             this.txtDOB = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnGoTo = new System.Windows.Forms.Button();
-            this.txtResults = new System.Windows.Forms.RichTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblSearchLName = new System.Windows.Forms.Label();
+            this.txtLName = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(16, 11);
-            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserName.Location = new System.Drawing.Point(12, 9);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(181, 23);
+            this.lblUserName.Size = new System.Drawing.Size(145, 19);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
-            // lblSearchName
+            // lblSearchFName
             // 
-            this.lblSearchName.AutoSize = true;
-            this.lblSearchName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchName.Location = new System.Drawing.Point(89, 78);
-            this.lblSearchName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(56, 23);
-            this.lblSearchName.TabIndex = 1;
-            this.lblSearchName.Text = "Name";
+            this.lblSearchFName.AutoSize = true;
+            this.lblSearchFName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchFName.Location = new System.Drawing.Point(34, 66);
+            this.lblSearchFName.Name = "lblSearchFName";
+            this.lblSearchFName.Size = new System.Drawing.Size(75, 19);
+            this.lblSearchFName.TabIndex = 1;
+            this.lblSearchFName.Text = "First Name";
+            this.lblSearchFName.Click += new System.EventHandler(this.lblSearchName_Click);
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(96, 125);
-            this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDOB.Location = new System.Drawing.Point(57, 153);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(45, 23);
+            this.lblDOB.Size = new System.Drawing.Size(38, 19);
             this.lblDOB.TabIndex = 2;
             this.lblDOB.Text = "DOB";
             // 
-            // txtName
+            // txtFName
             // 
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(153, 78);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(211, 30);
-            this.txtName.TabIndex = 3;
+            this.txtFName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFName.Location = new System.Drawing.Point(115, 63);
+            this.txtFName.Name = "txtFName";
+            this.txtFName.Size = new System.Drawing.Size(159, 26);
+            this.txtFName.TabIndex = 3;
             // 
             // txtDOB
             // 
             this.txtDOB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDOB.Location = new System.Drawing.Point(153, 125);
-            this.txtDOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDOB.Location = new System.Drawing.Point(115, 146);
             this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Size = new System.Drawing.Size(211, 30);
+            this.txtDOB.Size = new System.Drawing.Size(159, 26);
             this.txtDOB.TabIndex = 4;
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(203, 172);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(115, 197);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 38);
+            this.btnSearch.Size = new System.Drawing.Size(75, 31);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(359, 354);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(216, 452);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 40);
+            this.btnCancel.Size = new System.Drawing.Size(75, 32);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnGoTo
             // 
             this.btnGoTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoTo.Location = new System.Drawing.Point(214, 354);
-            this.btnGoTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoTo.Location = new System.Drawing.Point(61, 452);
             this.btnGoTo.Name = "btnGoTo";
-            this.btnGoTo.Size = new System.Drawing.Size(128, 40);
+            this.btnGoTo.Size = new System.Drawing.Size(96, 32);
             this.btnGoTo.TabIndex = 7;
             this.btnGoTo.Text = "Select Patient";
             this.btnGoTo.UseVisualStyleBackColor = true;
             // 
-            // txtResults
+            // dataGridView1
             // 
-            this.txtResults.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResults.Location = new System.Drawing.Point(20, 218);
-            this.txtResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtResults.Name = "txtResults";
-            this.txtResults.ReadOnly = true;
-            this.txtResults.Size = new System.Drawing.Size(439, 128);
-            this.txtResults.TabIndex = 8;
-            this.txtResults.Text = "";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(71, 266);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // lblSearchLName
+            // 
+            this.lblSearchLName.AutoSize = true;
+            this.lblSearchLName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchLName.Location = new System.Drawing.Point(34, 104);
+            this.lblSearchLName.Name = "lblSearchLName";
+            this.lblSearchLName.Size = new System.Drawing.Size(74, 19);
+            this.lblSearchLName.TabIndex = 9;
+            this.lblSearchLName.Text = "Last Name";
+            // 
+            // txtLName
+            // 
+            this.txtLName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLName.Location = new System.Drawing.Point(115, 101);
+            this.txtLName.Name = "txtLName";
+            this.txtLName.Size = new System.Drawing.Size(159, 26);
+            this.txtLName.TabIndex = 10;
             // 
             // SearchPatient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 413);
-            this.Controls.Add(this.txtResults);
+            this.ClientSize = new System.Drawing.Size(420, 545);
+            this.Controls.Add(this.txtLName);
+            this.Controls.Add(this.lblSearchLName);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnGoTo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtDOB);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtFName);
             this.Controls.Add(this.lblDOB);
-            this.Controls.Add(this.lblSearchName);
+            this.Controls.Add(this.lblSearchFName);
             this.Controls.Add(this.lblUserName);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SearchPatient";
             this.Text = "Search Patient";
+            this.Load += new System.EventHandler(this.SearchPatient_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,13 +175,15 @@
         #endregion
 
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label lblSearchName;
+        private System.Windows.Forms.Label lblSearchFName;
         private System.Windows.Forms.Label lblDOB;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtFName;
         private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnGoTo;
-        private System.Windows.Forms.RichTextBox txtResults;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblSearchLName;
+        private System.Windows.Forms.TextBox txtLName;
     }
 }
