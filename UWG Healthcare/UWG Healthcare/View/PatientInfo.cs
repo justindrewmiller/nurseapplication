@@ -28,5 +28,33 @@ namespace UWG_Healthcare.View
         {
 
         }
+
+        private void PatientInfo_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid patient id. " +
+                   "Please try searching for the patient again.", "Patient Not Found");
+            }
+        }
+
+        private void loadComboAppointments()
+        {
+
+        }
+
+        private void loadComboTests()
+        {
+
+        }
+
+        private void loadComboVisits()
+        {
+
+        }
     }
 }

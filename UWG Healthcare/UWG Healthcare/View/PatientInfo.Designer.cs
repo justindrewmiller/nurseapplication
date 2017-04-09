@@ -225,9 +225,9 @@
             this.lblVisits.AutoSize = true;
             this.lblVisits.Location = new System.Drawing.Point(37, 378);
             this.lblVisits.Name = "lblVisits";
-            this.lblVisits.Size = new System.Drawing.Size(45, 13);
+            this.lblVisits.Size = new System.Drawing.Size(34, 13);
             this.lblVisits.TabIndex = 38;
-            this.lblVisits.Text = "Results:";
+            this.lblVisits.Text = "Visits:";
             // 
             // cboResults
             // 
@@ -278,7 +278,7 @@
             this.btnTests.Name = "btnTests";
             this.btnTests.Size = new System.Drawing.Size(97, 23);
             this.btnTests.TabIndex = 44;
-            this.btnTests.Text = "Get Result";
+            this.btnTests.Text = "Get/Add Result";
             this.btnTests.UseVisualStyleBackColor = true;
             this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
             // 
@@ -335,6 +335,7 @@
             this.Controls.Add(this.lblfname);
             this.Name = "PatientInfo";
             this.Text = "Patient Information";
+            this.Load += new System.EventHandler(this.PatientInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

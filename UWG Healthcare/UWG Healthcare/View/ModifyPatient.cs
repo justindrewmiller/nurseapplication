@@ -15,11 +15,21 @@ namespace UWG_Healthcare
     public partial class ModifyPatient : Form
     {
         public UserInfo userID;
+        public Patient currentPatient;
         private PatientController inController;
         Person person;
         public ModifyPatient(UserInfo info)
         {
             InitializeComponent();
+            inController = new PatientController();
+            userID = info;
+            lblUserName.Text = userID.userID;
+        }
+
+        public ModifyPatient(UserInfo info, Patient currentPatient)
+        {
+            InitializeComponent();
+            this.currentPatient = currentPatient;
             inController = new PatientController();
             userID = info;
             lblUserName.Text = userID.userID;
@@ -155,17 +165,34 @@ namespace UWG_Healthcare
 
         private void ModifyPatient_Load(object sender, EventArgs e)
         {
-            btnSubmit.Enabled = false;
-            btnCancel.Enabled = false;
-            txtFName.Enabled = false;
-            txtLName.Enabled = false;
-            txtSSN.Enabled = false;
-            txtStreet.Enabled = false;
-            txtCity.Enabled = false;
-            txtZip.Enabled = false;
-            txtState.Enabled = false;
-            txtPhone.Enabled = false;
-            txtDOB.Enabled = false;
+            if (this.currentPatient == null)
+            {
+                btnSubmit.Enabled = false;
+                btnCancel.Enabled = false;
+                txtFName.Enabled = false;
+                txtLName.Enabled = false;
+                txtSSN.Enabled = false;
+                txtStreet.Enabled = false;
+                txtCity.Enabled = false;
+                txtZip.Enabled = false;
+                txtState.Enabled = false;
+                txtPhone.Enabled = false;
+                txtDOB.Enabled = false;
+            } else
+            {
+                btnSubmit.Enabled = true;
+                btnCancel.Enabled = true;
+                txtFName.Text = this.currentPatient.FName;
+                txtLName.Text = this.currentPatient.LName;
+                txtSSN.Text = this.currentPatient.SSN;
+                txtStreet.Text = this.currentPatient.Street;
+                txtCity.Text = this.currentPatient.City;
+                txtZip.Text = this.currentPatient.ZipCode;
+                txtState.Text = this.currentPatient.FName;
+                txtPhone.Text = this.currentPatient.PhoneNum;
+                txtDOB.Text = this.currentPatient.DOB;
+            }
+
         }
 
         private bool isValidData()
