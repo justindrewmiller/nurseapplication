@@ -31,7 +31,17 @@ namespace UWG_Healthcare.View
         {
             try
             {
-
+                if (cboTests.ValueMember == "")
+                {
+                    MessageBox.Show("No test to select.", "No test selected");
+                }
+                else
+                {
+                    TestInfo testInfo = new TestInfo(this.info, this.patient);
+                    testInfo.MdiParent = this.MdiParent;
+                    testInfo.Show();
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -133,7 +143,17 @@ namespace UWG_Healthcare.View
         {
             try
             {
-
+                if (cboAppointments.ValueMember == "")
+                {
+                    MessageBox.Show("No applicable appointment.", "No appointment selected");
+                }
+                else
+                {
+                    CurrentAppointment currentApt = new CurrentAppointment(this.info, cboAppointments.ValueMember);
+                    currentApt.MdiParent = this.MdiParent;
+                    currentApt.Show();
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -145,7 +165,17 @@ namespace UWG_Healthcare.View
         {
             try
             {
-
+                if (cboVisits.ValueMember == "")
+                {
+                    MessageBox.Show("No applicable visit.", "No visit selected");
+                }
+                else
+                {
+                    VisitInfo visitInfo = new VisitInfo(this.info, cboVisits.ValueMember);
+                    visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.Show();
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {

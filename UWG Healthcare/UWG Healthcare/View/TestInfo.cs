@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthcareData.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace UWG_Healthcare.View
 {
     public partial class TestInfo : Form
     {
-        public TestInfo()
+
+        public UserInfo info;
+        private Patient patient;
+
+        public TestInfo(UserInfo info, Patient patient)
         {
             InitializeComponent();
+            this.info = info;
+            lblUserName.Text = info.userID;
+            this.patient = patient;
         }
 
         private void Test_Load(object sender, EventArgs e)
