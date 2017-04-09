@@ -77,7 +77,9 @@ namespace HealthcareData.DAL
             List<Appointment> appointmentList = new List<Appointment>();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "";
+                "SELECT ApptID, PatientID, DoctorID, apptDateTime, Reason " +
+                "FROM Appointment " +
+                "WHERE PatientID = @PatientID";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@PatientID", patientID);
             SqlDataReader reader = null;
@@ -123,7 +125,12 @@ namespace HealthcareData.DAL
             List<Test> testList = new List<Test>();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "";
+                "SELECT t.TestCode, lt.TestName, t.TestDate, t.ApptID, t.Result " +
+                "FROM TestResults t JOIN Appointment a " +
+                "ON a.ApptID = t.ApptID " +
+                "JOIN LabTests lt " +
+                "ON lt.TestCode = t.TestCode " +
+                "WHERE a.PatientID = @PatientID";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@PatientID", patientID);
             SqlDataReader reader = null;
@@ -169,7 +176,10 @@ namespace HealthcareData.DAL
             List<Visit> visitList = new List<Visit>();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "";
+                "SELECT v.VisitID, v.ApptID, v.SysBP, v.DiaBP, v.BodyTemp, v.Pulse, v.Symptoms, v.NurseID, v.DiagnosesCode " +
+                "FROM Visits v JOIN Appointment a " +
+                "ON v.ApptID = a.ApptID " +
+                "WHERE a.PatientID = @PatientID";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@PatientID", patientID);
             SqlDataReader reader = null;
