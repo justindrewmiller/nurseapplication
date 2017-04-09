@@ -73,9 +73,9 @@ namespace UWG_Healthcare
                 cboPatients.DisplayMember = "FullName";
                 cboPatients.ValueMember = "PatientID";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong!");
+                MessageBox.Show(ex.ToString());
             }
 
         }

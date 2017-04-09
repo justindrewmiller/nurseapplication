@@ -111,11 +111,11 @@
     <Compile Include="View\SearchPatient.Designer.cs">
       <DependentUpon>SearchPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Test.cs">
+    <Compile Include="View\TestInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
+    <Compile Include="View\TestInfo.Designer.cs">
+      <DependentUpon>TestInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\VisitInfo.cs">
       <SubType>Form</SubType>
@@ -159,8 +159,8 @@
     <EmbeddedResource Include="View\SearchPatient.resx">
       <DependentUpon>SearchPatient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
+    <EmbeddedResource Include="View\TestInfo.resx">
+      <DependentUpon>TestInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VisitInfo.resx">
       <DependentUpon>VisitInfo.cs</DependentUpon>

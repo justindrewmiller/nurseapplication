@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UWG_Healthcare.View
 {
-    public partial class Test : Form
+    public partial class TestInfo : Form
     {
-        public Test()
+        public TestInfo()
         {
             InitializeComponent();
         }

@@ -48,11 +48,11 @@
             this.lblAppointment = new System.Windows.Forms.Label();
             this.cboAppointments = new System.Windows.Forms.ComboBox();
             this.lblVisits = new System.Windows.Forms.Label();
-            this.cboResults = new System.Windows.Forms.ComboBox();
+            this.cboVisits = new System.Windows.Forms.ComboBox();
             this.btnAppointments = new System.Windows.Forms.Button();
             this.btnVisits = new System.Windows.Forms.Button();
             this.lblTests = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboTests = new System.Windows.Forms.ComboBox();
             this.btnTests = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnFinished = new System.Windows.Forms.Button();
@@ -229,13 +229,13 @@
             this.lblVisits.TabIndex = 38;
             this.lblVisits.Text = "Visits:";
             // 
-            // cboResults
+            // cboVisits
             // 
-            this.cboResults.FormattingEnabled = true;
-            this.cboResults.Location = new System.Drawing.Point(123, 369);
-            this.cboResults.Name = "cboResults";
-            this.cboResults.Size = new System.Drawing.Size(180, 21);
-            this.cboResults.TabIndex = 39;
+            this.cboVisits.FormattingEnabled = true;
+            this.cboVisits.Location = new System.Drawing.Point(123, 369);
+            this.cboVisits.Name = "cboVisits";
+            this.cboVisits.Size = new System.Drawing.Size(180, 21);
+            this.cboVisits.TabIndex = 39;
             // 
             // btnAppointments
             // 
@@ -264,13 +264,13 @@
             this.lblTests.TabIndex = 42;
             this.lblTests.Text = "Tests:";
             // 
-            // comboBox1
+            // cboTests
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 405);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 21);
-            this.comboBox1.TabIndex = 43;
+            this.cboTests.FormattingEnabled = true;
+            this.cboTests.Location = new System.Drawing.Point(123, 405);
+            this.cboTests.Name = "cboTests";
+            this.cboTests.Size = new System.Drawing.Size(180, 21);
+            this.cboTests.TabIndex = 43;
             // 
             // btnTests
             // 
@@ -308,11 +308,11 @@
             this.Controls.Add(this.btnFinished);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnTests);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboTests);
             this.Controls.Add(this.lblTests);
             this.Controls.Add(this.btnVisits);
             this.Controls.Add(this.btnAppointments);
-            this.Controls.Add(this.cboResults);
+            this.Controls.Add(this.cboVisits);
             this.Controls.Add(this.lblVisits);
             this.Controls.Add(this.cboAppointments);
             this.Controls.Add(this.lblAppointment);
@@ -363,11 +363,11 @@
         private System.Windows.Forms.Label lblAppointment;
         private System.Windows.Forms.ComboBox cboAppointments;
         private System.Windows.Forms.Label lblVisits;
-        private System.Windows.Forms.ComboBox cboResults;
+        private System.Windows.Forms.ComboBox cboVisits;
         private System.Windows.Forms.Button btnAppointments;
         private System.Windows.Forms.Button btnVisits;
         private System.Windows.Forms.Label lblTests;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboTests;
         private System.Windows.Forms.Button btnTests;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnFinished;

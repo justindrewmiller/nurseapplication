@@ -1,6 +1,6 @@
 ﻿namespace UWG_Healthcare.View
 {
-    partial class Test
+    partial class TestInfo
     {
         /// <summary>
         /// Required designer variable.

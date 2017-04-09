@@ -40,7 +40,7 @@ namespace UWG_Healthcare.View
 
         private void btnOrderTests_Click(object sender, EventArgs e)
         {
-            Test newTest = new Test();
+            TestInfo newTest = new TestInfo();
             newTest.MdiParent = this.MdiParent;
             newTest.Show();
             this.Close();
