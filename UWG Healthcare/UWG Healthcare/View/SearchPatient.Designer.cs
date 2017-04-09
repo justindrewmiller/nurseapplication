@@ -38,11 +38,7 @@
             this.lblSearchLName = new System.Windows.Forms.Label();
             this.txtLName = new System.Windows.Forms.TextBox();
             this.dtDOB = new System.Windows.Forms.DateTimePicker();
-            this.lvPatients = new System.Windows.Forms.ListView();
-            this.PatientFName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PatientLName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.patientDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PatientID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cboPatients = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -97,7 +93,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(273, 407);
+            this.btnCancel.Location = new System.Drawing.Point(256, 323);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 32);
             this.btnCancel.TabIndex = 6;
@@ -108,7 +104,7 @@
             // btnGoTo
             // 
             this.btnGoTo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoTo.Location = new System.Drawing.Point(115, 407);
+            this.btnGoTo.Location = new System.Drawing.Point(115, 323);
             this.btnGoTo.Name = "btnGoTo";
             this.btnGoTo.Size = new System.Drawing.Size(96, 32);
             this.btnGoTo.TabIndex = 7;
@@ -140,45 +136,20 @@
             this.dtDOB.Size = new System.Drawing.Size(200, 20);
             this.dtDOB.TabIndex = 13;
             // 
-            // lvPatients
+            // cboPatients
             // 
-            this.lvPatients.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.PatientFName,
-            this.PatientLName,
-            this.patientDOB,
-            this.PatientID});
-            this.lvPatients.Location = new System.Drawing.Point(97, 248);
-            this.lvPatients.Name = "lvPatients";
-            this.lvPatients.Size = new System.Drawing.Size(294, 133);
-            this.lvPatients.TabIndex = 14;
-            this.lvPatients.UseCompatibleStateImageBehavior = false;
-            this.lvPatients.View = System.Windows.Forms.View.Details;
-            // 
-            // PatientFName
-            // 
-            this.PatientFName.Text = "First Name";
-            this.PatientFName.Width = 76;
-            // 
-            // PatientLName
-            // 
-            this.PatientLName.Text = "Last Name";
-            this.PatientLName.Width = 77;
-            // 
-            // patientDOB
-            // 
-            this.patientDOB.Text = "DOB";
-            this.patientDOB.Width = 76;
-            // 
-            // PatientID
-            // 
-            this.PatientID.Text = "PatientID";
+            this.cboPatients.FormattingEnabled = true;
+            this.cboPatients.Location = new System.Drawing.Point(115, 253);
+            this.cboPatients.Name = "cboPatients";
+            this.cboPatients.Size = new System.Drawing.Size(247, 21);
+            this.cboPatients.TabIndex = 14;
             // 
             // SearchPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 501);
-            this.Controls.Add(this.lvPatients);
+            this.Controls.Add(this.cboPatients);
             this.Controls.Add(this.dtDOB);
             this.Controls.Add(this.txtLName);
             this.Controls.Add(this.lblSearchLName);
@@ -208,10 +179,6 @@
         private System.Windows.Forms.Label lblSearchLName;
         private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.DateTimePicker dtDOB;
-        private System.Windows.Forms.ListView lvPatients;
-        private System.Windows.Forms.ColumnHeader PatientFName;
-        private System.Windows.Forms.ColumnHeader PatientLName;
-        private System.Windows.Forms.ColumnHeader patientDOB;
-        private System.Windows.Forms.ColumnHeader PatientID;
+        private System.Windows.Forms.ComboBox cboPatients;
     }
 }

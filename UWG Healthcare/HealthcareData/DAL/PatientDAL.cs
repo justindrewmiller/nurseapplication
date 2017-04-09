@@ -19,7 +19,7 @@ namespace HealthcareData.DAL
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
-                "WHERE p.DOB = @DOB";
+                "WHERE p.DOB = '@DOB'";
 
 
             try
@@ -75,7 +75,7 @@ namespace HealthcareData.DAL
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
-                "WHERE p.FName = @FName AND p.LName = @LName";
+                "WHERE p.FName = '@FName' AND p.LName = '@LName'";
 
 
             try
@@ -132,7 +132,7 @@ namespace HealthcareData.DAL
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
-                "WHERE p.DOB = @DOB AND p.LName = @LName";
+                "WHERE p.DOB = '@DOB' AND p.LName = '@LName'";
 
 
             try

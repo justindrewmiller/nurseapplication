@@ -25,19 +25,9 @@ namespace UWG_Healthcare
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (dtDOB != null && Validator.IsPresent(txtLName))
-            {
-                this.GetPatientByDOBAndLName(dtDOB.Value, txtLName.Text);
-            } else if (Validator.IsPresent(txtLName) && Validator.IsPresent(txtFName))
-            {
+
                 this.GetPatientByFullName(txtFName.Text, txtLName.Text);
-            } else if (dtDOB != null)
-            {
-                this.GetPatientByDOB(dtDOB.Value);
-            } else
-            {
-                MessageBox.Show("Please input a dob and last name, a DOB, or a full name", "Invalid search parameters");
-            }
+
         }
 
         private void GetPatientByDOB(DateTime DOB)
@@ -45,6 +35,10 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByDOB(DOB.ToString());
+                if (patients == null) {
+                    MessageBox.Show("No patient found with this DOB. " +
+                       "Please try again.", "Patient Not Found");
+                } else
                 this.DisplayPatients();
             }
             catch (Exception)
@@ -56,16 +50,9 @@ namespace UWG_Healthcare
 
         private void DisplayPatients()
         {
-            Patient patient;
-            for (int i = 0; i < patients.Count; i++)
-            {
-                patient = this.patients[i];
-                lvPatients.Items.Add(patient.FName.ToString());
-                lvPatients.Items[i].SubItems.Add(patient.LName.ToString());
-                lvPatients.Items[i].SubItems.Add(patient.DOB.ToString());
-                lvPatients.Items[i].SubItems.Add(patient.PatientID.ToString());
- 
-            }
+            cboPatients.DataSource = patients;
+            cboPatients.DisplayMember = "FullName";
+            cboPatients.ValueMember = "PatientID";
         }
 
         private void GetPatientByFullName(string FName, string LName)
@@ -73,7 +60,13 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByFullName(FName, LName);
-                this.DisplayPatients();
+                if (patients == null)
+                {
+                    MessageBox.Show("No patient found with this name. " +
+                       "Please try again.", "Patient Not Found");
+                }
+                else
+                    this.DisplayPatients();
             }
             catch (Exception)
             {
@@ -87,7 +80,13 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByLastNameAndDOB(DOB.ToString(), LName);
-                this.DisplayPatients();
+                if (patients == null)
+                {
+                    MessageBox.Show("No patient found with this DOB and last name. " +
+                       "Please try again.", "Patient Not Found");
+                }
+                else
+                    this.DisplayPatients();
             }
             catch (Exception)
             {
