@@ -245,6 +245,7 @@
             this.btnAppointments.TabIndex = 40;
             this.btnAppointments.Text = "Get Appointment";
             this.btnAppointments.UseVisualStyleBackColor = true;
+            this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
             // 
             // btnVisits
             // 
@@ -254,6 +255,7 @@
             this.btnVisits.TabIndex = 41;
             this.btnVisits.Text = "Get Visit";
             this.btnVisits.UseVisualStyleBackColor = true;
+            this.btnVisits.Click += new System.EventHandler(this.btnVisits_Click);
             // 
             // lblTests
             // 
@@ -290,6 +292,7 @@
             this.btnModify.TabIndex = 45;
             this.btnModify.Text = "Modify Info";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnFinished
             // 
@@ -299,6 +302,7 @@
             this.btnFinished.TabIndex = 46;
             this.btnFinished.Text = "Finished";
             this.btnFinished.UseVisualStyleBackColor = true;
+            this.btnFinished.Click += new System.EventHandler(this.btnFinished_Click);
             // 
             // PatientInfo
             // 

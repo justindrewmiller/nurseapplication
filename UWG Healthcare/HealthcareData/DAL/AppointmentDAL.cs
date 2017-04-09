@@ -51,5 +51,12 @@ namespace HealthcareData.DAL
 
             return appointmentList;
         }
+
+        public static Appointment GetAppointment(String apptID)
+        {
+            Appointment appointment = new Appointment();
+
+            return appointment;
+        }
     }
 }

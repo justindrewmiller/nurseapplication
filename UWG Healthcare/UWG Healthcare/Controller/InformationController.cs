@@ -30,5 +30,20 @@ namespace UWG_Healthcare.Controller
         {
             return InformationDAL.GetPatientTests(patientID);
         }
+
+        public static Appointment GetAppointment(string apptID)
+        {
+            return AppointmentDAL.GetAppointment(apptID);
+        }
+
+        public static Test GetTest(string apptID)
+        {
+            return TestDAL.GetTest(apptID);
+        }
+
+        public static Visit GetVisit(string apptID)
+        {
+            return VisitDAL.GetVisit(apptID);
+        }
     }
 }
