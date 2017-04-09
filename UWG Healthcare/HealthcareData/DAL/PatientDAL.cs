@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HealthcareData.DAL
 {
@@ -15,46 +16,39 @@ namespace HealthcareData.DAL
         public static List<Patient> SearchPatientByDOB(string DOB)
         {
             List<Patient> patientList = new List<Patient>();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
                 "WHERE p.DOB = '@DOB'";
-
-
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
+            SqlDataReader reader = null;
             try
             {
-                using (SqlConnection connection = HealthCareUWGDBConnection.GetConnection())
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    connection.Open();
-                    SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-                    selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
-                    using (selectCommand)
-                    {
-                        using (SqlDataReader reader = selectCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Patient patient = new Patient();
-                                patient.PersonID = (int)reader["PersonID"];
-                                patient.PatientID = (int)reader["PatientID"];
-                                patient.FullName = reader["FullName"].ToString();
-                                patient.FName = reader["FName"].ToString();
-                                patient.LName = reader["LName"].ToString();
-                                patient.DOB = reader["DOB"].ToString();
-                                patient.Street = reader["Street"].ToString();
-                                patient.City = reader["City"].ToString();
-                                patient.State = reader["State"].ToString();
-                                patient.ZipCode = reader["ZipCode"].ToString();
-                                patient.PhoneNum = reader["PhoneNum"].ToString();
-                                patient.SSN = reader["SSN"].ToString();
-                                patientList.Add(patient);
-                            }
-                        }
-                    }
-                }
-
-
+                     Patient patient = new Patient();
+                     patient.PersonID = (int)reader["PersonID"];
+                     patient.PatientID = (int)reader["PatientID"];
+                     patient.FullName = reader["FullName"].ToString();
+                     patient.FName = reader["FName"].ToString();
+                     patient.LName = reader["LName"].ToString();
+                     patient.DOB = reader["DOB"].ToString();
+                     patient.Street = reader["Street"].ToString();
+                     patient.City = reader["City"].ToString();
+                     patient.State = reader["State"].ToString();
+                     patient.ZipCode = reader["ZipCode"].ToString();
+                     patient.PhoneNum = reader["PhoneNum"].ToString();
+                     patient.SSN = reader["SSN"].ToString();
+                     patientList.Add(patient);
+                 }
+                        
+                    
             }
             catch (SqlException ex)
             {
@@ -64,51 +58,50 @@ namespace HealthcareData.DAL
             {
                 throw ex;
             }
-
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+                if (reader != null)
+                    reader.Close();
+            }
             return patientList;
         }
 
         public static List<Patient> SearchPatientByFullName(string FName, string LName)
         {
             List<Patient> patientList = new List<Patient>();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
                 "WHERE p.FName = '@FName' AND p.LName = '@LName'";
-
-
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@FName", FName.ToString());
+            selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
+            SqlDataReader reader = null;
             try
             {
-                using (SqlConnection connection = HealthCareUWGDBConnection.GetConnection())
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    connection.Open();
-                    SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-                    selectCommand.Parameters.AddWithValue("@FName", FName.ToString());
-                    selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
-                    using (selectCommand)
-                    {
-                        using (SqlDataReader reader = selectCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Patient patient = new Patient();
-                                patient.PersonID = (int)reader["PersonID"];
-                                patient.PatientID = (int)reader["PatientID"];
-                                patient.FullName = reader["FullName"].ToString();
-                                patient.FName = reader["FName"].ToString();
-                                patient.LName = reader["LName"].ToString();
-                                patient.DOB = reader["DOB"].ToString();
-                                patient.Street = reader["Street"].ToString();
-                                patient.City = reader["City"].ToString();
-                                patient.State = reader["State"].ToString();
-                                patient.ZipCode = reader["ZipCode"].ToString();
-                                patient.PhoneNum = reader["PhoneNum"].ToString();
-                                patient.SSN = reader["SSN"].ToString();
-                                patientList.Add(patient);
-                            }
-                        }
-                    }
+                    Patient patient = new Patient();
+                    patient.PersonID = (int)reader["PersonID"];
+                    patient.PatientID = (int)reader["PatientID"];
+                    patient.FullName = reader["FullName"].ToString();
+                    patient.FName = reader["FName"].ToString();
+                    patient.LName = reader["LName"].ToString();
+                    patient.DOB = reader["DOB"].ToString();
+                    patient.Street = reader["Street"].ToString();
+                    patient.City = reader["City"].ToString();
+                    patient.State = reader["State"].ToString();
+                    patient.ZipCode = reader["ZipCode"].ToString();
+                    patient.PhoneNum = reader["PhoneNum"].ToString();
+                    patient.SSN = reader["SSN"].ToString();
+                    patientList.Add(patient);
                 }
 
 
@@ -121,51 +114,50 @@ namespace HealthcareData.DAL
             {
                 throw ex;
             }
-
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+                if (reader != null)
+                    reader.Close();
+            }
             return patientList;
         }
 
         public static List<Patient> SearchPatientByLastNameAndDOB(string DOB, string LName)
         {
             List<Patient> patientList = new List<Patient>();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
                 "WHERE p.DOB = '@DOB' AND p.LName = '@LName'";
-
-
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
+            selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
+            SqlDataReader reader = null;
             try
             {
-                using (SqlConnection connection = HealthCareUWGDBConnection.GetConnection())
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    connection.Open();
-                    SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-                    selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
-                    selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
-                    using (selectCommand)
-                    {
-                        using (SqlDataReader reader = selectCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Patient patient = new Patient();
-                                patient.PersonID = (int)reader["PersonID"];
-                                patient.PatientID = (int)reader["PatientID"];
-                                patient.FullName = reader["FullName"].ToString();
-                                patient.FName = reader["FName"].ToString();
-                                patient.LName = reader["LName"].ToString();
-                                patient.DOB = reader["DOB"].ToString();
-                                patient.Street = reader["Street"].ToString();
-                                patient.City = reader["City"].ToString();
-                                patient.State = reader["State"].ToString();
-                                patient.ZipCode = reader["ZipCode"].ToString();
-                                patient.PhoneNum = reader["PhoneNum"].ToString();
-                                patient.SSN = reader["SSN"].ToString();
-                                patientList.Add(patient);
-                            }
-                        }
-                    }
+                    Patient patient = new Patient();
+                    patient.PersonID = (int)reader["PersonID"];
+                    patient.PatientID = (int)reader["PatientID"];
+                    patient.FullName = reader["FullName"].ToString();
+                    patient.FName = reader["FName"].ToString();
+                    patient.LName = reader["LName"].ToString();
+                    patient.DOB = reader["DOB"].ToString();
+                    patient.Street = reader["Street"].ToString();
+                    patient.City = reader["City"].ToString();
+                    patient.State = reader["State"].ToString();
+                    patient.ZipCode = reader["ZipCode"].ToString();
+                    patient.PhoneNum = reader["PhoneNum"].ToString();
+                    patient.SSN = reader["SSN"].ToString();
+                    patientList.Add(patient);
                 }
 
 
@@ -178,8 +170,15 @@ namespace HealthcareData.DAL
             {
                 throw ex;
             }
-
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+                if (reader != null)
+                    reader.Close();
+            }
             return patientList;
+
         }
 
         // Gets the the doctor objects

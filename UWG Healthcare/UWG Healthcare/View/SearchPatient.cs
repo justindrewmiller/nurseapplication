@@ -20,6 +20,7 @@ namespace UWG_Healthcare
         public SearchPatient(UserInfo info)
         {
             InitializeComponent();
+            patients = new List<Patient>();
             lblUserName.Text = info.userID;
         }
 
@@ -48,7 +49,7 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByDOB(DOB.ToString());
-                if (patients == null) {
+                if (patients.Count == 0) {
                     MessageBox.Show("No patient found with this DOB. " +
                        "Please try again.", "Patient Not Found");
                 } else
@@ -63,10 +64,17 @@ namespace UWG_Healthcare
 
         private void DisplayPatients()
         {
-            cboPatients.DataSource = patients;
-            cboPatients.DisplayMember = "FullName";
-            cboPatients.ValueMember = "PatientID";
-            cboPatients.SelectedIndex = 0;
+            try
+            {
+                cboPatients.DataSource = patients;
+                cboPatients.DisplayMember = "FullName";
+                cboPatients.ValueMember = "PatientID";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong!");
+            }
+
         }
 
         private void GetPatientByFullName(string FName, string LName)
@@ -74,7 +82,7 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByFullName(FName, LName);
-                if (patients == null)
+                if (patients.Count == 0)
                 {
                     MessageBox.Show("No patient found with this name. " +
                        "Please try again.", "Patient Not Found");
@@ -94,7 +102,7 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByLastNameAndDOB(DOB.ToString(), LName);
-                if (patients == null)
+                if (patients.Count == 0)
                 {
                     MessageBox.Show("No patient found with this DOB and last name. " +
                        "Please try again.", "Patient Not Found");
