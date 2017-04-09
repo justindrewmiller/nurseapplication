@@ -75,18 +75,142 @@ namespace HealthcareData.DAL
         public static List<Appointment> GetPatientAppointments(string patientID)
         {
             List<Appointment> appointmentList = new List<Appointment>();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string selectStatement =
+                "";
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@PatientID", patientID);
+            SqlDataReader reader = null;
+            try
+            {
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Appointment appointment = new Appointment();
+                    appointment.ApptID = (int)reader["ApptID"];
+                    appointment.PatientID = (int)reader["PatientID"];
+                    appointment.DoctorID = (int)reader["DoctorID"];
+                    appointment.apptDateTime = reader["apptDateTime"].ToString();
+                    appointment.Reason = reader["Reason"].ToString();
+                    appointmentList.Add(appointment);
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+                if (reader != null)
+                    reader.Close();
+            }
             return appointmentList;
         }
 
         public static List<Test> GetPatientTests(string patientID)
         {
             List<Test> testList = new List<Test>();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string selectStatement =
+                "";
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@PatientID", patientID);
+            SqlDataReader reader = null;
+            try
+            {
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Test test = new Test();
+                    test.TestCode = reader["TestCode"].ToString();
+                    test.TestName = reader["TestName"].ToString();
+                    test.TestDate = reader["TestDate"].ToString();
+                    test.ApptID = reader["ApptID"].ToString();
+                    test.Result = reader["Result"].ToString();
+                    testList.Add(test);
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+                if (reader != null)
+                    reader.Close();
+            }
             return testList;
         }
 
         public static List<Visit> GetPatientVisits(string patientID)
         {
             List<Visit> visitList = new List<Visit>();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string selectStatement =
+                "";
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@PatientID", patientID);
+            SqlDataReader reader = null;
+            try
+            {
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Visit visit = new Visit();
+                    visit.VisitID = reader["VisitID"].ToString();
+                    visit.ApptID = reader["ApptID"].ToString();
+                    visit.SysBP = reader["SysBP"].ToString();
+                    visit.DiaBP = reader["DiaBP"].ToString();
+                    visit.BodyTemp = reader["BodyTemp"].ToString();
+                    visit.Pulse = reader["Pulse"].ToString();
+                    visit.Symptoms = reader["Symptoms"].ToString();
+                    visit.NurseID = reader["NurseID"].ToString();
+                    visit.DiagnosesCode = reader["DiagnosesCode"].ToString();
+                    visitList.Add(visit);
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+                if (reader != null)
+                    reader.Close();
+            }
             return visitList;
         }
     }
