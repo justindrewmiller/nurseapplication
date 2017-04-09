@@ -15,13 +15,15 @@ namespace UWG_Healthcare.View
     {
 
         public UserInfo info;
-        private int patientID;
+        private Patient patient;
+        private string patientID;
 
         public PatientInfo(UserInfo info, string patientID)
         {
             InitializeComponent();
             this.info = info;
             lblUserName.Text = info.userID;
+            this.patientID = patientID;
         }
 
         private void btnTests_Click(object sender, EventArgs e)
@@ -33,9 +35,12 @@ namespace UWG_Healthcare.View
         {
             try
             {
-
+                this.patient = He
+                this.loadComboAppointments();
+                this.loadComboTests();
+                this.loadComboVisits();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Invalid patient id. " +
                    "Please try searching for the patient again.", "Patient Not Found");

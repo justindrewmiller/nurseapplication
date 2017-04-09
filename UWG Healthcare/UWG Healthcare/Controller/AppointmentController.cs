@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace UWG_Healthcare.Controller
 {
-    class AppointmentController
+    public class AppointmentController
     {
 
         // Creates the appointment
