@@ -135,6 +135,7 @@
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(200, 20);
             this.dtDOB.TabIndex = 13;
+            this.dtDOB.Value = new System.DateTime(2017, 4, 9, 2, 20, 37, 0);
             // 
             // cboPatients
             // 

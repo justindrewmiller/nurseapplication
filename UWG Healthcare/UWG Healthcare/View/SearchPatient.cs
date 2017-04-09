@@ -25,8 +25,21 @@ namespace UWG_Healthcare
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            if (txtFName.Text != "" && txtLName.Text != "")
+            {
                 this.GetPatientByFullName(txtFName.Text, txtLName.Text);
+            } else if (txtLName.Text != "" && dtDOB.Value != DateTime.Today)
+            {
+                this.GetPatientByDOBAndLName(dtDOB.Value, txtLName.Text);
+            } else if (dtDOB.Value != DateTime.Today)
+            {
+                this.GetPatientByDOB(dtDOB.Value);
+            } else
+            {
+                MessageBox.Show("Please choose a dob, dob and last name, or first and last name. " +
+                   "Please try again.", "Improper parameters");
+            }
+
 
         }
 
