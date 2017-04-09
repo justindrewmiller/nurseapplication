@@ -12,9 +12,9 @@ namespace HealthcareData.DAL
     public class PatientDAL
     {
         
-        public static Patient SearchPatientByDOB(string DOB)
+        public static List<Patient> SearchPatientByDOB(string DOB)
         {
-            Patient patient = new Patient();
+            List<Patient> patientList = new List<Patient>();
             string selectStatement =
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
@@ -33,8 +33,9 @@ namespace HealthcareData.DAL
                     {
                         using (SqlDataReader reader = selectCommand.ExecuteReader())
                         {
-                            if (reader.Read())
+                            while (reader.Read())
                             {
+                                Patient patient = new Patient();
                                 patient.PersonID = (int)reader["PersonID"];
                                 patient.PatientID = (int)reader["PatientID"];
                                 patient.FullName = reader["FullName"].ToString();
@@ -47,10 +48,8 @@ namespace HealthcareData.DAL
                                 patient.ZipCode = reader["ZipCode"].ToString();
                                 patient.PhoneNum = reader["PhoneNum"].ToString();
                                 patient.SSN = reader["SSN"].ToString();
-
+                                patientList.Add(patient);
                             }
-                            else
-                                patient = null;
                         }
                     }
                 }
@@ -66,12 +65,12 @@ namespace HealthcareData.DAL
                 throw ex;
             }
 
-            return patient;
+            return patientList;
         }
 
-        public static Patient SearchPatientByFullName(string FName, string LName)
+        public static List<Patient> SearchPatientByFullName(string FName, string LName)
         {
-            Patient patient = new Patient();
+            List<Patient> patientList = new List<Patient>();
             string selectStatement =
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
@@ -91,8 +90,9 @@ namespace HealthcareData.DAL
                     {
                         using (SqlDataReader reader = selectCommand.ExecuteReader())
                         {
-                            if (reader.Read())
+                            while (reader.Read())
                             {
+                                Patient patient = new Patient();
                                 patient.PersonID = (int)reader["PersonID"];
                                 patient.PatientID = (int)reader["PatientID"];
                                 patient.FullName = reader["FullName"].ToString();
@@ -105,10 +105,8 @@ namespace HealthcareData.DAL
                                 patient.ZipCode = reader["ZipCode"].ToString();
                                 patient.PhoneNum = reader["PhoneNum"].ToString();
                                 patient.SSN = reader["SSN"].ToString();
-
+                                patientList.Add(patient);
                             }
-                            else
-                                patient = null;
                         }
                     }
                 }
@@ -124,12 +122,12 @@ namespace HealthcareData.DAL
                 throw ex;
             }
 
-            return patient;
+            return patientList;
         }
 
-        public static Patient SearchPatientByLastNameAndDOB(string DOB, string LName)
+        public static List<Patient> SearchPatientByLastNameAndDOB(string DOB, string LName)
         {
-            Patient patient = new Patient();
+            List<Patient> patientList = new List<Patient>();
             string selectStatement =
                 "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
@@ -149,8 +147,9 @@ namespace HealthcareData.DAL
                     {
                         using (SqlDataReader reader = selectCommand.ExecuteReader())
                         {
-                            if (reader.Read())
+                            while (reader.Read())
                             {
+                                Patient patient = new Patient();
                                 patient.PersonID = (int)reader["PersonID"];
                                 patient.PatientID = (int)reader["PatientID"];
                                 patient.FullName = reader["FullName"].ToString();
@@ -163,10 +162,8 @@ namespace HealthcareData.DAL
                                 patient.ZipCode = reader["ZipCode"].ToString();
                                 patient.PhoneNum = reader["PhoneNum"].ToString();
                                 patient.SSN = reader["SSN"].ToString();
-
+                                patientList.Add(patient);
                             }
-                            else
-                                patient = null;
                         }
                     }
                 }
@@ -182,7 +179,7 @@ namespace HealthcareData.DAL
                 throw ex;
             }
 
-            return patient;
+            return patientList;
         }
 
         // Gets the the doctor objects

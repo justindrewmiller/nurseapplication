@@ -10,17 +10,17 @@ namespace UWG_Healthcare.Controller
 {
     public class SearchController
     {
-        public static Patient SearchPatientsByDOB(string DOB)
+        public static List<Patient> SearchPatientsByDOB(string DOB)
         {
             return PatientDAL.SearchPatientByDOB(DOB);
         }
 
-        public static Patient SearchPatientsByFullName(string FName, string LName)
+        public static List<Patient> SearchPatientsByFullName(string FName, string LName)
         {
             return PatientDAL.SearchPatientByFullName(FName, LName);
         }
 
-        public static Patient SearchPatientsByLastNameAndDOB(string DOB, string LName)
+        public static List<Patient> SearchPatientsByLastNameAndDOB(string DOB, string LName)
         {
             return PatientDAL.SearchPatientByLastNameAndDOB(DOB, LName);
         }
