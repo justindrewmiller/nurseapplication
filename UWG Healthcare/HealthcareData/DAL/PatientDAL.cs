@@ -18,10 +18,10 @@ namespace HealthcareData.DAL
             List<Patient> patientList = new List<Patient>();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
+                "SELECT p.PersonID, pt.PatientID, p.FName, p.LName, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
-                "WHERE p.DOB = '@DOB'";
+                "WHERE p.DOB = @DOB";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
             SqlDataReader reader = null;
@@ -56,6 +56,7 @@ namespace HealthcareData.DAL
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 throw ex;
             }
             finally
@@ -73,10 +74,10 @@ namespace HealthcareData.DAL
             List<Patient> patientList = new List<Patient>();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
+                "SELECT p.PersonID, pt.PatientID, p.FName, p.LName, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
-                "WHERE p.FName = '@FName' AND p.LName = '@LName'";
+                "WHERE p.FName = @FName AND p.LName = @LName";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@FName", FName.ToString());
             selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
@@ -112,6 +113,7 @@ namespace HealthcareData.DAL
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 throw ex;
             }
             finally
@@ -129,10 +131,10 @@ namespace HealthcareData.DAL
             List<Patient> patientList = new List<Patient>();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
+                "SELECT p.PersonID, pt.PatientID, p.FName, p.LName, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
                 "FROM Person p JOIN Patients pt " +
                 "ON p.PersonID = pt.PersonID " +
-                "WHERE p.DOB = '@DOB' AND p.LName = '@LName'";
+                "WHERE p.DOB = @DOB AND p.LName = @LName";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
             selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
@@ -168,6 +170,7 @@ namespace HealthcareData.DAL
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 throw ex;
             }
             finally

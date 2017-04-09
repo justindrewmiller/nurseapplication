@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UWG_Healthcare.Controller;
+using UWG_Healthcare.View;
 
 namespace UWG_Healthcare
 {
@@ -16,10 +17,12 @@ namespace UWG_Healthcare
     {
 
         public List<Patient> patients;
+        public UserInfo info;
 
         public SearchPatient(UserInfo info)
         {
             InitializeComponent();
+            this.info = info;
             patients = new List<Patient>();
             lblUserName.Text = info.userID;
         }
@@ -120,6 +123,22 @@ namespace UWG_Healthcare
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGoTo_Click(object sender, EventArgs e)
+        {
+            if (cboPatients.SelectedValue == null)
+            {
+                MessageBox.Show("Please search for a patient.", "No value searched");
+            }
+            else
+            {
+                PatientInfo newInfo = new PatientInfo(this.info, cboPatients.SelectedValue.ToString());
+                newInfo.MdiParent = this.MdiParent;
+                newInfo.Show();
+                this.Close();
+            }
+
         }
     }
 }

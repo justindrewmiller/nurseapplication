@@ -110,6 +110,7 @@
             this.btnGoTo.TabIndex = 7;
             this.btnGoTo.Text = "Select Patient";
             this.btnGoTo.UseVisualStyleBackColor = true;
+            this.btnGoTo.Click += new System.EventHandler(this.btnGoTo_Click);
             // 
             // lblSearchLName
             // 
