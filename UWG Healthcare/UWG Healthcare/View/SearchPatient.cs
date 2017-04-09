@@ -45,6 +45,7 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByDOB(DOB.ToString());
+                this.DisplayPatients();
             }
             catch (Exception)
             {
@@ -53,11 +54,26 @@ namespace UWG_Healthcare
             }
         }
 
+        private void DisplayPatients()
+        {
+            Patient patient;
+            for (int i = 0; i < patients.Count; i++)
+            {
+                patient = this.patients[i];
+                lvPatients.Items.Add(patient.FName.ToString());
+                lvPatients.Items[i].SubItems.Add(patient.LName.ToString());
+                lvPatients.Items[i].SubItems.Add(patient.DOB.ToString());
+                lvPatients.Items[i].SubItems.Add(patient.PatientID.ToString());
+ 
+            }
+        }
+
         private void GetPatientByFullName(string FName, string LName)
         {
             try
             {
                 patients = SearchController.SearchPatientsByFullName(FName, LName);
+                this.DisplayPatients();
             }
             catch (Exception)
             {
@@ -71,6 +87,7 @@ namespace UWG_Healthcare
             try
             {
                 patients = SearchController.SearchPatientsByLastNameAndDOB(DOB.ToString(), LName);
+                this.DisplayPatients();
             }
             catch (Exception)
             {

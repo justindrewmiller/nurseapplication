@@ -37,8 +37,12 @@
             this.btnGoTo = new System.Windows.Forms.Button();
             this.lblSearchLName = new System.Windows.Forms.Label();
             this.txtLName = new System.Windows.Forms.TextBox();
-            this.lstPatients = new System.Windows.Forms.ListBox();
             this.dtDOB = new System.Windows.Forms.DateTimePicker();
+            this.lvPatients = new System.Windows.Forms.ListView();
+            this.PatientFName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PatientLName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.patientDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PatientID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lblUserName
@@ -129,14 +133,6 @@
             this.txtLName.Size = new System.Drawing.Size(159, 26);
             this.txtLName.TabIndex = 10;
             // 
-            // lstPatients
-            // 
-            this.lstPatients.FormattingEnabled = true;
-            this.lstPatients.Location = new System.Drawing.Point(115, 265);
-            this.lstPatients.Name = "lstPatients";
-            this.lstPatients.Size = new System.Drawing.Size(233, 95);
-            this.lstPatients.TabIndex = 11;
-            // 
             // dtDOB
             // 
             this.dtDOB.Location = new System.Drawing.Point(115, 152);
@@ -144,13 +140,46 @@
             this.dtDOB.Size = new System.Drawing.Size(200, 20);
             this.dtDOB.TabIndex = 13;
             // 
+            // lvPatients
+            // 
+            this.lvPatients.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.PatientFName,
+            this.PatientLName,
+            this.patientDOB,
+            this.PatientID});
+            this.lvPatients.Location = new System.Drawing.Point(97, 248);
+            this.lvPatients.Name = "lvPatients";
+            this.lvPatients.Size = new System.Drawing.Size(294, 133);
+            this.lvPatients.TabIndex = 14;
+            this.lvPatients.UseCompatibleStateImageBehavior = false;
+            this.lvPatients.View = System.Windows.Forms.View.Details;
+            // 
+            // PatientFName
+            // 
+            this.PatientFName.Text = "First Name";
+            this.PatientFName.Width = 76;
+            // 
+            // PatientLName
+            // 
+            this.PatientLName.Text = "Last Name";
+            this.PatientLName.Width = 77;
+            // 
+            // patientDOB
+            // 
+            this.patientDOB.Text = "DOB";
+            this.patientDOB.Width = 76;
+            // 
+            // PatientID
+            // 
+            this.PatientID.Text = "PatientID";
+            // 
             // SearchPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 501);
+            this.ClientSize = new System.Drawing.Size(461, 501);
+            this.Controls.Add(this.lvPatients);
             this.Controls.Add(this.dtDOB);
-            this.Controls.Add(this.lstPatients);
             this.Controls.Add(this.txtLName);
             this.Controls.Add(this.lblSearchLName);
             this.Controls.Add(this.btnGoTo);
@@ -178,7 +207,11 @@
         private System.Windows.Forms.Button btnGoTo;
         private System.Windows.Forms.Label lblSearchLName;
         private System.Windows.Forms.TextBox txtLName;
-        private System.Windows.Forms.ListBox lstPatients;
         private System.Windows.Forms.DateTimePicker dtDOB;
+        private System.Windows.Forms.ListView lvPatients;
+        private System.Windows.Forms.ColumnHeader PatientFName;
+        private System.Windows.Forms.ColumnHeader PatientLName;
+        private System.Windows.Forms.ColumnHeader patientDOB;
+        private System.Windows.Forms.ColumnHeader PatientID;
     }
 }
