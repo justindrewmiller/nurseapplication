@@ -1,6 +1,6 @@
 ﻿namespace UWG_Healthcare.View
 {
-    partial class Appointment
+    partial class CurrentAppointment
     {
         /// <summary>
         /// Required designer variable.

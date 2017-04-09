@@ -11,6 +11,179 @@ namespace HealthcareData.DAL
 {
     public class PatientDAL
     {
+        
+        public static Patient SearchPatientByDOB(string DOB)
+        {
+            Patient patient = new Patient();
+            string selectStatement =
+                "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
+                "FROM Person p JOIN Patients pt " +
+                "ON p.PersonID = pt.PersonID " +
+                "WHERE p.DOB = @DOB";
+
+
+            try
+            {
+                using (SqlConnection connection = HealthCareUWGDBConnection.GetConnection())
+                {
+                    connection.Open();
+                    SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+                    selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
+                    using (selectCommand)
+                    {
+                        using (SqlDataReader reader = selectCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                patient.PersonID = (int)reader["PersonID"];
+                                patient.PatientID = (int)reader["PatientID"];
+                                patient.FullName = reader["FullName"].ToString();
+                                patient.FName = reader["FName"].ToString();
+                                patient.LName = reader["LName"].ToString();
+                                patient.DOB = reader["DOB"].ToString();
+                                patient.Street = reader["Street"].ToString();
+                                patient.City = reader["City"].ToString();
+                                patient.State = reader["State"].ToString();
+                                patient.ZipCode = reader["ZipCode"].ToString();
+                                patient.PhoneNum = reader["PhoneNum"].ToString();
+                                patient.SSN = reader["SSN"].ToString();
+
+                            }
+                            else
+                                patient = null;
+                        }
+                    }
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return patient;
+        }
+
+        public static Patient SearchPatientByFullName(string FName, string LName)
+        {
+            Patient patient = new Patient();
+            string selectStatement =
+                "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
+                "FROM Person p JOIN Patients pt " +
+                "ON p.PersonID = pt.PersonID " +
+                "WHERE p.FName = @FName AND p.LName = @LName";
+
+
+            try
+            {
+                using (SqlConnection connection = HealthCareUWGDBConnection.GetConnection())
+                {
+                    connection.Open();
+                    SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+                    selectCommand.Parameters.AddWithValue("@FName", FName.ToString());
+                    selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
+                    using (selectCommand)
+                    {
+                        using (SqlDataReader reader = selectCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                patient.PersonID = (int)reader["PersonID"];
+                                patient.PatientID = (int)reader["PatientID"];
+                                patient.FullName = reader["FullName"].ToString();
+                                patient.FName = reader["FName"].ToString();
+                                patient.LName = reader["LName"].ToString();
+                                patient.DOB = reader["DOB"].ToString();
+                                patient.Street = reader["Street"].ToString();
+                                patient.City = reader["City"].ToString();
+                                patient.State = reader["State"].ToString();
+                                patient.ZipCode = reader["ZipCode"].ToString();
+                                patient.PhoneNum = reader["PhoneNum"].ToString();
+                                patient.SSN = reader["SSN"].ToString();
+
+                            }
+                            else
+                                patient = null;
+                        }
+                    }
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return patient;
+        }
+
+        public static Patient SearchPatientByLastNameAndDOB(string DOB, string LName)
+        {
+            Patient patient = new Patient();
+            string selectStatement =
+                "SELECT p.PersonID, pt.PatientID, p.FName +' ' + p.LName AS  'FullName', p.DOB, p.Street, p.City, p.State, p.ZipCode, p.PhoneNum, p.SSN " +
+                "FROM Person p JOIN Patients pt " +
+                "ON p.PersonID = pt.PersonID " +
+                "WHERE p.DOB = @DOB AND p.LName = @LName";
+
+
+            try
+            {
+                using (SqlConnection connection = HealthCareUWGDBConnection.GetConnection())
+                {
+                    connection.Open();
+                    SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+                    selectCommand.Parameters.AddWithValue("@DOB", DOB.ToString());
+                    selectCommand.Parameters.AddWithValue("@LName", LName.ToString());
+                    using (selectCommand)
+                    {
+                        using (SqlDataReader reader = selectCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                patient.PersonID = (int)reader["PersonID"];
+                                patient.PatientID = (int)reader["PatientID"];
+                                patient.FullName = reader["FullName"].ToString();
+                                patient.FName = reader["FName"].ToString();
+                                patient.LName = reader["LName"].ToString();
+                                patient.DOB = reader["DOB"].ToString();
+                                patient.Street = reader["Street"].ToString();
+                                patient.City = reader["City"].ToString();
+                                patient.State = reader["State"].ToString();
+                                patient.ZipCode = reader["ZipCode"].ToString();
+                                patient.PhoneNum = reader["PhoneNum"].ToString();
+                                patient.SSN = reader["SSN"].ToString();
+
+                            }
+                            else
+                                patient = null;
+                        }
+                    }
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return patient;
+        }
 
         // Gets the the doctor objects
         public static List<Patient> GetPatients()
@@ -48,11 +221,11 @@ namespace HealthcareData.DAL
             }
             catch (SqlException ex)
             {
-                throw;
+                throw ex;
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
             return patientList;

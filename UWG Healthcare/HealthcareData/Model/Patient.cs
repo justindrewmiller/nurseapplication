@@ -11,5 +11,6 @@ namespace HealthcareData.Model
         public int PatientID { get; set; }
 
         public string FullName { get; set; }
+
     }
 }

@@ -53,11 +53,11 @@
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\HealthcareController.cs" />
     <Compile Include="Controller\PatientController.cs" />
-    <Compile Include="View\Appointment.cs">
+    <Compile Include="View\CurrentAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Appointment.Designer.cs">
-      <DependentUpon>Appointment.cs</DependentUpon>
+    <Compile Include="View\CurrentAppointment.Designer.cs">
+      <DependentUpon>CurrentAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CreateAppointment.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     <Compile Include="View\VisitInfo.Designer.cs">
       <DependentUpon>VisitInfo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Appointment.resx">
-      <DependentUpon>Appointment.cs</DependentUpon>
+    <EmbeddedResource Include="View\CurrentAppointment.resx">
+      <DependentUpon>CurrentAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreateAppointment.resx">
       <DependentUpon>CreateAppointment.cs</DependentUpon>

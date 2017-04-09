@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace UWG_Healthcare.View
 {
-    public partial class Appointment : Form
+    public partial class CurrentAppointment : Form
     {
 
         public UserInfo userID;
 
-        public Appointment(UserInfo info)
+        public CurrentAppointment(UserInfo info)
         {
             InitializeComponent();
             userID = info;
