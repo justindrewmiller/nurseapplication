@@ -44,5 +44,12 @@ namespace HealthcareData.DAL
                 connection.Close();
             }
         }
+
+        public static List<Appointment> getAppointments(String patientID)
+        {
+            List<Appointment> appointmentList = new List<Appointment>();
+
+            return appointmentList;
+        }
     }
 }

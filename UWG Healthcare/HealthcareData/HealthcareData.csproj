@@ -46,7 +46,9 @@
     <Compile Include="DAL\DoctorDAL.cs" />
     <Compile Include="DAL\HealthCareUWGDBConnection.cs" />
     <Compile Include="DAL\PatientDAL.cs" />
+    <Compile Include="DAL\TestsDAL.cs" />
     <Compile Include="DAL\UsersDAL.cs" />
+    <Compile Include="DAL\VisitsDAL.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />
