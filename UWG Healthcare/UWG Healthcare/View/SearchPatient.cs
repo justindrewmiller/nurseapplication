@@ -66,6 +66,7 @@ namespace UWG_Healthcare
             cboPatients.DataSource = patients;
             cboPatients.DisplayMember = "FullName";
             cboPatients.ValueMember = "PatientID";
+            cboPatients.SelectedIndex = 0;
         }
 
         private void GetPatientByFullName(string FName, string LName)
