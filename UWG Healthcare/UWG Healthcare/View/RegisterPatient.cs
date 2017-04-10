@@ -35,6 +35,9 @@ namespace UWG_Healthcare
         {
             this.LoadComboBox();
             cmbStatesList.SelectedIndex = -1;
+
+            //Sets the Date time to be a maximum of Today.
+            dtpDateTime.MaxDate = DateTime.Today;
         }
 
         // Loads the State information into comboboxes

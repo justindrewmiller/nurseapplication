@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,10 +16,13 @@ namespace HealthcareData.DAL
         public static bool ValidLogin(string UserID, string Password)
         {
             Boolean isValid;
+
+            // Encryptes incoming password to SHA1 Hash
+            String encryptedPassword = GetSHA1HashData(Password);
             UserInfo ui = new UserInfo();
             SqlConnection con = HealthCareUWGDBConnection.GetConnection();
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + Password + "'", con);
+            SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + encryptedPassword + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -38,9 +42,10 @@ namespace HealthcareData.DAL
         public static String GetUserInfo(string UserID, string Password)
         {
             string userName;
+            String encryptedPassword = GetSHA1HashData(Password);
             SqlConnection con = HealthCareUWGDBConnection.GetConnection();
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + Password + "'", con);
+            SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + encryptedPassword + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -54,6 +59,33 @@ namespace HealthcareData.DAL
             }
             con.Close();
             return userName;
+        }
+
+        /// <summary>
+        /// take any string and encrypt it using SHA1 then
+        /// return the encrypted data
+        /// </summary>
+        /// <param name="data">input text you will enterd to encrypt it</param>
+        /// <returns>return the encrypted text as hexadecimal string</returns>
+        private static string GetSHA1HashData(string data)
+        {
+            //create new instance of md5
+            SHA1 sha1 = SHA1.Create();
+
+            //convert the input text to array of bytes
+            byte[] hashData = sha1.ComputeHash(Encoding.Default.GetBytes(data));
+
+            //create new instance of StringBuilder to save hashed data
+            StringBuilder returnValue = new StringBuilder();
+
+            //loop for each byte and add it to StringBuilder
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                returnValue.Append(hashData[i].ToString());
+            }
+
+            // return hexadecimal string
+            return returnValue.ToString();
         }
     }
 }

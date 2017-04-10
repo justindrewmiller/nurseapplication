@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,8 @@ namespace UWG_Healthcare.View
         private void LogIn_Load(object sender, EventArgs e)
         {
             lblInvalid.Text = "Enter valid user name and password";
+            // To view encrypted password make encryptedTB.Visible = true.
+            encryptedTB.Visible = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -36,6 +39,7 @@ namespace UWG_Healthcare.View
             UserInfo ui = new UserInfo();
             string UserName = txtUserName.Text;
             string Password = txtPassword.Text;
+            encryptedTB.Text = GetSHA1HashData(Password);
             if (Controller.HealthcareController.ValidLogin(UserName, Password))
             {
                 ui.userID = Controller.HealthcareController.GetUserInfo(UserName, Password);
@@ -47,6 +51,27 @@ namespace UWG_Healthcare.View
                 lblInvalid.Text = "Username or password was invalid";
             }
 
+        }
+
+        private static string GetSHA1HashData(string data)
+        {
+            //create new instance of md5
+            SHA1 sha1 = SHA1.Create();
+
+            //convert the input text to array of bytes
+            byte[] hashData = sha1.ComputeHash(Encoding.Default.GetBytes(data));
+
+            //create new instance of StringBuilder to save hashed data
+            StringBuilder returnValue = new StringBuilder();
+
+            //loop for each byte and add it to StringBuilder
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                returnValue.Append(hashData[i].ToString());
+            }
+
+            // return hexadecimal string
+            return returnValue.ToString();
         }
     }
 }
