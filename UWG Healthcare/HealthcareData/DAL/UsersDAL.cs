@@ -38,28 +38,28 @@ namespace HealthcareData.DAL
             return isValid;
         }
 
-        // Gets the user name of the person who is logged in.
-        public static String GetUserInfo(string UserID, string Password)
-        {
-            string userName;
-            String encryptedPassword = GetSHA1HashData(Password);
-            SqlConnection con = HealthCareUWGDBConnection.GetConnection();
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + encryptedPassword + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
-            {
-                userName = dt.Rows[0][0].ToString();
-            }
-            else
-            {
-                userName = "";
-            }
-            con.Close();
-            return userName;
-        }
+        //// Gets the user name of the person who is logged in.
+        //public static String GetUserInfo(string UserID, string Password)
+        //{
+        //    string userName;
+        //    String encryptedPassword = GetSHA1HashData(Password);
+        //    SqlConnection con = HealthCareUWGDBConnection.GetConnection();
+        //    con.Open();
+        //    SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + encryptedPassword + "'", con);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    if (dt.Rows.Count == 1)
+        //    {
+        //        userName = dt.Rows[0][0].ToString();
+        //    }
+        //    else
+        //    {
+        //        userName = "";
+        //    }
+        //    con.Close();
+        //    return userName;
+        //}
 
         // Gets the Gets the User's information via the Username and Password
         public static UserInfo GetUser(string username, string password)

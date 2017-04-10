@@ -45,6 +45,11 @@ namespace UWG_Healthcare
             if (user.DoctorID > 0)
             {
                 role = "DOCTOR";
+                registerNewPatientToolStripMenuItem.Enabled = false;
+                modifyPatientProfileToolStripMenuItem.Enabled = false;
+                createAppointmentToolStripMenuItem.Enabled = false;
+                searchPatientToolStripMenuItem.Enabled = false;
+                menuScreenToolStripMenuItem.Enabled = false;
             }
             if (user.NurseID > 0)
             {

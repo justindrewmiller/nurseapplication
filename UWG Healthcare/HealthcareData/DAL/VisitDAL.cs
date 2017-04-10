@@ -12,6 +12,44 @@ namespace HealthcareData.DAL
     public class VisitDAL
     {
 
+        // Inserts into the Visits table
+        public static int AddVisit(Visit visit)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string insertStatement =
+                "INSERT Visits " +
+                  "(ApptID, SysBP, DiaBP, BodyTemp, Pulse, Symptoms, NurseID, DiagnosesCode) " +
+                "VALUES (@ApptID, @SysBP, @DiaBP, @BodyTemp, @Pulse, @Symptoms, @NurseID, @DiagnosesCode)";
+            SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
+            insertCommand.Parameters.AddWithValue("@ApptID", visit.ApptID);
+            insertCommand.Parameters.AddWithValue("@SysBP", visit.SysBP);
+            insertCommand.Parameters.AddWithValue("@DiaBP", visit.DiaBP);
+            insertCommand.Parameters.AddWithValue("@BodyTemp", visit.BodyTemp);
+            insertCommand.Parameters.AddWithValue("@Pulse", visit.Pulse);
+            insertCommand.Parameters.AddWithValue("@Symptoms", visit.Symptoms);
+            insertCommand.Parameters.AddWithValue("@NurseID", visit.NurseID);
+            insertCommand.Parameters.AddWithValue("@DiagnosesCode", visit.DiagnosesCode);
+            try
+            {
+                connection.Open();
+
+                insertCommand.ExecuteNonQuery();
+                string selectStatement =
+                    "SELECT IDENT_CURRENT('Visits') FROM Visits";
+                SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+                int personID = Convert.ToInt32(selectCommand.ExecuteScalar());
+                return personID;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public static Visit GetVisit(string visitID)
         {
             Visit visit = new Visit();
