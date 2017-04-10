@@ -64,7 +64,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(139, 20);
-            this.txtPhone.TabIndex = 34;
+            this.txtPhone.TabIndex = 17;
             // 
             // txtZip
             // 
@@ -72,7 +72,7 @@
             this.txtZip.Name = "txtZip";
             this.txtZip.ReadOnly = true;
             this.txtZip.Size = new System.Drawing.Size(139, 20);
-            this.txtZip.TabIndex = 33;
+            this.txtZip.TabIndex = 15;
             // 
             // txtCity
             // 
@@ -80,7 +80,7 @@
             this.txtCity.Name = "txtCity";
             this.txtCity.ReadOnly = true;
             this.txtCity.Size = new System.Drawing.Size(210, 20);
-            this.txtCity.TabIndex = 32;
+            this.txtCity.TabIndex = 14;
             // 
             // txtStreet
             // 
@@ -88,7 +88,7 @@
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.ReadOnly = true;
             this.txtStreet.Size = new System.Drawing.Size(209, 20);
-            this.txtStreet.TabIndex = 31;
+            this.txtStreet.TabIndex = 13;
             // 
             // txtSSN
             // 
@@ -96,7 +96,7 @@
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.ReadOnly = true;
             this.txtSSN.Size = new System.Drawing.Size(139, 20);
-            this.txtSSN.TabIndex = 30;
+            this.txtSSN.TabIndex = 12;
             // 
             // txtLName
             // 
@@ -104,7 +104,7 @@
             this.txtLName.Name = "txtLName";
             this.txtLName.ReadOnly = true;
             this.txtLName.Size = new System.Drawing.Size(139, 20);
-            this.txtLName.TabIndex = 29;
+            this.txtLName.TabIndex = 11;
             // 
             // txtFName
             // 
@@ -112,7 +112,7 @@
             this.txtFName.Name = "txtFName";
             this.txtFName.ReadOnly = true;
             this.txtFName.Size = new System.Drawing.Size(139, 20);
-            this.txtFName.TabIndex = 28;
+            this.txtFName.TabIndex = 10;
             // 
             // lblUserName
             // 
@@ -201,7 +201,7 @@
             this.txtState.Name = "txtState";
             this.txtState.ReadOnly = true;
             this.txtState.Size = new System.Drawing.Size(139, 20);
-            this.txtState.TabIndex = 35;
+            this.txtState.TabIndex = 16;
             // 
             // lblAppointment
             // 
@@ -218,7 +218,7 @@
             this.cboAppointments.Location = new System.Drawing.Point(124, 334);
             this.cboAppointments.Name = "cboAppointments";
             this.cboAppointments.Size = new System.Drawing.Size(179, 21);
-            this.cboAppointments.TabIndex = 37;
+            this.cboAppointments.TabIndex = 18;
             // 
             // lblVisits
             // 
@@ -235,14 +235,14 @@
             this.cboVisits.Location = new System.Drawing.Point(123, 369);
             this.cboVisits.Name = "cboVisits";
             this.cboVisits.Size = new System.Drawing.Size(180, 21);
-            this.cboVisits.TabIndex = 39;
+            this.cboVisits.TabIndex = 19;
             // 
             // btnAppointments
             // 
             this.btnAppointments.Location = new System.Drawing.Point(327, 334);
             this.btnAppointments.Name = "btnAppointments";
             this.btnAppointments.Size = new System.Drawing.Size(97, 23);
-            this.btnAppointments.TabIndex = 40;
+            this.btnAppointments.TabIndex = 23;
             this.btnAppointments.Text = "Get Appointment";
             this.btnAppointments.UseVisualStyleBackColor = true;
             this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
@@ -252,7 +252,7 @@
             this.btnVisits.Location = new System.Drawing.Point(327, 369);
             this.btnVisits.Name = "btnVisits";
             this.btnVisits.Size = new System.Drawing.Size(97, 23);
-            this.btnVisits.TabIndex = 41;
+            this.btnVisits.TabIndex = 24;
             this.btnVisits.Text = "Get Visit";
             this.btnVisits.UseVisualStyleBackColor = true;
             this.btnVisits.Click += new System.EventHandler(this.btnVisits_Click);
@@ -272,14 +272,14 @@
             this.cboTests.Location = new System.Drawing.Point(123, 405);
             this.cboTests.Name = "cboTests";
             this.cboTests.Size = new System.Drawing.Size(180, 21);
-            this.cboTests.TabIndex = 43;
+            this.cboTests.TabIndex = 20;
             // 
             // btnTests
             // 
             this.btnTests.Location = new System.Drawing.Point(327, 403);
             this.btnTests.Name = "btnTests";
             this.btnTests.Size = new System.Drawing.Size(97, 23);
-            this.btnTests.TabIndex = 44;
+            this.btnTests.TabIndex = 25;
             this.btnTests.Text = "Get/Add Result";
             this.btnTests.UseVisualStyleBackColor = true;
             this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
@@ -289,7 +289,7 @@
             this.btnModify.Location = new System.Drawing.Point(327, 294);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(97, 23);
-            this.btnModify.TabIndex = 45;
+            this.btnModify.TabIndex = 22;
             this.btnModify.Text = "Modify Info";
             this.btnModify.UseVisualStyleBackColor = true;
             this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
@@ -299,7 +299,7 @@
             this.btnFinished.Location = new System.Drawing.Point(166, 466);
             this.btnFinished.Name = "btnFinished";
             this.btnFinished.Size = new System.Drawing.Size(97, 23);
-            this.btnFinished.TabIndex = 46;
+            this.btnFinished.TabIndex = 21;
             this.btnFinished.Text = "Finished";
             this.btnFinished.UseVisualStyleBackColor = true;
             this.btnFinished.Click += new System.EventHandler(this.btnFinished_Click);

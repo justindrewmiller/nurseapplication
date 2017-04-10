@@ -85,7 +85,7 @@
             this.btnSearch.Location = new System.Drawing.Point(115, 200);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 31);
-            this.btnSearch.TabIndex = 5;
+            this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -96,7 +96,7 @@
             this.btnCancel.Location = new System.Drawing.Point(256, 323);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 32);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -107,7 +107,7 @@
             this.btnGoTo.Location = new System.Drawing.Point(115, 323);
             this.btnGoTo.Name = "btnGoTo";
             this.btnGoTo.Size = new System.Drawing.Size(96, 32);
-            this.btnGoTo.TabIndex = 7;
+            this.btnGoTo.TabIndex = 8;
             this.btnGoTo.Text = "Select Patient";
             this.btnGoTo.UseVisualStyleBackColor = true;
             this.btnGoTo.Click += new System.EventHandler(this.btnGoTo_Click);
@@ -128,14 +128,14 @@
             this.txtLName.Location = new System.Drawing.Point(115, 101);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(159, 26);
-            this.txtLName.TabIndex = 10;
+            this.txtLName.TabIndex = 4;
             // 
             // dtDOB
             // 
             this.dtDOB.Location = new System.Drawing.Point(115, 152);
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(200, 20);
-            this.dtDOB.TabIndex = 13;
+            this.dtDOB.TabIndex = 5;
             this.dtDOB.Value = new System.DateTime(2017, 4, 9, 2, 20, 37, 0);
             // 
             // cboPatients
@@ -144,7 +144,7 @@
             this.cboPatients.Location = new System.Drawing.Point(115, 253);
             this.cboPatients.Name = "cboPatients";
             this.cboPatients.Size = new System.Drawing.Size(247, 21);
-            this.cboPatients.TabIndex = 14;
+            this.cboPatients.TabIndex = 7;
             // 
             // SearchPatient
             // 

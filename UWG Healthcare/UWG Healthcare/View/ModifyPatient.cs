@@ -130,7 +130,7 @@ namespace UWG_Healthcare
                     txtZip.Enabled = true;
                     cmbStatesList.Enabled = true;
                     txtPhone.Enabled = true;
-                    txtDOB.Enabled = true;
+                    dtpDateTime.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -150,7 +150,7 @@ namespace UWG_Healthcare
             txtZip.Text = person.ZipCode;
             cmbStatesList.Text = person.State;
             txtPhone.Text = person.PhoneNum;
-            txtDOB.Text = person.DOB;
+            dtpDateTime.Text = person.DOB;
         }
         // Sets person object values to values based on person id
         private void PutPersonData(Person person)
@@ -163,7 +163,7 @@ namespace UWG_Healthcare
             person.ZipCode = txtZip.Text;
             person.State = cmbStatesList.Text;
             person.PhoneNum = txtPhone.Text;
-            person.DOB = txtDOB.Text;
+            person.DOB = dtpDateTime.Text;
         }
 
         private void personDoesntExist()
@@ -177,7 +177,7 @@ namespace UWG_Healthcare
             txtCity.Text = "";
             cmbStatesList.Text = "";
             txtPhone.Text = "";
-            txtDOB.Text = "";
+            dtpDateTime.Text = "";
             MessageBox.Show("No Patient found with this ID. " +
             "Please try again.", "Patient Not Found");
 
@@ -198,7 +198,7 @@ namespace UWG_Healthcare
                 txtZip.Enabled = false;
                 cmbStatesList.Enabled = false;
                 txtPhone.Enabled = false;
-                txtDOB.Enabled = false;
+                dtpDateTime.Enabled = false;
             } else
             {
                 this.GetPatient(this.currentPatient.PersonID);
@@ -219,8 +219,8 @@ namespace UWG_Healthcare
                 Validator.IsPresent(txtZip) &&
                 Validator.IsPresent(txtPhone) &&
                 Validator.IsValidPhonNum(txtPhone) &&
-                Validator.IsPresent(txtDOB) &&
-                Validator.IsValidDOB(txtDOB))
+                Validator.IsPresent(dtpDateTime) &&
+                Validator.IsValidDOB(dtpDateTime))
             {
                 return true;
 
