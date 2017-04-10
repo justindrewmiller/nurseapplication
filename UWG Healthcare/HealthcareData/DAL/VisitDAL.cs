@@ -55,5 +55,41 @@ namespace HealthcareData.DAL
             }
             return visit;
         }
+
+        public static string GetDiagnoses(string diagnosesCode)
+        {
+            string diagnoses = "";
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string selectStatement =
+                "SELECT DiagnosesName " +
+                "FROM Diagnoses " +
+                "WHERE DiagnosesCode = @DiagnosesCode";
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@DiagnosesCode", diagnosesCode);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader =
+                    selectCommand.ExecuteReader(CommandBehavior.SingleRow);
+                if (reader.Read())
+                {
+                    diagnoses = reader["DiagnosesName"].ToString();
+                }
+                else
+                {
+                    diagnoses = "";
+                }
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return diagnoses;
+        }
     }
 }
