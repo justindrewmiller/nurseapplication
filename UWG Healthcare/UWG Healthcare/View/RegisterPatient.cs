@@ -17,6 +17,7 @@ namespace UWG_Healthcare
     {
         public UserInfo userID;
         private PatientController inController;
+        private StatesController stateController;
         public Person person;
         public Patient patient;
 
@@ -24,8 +25,34 @@ namespace UWG_Healthcare
         {
             InitializeComponent();
             inController = new PatientController();
+            stateController = new StatesController();
             userID = info;
             lblUserName.Text = info.userID;
+        }
+
+
+        private void RegisterPatient_Load(object sender, EventArgs e)
+        {
+            this.LoadComboBox();
+            cmbStatesList.SelectedIndex = -1;
+        }
+
+        // Loads the Doctor information into comboboxes
+        private void LoadComboBox()
+        {
+            try
+            {
+
+                List<US_State> statesList;
+                statesList = stateController.GetStates();
+                cmbStatesList.DataSource = statesList;
+                cmbStatesList.DisplayMember = "Name";
+                cmbStatesList.ValueMember = "StateCode";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -41,7 +68,7 @@ namespace UWG_Healthcare
                 Validator.IsValidSSN(txtSSN) &&
                 Validator.IsPresent(txtStreet) &&
                 Validator.IsPresent(txtCity) &&
-                Validator.IsPresent(txtState) &&
+                Validator.IsPresent(cmbStatesList) &&
                 Validator.IsPresent(txtZip) &&
                 Validator.IsPresent(txtPhone) &&
                 Validator.IsValidPhonNum(txtPhone) &&
@@ -65,7 +92,7 @@ namespace UWG_Healthcare
             person.LName = txtLName.Text;
             person.Street = txtStreet.Text;
             person.City = txtCity.Text;
-            person.State = txtState.Text;
+            person.State = cmbStatesList.Text;
             person.ZipCode = txtZip.Text;
             person.PhoneNum = txtPhone.Text;
             person.SSN = txtSSN.Text;

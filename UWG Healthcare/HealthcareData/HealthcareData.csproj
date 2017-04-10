@@ -47,6 +47,7 @@
     <Compile Include="DAL\HealthCareUWGDBConnection.cs" />
     <Compile Include="DAL\InformationDAL.cs" />
     <Compile Include="DAL\PatientDAL.cs" />
+    <Compile Include="DAL\StateDAL.cs" />
     <Compile Include="DAL\UsersDAL.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Appointment.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Test.cs" />
     <Compile Include="Model\UserInfo.cs" />
+    <Compile Include="Model\US_State.cs" />
     <Compile Include="Model\Validator.cs" />
     <Compile Include="Model\Visit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

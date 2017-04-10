@@ -55,6 +55,7 @@
     <Compile Include="Controller\InformationController.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="Controller\SearchController.cs" />
+    <Compile Include="Controller\StatesController.cs" />
     <Compile Include="View\CurrentAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
