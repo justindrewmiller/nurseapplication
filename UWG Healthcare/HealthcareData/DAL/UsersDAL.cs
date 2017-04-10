@@ -61,6 +61,58 @@ namespace HealthcareData.DAL
             return userName;
         }
 
+        // Gets the Gets the User's information via the Username and Password
+        public static UserInfo GetUser(string username, string password)
+        {
+
+            String encryptedPassword = GetSHA1HashData(password);
+            UserInfo user = new UserInfo();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string selectStatement =
+               "SELECT Username, Password, AdminID, DoctorID, NurseID " +
+                "FROM UserInfo " +
+                "WHERE Username = @Username AND Password = @Password";
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@Username", username);
+            selectCommand.Parameters.AddWithValue("@Password", encryptedPassword);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader =
+                    selectCommand.ExecuteReader(CommandBehavior.SingleRow);
+                if (reader.Read())
+                {
+                    user.userID = reader["Username"].ToString();
+                    user.userPassword = reader["Password"].ToString();
+                    if (reader.IsDBNull(reader.GetOrdinal("AdminID")) == false) {
+                        user.AdminID = (int)reader["AdminID"];
+                    }
+                    if (reader.IsDBNull(reader.GetOrdinal("DoctorID")) == false)
+                    {
+                        user.DoctorID = (int)reader["DoctorID"];
+                    }
+                    if (reader.IsDBNull(reader.GetOrdinal("NurseID")) == false)
+                    {
+                        user.NurseID = (int)reader["NurseID"];
+                    }
+                }
+                else
+                {
+                    user = null;
+                }
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return user;
+        }
+
         /// <summary>
         /// take any string and encrypt it using SHA1 then
         /// return the encrypted data

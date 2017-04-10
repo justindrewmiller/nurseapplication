@@ -12,5 +12,11 @@ namespace HealthcareData.Model
 
         public string userPassword { get; set; }
 
+        public int AdminID { get; set; }
+
+        public int DoctorID { get; set; }
+
+        public int NurseID { get; set; }
+
     }
 }

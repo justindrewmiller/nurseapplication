@@ -36,14 +36,14 @@ namespace UWG_Healthcare.View
 
         public void btnLogin_Click(object sender, EventArgs e)
         {
-            UserInfo ui = new UserInfo();
+            UserInfo ui;
             string UserName = txtUserName.Text;
             string Password = txtPassword.Text;
             encryptedTB.Text = GetSHA1HashData(Password);
             if (Controller.HealthcareController.ValidLogin(UserName, Password))
             {
-                ui.userID = Controller.HealthcareController.GetUserInfo(UserName, Password);
-               this.Visible = false;
+                ui = Controller.HealthcareController.GetUser(UserName, Password);
+                this.Visible = false;
                 MainContainer mc = new MainContainer(ui);
                 mc.Show();
             } else

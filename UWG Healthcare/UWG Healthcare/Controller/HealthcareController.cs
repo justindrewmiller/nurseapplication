@@ -1,4 +1,6 @@
-﻿using HealthcareData.DAL;
+﻿
+using HealthcareData.DAL;
+using HealthcareData.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,11 @@ namespace UWG_Healthcare.Controller
         public static String GetUserInfo(string UserName, string Password)
         {
             return UsersDAL.GetUserInfo(UserName, Password);
+        }
+
+        public static UserInfo GetUser(string UserName, string Password)
+        {
+            return UsersDAL.GetUser(UserName, Password);
         }
 
     }

@@ -16,15 +16,41 @@ namespace UWG_Healthcare
     public partial class MainContainer : Form
     {
 
-        UserInfo userID;
+        UserInfo userLoggedIn;
+        String role = "";
 
         private HealthcareController inController;
-        public MainContainer(UserInfo info)
+        public MainContainer(UserInfo user)
         {
-            userID = info;
+            userLoggedIn = user;
+
             InitializeComponent();
             inController = new HealthcareController();
-            lblUserID.Text = lblUserID.Text + info.userID;
+            String role = userRole(userLoggedIn);
+            lblUserID.Text = lblUserID.Text + userLoggedIn.userID +"\nRole: " + role;
+        }
+
+        // Sets the role of the user after logging in.
+        private String userRole(UserInfo user)
+        {
+            if(user.AdminID > 0)
+            {
+                role = "ADMINISTRATOR";
+                registerNewPatientToolStripMenuItem.Enabled = false;
+                modifyPatientProfileToolStripMenuItem.Enabled = false;
+                createAppointmentToolStripMenuItem.Enabled = false;
+                searchPatientToolStripMenuItem.Enabled = false;
+                menuScreenToolStripMenuItem.Enabled = false;
+            }
+            if (user.DoctorID > 0)
+            {
+                role = "DOCTOR";
+            }
+            if (user.NurseID > 0)
+            {
+                role = "NURSE";
+            }
+            return role;
         }
 
         // Exits the application
@@ -36,7 +62,7 @@ namespace UWG_Healthcare
         // Contains form to Register New Patient
         private void registerNewPatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterPatient rp = new RegisterPatient(userID);
+            RegisterPatient rp = new RegisterPatient(userLoggedIn);
             rp.MdiParent = this;
             rp.Show();
         }
@@ -44,7 +70,7 @@ namespace UWG_Healthcare
         // Contains form to Modify Patient
         private void modifyPatientProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModifyPatient mp = new ModifyPatient(userID);
+            ModifyPatient mp = new ModifyPatient(userLoggedIn);
             mp.MdiParent = this;
             mp.Show();
         }
@@ -52,7 +78,7 @@ namespace UWG_Healthcare
         // Contains form to Create New Appointment
         private void createAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateAppointment ca = new CreateAppointment(userID);
+            CreateAppointment ca = new CreateAppointment(userLoggedIn);
             ca.MdiParent = this;
             ca.Show();
         }
@@ -60,7 +86,7 @@ namespace UWG_Healthcare
         // Contains form to Search for Patient or Appointment
         private void searchPatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SearchPatient sp = new SearchPatient(userID);
+            SearchPatient sp = new SearchPatient(userLoggedIn);
             sp.MdiParent = this;
             sp.Show();
 
@@ -68,9 +94,12 @@ namespace UWG_Healthcare
 
         private void MainContainer_Load(object sender, EventArgs e)
         {
-            MenuScreen ms = new MenuScreen(userID);
-            ms.MdiParent = this;
-            ms.Show();
+            if (role == "NURSE")
+            {
+                MenuScreen ms = new MenuScreen(userLoggedIn);
+                ms.MdiParent = this;
+                ms.Show();
+            }
             
         }
 
@@ -87,7 +116,7 @@ namespace UWG_Healthcare
 
         private void menuScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuScreen ms = new MenuScreen(userID);
+            MenuScreen ms = new MenuScreen(userLoggedIn);
             ms.MdiParent = this;
             ms.Show();
         }
