@@ -43,7 +43,6 @@ namespace UWG_Healthcare
         {
             try
             {
-
                 List<US_State> statesList;
                 statesList = stateController.GetStates();
                 cmbStatesList.DataSource = statesList;
@@ -101,14 +100,14 @@ namespace UWG_Healthcare
             {
 
                 int personID = Convert.ToInt32(txtPersonID.Text);
-                this.GetIncident(personID);
+                this.GetPatient(personID);
 
             }
 
         }
 
         // Gets information based on the specific Person based on the personID.
-        private void GetIncident(int personID)
+        private void GetPatient(int personID)
         {
             try
             {
@@ -184,6 +183,7 @@ namespace UWG_Healthcare
 
         }
 
+        // Inserts the Patient information if not null
         private void ModifyPatient_Load(object sender, EventArgs e)
         {
             if (this.currentPatient == null)
@@ -201,17 +201,7 @@ namespace UWG_Healthcare
                 txtDOB.Enabled = false;
             } else
             {
-                btnSubmit.Enabled = true;
-                btnCancel.Enabled = true;
-                txtFName.Text = this.currentPatient.FName;
-                txtLName.Text = this.currentPatient.LName;
-                txtSSN.Text = this.currentPatient.SSN;
-                txtStreet.Text = this.currentPatient.Street;
-                txtCity.Text = this.currentPatient.City;
-                txtZip.Text = this.currentPatient.ZipCode;
-                cmbStatesList.Text = this.currentPatient.State;
-                txtPhone.Text = this.currentPatient.PhoneNum;
-                txtDOB.Text = this.currentPatient.DOB;
+                this.GetPatient(this.currentPatient.PersonID);
             }
 
         }
