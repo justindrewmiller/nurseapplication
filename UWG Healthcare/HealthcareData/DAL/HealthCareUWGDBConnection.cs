@@ -12,7 +12,7 @@ namespace HealthcareData.DAL
         public static SqlConnection GetConnection()
         {
             string connectionString =
-                "Data Source=NGGAA4V-SQLDB01;Initial Catalog=CS6232-g2;" +
+                "Data Source=localhost;Initial Catalog=CS6232-g2;" +
                 "Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;
