@@ -67,7 +67,7 @@ namespace HealthcareData.DAL
                     selectCommand.ExecuteReader(CommandBehavior.SingleRow);
                 if (reader.Read())
                 {
-                    visit.VisitID = reader["VisitID"].ToString();
+                    visit.VisitID = (int)reader["VisitID"];
                     visit.ApptID = reader["ApptID"].ToString();
                     visit.SysBP = reader["SysBP"].ToString();
                     visit.DiaBP = reader["DiaBP"].ToString();

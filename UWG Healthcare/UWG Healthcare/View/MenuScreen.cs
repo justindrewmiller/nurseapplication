@@ -53,5 +53,13 @@ namespace UWG_Healthcare.View
             newSearch.Show();
             this.Close();
         }
+
+        private void btnVisit_Click(object sender, EventArgs e)
+        {
+            VisitInfo newVisit = new VisitInfo(userID, "");
+            newVisit.MdiParent = this.MdiParent;
+            newVisit.Show();
+            this.Close();
+        }
     }
 }

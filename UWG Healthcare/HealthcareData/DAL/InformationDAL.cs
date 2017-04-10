@@ -191,7 +191,7 @@ namespace HealthcareData.DAL
                 while (reader.Read())
                 {
                     Visit visit = new Visit();
-                    visit.VisitID = reader["VisitID"].ToString();
+                    visit.VisitID = (int)reader["VisitID"];
                     visit.ApptID = reader["ApptID"].ToString();
                     visit.SysBP = reader["SysBP"].ToString();
                     visit.DiaBP = reader["DiaBP"].ToString();

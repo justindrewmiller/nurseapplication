@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UWG_Healthcare.Controller;
 
 namespace UWG_Healthcare.View
 {
@@ -19,10 +20,14 @@ namespace UWG_Healthcare.View
         public UserInfo info;
         public string visitID;
         public Visit currentVisit;
+        public Visit newVisit;
+        private VisitsController visitsController;
+
 
         public VisitInfo(UserInfo info, string visitID)
         {
             InitializeComponent();
+            visitsController = new VisitsController();
             this.info = info;
             this.visitID = visitID;
             lblUserName.Text = info.userID;
@@ -30,22 +35,84 @@ namespace UWG_Healthcare.View
 
         private void VisitInfo_Load(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    currentVisit = VisitDAL.GetVisit(this.visitID);
+            //    txtAppointment.Text = currentVisit.ApptID;
+            //    txtSys.Text = currentVisit.SysBP;
+            //    txtDia.Text = currentVisit.DiaBP;
+            //    txtTemp.Text = currentVisit.BodyTemp;
+            //    txtPulse.Text = currentVisit.Pulse;
+            //    txtSymptoms.Text = currentVisit.Symptoms;
+            //    txtDiagnosis.Text = VisitDAL.GetDiagnoses(currentVisit.DiagnosesCode);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
+        }
+
+        // Stores the information from textboxes and combo boxes into variables.
+        private void PutVisitData(Visit visit)
+        {
+            visit.ApptID = txtAppointment.Text;
+            visit.SysBP = txtSys.Text;
+            visit.DiaBP = txtDia.Text;
+            visit.BodyTemp = txtTemp.Text;
+            visit.Pulse = txtPulse.Text;
+            visit.Symptoms = txtSymptoms.Text;
+            visit.NurseID = this.info.NurseID.ToString();
+            visit.DiagnosesCode = txtDiagnosis.Text;
+
+        }
+
+        private bool isValidData()
+        {
+            if (Validator.IsPresent(txtAppointment) &&
+                Validator.IsPresent(txtSys) &&
+                Validator.IsPresent(txtDia) &&
+                Validator.IsPresent(txtTemp) &&
+                Validator.IsPresent(txtSymptoms) &&
+                Validator.IsPresent(txtDiagnosis))
             {
-                currentVisit = VisitDAL.GetVisit(this.visitID);
-                txtAppointment.Text = currentVisit.ApptID;
-                txtSys.Text = currentVisit.SysBP;
-                txtDia.Text = currentVisit.DiaBP;
-                txtTemp.Text = currentVisit.BodyTemp;
-                txtPulse.Text = currentVisit.Pulse;
-                txtSymptoms.Text = currentVisit.Symptoms;
-                txtDiagnosis.Text = VisitDAL.GetDiagnoses(currentVisit.DiagnosesCode);
+                return true;
+
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                return false;
             }
         }
 
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (isValidData())
+            {
+                if(txtSymptoms.TextLength < 20)
+                {
+                    MessageBox.Show("Symptoms description should be more than 20 characters");
+                    return;
+                }
+                newVisit = new Visit();
+                this.PutVisitData(newVisit);
+                try
+                {
+                    //Inserts the Visit into the table and stores VisitID
+                    newVisit.VisitID = visitsController.AddVisit(newVisit);
+                    MessageBox.Show("The visit was successfully added.");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+            }
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

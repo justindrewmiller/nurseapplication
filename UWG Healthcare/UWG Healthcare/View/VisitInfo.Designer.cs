@@ -64,17 +64,19 @@
             this.btnClose.Location = new System.Drawing.Point(238, 277);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 29);
-            this.btnClose.TabIndex = 1;
+            this.btnClose.TabIndex = 18;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtSys
             // 
             this.txtSys.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSys.Location = new System.Drawing.Point(157, 90);
+            this.txtSys.Location = new System.Drawing.Point(168, 90);
             this.txtSys.Name = "txtSys";
             this.txtSys.Size = new System.Drawing.Size(93, 26);
-            this.txtSys.TabIndex = 3;
+            this.txtSys.TabIndex = 11;
+            this.txtSys.Tag = "Systolic Blood Pressure";
             // 
             // btnSubmit
             // 
@@ -82,9 +84,10 @@
             this.btnSubmit.Location = new System.Drawing.Point(157, 277);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 29);
-            this.btnSubmit.TabIndex = 4;
+            this.btnSubmit.TabIndex = 17;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label2
             // 
@@ -92,9 +95,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(64, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 19);
+            this.label2.Size = new System.Drawing.Size(93, 19);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Appointment";
+            this.label2.Text = "Appointment:";
             // 
             // txtDia
             // 
@@ -102,15 +105,17 @@
             this.txtDia.Location = new System.Drawing.Point(430, 90);
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(93, 26);
-            this.txtDia.TabIndex = 7;
+            this.txtDia.TabIndex = 12;
+            this.txtDia.Tag = "Diastolic Blood Pressure";
             // 
             // txtTemp
             // 
             this.txtTemp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTemp.Location = new System.Drawing.Point(157, 124);
+            this.txtTemp.Location = new System.Drawing.Point(164, 124);
             this.txtTemp.Name = "txtTemp";
             this.txtTemp.Size = new System.Drawing.Size(93, 26);
-            this.txtTemp.TabIndex = 8;
+            this.txtTemp.TabIndex = 13;
+            this.txtTemp.Tag = "Temperature";
             // 
             // lblSysBP
             // 
@@ -118,19 +123,19 @@
             this.lblSysBP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSysBP.Location = new System.Drawing.Point(13, 90);
             this.lblSysBP.Name = "lblSysBP";
-            this.lblSysBP.Size = new System.Drawing.Size(149, 19);
+            this.lblSysBP.Size = new System.Drawing.Size(152, 19);
             this.lblSysBP.TabIndex = 10;
-            this.lblSysBP.Text = "Systolic Blood Pressure";
+            this.lblSysBP.Text = "Systolic Blood Pressure:";
             // 
             // lblDiaBP
             // 
             this.lblDiaBP.AutoSize = true;
             this.lblDiaBP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaBP.Location = new System.Drawing.Point(278, 93);
+            this.lblDiaBP.Location = new System.Drawing.Point(267, 93);
             this.lblDiaBP.Name = "lblDiaBP";
-            this.lblDiaBP.Size = new System.Drawing.Size(155, 19);
+            this.lblDiaBP.Size = new System.Drawing.Size(158, 19);
             this.lblDiaBP.TabIndex = 11;
-            this.lblDiaBP.Text = "Diastolic Blood Pressure";
+            this.lblDiaBP.Text = "Diastolic Blood Pressure:";
             // 
             // lblTemp
             // 
@@ -138,9 +143,9 @@
             this.lblTemp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp.Location = new System.Drawing.Point(68, 127);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(86, 19);
+            this.lblTemp.Size = new System.Drawing.Size(90, 19);
             this.lblTemp.TabIndex = 12;
-            this.lblTemp.Text = "Temperature";
+            this.lblTemp.Text = "Temperature:";
             // 
             // lblPulse
             // 
@@ -148,9 +153,9 @@
             this.lblPulse.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPulse.Location = new System.Drawing.Point(384, 124);
             this.lblPulse.Name = "lblPulse";
-            this.lblPulse.Size = new System.Drawing.Size(41, 19);
+            this.lblPulse.Size = new System.Drawing.Size(44, 19);
             this.lblPulse.TabIndex = 13;
-            this.lblPulse.Text = "Pulse";
+            this.lblPulse.Text = "Pulse:";
             // 
             // txtPulse
             // 
@@ -159,6 +164,7 @@
             this.txtPulse.Name = "txtPulse";
             this.txtPulse.Size = new System.Drawing.Size(93, 26);
             this.txtPulse.TabIndex = 14;
+            this.txtPulse.Tag = "Pulse";
             // 
             // txtDiagnosis
             // 
@@ -166,18 +172,19 @@
             this.txtDiagnosis.Location = new System.Drawing.Point(157, 228);
             this.txtDiagnosis.Name = "txtDiagnosis";
             this.txtDiagnosis.Size = new System.Drawing.Size(293, 43);
-            this.txtDiagnosis.TabIndex = 15;
+            this.txtDiagnosis.TabIndex = 16;
+            this.txtDiagnosis.Tag = "Diagnosis";
             this.txtDiagnosis.Text = "";
             // 
             // lblDiagnosis
             // 
             this.lblDiagnosis.AutoSize = true;
             this.lblDiagnosis.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiagnosis.Location = new System.Drawing.Point(88, 228);
+            this.lblDiagnosis.Location = new System.Drawing.Point(80, 228);
             this.lblDiagnosis.Name = "lblDiagnosis";
-            this.lblDiagnosis.Size = new System.Drawing.Size(68, 19);
+            this.lblDiagnosis.Size = new System.Drawing.Size(71, 19);
             this.lblDiagnosis.TabIndex = 16;
-            this.lblDiagnosis.Text = "Diagnosis";
+            this.lblDiagnosis.Text = "Diagnosis:";
             // 
             // btnUpdate
             // 
@@ -195,7 +202,8 @@
             this.txtSymptoms.Location = new System.Drawing.Point(157, 154);
             this.txtSymptoms.Name = "txtSymptoms";
             this.txtSymptoms.Size = new System.Drawing.Size(367, 65);
-            this.txtSymptoms.TabIndex = 18;
+            this.txtSymptoms.TabIndex = 15;
+            this.txtSymptoms.Tag = "Symptoms";
             this.txtSymptoms.Text = "";
             // 
             // lblSymptoms
@@ -204,16 +212,17 @@
             this.lblSymptoms.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSymptoms.Location = new System.Drawing.Point(80, 154);
             this.lblSymptoms.Name = "lblSymptoms";
-            this.lblSymptoms.Size = new System.Drawing.Size(74, 19);
+            this.lblSymptoms.Size = new System.Drawing.Size(77, 19);
             this.lblSymptoms.TabIndex = 19;
-            this.lblSymptoms.Text = "Symptoms";
+            this.lblSymptoms.Text = "Symptoms:";
             // 
             // txtAppointment
             // 
             this.txtAppointment.Location = new System.Drawing.Point(157, 57);
             this.txtAppointment.Name = "txtAppointment";
             this.txtAppointment.Size = new System.Drawing.Size(241, 20);
-            this.txtAppointment.TabIndex = 20;
+            this.txtAppointment.TabIndex = 10;
+            this.txtAppointment.Tag = "Appointment";
             // 
             // VisitInfo
             // 

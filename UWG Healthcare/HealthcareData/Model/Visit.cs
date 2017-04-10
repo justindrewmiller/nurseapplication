@@ -8,7 +8,7 @@ namespace HealthcareData.Model
 {
     public class Visit
     {
-        public string VisitID { get; set; }
+        public int VisitID { get; set; }
 
         public string ApptID { get; set; }
 
