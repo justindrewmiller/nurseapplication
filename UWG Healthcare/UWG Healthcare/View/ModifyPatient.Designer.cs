@@ -51,7 +51,7 @@
             this.getButton = new System.Windows.Forms.Button();
             this.txtDOB = new System.Windows.Forms.TextBox();
             this.lblDOB = new System.Windows.Forms.Label();
-            this.txtState = new System.Windows.Forms.TextBox();
+            this.cmbStatesList = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtPhone
@@ -255,20 +255,21 @@
             this.lblDOB.TabIndex = 41;
             this.lblDOB.Text = "DOB:";
             // 
-            // txtState
+            // cmbStatesList
             // 
-            this.txtState.Location = new System.Drawing.Point(136, 269);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(139, 20);
-            this.txtState.TabIndex = 43;
-            this.txtState.Tag = "State";
+            this.cmbStatesList.FormattingEnabled = true;
+            this.cmbStatesList.Location = new System.Drawing.Point(136, 266);
+            this.cmbStatesList.Name = "cmbStatesList";
+            this.cmbStatesList.Size = new System.Drawing.Size(174, 21);
+            this.cmbStatesList.TabIndex = 46;
+            this.cmbStatesList.Tag = "State";
             // 
             // ModifyPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 407);
-            this.Controls.Add(this.txtState);
+            this.Controls.Add(this.cmbStatesList);
             this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.getButton);
@@ -324,6 +325,6 @@
         private System.Windows.Forms.Button getButton;
         private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Label lblDOB;
-        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.ComboBox cmbStatesList;
     }
 }

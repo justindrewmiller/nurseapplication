@@ -17,6 +17,7 @@ namespace UWG_Healthcare
         public UserInfo userID;
         public Patient currentPatient;
         private PatientController inController;
+        private StatesController stateController;
         Person person;
         public ModifyPatient(UserInfo info)
         {
@@ -31,8 +32,28 @@ namespace UWG_Healthcare
             InitializeComponent();
             this.currentPatient = currentPatient;
             inController = new PatientController();
+            stateController = new StatesController();
             userID = info;
             lblUserName.Text = userID.userID;
+            this.LoadComboBox();
+        }
+
+        // Loads the State information into comboboxes
+        private void LoadComboBox()
+        {
+            try
+            {
+
+                List<US_State> statesList;
+                statesList = stateController.GetStates();
+                cmbStatesList.DataSource = statesList;
+                cmbStatesList.DisplayMember = "Name";
+                cmbStatesList.ValueMember = "StateCode";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -55,7 +76,7 @@ namespace UWG_Healthcare
                         if (!inController.UpdatePatient(person, newPerson))
                         {
                             MessageBox.Show("Another user has updated or " +
-                                "deleted that incident.", "Database Error");
+                                "deleted that patient.", "Database Error");
                             this.DialogResult = DialogResult.Retry;
                         }
                         else
@@ -108,7 +129,7 @@ namespace UWG_Healthcare
                     txtStreet.Enabled = true;
                     txtCity.Enabled = true;
                     txtZip.Enabled = true;
-                    txtState.Enabled = true;
+                    cmbStatesList.Enabled = true;
                     txtPhone.Enabled = true;
                     txtDOB.Enabled = true;
                 }
@@ -128,7 +149,7 @@ namespace UWG_Healthcare
             txtStreet.Text = person.Street;
             txtCity.Text = person.City;
             txtZip.Text = person.ZipCode;
-            txtState.Text = person.State;
+            cmbStatesList.Text = person.State;
             txtPhone.Text = person.PhoneNum;
             txtDOB.Text = person.DOB;
         }
@@ -141,7 +162,7 @@ namespace UWG_Healthcare
             person.Street = txtStreet.Text;
             person.City = txtCity.Text;
             person.ZipCode = txtZip.Text;
-            person.State = txtState.Text;
+            person.State = cmbStatesList.Text;
             person.PhoneNum = txtPhone.Text;
             person.DOB = txtDOB.Text;
         }
@@ -155,7 +176,7 @@ namespace UWG_Healthcare
             txtSSN.Text = "";
             txtStreet.Text = "";
             txtCity.Text = "";
-            txtState.Text = "";
+            cmbStatesList.Text = "";
             txtPhone.Text = "";
             txtDOB.Text = "";
             MessageBox.Show("No Patient found with this ID. " +
@@ -175,7 +196,7 @@ namespace UWG_Healthcare
                 txtStreet.Enabled = false;
                 txtCity.Enabled = false;
                 txtZip.Enabled = false;
-                txtState.Enabled = false;
+                cmbStatesList.Enabled = false;
                 txtPhone.Enabled = false;
                 txtDOB.Enabled = false;
             } else
@@ -188,7 +209,7 @@ namespace UWG_Healthcare
                 txtStreet.Text = this.currentPatient.Street;
                 txtCity.Text = this.currentPatient.City;
                 txtZip.Text = this.currentPatient.ZipCode;
-                txtState.Text = this.currentPatient.FName;
+                cmbStatesList.Text = this.currentPatient.State;
                 txtPhone.Text = this.currentPatient.PhoneNum;
                 txtDOB.Text = this.currentPatient.DOB;
             }
@@ -203,7 +224,7 @@ namespace UWG_Healthcare
                 Validator.IsValidSSN(txtSSN) &&
                 Validator.IsPresent(txtStreet) &&
                 Validator.IsPresent(txtCity) &&
-                Validator.IsPresent(txtState) &&
+                Validator.IsPresent(cmbStatesList) &&
                 Validator.IsPresent(txtZip) &&
                 Validator.IsPresent(txtPhone) &&
                 Validator.IsValidPhonNum(txtPhone) &&

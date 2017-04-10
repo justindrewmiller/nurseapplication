@@ -37,7 +37,7 @@ namespace UWG_Healthcare
             cmbStatesList.SelectedIndex = -1;
         }
 
-        // Loads the Doctor information into comboboxes
+        // Loads the State information into comboboxes
         private void LoadComboBox()
         {
             try
