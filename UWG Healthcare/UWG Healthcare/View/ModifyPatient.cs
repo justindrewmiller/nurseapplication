@@ -203,6 +203,7 @@ namespace UWG_Healthcare
             {
                 this.GetPatient(this.currentPatient.PersonID);
             }
+            this.LoadComboBox();
 
         }
 
