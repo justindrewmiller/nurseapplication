@@ -72,8 +72,8 @@ namespace UWG_Healthcare
                 Validator.IsPresent(txtZip) &&
                 Validator.IsPresent(txtPhone) &&
                 Validator.IsValidPhonNum(txtPhone) &&
-                Validator.IsPresent(txtDOB) &&
-                Validator.IsValidDOB(txtDOB))
+                Validator.IsPresent(dtpDateTime) &&
+                Validator.IsValidDOB(dtpDateTime))
             {
                 return true;
 
@@ -87,7 +87,7 @@ namespace UWG_Healthcare
         // Stores the information from textboxes and combo boxes into variables.
         private void PutPersonData(Person person)
         {
-            person.DOB = txtDOB.Text;
+            person.DOB = dtpDateTime.Text;
             person.FName = txtFName.Text;
             person.LName = txtLName.Text;
             person.Street = txtStreet.Text;

@@ -46,9 +46,9 @@
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtZip = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtDOB = new System.Windows.Forms.TextBox();
             this.lblDOB = new System.Windows.Forms.Label();
             this.cmbStatesList = new System.Windows.Forms.ComboBox();
+            this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblfname
@@ -137,7 +137,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(333, 223);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 32);
-            this.btnSubmit.TabIndex = 8;
+            this.btnSubmit.TabIndex = 20;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -148,7 +148,7 @@
             this.btnCancel.Location = new System.Drawing.Point(414, 223);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 32);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -185,6 +185,7 @@
             // 
             this.txtSSN.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSSN.Location = new System.Drawing.Point(88, 83);
+            this.txtSSN.MaxLength = 9;
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.Size = new System.Drawing.Size(158, 26);
             this.txtSSN.TabIndex = 13;
@@ -196,7 +197,7 @@
             this.txtStreet.Location = new System.Drawing.Point(88, 115);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(402, 26);
-            this.txtStreet.TabIndex = 14;
+            this.txtStreet.TabIndex = 15;
             this.txtStreet.Tag = "Street";
             // 
             // txtCity
@@ -205,41 +206,34 @@
             this.txtCity.Location = new System.Drawing.Point(88, 146);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(218, 26);
-            this.txtCity.TabIndex = 15;
+            this.txtCity.TabIndex = 16;
             this.txtCity.Tag = "City";
             // 
             // txtZip
             // 
             this.txtZip.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZip.Location = new System.Drawing.Point(380, 146);
+            this.txtZip.MaxLength = 5;
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(112, 26);
-            this.txtZip.TabIndex = 16;
+            this.txtZip.TabIndex = 17;
             this.txtZip.Tag = "Zip Code";
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(333, 182);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(158, 26);
-            this.txtPhone.TabIndex = 17;
+            this.txtPhone.TabIndex = 19;
             this.txtPhone.Tag = "Phone Number";
-            // 
-            // txtDOB
-            // 
-            this.txtDOB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDOB.Location = new System.Drawing.Point(333, 83);
-            this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Size = new System.Drawing.Size(158, 26);
-            this.txtDOB.TabIndex = 20;
-            this.txtDOB.Tag = "Date of Birth";
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(290, 83);
+            this.lblDOB.Location = new System.Drawing.Point(256, 83);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(41, 19);
             this.lblDOB.TabIndex = 19;
@@ -251,16 +245,25 @@
             this.cmbStatesList.Location = new System.Drawing.Point(88, 178);
             this.cmbStatesList.Name = "cmbStatesList";
             this.cmbStatesList.Size = new System.Drawing.Size(174, 21);
-            this.cmbStatesList.TabIndex = 45;
+            this.cmbStatesList.TabIndex = 18;
             this.cmbStatesList.Tag = "State";
+            // 
+            // dtpDateTime
+            // 
+            this.dtpDateTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateTime.Location = new System.Drawing.Point(303, 80);
+            this.dtpDateTime.Name = "dtpDateTime";
+            this.dtpDateTime.Size = new System.Drawing.Size(186, 26);
+            this.dtpDateTime.TabIndex = 14;
             // 
             // RegisterPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 273);
+            this.Controls.Add(this.dtpDateTime);
             this.Controls.Add(this.cmbStatesList);
-            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.lblDOB);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtZip);
@@ -308,8 +311,8 @@
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.ComboBox cmbStatesList;
+        private System.Windows.Forms.DateTimePicker dtpDateTime;
     }
 }
