@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HealthcareData.DAL
 {
@@ -55,7 +56,50 @@ namespace HealthcareData.DAL
         public static Appointment GetAppointment(String apptID)
         {
             Appointment appointment = new Appointment();
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string selectStatement =
+                "SELECT ApptID, PatientID, DoctorID, apptDateTime, Reason " +
+                "FROM Appointment " +
+                "WHERE ApptID = @ApptID";
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@ApptID", apptID);
+            SqlDataReader reader = null;
+            try
+            {
+                connection.Open();
+                reader = selectCommand.ExecuteReader();
 
+                if (reader.Read())
+                {
+                    appointment.ApptID = (int)reader["ApptID"];
+                    appointment.PatientID = (int)reader["PatientID"];
+                    appointment.DoctorID = (int)reader["DoctorID"];
+                    appointment.apptDateTime = reader["apptDateTime"].ToString();
+                    appointment.Reason = reader["Reason"].ToString();
+                }
+                else
+                {
+                    appointment = null;
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+                if (reader != null)
+                    reader.Close();
+            }
             return appointment;
         }
     }
