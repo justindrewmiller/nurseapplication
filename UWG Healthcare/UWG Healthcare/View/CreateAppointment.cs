@@ -35,6 +35,8 @@ namespace UWG_Healthcare.View
             this.LoadComboBox();
             cmbDoctorList.SelectedIndex = -1;
             cmbPatientList.SelectedIndex = -1;
+            //Sets the Date time to be a minimum of Today.
+            dtpDateTime.MinDate = DateTime.Today;
 
         }
 
@@ -61,6 +63,22 @@ namespace UWG_Healthcare.View
             }
         }
 
+        private bool isValidData()
+        {
+            if (Validator.IsPresent(cmbPatientList) &&
+                Validator.IsPresent(cmbDoctorList) &&
+                Validator.IsPresent(dtpDateTime) &&
+                Validator.IsPresent(txtReason))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         // Stores the information from textboxes and combo boxes into variables.
         private void PutIncidentData(Appointment appointment)
         {
@@ -78,19 +96,27 @@ namespace UWG_Healthcare.View
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            newAppointment = new Appointment();
-            this.PutIncidentData(newAppointment);
-            try
+            if (isValidData())
             {
-                newAppointment.ApptID = appointmentController.CreateAppointment(newAppointment);
-                MessageBox.Show("The appointment was successfully created.");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
+                if(txtReason.Text.Length < 10)
+                {
+                    MessageBox.Show("Reason should be longer than 10 characters.");
+                    return;
+                }
+                newAppointment = new Appointment();
+                this.PutIncidentData(newAppointment);
+                try
+                {
+                    newAppointment.ApptID = appointmentController.CreateAppointment(newAppointment);
+                    MessageBox.Show("The appointment was successfully created.");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
 
+            }
         }
     }
 }

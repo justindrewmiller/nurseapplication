@@ -59,6 +59,7 @@
             this.txtReason.Name = "txtReason";
             this.txtReason.Size = new System.Drawing.Size(252, 109);
             this.txtReason.TabIndex = 13;
+            this.txtReason.Tag = "Reason";
             this.txtReason.Text = "";
             // 
             // lblReason
@@ -121,6 +122,7 @@
             this.cmbDoctorList.Name = "cmbDoctorList";
             this.cmbDoctorList.Size = new System.Drawing.Size(254, 27);
             this.cmbDoctorList.TabIndex = 11;
+            this.cmbDoctorList.Tag = "Doctor";
             // 
             // cmbPatientList
             // 
@@ -131,6 +133,7 @@
             this.cmbPatientList.Name = "cmbPatientList";
             this.cmbPatientList.Size = new System.Drawing.Size(254, 27);
             this.cmbPatientList.TabIndex = 10;
+            this.cmbPatientList.Tag = "Patient Name";
             // 
             // dtpDateTime
             // 
@@ -140,6 +143,7 @@
             this.dtpDateTime.Name = "dtpDateTime";
             this.dtpDateTime.Size = new System.Drawing.Size(252, 26);
             this.dtpDateTime.TabIndex = 12;
+            this.dtpDateTime.Tag = "Date and Time";
             // 
             // btnSubmit
             // 
