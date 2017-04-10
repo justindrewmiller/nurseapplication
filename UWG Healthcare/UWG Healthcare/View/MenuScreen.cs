@@ -40,10 +40,10 @@ namespace UWG_Healthcare.View
 
         private void btnOrderTests_Click(object sender, EventArgs e)
         {
-            TestInfo newTest = new TestInfo();
-            newTest.MdiParent = this.MdiParent;
-            newTest.Show();
-            this.Close();
+            //TestInfo newTest = new TestInfo();
+            //newTest.MdiParent = this.MdiParent;
+            //newTest.Show();
+            //this.Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
