@@ -15,11 +15,13 @@ namespace UWG_Healthcare.View
     {
 
         public UserInfo userID;
+        public string apptID;
 
-        public CurrentAppointment(UserInfo info)
+        public CurrentAppointment(UserInfo info, string apptID)
         {
             InitializeComponent();
             userID = info;
+            this.apptID = apptID;
             lblUserID.Text = userID.userID;
         }
 

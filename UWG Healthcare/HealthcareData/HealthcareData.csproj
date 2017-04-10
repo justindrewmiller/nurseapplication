@@ -47,8 +47,13 @@
     <Compile Include="DAL\HealthCareUWGDBConnection.cs" />
     <Compile Include="DAL\InformationDAL.cs" />
     <Compile Include="DAL\PatientDAL.cs" />
+<<<<<<< HEAD
     <Compile Include="DAL\StateDAL.cs" />
+=======
+    <Compile Include="DAL\TestDAL.cs" />
+>>>>>>> ca1346f24ef2797d59445d54d2367d8a2db1ff49
     <Compile Include="DAL\UsersDAL.cs" />
+    <Compile Include="DAL\VisitDAL.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Doctor.cs" />

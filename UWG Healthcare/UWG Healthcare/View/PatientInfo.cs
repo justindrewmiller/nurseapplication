@@ -29,7 +29,24 @@ namespace UWG_Healthcare.View
 
         private void btnTests_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (cboTests.ValueMember == "")
+                {
+                    MessageBox.Show("No test to select.", "No test selected");
+                }
+                else
+                {
+                    TestInfo testInfo = new TestInfo(this.info, this.patient);
+                    testInfo.MdiParent = this.MdiParent;
+                    testInfo.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void PatientInfo_Load(object sender, EventArgs e)
@@ -45,9 +62,9 @@ namespace UWG_Healthcare.View
                 txtZip.Text = this.patient.ZipCode;
                 txtState.Text = this.patient.State;
                 txtPhone.Text = this.patient.PhoneNum;
-               // this.loadComboAppointments();
-               // this.loadComboTests();
-               // this.loadComboVisits();
+                this.loadComboAppointments();
+                this.loadComboTests();
+                this.loadComboVisits();
             }
             catch (Exception ex)
             {
@@ -78,8 +95,8 @@ namespace UWG_Healthcare.View
             {
                 List<Test> tests = InformationController.GetPatientTests(this.patientID);
                 cboTests.DataSource = tests;
-                cboTests.DisplayMember = "TestDate";
-                cboTests.ValueMember = "TestDate";
+                cboTests.DisplayMember = "TestName";
+                cboTests.ValueMember = "TestName";
             }
             catch (Exception ex)
             {
@@ -95,6 +112,70 @@ namespace UWG_Healthcare.View
                 cboVisits.DataSource = visits;
                 cboVisits.DisplayMember = "Symptoms";
                 cboVisits.ValueMember = "VisitID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            if (txtFName.Text == "")
+            {
+                MessageBox.Show("No patient to modify.", "No patient selected");
+            }
+            else
+            {
+                ModifyPatient modifyInfo = new ModifyPatient(this.info, this.patient);
+                modifyInfo.MdiParent = this.MdiParent;
+                modifyInfo.Show();
+                this.Close();
+            }
+        }
+
+        private void btnFinished_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboAppointments.ValueMember == "")
+                {
+                    MessageBox.Show("No applicable appointment.", "No appointment selected");
+                }
+                else
+                {
+                    CurrentAppointment currentApt = new CurrentAppointment(this.info, cboAppointments.ValueMember);
+                    currentApt.MdiParent = this.MdiParent;
+                    currentApt.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnVisits_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboVisits.ValueMember == "")
+                {
+                    MessageBox.Show("No applicable visit.", "No visit selected");
+                }
+                else
+                {
+                    VisitInfo visitInfo = new VisitInfo(this.info, cboVisits.ValueMember);
+                    visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.Show();
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
