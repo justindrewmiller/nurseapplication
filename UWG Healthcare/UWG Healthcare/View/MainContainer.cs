@@ -128,5 +128,15 @@ namespace UWG_Healthcare
             ms.MdiParent = this;
             ms.Show();
         }
+
+        // Generates form for running the admin report
+        private void generateReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateReport gr = new GenerateReport(userLoggedIn);
+            gr.MdiParent = this;
+            gr.Show();
+
+        }
+    
     }
 }

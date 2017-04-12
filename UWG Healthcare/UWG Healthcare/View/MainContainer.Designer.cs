@@ -39,9 +39,9 @@
             this.createAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblUserID = new System.Windows.Forms.Label();
-            this.generateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +129,13 @@
             this.menuScreenToolStripMenuItem.Text = "Menu Screen";
             this.menuScreenToolStripMenuItem.Click += new System.EventHandler(this.menuScreenToolStripMenuItem_Click);
             // 
+            // generateReportToolStripMenuItem
+            // 
+            this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
+            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.generateReportToolStripMenuItem.Text = "Generate Report";
+            this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -145,12 +152,6 @@
             this.lblUserID.Size = new System.Drawing.Size(230, 28);
             this.lblUserID.TabIndex = 3;
             this.lblUserID.Text = "User Currently Logged In: ";
-            // 
-            // generateReportToolStripMenuItem
-            // 
-            this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
-            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.generateReportToolStripMenuItem.Text = "Generate Report";
             // 
             // MainContainer
             // 
