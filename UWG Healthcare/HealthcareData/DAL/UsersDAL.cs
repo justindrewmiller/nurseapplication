@@ -21,9 +21,15 @@ namespace HealthcareData.DAL
             String encryptedPassword = GetSHA1HashData(Password);
             UserInfo ui = new UserInfo();
             SqlConnection con = HealthCareUWGDBConnection.GetConnection();
+            string selectStatement =
+               "SELECT Username " +
+                "FROM UserInfo " +
+                "WHERE Username = @Username AND Password = @Password";
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + encryptedPassword + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlCommand selectCommand = new SqlCommand(selectStatement, con);
+            selectCommand.Parameters.AddWithValue("@Username", UserID);
+            selectCommand.Parameters.AddWithValue("@Password", encryptedPassword);
+            SqlDataAdapter da = new SqlDataAdapter(selectCommand);
             DataTable dt = new DataTable();
             da.Fill(dt);
             if (dt.Rows.Count == 1)
@@ -37,29 +43,6 @@ namespace HealthcareData.DAL
             con.Close();
             return isValid;
         }
-
-        //// Gets the user name of the person who is logged in.
-        //public static String GetUserInfo(string UserID, string Password)
-        //{
-        //    string userName;
-        //    String encryptedPassword = GetSHA1HashData(Password);
-        //    SqlConnection con = HealthCareUWGDBConnection.GetConnection();
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand("SELECT Username FROM UserInfo WHERE Username='" + UserID + "'AND Password='" + encryptedPassword + "'", con);
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataTable dt = new DataTable();
-        //    da.Fill(dt);
-        //    if (dt.Rows.Count == 1)
-        //    {
-        //        userName = dt.Rows[0][0].ToString();
-        //    }
-        //    else
-        //    {
-        //        userName = "";
-        //    }
-        //    con.Close();
-        //    return userName;
-        //}
 
         // Gets the Gets the User's information via the Username and Password
         public static UserInfo GetUser(string username, string password)
