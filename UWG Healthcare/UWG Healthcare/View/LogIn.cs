@@ -40,7 +40,9 @@ namespace UWG_Healthcare.View
             string UserName = txtUserName.Text;
             string Password = txtPassword.Text;
             encryptedTB.Text = GetSHA1HashData(Password);
-            if (Controller.HealthcareController.ValidLogin(UserName, Password))
+            try
+            {
+                if (Controller.HealthcareController.ValidLogin(UserName, Password))
             {
                 ui = Controller.HealthcareController.GetUser(UserName, Password);
                 this.Visible = false;
@@ -49,6 +51,12 @@ namespace UWG_Healthcare.View
             } else
             {
                 lblInvalid.Text = "Username or password was invalid";
+            }
+        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                this.BeginInvoke(new MethodInvoker(Close));
             }
 
         }
