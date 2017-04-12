@@ -41,6 +41,7 @@
             this.menuScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblUserID = new System.Windows.Forms.Label();
+            this.generateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +88,8 @@
             this.modifyPatientProfileToolStripMenuItem,
             this.createAppointmentToolStripMenuItem,
             this.searchPatientToolStripMenuItem,
-            this.menuScreenToolStripMenuItem});
+            this.menuScreenToolStripMenuItem,
+            this.generateReportToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -144,6 +146,12 @@
             this.lblUserID.TabIndex = 3;
             this.lblUserID.Text = "User Currently Logged In: ";
             // 
+            // generateReportToolStripMenuItem
+            // 
+            this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
+            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.generateReportToolStripMenuItem.Text = "Generate Report";
+            // 
             // MainContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -153,7 +161,7 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainContainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wolf Healthcare Application";
@@ -179,6 +187,7 @@
         private System.Windows.Forms.ToolStripMenuItem searchPatientToolStripMenuItem;
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.ToolStripMenuItem menuScreenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateReportToolStripMenuItem;
     }
 }
 

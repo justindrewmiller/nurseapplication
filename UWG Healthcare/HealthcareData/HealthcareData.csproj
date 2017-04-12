@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="DB\cs6232-g2database.sql" />
     <Content Include="DB\cs6232-g2sampledata.sql" />
+    <Content Include="DB\sp_mostPerformedTestsDuringDates.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

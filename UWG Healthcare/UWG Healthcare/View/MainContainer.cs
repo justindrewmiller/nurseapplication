@@ -36,24 +36,27 @@ namespace UWG_Healthcare
             if(user.AdminID > 0)
             {
                 role = "ADMINISTRATOR";
-                registerNewPatientToolStripMenuItem.Enabled = false;
-                modifyPatientProfileToolStripMenuItem.Enabled = false;
-                createAppointmentToolStripMenuItem.Enabled = false;
-                searchPatientToolStripMenuItem.Enabled = false;
-                menuScreenToolStripMenuItem.Enabled = false;
+                registerNewPatientToolStripMenuItem.Visible = false;
+                modifyPatientProfileToolStripMenuItem.Visible = false;
+                createAppointmentToolStripMenuItem.Visible = false;
+                searchPatientToolStripMenuItem.Visible = false;
+                menuScreenToolStripMenuItem.Visible = false;
+                generateReportToolStripMenuItem.Visible = true;
             }
             if (user.DoctorID > 0)
             {
                 role = "DOCTOR";
-                registerNewPatientToolStripMenuItem.Enabled = false;
-                modifyPatientProfileToolStripMenuItem.Enabled = false;
-                createAppointmentToolStripMenuItem.Enabled = false;
-                searchPatientToolStripMenuItem.Enabled = false;
-                menuScreenToolStripMenuItem.Enabled = false;
+                registerNewPatientToolStripMenuItem.Visible = false;
+                modifyPatientProfileToolStripMenuItem.Visible = false;
+                createAppointmentToolStripMenuItem.Visible = false;
+                searchPatientToolStripMenuItem.Visible = false;
+                menuScreenToolStripMenuItem.Visible = false;
+                generateReportToolStripMenuItem.Visible = false;
             }
             if (user.NurseID > 0)
             {
                 role = "NURSE";
+                generateReportToolStripMenuItem.Visible = false;
             }
             return role;
         }
