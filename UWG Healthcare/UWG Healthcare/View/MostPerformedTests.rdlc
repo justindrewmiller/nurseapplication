@@ -412,7 +412,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TestName</rd:DefaultName>
@@ -438,14 +440,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!NumberofTests.Value)</Value>
+                              <Value>=Fields!NumberofTests.Value</Value>
                               <Style>
                                 <FontFamily>segoe ui</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NumberofTests</rd:DefaultName>
@@ -478,7 +482,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>AllNumberofTests</rd:DefaultName>
@@ -504,14 +510,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!PercentofTotal.Value)</Value>
+                              <Value>=Sum(Fields!PercentofTotal.Value) &amp; "%"</Value>
                               <Style>
                                 <FontFamily>segoe ui</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>PercentofTotal</rd:DefaultName>
@@ -544,7 +552,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Normal</rd:DefaultName>
@@ -577,7 +587,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Abnormal</rd:DefaultName>
@@ -603,14 +615,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Age18to29.Value)</Value>
+                              <Value>=Sum(Fields!Age18to29.Value) &amp; "%"</Value>
                               <Style>
                                 <FontFamily>segoe ui</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Age18to29</rd:DefaultName>
@@ -636,7 +650,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Age30to39.Value)</Value>
+                              <Value>=Sum(Fields!Age30to39.Value) &amp; "%"</Value>
                               <Style>
                                 <FontFamily>segoe ui</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -669,7 +683,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Age40to49.Value)</Value>
+                              <Value>=Sum(Fields!Age40to49.Value) &amp; "%"</Value>
                               <Style>
                                 <FontFamily>segoe ui</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -702,7 +716,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Age50to59.Value)</Value>
+                              <Value>=Sum(Fields!Age50to59.Value) &amp; "%"</Value>
                               <Style>
                                 <FontFamily>segoe ui</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -748,7 +762,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>0.6in</Size>
                 <CellContents>
                   <Textbox Name="Textbox21">
                     <CanGrow>true</CanGrow>
@@ -800,7 +814,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>0.6in</Size>
                 <CellContents>
                   <Textbox Name="TestCode">
                     <CanGrow>true</CanGrow>
@@ -817,7 +831,9 @@
                             </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>TestCode</rd:DefaultName>
@@ -846,7 +862,7 @@
         <DataSetName>MostPerformedData</DataSetName>
         <Top>0.50833in</Top>
         <Height>0.5in</Height>
-        <Width>10.54667in</Width>
+        <Width>10.14667in</Width>
         <Style>
           <Border>
             <Style>None</Style>
