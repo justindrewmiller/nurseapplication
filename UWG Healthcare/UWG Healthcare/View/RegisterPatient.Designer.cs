@@ -241,6 +241,7 @@
             // 
             // cmbStatesList
             // 
+            this.cmbStatesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatesList.FormattingEnabled = true;
             this.cmbStatesList.Location = new System.Drawing.Point(88, 178);
             this.cmbStatesList.Name = "cmbStatesList";

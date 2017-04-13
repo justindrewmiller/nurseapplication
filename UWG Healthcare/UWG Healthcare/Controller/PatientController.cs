@@ -22,7 +22,7 @@ namespace UWG_Healthcare.Controller
         {
             return PatientDAL.AddPatient(patient);
         }
-
+        
         //Updates the patient
         public bool UpdatePatient(Person oldPerson, Person newPerson)
         {
