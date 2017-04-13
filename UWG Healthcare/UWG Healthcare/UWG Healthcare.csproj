@@ -36,8 +36,11 @@
     <StartupObject>UWG_Healthcare.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +60,20 @@
     <Compile Include="Controller\SearchController.cs" />
     <Compile Include="Controller\StatesController.cs" />
     <Compile Include="Controller\VisitsController.cs" />
+    <Compile Include="TestDataSet.cs">
+      <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateAdminReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CreateAdminReport.Designer.cs">
+      <DependentUpon>CreateAdminReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CurrentAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,12 +85,6 @@
     </Compile>
     <Compile Include="View\CreateAppointment.Designer.cs">
       <DependentUpon>CreateAppointment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\GenerateReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\GenerateReport.Designer.cs">
-      <DependentUpon>GenerateReport.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LogIn.cs">
       <SubType>Form</SubType>
@@ -131,14 +142,14 @@
     <Compile Include="View\VisitInfo.Designer.cs">
       <DependentUpon>VisitInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CreateAdminReport.resx">
+      <DependentUpon>CreateAdminReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CurrentAppointment.resx">
       <DependentUpon>CurrentAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreateAppointment.resx">
       <DependentUpon>CreateAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\GenerateReport.resx">
-      <DependentUpon>GenerateReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -161,6 +172,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\MostPerformedTests.rdlc" />
     <EmbeddedResource Include="View\PatientInfo.resx">
       <DependentUpon>PatientInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +197,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TestDataSet.xsc">
+      <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDataSet.xss">
+      <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

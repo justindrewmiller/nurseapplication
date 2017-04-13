@@ -132,7 +132,7 @@ namespace UWG_Healthcare
         // Generates form for running the admin report
         private void generateReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GenerateReport gr = new GenerateReport(userLoggedIn);
+            CreateAdminReport gr = new CreateAdminReport(userLoggedIn);
             gr.MdiParent = this;
             gr.Show();
 
