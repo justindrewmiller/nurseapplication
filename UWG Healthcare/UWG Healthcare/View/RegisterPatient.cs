@@ -113,11 +113,11 @@ namespace UWG_Healthcare
                 {
                     //Inserts the Person into the table and stores PersonID
                     person.PersonID = inController.AddPerson(person);
-                    //Passes PersonID from Person to Patien
+                    //Passes PersonID from Person to Patient
                     patient.PersonID = person.PersonID;
                     //Inserts Patient by using PersonID
-                    inController.AddPatient(patient);
-                    MessageBox.Show("The patient was successfully added.");
+                        inController.AddPatient(patient);
+                        MessageBox.Show("The patient was successfully added.");
                     this.Close();
                 }
                 catch (Exception ex)
