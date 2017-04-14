@@ -35,10 +35,9 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerNewPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyPatientProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyPatientProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblUserID = new System.Windows.Forms.Label();
@@ -84,11 +83,10 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createAppointmentToolStripMenuItem,
             this.registerNewPatientToolStripMenuItem,
             this.modifyPatientProfileToolStripMenuItem,
-            this.createAppointmentToolStripMenuItem,
             this.searchPatientToolStripMenuItem,
-            this.menuScreenToolStripMenuItem,
             this.generateReportToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
@@ -97,42 +95,35 @@
             // registerNewPatientToolStripMenuItem
             // 
             this.registerNewPatientToolStripMenuItem.Name = "registerNewPatientToolStripMenuItem";
-            this.registerNewPatientToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.registerNewPatientToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.registerNewPatientToolStripMenuItem.Text = "Register New Patient";
             this.registerNewPatientToolStripMenuItem.Click += new System.EventHandler(this.registerNewPatientToolStripMenuItem_Click);
-            // 
-            // modifyPatientProfileToolStripMenuItem
-            // 
-            this.modifyPatientProfileToolStripMenuItem.Name = "modifyPatientProfileToolStripMenuItem";
-            this.modifyPatientProfileToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.modifyPatientProfileToolStripMenuItem.Text = "Modify Patient Profile";
-            this.modifyPatientProfileToolStripMenuItem.Click += new System.EventHandler(this.modifyPatientProfileToolStripMenuItem_Click);
             // 
             // createAppointmentToolStripMenuItem
             // 
             this.createAppointmentToolStripMenuItem.Name = "createAppointmentToolStripMenuItem";
-            this.createAppointmentToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.createAppointmentToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.createAppointmentToolStripMenuItem.Text = "Create Appointment";
             this.createAppointmentToolStripMenuItem.Click += new System.EventHandler(this.createAppointmentToolStripMenuItem_Click);
+            // 
+            // modifyPatientProfileToolStripMenuItem
+            // 
+            this.modifyPatientProfileToolStripMenuItem.Name = "modifyPatientProfileToolStripMenuItem";
+            this.modifyPatientProfileToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.modifyPatientProfileToolStripMenuItem.Text = "Modify Patient Profile";
+            this.modifyPatientProfileToolStripMenuItem.Click += new System.EventHandler(this.modifyPatientProfileToolStripMenuItem_Click);
             // 
             // searchPatientToolStripMenuItem
             // 
             this.searchPatientToolStripMenuItem.Name = "searchPatientToolStripMenuItem";
-            this.searchPatientToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.searchPatientToolStripMenuItem.Text = "Search Patient";
+            this.searchPatientToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.searchPatientToolStripMenuItem.Text = "Search Patient/Check In";
             this.searchPatientToolStripMenuItem.Click += new System.EventHandler(this.searchPatientToolStripMenuItem_Click);
-            // 
-            // menuScreenToolStripMenuItem
-            // 
-            this.menuScreenToolStripMenuItem.Name = "menuScreenToolStripMenuItem";
-            this.menuScreenToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.menuScreenToolStripMenuItem.Text = "Menu Screen";
-            this.menuScreenToolStripMenuItem.Click += new System.EventHandler(this.menuScreenToolStripMenuItem_Click);
             // 
             // generateReportToolStripMenuItem
             // 
             this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
-            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.generateReportToolStripMenuItem.Text = "Generate Report";
             this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
             // 
@@ -187,7 +178,6 @@
         private System.Windows.Forms.ToolStripMenuItem createAppointmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchPatientToolStripMenuItem;
         private System.Windows.Forms.Label lblUserID;
-        private System.Windows.Forms.ToolStripMenuItem menuScreenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateReportToolStripMenuItem;
     }
 }

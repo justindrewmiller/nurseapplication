@@ -59,6 +59,7 @@
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="Controller\SearchController.cs" />
     <Compile Include="Controller\StatesController.cs" />
+    <Compile Include="Controller\TestController.cs" />
     <Compile Include="Controller\VisitsController.cs" />
     <Compile Include="TestDataSet.cs">
       <DependentUpon>TestDataSet.xsd</DependentUpon>
@@ -112,6 +113,12 @@
     </Compile>
     <Compile Include="Controller\Driver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\OrderTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OrderTest.Designer.cs">
+      <DependentUpon>OrderTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +180,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\MostPerformedTests.rdlc" />
+    <EmbeddedResource Include="View\OrderTest.resx">
+      <DependentUpon>OrderTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PatientInfo.resx">
       <DependentUpon>PatientInfo.cs</DependentUpon>
     </EmbeddedResource>

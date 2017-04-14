@@ -40,7 +40,6 @@ namespace UWG_Healthcare
                 modifyPatientProfileToolStripMenuItem.Visible = false;
                 createAppointmentToolStripMenuItem.Visible = false;
                 searchPatientToolStripMenuItem.Visible = false;
-                menuScreenToolStripMenuItem.Visible = false;
                 generateReportToolStripMenuItem.Visible = true;
             }
             if (user.DoctorID > 0)
@@ -50,7 +49,6 @@ namespace UWG_Healthcare
                 modifyPatientProfileToolStripMenuItem.Visible = false;
                 createAppointmentToolStripMenuItem.Visible = false;
                 searchPatientToolStripMenuItem.Visible = false;
-                menuScreenToolStripMenuItem.Visible = false;
                 generateReportToolStripMenuItem.Visible = false;
             }
             if (user.NurseID > 0)
@@ -102,12 +100,12 @@ namespace UWG_Healthcare
 
         private void MainContainer_Load(object sender, EventArgs e)
         {
-            if (role == "NURSE")
-            {
-                MenuScreen ms = new MenuScreen(userLoggedIn);
-                ms.MdiParent = this;
-                ms.Show();
-            }
+            //if (role == "NURSE")
+            //{
+            //    MenuScreen ms = new MenuScreen(userLoggedIn);
+            //    ms.MdiParent = this;
+            //    ms.Show();
+            //}
             
         }
 

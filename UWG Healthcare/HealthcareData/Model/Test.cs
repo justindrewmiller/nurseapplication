@@ -9,7 +9,7 @@ namespace HealthcareData.Model
     public class Test
     {
 
-        public string TestCode { get; set; }
+        public int TestCode { get; set; }
 
         public string TestName { get; set; }
 

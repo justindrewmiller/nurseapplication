@@ -70,7 +70,7 @@
             // 
             this.dtReportStart.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtReportStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtReportStart.Location = new System.Drawing.Point(105, 94);
+            this.dtReportStart.Location = new System.Drawing.Point(114, 94);
             this.dtReportStart.Name = "dtReportStart";
             this.dtReportStart.Size = new System.Drawing.Size(117, 30);
             this.dtReportStart.TabIndex = 20;
@@ -89,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 96);
+            this.label2.Location = new System.Drawing.Point(250, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 22;
@@ -99,7 +99,7 @@
             // 
             this.dtReportEnd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtReportEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtReportEnd.Location = new System.Drawing.Point(327, 95);
+            this.dtReportEnd.Location = new System.Drawing.Point(336, 95);
             this.dtReportEnd.Name = "dtReportEnd";
             this.dtReportEnd.Size = new System.Drawing.Size(117, 30);
             this.dtReportEnd.TabIndex = 23;
@@ -107,7 +107,7 @@
             // btnGenerate
             // 
             this.btnGenerate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(465, 93);
+            this.btnGenerate.Location = new System.Drawing.Point(474, 93);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(145, 36);
             this.btnGenerate.TabIndex = 24;

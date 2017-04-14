@@ -142,7 +142,7 @@ namespace HealthcareData.DAL
                 while (reader.Read())
                 {
                     Test test = new Test();
-                    test.TestCode = reader["TestCode"].ToString();
+                    test.TestCode = (int)reader["TestCode"];
                     test.TestName = reader["TestName"].ToString();
                     test.TestDate = reader["TestDate"].ToString();
                     test.ApptID = reader["ApptID"].ToString();

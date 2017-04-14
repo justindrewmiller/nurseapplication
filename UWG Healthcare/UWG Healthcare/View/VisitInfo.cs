@@ -114,5 +114,12 @@ namespace UWG_Healthcare.View
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OrderTest orderTests = new OrderTest(info);
+            orderTests.MdiParent = this.MdiParent;
+            orderTests.Show();
+        }
     }
 }
