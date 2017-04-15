@@ -16,18 +16,22 @@ namespace UWG_Healthcare.View
 
         public UserInfo info;
         private Patient patient;
+        private Test test; 
 
-        public TestInfo(UserInfo info, Patient patient)
+        public TestInfo(UserInfo info, Patient patient, Test test)
         {
             InitializeComponent();
             this.info = info;
             lblUserName.Text = info.userID;
             this.patient = patient;
+            this.test = test; 
         }
 
         private void Test_Load(object sender, EventArgs e)
         {
-
+            txtPatientName.Text = patient.FullName;
+            txtDate.Text = test.TestDate;
+            txtTestName.Text = test.TestName; 
         }
     }
 }

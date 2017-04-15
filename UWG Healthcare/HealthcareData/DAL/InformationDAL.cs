@@ -79,7 +79,8 @@ namespace HealthcareData.DAL
             string selectStatement =
                 "SELECT ApptID, PatientID, DoctorID, apptDateTime, Reason " +
                 "FROM Appointment " +
-                "WHERE PatientID = @PatientID";
+                "WHERE PatientID = @PatientID " +
+                "ORDER BY apptDateTime desc";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@PatientID", patientID);
             SqlDataReader reader = null;

@@ -23,7 +23,6 @@ namespace UWG_Healthcare.View
         public Visit newVisit;
         private VisitsController visitsController;
 
-
         public VisitInfo(UserInfo info, string visitID)
         {
             InitializeComponent();
@@ -35,21 +34,21 @@ namespace UWG_Healthcare.View
 
         private void VisitInfo_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    currentVisit = VisitDAL.GetVisit(this.visitID);
-            //    txtAppointment.Text = currentVisit.ApptID;
-            //    txtSys.Text = currentVisit.SysBP;
-            //    txtDia.Text = currentVisit.DiaBP;
-            //    txtTemp.Text = currentVisit.BodyTemp;
-            //    txtPulse.Text = currentVisit.Pulse;
-            //    txtSymptoms.Text = currentVisit.Symptoms;
-            //    txtDiagnosis.Text = VisitDAL.GetDiagnoses(currentVisit.DiagnosesCode);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
+            try
+            {
+                currentVisit = VisitDAL.GetVisit(this.visitID);
+                txtAppointment.Text = currentVisit.ApptID;
+                txtSys.Text = currentVisit.SysBP;
+                txtDia.Text = currentVisit.DiaBP;
+                txtTemp.Text = currentVisit.BodyTemp;
+                txtPulse.Text = currentVisit.Pulse;
+                txtSymptoms.Text = currentVisit.Symptoms;
+                txtDiagnosis.Text = VisitDAL.GetDiagnoses(currentVisit.DiagnosesCode);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         // Stores the information from textboxes and combo boxes into variables.
@@ -120,6 +119,11 @@ namespace UWG_Healthcare.View
             OrderTest orderTests = new OrderTest(info);
             orderTests.MdiParent = this.MdiParent;
             orderTests.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

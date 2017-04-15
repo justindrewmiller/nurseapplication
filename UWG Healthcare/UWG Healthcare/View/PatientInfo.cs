@@ -47,21 +47,37 @@ namespace UWG_Healthcare.View
             //{
             //    MessageBox.Show(ex.ToString());
             //}
+            if (!(lstTests.SelectedItems.Count > 0))
+                {
+                    MessageBox.Show("Please select a test!");
+                } else
+            {
 
+          
             try
             {
                 string txtResult = lstTests.FocusedItem.SubItems[4].Text;
-                if (txtResult != "" )
+                if (txtResult != "")
                 {
-                    MessageBox.Show("Results have already been recorded for this test!"); 
-                } else
+                    MessageBox.Show("Results have already been recorded for this test!");
+                } 
+                else
                 {
-
+                    Test test = new Test();
+                    test.TestCode = Convert.ToInt32(lstTests.FocusedItem.SubItems[0].Text);
+                    test.TestDate = lstTests.FocusedItem.SubItems[2].Text;
+                    test.TestName = lstTests.FocusedItem.SubItems[1].Text;
+                    test.ApptID = lstTests.FocusedItem.SubItems[3].Text;
+                    TestInfo testInfo = new TestInfo(this.info, this.patient, test);
+                    testInfo.MdiParent = this.MdiParent;
+                    testInfo.Show();
+                    this.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
             }
 
         }
@@ -185,9 +201,13 @@ namespace UWG_Healthcare.View
         {
             try
             {
+                DateTime apptDate = Convert.ToDateTime(cboAppointments.Text);
                 if (cboAppointments.ValueMember == "")
                 {
                     MessageBox.Show("No applicable appointment.", "No appointment selected");
+                } else if (apptDate.Date < DateTime.Now.Date)
+                    {
+                        MessageBox.Show("This date is in the past, you may not update it!");
                 }
                 else
                 {
@@ -212,9 +232,9 @@ namespace UWG_Healthcare.View
                 {
                     MessageBox.Show("No applicable appointment.", "No appointment selected");
                 }
-                else if (apptDate.Date < DateTime.Now.Date)
+                else if (apptDate.Date != DateTime.Now.Date)
                 {
-                    MessageBox.Show("This date is in the past, you may not check in!");
+                    MessageBox.Show("This date is not today, you may not check in!");
                 }
                 else
                 {

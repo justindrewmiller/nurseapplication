@@ -46,11 +46,11 @@ namespace HealthcareData.DAL
             }
             catch (SqlException ex)
             {
-                throw;
+                throw ex;
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
             return docList;
