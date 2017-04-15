@@ -37,7 +37,6 @@ namespace UWG_Healthcare
             {
                 role = "ADMINISTRATOR";
                 registerNewPatientToolStripMenuItem.Visible = false;
-                modifyPatientProfileToolStripMenuItem.Visible = false;
                 createAppointmentToolStripMenuItem.Visible = false;
                 searchPatientToolStripMenuItem.Visible = false;
                 generateReportToolStripMenuItem.Visible = true;
@@ -46,7 +45,6 @@ namespace UWG_Healthcare
             {
                 role = "DOCTOR";
                 registerNewPatientToolStripMenuItem.Visible = false;
-                modifyPatientProfileToolStripMenuItem.Visible = false;
                 createAppointmentToolStripMenuItem.Visible = false;
                 searchPatientToolStripMenuItem.Visible = false;
                 generateReportToolStripMenuItem.Visible = false;
