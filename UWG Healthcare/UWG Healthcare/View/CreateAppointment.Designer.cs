@@ -33,12 +33,12 @@
             this.lblReason = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblDoctor = new System.Windows.Forms.Label();
-            this.lblPatientName = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.cmbDoctorList = new System.Windows.Forms.ComboBox();
-            this.cmbPatientList = new System.Windows.Forms.ComboBox();
             this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblPatientName = new System.Windows.Forms.Label();
+            this.txtPatientName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -92,16 +92,6 @@
             this.lblDoctor.TabIndex = 12;
             this.lblDoctor.Text = "Doctor";
             // 
-            // lblPatientName
-            // 
-            this.lblPatientName.AutoSize = true;
-            this.lblPatientName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientName.Location = new System.Drawing.Point(10, 61);
-            this.lblPatientName.Name = "lblPatientName";
-            this.lblPatientName.Size = new System.Drawing.Size(92, 19);
-            this.lblPatientName.TabIndex = 10;
-            this.lblPatientName.Text = "Patient Name";
-            // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,17 +114,6 @@
             this.cmbDoctorList.TabIndex = 11;
             this.cmbDoctorList.Tag = "Doctor";
             // 
-            // cmbPatientList
-            // 
-            this.cmbPatientList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPatientList.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPatientList.FormattingEnabled = true;
-            this.cmbPatientList.Location = new System.Drawing.Point(148, 54);
-            this.cmbPatientList.Name = "cmbPatientList";
-            this.cmbPatientList.Size = new System.Drawing.Size(254, 27);
-            this.cmbPatientList.TabIndex = 10;
-            this.cmbPatientList.Tag = "Patient Name";
-            // 
             // dtpDateTime
             // 
             this.dtpDateTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,14 +135,33 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // lblPatientName
+            // 
+            this.lblPatientName.AutoSize = true;
+            this.lblPatientName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientName.Location = new System.Drawing.Point(10, 61);
+            this.lblPatientName.Name = "lblPatientName";
+            this.lblPatientName.Size = new System.Drawing.Size(92, 19);
+            this.lblPatientName.TabIndex = 10;
+            this.lblPatientName.Text = "Patient Name";
+            // 
+            // txtPatientName
+            // 
+            this.txtPatientName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatientName.Location = new System.Drawing.Point(148, 54);
+            this.txtPatientName.Name = "txtPatientName";
+            this.txtPatientName.ReadOnly = true;
+            this.txtPatientName.Size = new System.Drawing.Size(252, 26);
+            this.txtPatientName.TabIndex = 19;
+            // 
             // CreateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 349);
+            this.Controls.Add(this.txtPatientName);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.dtpDateTime);
-            this.Controls.Add(this.cmbPatientList);
             this.Controls.Add(this.cmbDoctorList);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblUserName);
@@ -187,11 +185,11 @@
         private System.Windows.Forms.Label lblReason;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Label lblDoctor;
-        private System.Windows.Forms.Label lblPatientName;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ComboBox cmbDoctorList;
-        private System.Windows.Forms.ComboBox cmbPatientList;
         private System.Windows.Forms.DateTimePicker dtpDateTime;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblPatientName;
+        private System.Windows.Forms.TextBox txtPatientName;
     }
 }

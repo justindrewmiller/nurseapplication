@@ -24,10 +24,10 @@ namespace UWG_Healthcare.View
         private void btnCreateAppointment_Click(object sender, EventArgs e)
         {
 
-            CreateAppointment newApt = new CreateAppointment(userID);
-            newApt.MdiParent = this.MdiParent;
-            newApt.Show();
-            this.Close();
+            //CreateAppointment newApt = new CreateAppointment(userID);
+            //newApt.MdiParent = this.MdiParent;
+            //newApt.Show();
+            //this.Close();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

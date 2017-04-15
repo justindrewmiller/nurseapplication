@@ -34,7 +34,6 @@
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerNewPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,20 +80,12 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createAppointmentToolStripMenuItem,
             this.registerNewPatientToolStripMenuItem,
             this.searchPatientToolStripMenuItem,
             this.generateReportToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // createAppointmentToolStripMenuItem
-            // 
-            this.createAppointmentToolStripMenuItem.Name = "createAppointmentToolStripMenuItem";
-            this.createAppointmentToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.createAppointmentToolStripMenuItem.Text = "Create Appointment";
-            this.createAppointmentToolStripMenuItem.Click += new System.EventHandler(this.createAppointmentToolStripMenuItem_Click);
             // 
             // registerNewPatientToolStripMenuItem
             // 
@@ -162,7 +153,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerNewPatientToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createAppointmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchPatientToolStripMenuItem;
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.ToolStripMenuItem generateReportToolStripMenuItem;

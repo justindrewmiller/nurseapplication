@@ -182,5 +182,21 @@ namespace UWG_Healthcare.View
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnCrtAppointment_Click(object sender, EventArgs e)
+        {
+            if (txtFName.Text == "")
+            {
+                MessageBox.Show("No patient to create appointment.", "No patient selected");
+            }
+            else
+            {
+                CreateAppointment createAppt = new CreateAppointment(this.info, this.patient);
+                createAppt.MdiParent = this.MdiParent;
+                createAppt.Show();
+                this.Close();
+            }
+
+        }
     }
 }

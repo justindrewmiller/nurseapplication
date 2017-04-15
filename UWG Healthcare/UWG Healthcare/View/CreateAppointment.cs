@@ -16,13 +16,15 @@ namespace UWG_Healthcare.View
     {
         public Appointment newAppointment;
         public UserInfo userID;
+        public Patient currentPatient;
         private DoctorController doctorController;
         private PatientController patientController;
         private AppointmentController appointmentController;
 
-        public CreateAppointment(UserInfo info)
+        public CreateAppointment(UserInfo info, Patient currentPatient)
         {
             InitializeComponent();
+            this.currentPatient = currentPatient;
             doctorController = new DoctorController();
             patientController = new PatientController();
             appointmentController = new AppointmentController();
@@ -34,9 +36,9 @@ namespace UWG_Healthcare.View
         {
             this.LoadComboBox();
             cmbDoctorList.SelectedIndex = -1;
-            cmbPatientList.SelectedIndex = -1;
             //Sets the Date time to be a minimum of Today.
             dtpDateTime.MinDate = DateTime.Today;
+            txtPatientName.Text = this.currentPatient.FullName;
 
         }
 
@@ -50,12 +52,6 @@ namespace UWG_Healthcare.View
                 cmbDoctorList.DataSource = docList;
                 cmbDoctorList.DisplayMember = "FullName";
                 cmbDoctorList.ValueMember = "DoctorID";
-
-                List<Patient> patientList;
-                patientList = patientController.GetPatients();
-                cmbPatientList.DataSource = patientList;
-                cmbPatientList.DisplayMember = "FullName";
-                cmbPatientList.ValueMember = "PatientID";
             }
             catch (Exception ex)
             {
@@ -65,7 +61,7 @@ namespace UWG_Healthcare.View
 
         private bool isValidData()
         {
-            if (Validator.IsPresent(cmbPatientList) &&
+            if (Validator.IsPresent(txtPatientName) &&
                 Validator.IsPresent(cmbDoctorList) &&
                 Validator.IsPresent(dtpDateTime) &&
                 Validator.IsPresent(txtReason))
@@ -82,7 +78,7 @@ namespace UWG_Healthcare.View
         // Stores the information from textboxes and combo boxes into variables.
         private void PutIncidentData(Appointment appointment)
         {
-            appointment.PatientID = (int)cmbPatientList.SelectedValue;
+            appointment.PatientID = this.currentPatient.PatientID;
             appointment.DoctorID = (int)cmbDoctorList.SelectedValue;
             appointment.apptDateTime = dtpDateTime.Text;
             appointment.Reason = txtReason.Text;

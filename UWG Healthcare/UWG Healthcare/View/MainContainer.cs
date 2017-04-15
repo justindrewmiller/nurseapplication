@@ -37,7 +37,6 @@ namespace UWG_Healthcare
             {
                 role = "ADMINISTRATOR";
                 registerNewPatientToolStripMenuItem.Visible = false;
-                createAppointmentToolStripMenuItem.Visible = false;
                 searchPatientToolStripMenuItem.Visible = false;
                 generateReportToolStripMenuItem.Visible = true;
             }
@@ -45,7 +44,6 @@ namespace UWG_Healthcare
             {
                 role = "DOCTOR";
                 registerNewPatientToolStripMenuItem.Visible = false;
-                createAppointmentToolStripMenuItem.Visible = false;
                 searchPatientToolStripMenuItem.Visible = false;
                 generateReportToolStripMenuItem.Visible = false;
             }
@@ -78,14 +76,7 @@ namespace UWG_Healthcare
             mp.MdiParent = this;
             mp.Show();
         }
-
-        // Contains form to Create New Appointment
-        private void createAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateAppointment ca = new CreateAppointment(userLoggedIn);
-            ca.MdiParent = this;
-            ca.Show();
-        }
+        
 
         // Contains form to Search for Patient or Appointment
         private void searchPatientToolStripMenuItem_Click(object sender, EventArgs e)
