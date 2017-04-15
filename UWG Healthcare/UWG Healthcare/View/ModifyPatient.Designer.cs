@@ -48,7 +48,6 @@
             this.lblfname = new System.Windows.Forms.Label();
             this.txtPersonID = new System.Windows.Forms.TextBox();
             this.lblPersonID = new System.Windows.Forms.Label();
-            this.getButton = new System.Windows.Forms.Button();
             this.lblDOB = new System.Windows.Forms.Label();
             this.cmbStatesList = new System.Windows.Forms.ComboBox();
             this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +57,7 @@
             // 
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(181, 373);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(184, 30);
@@ -69,7 +68,7 @@
             // 
             this.txtZip.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZip.Location = new System.Drawing.Point(181, 287);
-            this.txtZip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtZip.Margin = new System.Windows.Forms.Padding(4);
             this.txtZip.MaxLength = 5;
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(184, 30);
@@ -80,7 +79,7 @@
             // 
             this.txtCity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(181, 244);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(279, 30);
             this.txtCity.TabIndex = 16;
@@ -90,7 +89,7 @@
             // 
             this.txtStreet.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStreet.Location = new System.Drawing.Point(183, 202);
-            this.txtStreet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStreet.Margin = new System.Windows.Forms.Padding(4);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(277, 30);
             this.txtStreet.TabIndex = 15;
@@ -100,7 +99,7 @@
             // 
             this.txtSSN.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSSN.Location = new System.Drawing.Point(183, 162);
-            this.txtSSN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSSN.Margin = new System.Windows.Forms.Padding(4);
             this.txtSSN.MaxLength = 9;
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.Size = new System.Drawing.Size(184, 30);
@@ -111,7 +110,7 @@
             // 
             this.txtLName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLName.Location = new System.Drawing.Point(183, 121);
-            this.txtLName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(184, 30);
             this.txtLName.TabIndex = 13;
@@ -121,7 +120,7 @@
             // 
             this.txtFName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFName.Location = new System.Drawing.Point(183, 78);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(184, 30);
             this.txtFName.TabIndex = 12;
@@ -142,7 +141,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(293, 457);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 35);
             this.btnCancel.TabIndex = 22;
@@ -154,7 +153,7 @@
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(181, 457);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(104, 35);
             this.btnSubmit.TabIndex = 21;
@@ -254,7 +253,7 @@
             // 
             this.txtPersonID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonID.Location = new System.Drawing.Point(183, 42);
-            this.txtPersonID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPersonID.Margin = new System.Windows.Forms.Padding(4);
             this.txtPersonID.Name = "txtPersonID";
             this.txtPersonID.Size = new System.Drawing.Size(81, 30);
             this.txtPersonID.TabIndex = 10;
@@ -270,18 +269,6 @@
             this.lblPersonID.Size = new System.Drawing.Size(87, 23);
             this.lblPersonID.TabIndex = 38;
             this.lblPersonID.Text = "Person ID:";
-            // 
-            // getButton
-            // 
-            this.getButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getButton.Location = new System.Drawing.Point(305, 39);
-            this.getButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.getButton.Name = "getButton";
-            this.getButton.Size = new System.Drawing.Size(123, 28);
-            this.getButton.TabIndex = 11;
-            this.getButton.Text = "Get";
-            this.getButton.UseVisualStyleBackColor = true;
-            this.getButton.Click += new System.EventHandler(this.getButton_Click);
             // 
             // lblDOB
             // 
@@ -300,7 +287,7 @@
             this.cmbStatesList.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatesList.FormattingEnabled = true;
             this.cmbStatesList.Location = new System.Drawing.Point(181, 327);
-            this.cmbStatesList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbStatesList.Margin = new System.Windows.Forms.Padding(4);
             this.cmbStatesList.Name = "cmbStatesList";
             this.cmbStatesList.Size = new System.Drawing.Size(231, 31);
             this.cmbStatesList.TabIndex = 18;
@@ -311,7 +298,7 @@
             this.dtpDateTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateTime.Location = new System.Drawing.Point(181, 415);
-            this.dtpDateTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateTime.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateTime.Name = "dtpDateTime";
             this.dtpDateTime.Size = new System.Drawing.Size(265, 30);
             this.dtpDateTime.TabIndex = 20;
@@ -324,7 +311,6 @@
             this.Controls.Add(this.dtpDateTime);
             this.Controls.Add(this.cmbStatesList);
             this.Controls.Add(this.lblDOB);
-            this.Controls.Add(this.getButton);
             this.Controls.Add(this.txtPersonID);
             this.Controls.Add(this.lblPersonID);
             this.Controls.Add(this.txtPhone);
@@ -345,7 +331,7 @@
             this.Controls.Add(this.lblssn);
             this.Controls.Add(this.lbllname);
             this.Controls.Add(this.lblfname);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ModifyPatient";
             this.Text = "Modify Patient";
             this.Load += new System.EventHandler(this.ModifyPatient_Load);
@@ -375,7 +361,6 @@
         private System.Windows.Forms.Label lblfname;
         private System.Windows.Forms.TextBox txtPersonID;
         private System.Windows.Forms.Label lblPersonID;
-        private System.Windows.Forms.Button getButton;
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.ComboBox cmbStatesList;
         private System.Windows.Forms.DateTimePicker dtpDateTime;

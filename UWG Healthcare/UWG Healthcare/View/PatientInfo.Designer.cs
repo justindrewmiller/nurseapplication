@@ -62,73 +62,81 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(416, 170);
+            this.txtPhone.Location = new System.Drawing.Point(555, 209);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
-            this.txtPhone.Size = new System.Drawing.Size(177, 26);
+            this.txtPhone.Size = new System.Drawing.Size(235, 30);
             this.txtPhone.TabIndex = 17;
             // 
             // txtZip
             // 
             this.txtZip.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZip.Location = new System.Drawing.Point(416, 135);
+            this.txtZip.Location = new System.Drawing.Point(555, 166);
+            this.txtZip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtZip.Name = "txtZip";
             this.txtZip.ReadOnly = true;
-            this.txtZip.Size = new System.Drawing.Size(177, 26);
+            this.txtZip.Size = new System.Drawing.Size(235, 30);
             this.txtZip.TabIndex = 15;
             // 
             // txtCity
             // 
             this.txtCity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCity.Location = new System.Drawing.Point(104, 137);
+            this.txtCity.Location = new System.Drawing.Point(139, 169);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCity.Name = "txtCity";
             this.txtCity.ReadOnly = true;
-            this.txtCity.Size = new System.Drawing.Size(210, 26);
+            this.txtCity.Size = new System.Drawing.Size(279, 30);
             this.txtCity.TabIndex = 14;
             // 
             // txtStreet
             // 
             this.txtStreet.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStreet.Location = new System.Drawing.Point(104, 104);
+            this.txtStreet.Location = new System.Drawing.Point(139, 128);
+            this.txtStreet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.ReadOnly = true;
-            this.txtStreet.Size = new System.Drawing.Size(490, 26);
+            this.txtStreet.Size = new System.Drawing.Size(652, 30);
             this.txtStreet.TabIndex = 13;
             // 
             // txtSSN
             // 
             this.txtSSN.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSSN.Location = new System.Drawing.Point(104, 72);
+            this.txtSSN.Location = new System.Drawing.Point(139, 89);
+            this.txtSSN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.ReadOnly = true;
-            this.txtSSN.Size = new System.Drawing.Size(183, 26);
+            this.txtSSN.Size = new System.Drawing.Size(243, 30);
             this.txtSSN.TabIndex = 12;
             // 
             // txtLName
             // 
             this.txtLName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLName.Location = new System.Drawing.Point(416, 42);
+            this.txtLName.Location = new System.Drawing.Point(555, 52);
+            this.txtLName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLName.Name = "txtLName";
             this.txtLName.ReadOnly = true;
-            this.txtLName.Size = new System.Drawing.Size(177, 26);
+            this.txtLName.Size = new System.Drawing.Size(235, 30);
             this.txtLName.TabIndex = 11;
             // 
             // txtFName
             // 
             this.txtFName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFName.Location = new System.Drawing.Point(104, 41);
+            this.txtFName.Location = new System.Drawing.Point(139, 50);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFName.Name = "txtFName";
             this.txtFName.ReadOnly = true;
-            this.txtFName.Size = new System.Drawing.Size(183, 26);
+            this.txtFName.Size = new System.Drawing.Size(243, 30);
             this.txtFName.TabIndex = 10;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(12, 9);
+            this.lblUserName.Location = new System.Drawing.Point(16, 11);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(145, 19);
+            this.lblUserName.Size = new System.Drawing.Size(181, 23);
             this.lblUserName.TabIndex = 27;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
@@ -136,9 +144,10 @@
             // 
             this.lblphone.AutoSize = true;
             this.lblphone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblphone.Location = new System.Drawing.Point(336, 172);
+            this.lblphone.Location = new System.Drawing.Point(448, 212);
+            this.lblphone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblphone.Name = "lblphone";
-            this.lblphone.Size = new System.Drawing.Size(63, 19);
+            this.lblphone.Size = new System.Drawing.Size(78, 23);
             this.lblphone.TabIndex = 26;
             this.lblphone.Text = "Phone #:";
             // 
@@ -146,9 +155,10 @@
             // 
             this.lblzip.AutoSize = true;
             this.lblzip.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblzip.Location = new System.Drawing.Point(336, 137);
+            this.lblzip.Location = new System.Drawing.Point(448, 169);
+            this.lblzip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblzip.Name = "lblzip";
-            this.lblzip.Size = new System.Drawing.Size(67, 19);
+            this.lblzip.Size = new System.Drawing.Size(83, 23);
             this.lblzip.TabIndex = 25;
             this.lblzip.Text = "Zip Code:";
             // 
@@ -156,9 +166,10 @@
             // 
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(14, 170);
+            this.lblState.Location = new System.Drawing.Point(19, 209);
+            this.lblState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(43, 19);
+            this.lblState.Size = new System.Drawing.Size(52, 23);
             this.lblState.TabIndex = 24;
             this.lblState.Text = "State:";
             // 
@@ -166,9 +177,10 @@
             // 
             this.lblcity.AutoSize = true;
             this.lblcity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcity.Location = new System.Drawing.Point(14, 137);
+            this.lblcity.Location = new System.Drawing.Point(19, 169);
+            this.lblcity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblcity.Name = "lblcity";
-            this.lblcity.Size = new System.Drawing.Size(36, 19);
+            this.lblcity.Size = new System.Drawing.Size(43, 23);
             this.lblcity.TabIndex = 23;
             this.lblcity.Text = "City:";
             // 
@@ -176,9 +188,10 @@
             // 
             this.lblstreet.AutoSize = true;
             this.lblstreet.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblstreet.Location = new System.Drawing.Point(14, 104);
+            this.lblstreet.Location = new System.Drawing.Point(19, 128);
+            this.lblstreet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstreet.Name = "lblstreet";
-            this.lblstreet.Size = new System.Drawing.Size(48, 19);
+            this.lblstreet.Size = new System.Drawing.Size(58, 23);
             this.lblstreet.TabIndex = 22;
             this.lblstreet.Text = "Street:";
             // 
@@ -186,9 +199,10 @@
             // 
             this.lblssn.AutoSize = true;
             this.lblssn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblssn.Location = new System.Drawing.Point(14, 72);
+            this.lblssn.Location = new System.Drawing.Point(19, 89);
+            this.lblssn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblssn.Name = "lblssn";
-            this.lblssn.Size = new System.Drawing.Size(36, 19);
+            this.lblssn.Size = new System.Drawing.Size(45, 23);
             this.lblssn.TabIndex = 21;
             this.lblssn.Text = "SSN:";
             // 
@@ -196,9 +210,10 @@
             // 
             this.lbllname.AutoSize = true;
             this.lbllname.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllname.Location = new System.Drawing.Point(336, 41);
+            this.lbllname.Location = new System.Drawing.Point(448, 50);
+            this.lbllname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbllname.Name = "lbllname";
-            this.lbllname.Size = new System.Drawing.Size(77, 19);
+            this.lbllname.Size = new System.Drawing.Size(95, 23);
             this.lbllname.TabIndex = 20;
             this.lbllname.Text = "Last Name:";
             // 
@@ -206,28 +221,31 @@
             // 
             this.lblfname.AutoSize = true;
             this.lblfname.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfname.Location = new System.Drawing.Point(14, 45);
+            this.lblfname.Location = new System.Drawing.Point(19, 55);
+            this.lblfname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblfname.Name = "lblfname";
-            this.lblfname.Size = new System.Drawing.Size(78, 19);
+            this.lblfname.Size = new System.Drawing.Size(96, 23);
             this.lblfname.TabIndex = 19;
             this.lblfname.Text = "First Name:";
             // 
             // txtState
             // 
             this.txtState.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtState.Location = new System.Drawing.Point(104, 170);
+            this.txtState.Location = new System.Drawing.Point(139, 209);
+            this.txtState.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtState.Name = "txtState";
             this.txtState.ReadOnly = true;
-            this.txtState.Size = new System.Drawing.Size(139, 26);
+            this.txtState.Size = new System.Drawing.Size(184, 30);
             this.txtState.TabIndex = 16;
             // 
             // lblAppointment
             // 
             this.lblAppointment.AutoSize = true;
             this.lblAppointment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointment.Location = new System.Drawing.Point(14, 210);
+            this.lblAppointment.Location = new System.Drawing.Point(19, 258);
+            this.lblAppointment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAppointment.Name = "lblAppointment";
-            this.lblAppointment.Size = new System.Drawing.Size(99, 19);
+            this.lblAppointment.Size = new System.Drawing.Size(122, 23);
             this.lblAppointment.TabIndex = 36;
             this.lblAppointment.Text = "Appointments:";
             // 
@@ -235,18 +253,20 @@
             // 
             this.cboAppointments.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAppointments.FormattingEnabled = true;
-            this.cboAppointments.Location = new System.Drawing.Point(104, 204);
+            this.cboAppointments.Location = new System.Drawing.Point(139, 251);
+            this.cboAppointments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboAppointments.Name = "cboAppointments";
-            this.cboAppointments.Size = new System.Drawing.Size(284, 27);
+            this.cboAppointments.Size = new System.Drawing.Size(377, 31);
             this.cboAppointments.TabIndex = 18;
             // 
             // lblVisits
             // 
             this.lblVisits.AutoSize = true;
             this.lblVisits.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisits.Location = new System.Drawing.Point(14, 240);
+            this.lblVisits.Location = new System.Drawing.Point(19, 295);
+            this.lblVisits.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVisits.Name = "lblVisits";
-            this.lblVisits.Size = new System.Drawing.Size(44, 19);
+            this.lblVisits.Size = new System.Drawing.Size(53, 23);
             this.lblVisits.TabIndex = 38;
             this.lblVisits.Text = "Visits:";
             // 
@@ -254,17 +274,19 @@
             // 
             this.cboVisits.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboVisits.FormattingEnabled = true;
-            this.cboVisits.Location = new System.Drawing.Point(104, 240);
+            this.cboVisits.Location = new System.Drawing.Point(139, 295);
+            this.cboVisits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboVisits.Name = "cboVisits";
-            this.cboVisits.Size = new System.Drawing.Size(284, 27);
+            this.cboVisits.Size = new System.Drawing.Size(377, 31);
             this.cboVisits.TabIndex = 19;
             // 
             // btnAppointments
             // 
             this.btnAppointments.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppointments.Location = new System.Drawing.Point(420, 204);
+            this.btnAppointments.Location = new System.Drawing.Point(560, 251);
+            this.btnAppointments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAppointments.Name = "btnAppointments";
-            this.btnAppointments.Size = new System.Drawing.Size(172, 29);
+            this.btnAppointments.Size = new System.Drawing.Size(229, 36);
             this.btnAppointments.TabIndex = 23;
             this.btnAppointments.Text = "Get Appointment";
             this.btnAppointments.UseVisualStyleBackColor = true;
@@ -273,9 +295,10 @@
             // btnVisits
             // 
             this.btnVisits.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisits.Location = new System.Drawing.Point(420, 240);
+            this.btnVisits.Location = new System.Drawing.Point(560, 295);
+            this.btnVisits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVisits.Name = "btnVisits";
-            this.btnVisits.Size = new System.Drawing.Size(172, 28);
+            this.btnVisits.Size = new System.Drawing.Size(229, 34);
             this.btnVisits.TabIndex = 24;
             this.btnVisits.Text = "Get Visit";
             this.btnVisits.UseVisualStyleBackColor = true;
@@ -285,9 +308,10 @@
             // 
             this.lblTests.AutoSize = true;
             this.lblTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTests.Location = new System.Drawing.Point(12, 270);
+            this.lblTests.Location = new System.Drawing.Point(16, 332);
+            this.lblTests.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTests.Name = "lblTests";
-            this.lblTests.Size = new System.Drawing.Size(42, 19);
+            this.lblTests.Size = new System.Drawing.Size(50, 23);
             this.lblTests.TabIndex = 42;
             this.lblTests.Text = "Tests:";
             // 
@@ -295,17 +319,19 @@
             // 
             this.cboTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTests.FormattingEnabled = true;
-            this.cboTests.Location = new System.Drawing.Point(104, 271);
+            this.cboTests.Location = new System.Drawing.Point(139, 334);
+            this.cboTests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTests.Name = "cboTests";
-            this.cboTests.Size = new System.Drawing.Size(284, 27);
+            this.cboTests.Size = new System.Drawing.Size(377, 31);
             this.cboTests.TabIndex = 20;
             // 
             // btnTests
             // 
             this.btnTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTests.Location = new System.Drawing.Point(420, 274);
+            this.btnTests.Location = new System.Drawing.Point(560, 337);
+            this.btnTests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTests.Name = "btnTests";
-            this.btnTests.Size = new System.Drawing.Size(172, 30);
+            this.btnTests.Size = new System.Drawing.Size(229, 37);
             this.btnTests.TabIndex = 25;
             this.btnTests.Text = "Get/Add Test Result";
             this.btnTests.UseVisualStyleBackColor = true;
@@ -314,9 +340,10 @@
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(104, 313);
+            this.btnModify.Location = new System.Drawing.Point(139, 385);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(97, 25);
+            this.btnModify.Size = new System.Drawing.Size(129, 41);
             this.btnModify.TabIndex = 22;
             this.btnModify.Text = "Modify Info";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -325,9 +352,10 @@
             // btnFinished
             // 
             this.btnFinished.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinished.Location = new System.Drawing.Point(206, 313);
+            this.btnFinished.Location = new System.Drawing.Point(275, 385);
+            this.btnFinished.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFinished.Name = "btnFinished";
-            this.btnFinished.Size = new System.Drawing.Size(59, 25);
+            this.btnFinished.Size = new System.Drawing.Size(79, 41);
             this.btnFinished.TabIndex = 21;
             this.btnFinished.Text = "Close";
             this.btnFinished.UseVisualStyleBackColor = true;
@@ -336,9 +364,10 @@
             // btnCrtAppointment
             // 
             this.btnCrtAppointment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrtAppointment.Location = new System.Drawing.Point(420, 309);
+            this.btnCrtAppointment.Location = new System.Drawing.Point(560, 380);
+            this.btnCrtAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCrtAppointment.Name = "btnCrtAppointment";
-            this.btnCrtAppointment.Size = new System.Drawing.Size(172, 29);
+            this.btnCrtAppointment.Size = new System.Drawing.Size(229, 36);
             this.btnCrtAppointment.TabIndex = 43;
             this.btnCrtAppointment.Text = "Create Appointment";
             this.btnCrtAppointment.UseVisualStyleBackColor = true;
@@ -346,9 +375,9 @@
             // 
             // PatientInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 385);
+            this.ClientSize = new System.Drawing.Size(864, 474);
             this.Controls.Add(this.btnCrtAppointment);
             this.Controls.Add(this.btnFinished);
             this.Controls.Add(this.btnModify);
@@ -378,6 +407,7 @@
             this.Controls.Add(this.lblssn);
             this.Controls.Add(this.lbllname);
             this.Controls.Add(this.lblfname);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PatientInfo";
             this.Text = "Patient Information";
             this.Load += new System.EventHandler(this.PatientInfo_Load);

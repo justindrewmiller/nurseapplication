@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UWG_Healthcare.Controller;
+using UWG_Healthcare.View;
 
 namespace UWG_Healthcare
 {
@@ -67,8 +68,6 @@ namespace UWG_Healthcare
                 {
                     Person newPerson = new Person();
                     newPerson.PersonID = person.PersonID;
-
-
                     this.PutPersonData(newPerson);
                     try
                     {
@@ -82,6 +81,9 @@ namespace UWG_Healthcare
                         {
                             person = newPerson;
                             MessageBox.Show("Patient was modified.", "Successful Modification");
+                            PatientInfo newInfo = new PatientInfo(this.userID, person.PersonID.ToString());
+                            newInfo.MdiParent = this.MdiParent;
+                            newInfo.Show();
                             this.Close();
                         }
                     }
@@ -142,6 +144,8 @@ namespace UWG_Healthcare
         // Displays the person information.
         private void DisplayPerson()
         {
+            txtPersonID.Text = person.PersonID.ToString();
+            txtPersonID.Enabled = false; 
             txtFName.Text = person.FName;
             txtLName.Text = person.LName;
             txtSSN.Text = person.SSN;
