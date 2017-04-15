@@ -89,9 +89,9 @@ Insert into TestResults (TestCode, TestDate, Result, ApptID) VALUES (2, '2016-11
 Insert into TestResults (TestCode, TestDate, Result, ApptID) VALUES (3, '2016-11-24', 'normal',7); 
 Insert into TestResults (TestCode, TestDate, Result, ApptID) VALUES (2, '2016-11-14', 'abnormal', 8);
 
-INSERT [UserInfo] ([Username], [Password], [AdminID], [DoctorID], [NurseID]) VALUES (N'clark1', N'25451882202207340139129165241162167124187831522256', 1, NULL, NULL);
-INSERT [UserInfo] ([Username], [Password], [AdminID], [DoctorID], [NurseID]) VALUES (N'smith1', N'1731204620517211915198235154982287914413563185127178107', NULL, 1, NULL);
-INSERT [UserInfo] ([Username], [Password], [AdminID], [DoctorID], [NurseID]) VALUES (N'superman1', N'18422431324844178791861761647315123232191461337187', NULL, NULL, 1);
+INSERT [UserInfo] ([Username], [Password], [AdminID], [DoctorID], [NurseID]) VALUES ('clark1', '25451882202207340139129165241162167124187831522256', 1, NULL, NULL);
+INSERT [UserInfo] ([Username], [Password], [AdminID], [DoctorID], [NurseID]) VALUES ('smith1', '1731204620517211915198235154982287914413563185127178107', NULL, 1, NULL);
+INSERT [UserInfo] ([Username], [Password], [AdminID], [DoctorID], [NurseID]) VALUES ('superman1', '18422431324844178791861761647315123232191461337187', NULL, NULL, 1);
 
 
 

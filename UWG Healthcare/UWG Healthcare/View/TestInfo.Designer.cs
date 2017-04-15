@@ -45,7 +45,7 @@
             // 
             this.btnFinished.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinished.Location = new System.Drawing.Point(282, 256);
-            this.btnFinished.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFinished.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinished.Name = "btnFinished";
             this.btnFinished.Size = new System.Drawing.Size(70, 35);
             this.btnFinished.TabIndex = 0;
@@ -65,9 +65,10 @@
             // 
             // txtPatientName
             // 
+            this.txtPatientName.Enabled = false;
             this.txtPatientName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatientName.Location = new System.Drawing.Point(138, 69);
-            this.txtPatientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPatientName.Margin = new System.Windows.Forms.Padding(4);
             this.txtPatientName.Name = "txtPatientName";
             this.txtPatientName.Size = new System.Drawing.Size(214, 30);
             this.txtPatientName.TabIndex = 3;
@@ -96,9 +97,10 @@
             // 
             // txtTestName
             // 
+            this.txtTestName.Enabled = false;
             this.txtTestName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTestName.Location = new System.Drawing.Point(138, 114);
-            this.txtTestName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTestName.Margin = new System.Windows.Forms.Padding(4);
             this.txtTestName.Name = "txtTestName";
             this.txtTestName.Size = new System.Drawing.Size(214, 30);
             this.txtTestName.TabIndex = 6;
@@ -107,7 +109,7 @@
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(138, 256);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(136, 35);
             this.btnUpdate.TabIndex = 7;
@@ -127,9 +129,10 @@
             // 
             // txtDate
             // 
+            this.txtDate.Enabled = false;
             this.txtDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.Location = new System.Drawing.Point(138, 161);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(214, 30);
             this.txtDate.TabIndex = 9;
@@ -149,12 +152,12 @@
             // 
             this.txtResults.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResults.Location = new System.Drawing.Point(138, 207);
-            this.txtResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtResults.Margin = new System.Windows.Forms.Padding(4);
             this.txtResults.Name = "txtResults";
             this.txtResults.Size = new System.Drawing.Size(214, 30);
             this.txtResults.TabIndex = 11;
             // 
-            // Test
+            // TestInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,8 +173,8 @@
             this.Controls.Add(this.txtPatientName);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnFinished);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Test";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "TestInfo";
             this.Text = "Test";
             this.Load += new System.EventHandler(this.Test_Load);
             this.ResumeLayout(false);

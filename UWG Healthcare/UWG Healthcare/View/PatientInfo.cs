@@ -29,24 +29,41 @@ namespace UWG_Healthcare.View
 
         private void btnTests_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    if (cboTests.ValueMember == "")
+            //    {
+            //        MessageBox.Show("No test to select.", "No test selected");
+            //    }
+            //    else
+            //    {
+            //        TestInfo testInfo = new TestInfo(this.info, this.patient);
+            //        testInfo.MdiParent = this.MdiParent;
+            //        testInfo.Show();
+            //        this.Close();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
+
             try
             {
-                if (cboTests.ValueMember == "")
+                string txtResult = lstTests.FocusedItem.SubItems[4].Text;
+                if (txtResult != "" )
                 {
-                    MessageBox.Show("No test to select.", "No test selected");
-                }
-                else
+                    MessageBox.Show("Results have already been recorded for this test!"); 
+                } else
                 {
-                    TestInfo testInfo = new TestInfo(this.info, this.patient);
-                    testInfo.MdiParent = this.MdiParent;
-                    testInfo.Show();
-                    this.Close();
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
         private void PatientInfo_Load(object sender, EventArgs e)
@@ -72,6 +89,9 @@ namespace UWG_Healthcare.View
                 MessageBox.Show("Invalid patient id. " +
                    "Please try searching for the patient again.", "Patient Not Found");
             }
+
+
+
         }
 
         private void loadComboAppointments()
@@ -91,32 +111,54 @@ namespace UWG_Healthcare.View
 
         private void loadComboTests()
         {
+
+            //load the test information 
+            List<Test> testList;
             try
             {
-                List<Test> tests = InformationController.GetPatientTests(this.patientID);
-                cboTests.DataSource = tests;
-                cboTests.DisplayMember = "TestName";
-                cboTests.ValueMember = "TestName";
+                testList = InformationController.GetPatientTests(this.patientID);
+
+                if (testList.Count > 0)
+                {
+                    Test test;
+                    for (int i = 0; i < testList.Count; i++)
+                    {
+                        test = testList[i];
+                        lstTests.Items.Add(test.TestCode.ToString());
+                        lstTests.Items[i].SubItems.Add(test.TestName);
+                        lstTests.Items[i].SubItems.Add(test.TestDate);
+                        lstTests.Items[i].SubItems.Add(test.ApptID);
+                        lstTests.Items[i].SubItems.Add(test.Result);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There are no test results");
+                    this.BeginInvoke(new MethodInvoker(Close));
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                this.BeginInvoke(new MethodInvoker(Close));
             }
+
+            lstTests.FullRowSelect = true;
         }
 
         private void loadComboVisits()
         {
-            try
-            {
-                List<Visit> visits = InformationController.GetPatientVisits(this.patientID);
-                cboVisits.DataSource = visits;
-                cboVisits.DisplayMember = "Symptoms";
-                cboVisits.ValueMember = "VisitID";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            //try
+            //{
+            //    List<Visit> visits = InformationController.GetPatientVisits(this.patientID);
+            //    cboVisits.DataSource = visits;
+            //    cboVisits.DisplayMember = "Symptoms";
+            //    cboVisits.ValueMember = "VisitID";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -163,24 +205,24 @@ namespace UWG_Healthcare.View
 
         private void btnVisits_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (cboVisits.ValueMember == "")
-                {
-                    MessageBox.Show("No applicable visit.", "No visit selected");
-                }
-                else
-                {
-                    VisitInfo visitInfo = new VisitInfo(this.info, cboVisits.ValueMember);
-                    visitInfo.MdiParent = this.MdiParent;
-                    visitInfo.Show();
-                    this.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            //try
+            //{
+            //    if (cboVisits.ValueMember == "")
+            //    {
+            //        MessageBox.Show("No applicable visit.", "No visit selected");
+            //    }
+            //    else
+            //    {
+            //        VisitInfo visitInfo = new VisitInfo(this.info, cboVisits.ValueMember);
+            //        visitInfo.MdiParent = this.MdiParent;
+            //        visitInfo.Show();
+            //        this.Close();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
         }
 
         private void btnCrtAppointment_Click(object sender, EventArgs e)
