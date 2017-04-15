@@ -205,24 +205,29 @@ namespace UWG_Healthcare.View
 
         private void btnVisits_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (cboVisits.ValueMember == "")
-            //    {
-            //        MessageBox.Show("No applicable visit.", "No visit selected");
-            //    }
-            //    else
-            //    {
-            //        VisitInfo visitInfo = new VisitInfo(this.info, cboVisits.ValueMember);
-            //        visitInfo.MdiParent = this.MdiParent;
-            //        visitInfo.Show();
-            //        this.Close();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
+            try
+            {
+                DateTime apptDate = Convert.ToDateTime(cboAppointments.Text); 
+                if (cboAppointments.ValueMember == "")
+                {
+                    MessageBox.Show("No applicable appointment.", "No appointment selected");
+                }
+                else if (apptDate.Date < DateTime.Now.Date)
+                {
+                    MessageBox.Show("This date is in the past, you may not check in!");
+                }
+                else
+                {
+                    VisitInfo visitInfo = new VisitInfo(this.info, cboAppointments.ValueMember);
+                    visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnCrtAppointment_Click(object sender, EventArgs e)
