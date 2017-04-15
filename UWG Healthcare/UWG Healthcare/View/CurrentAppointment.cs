@@ -15,9 +15,9 @@ namespace UWG_Healthcare.View
     {
 
         public UserInfo userID;
-        public string apptID;
+        public int apptID;
 
-        public CurrentAppointment(UserInfo info, string apptID)
+        public CurrentAppointment(UserInfo info, int apptID)
         {
             InitializeComponent();
             userID = info;

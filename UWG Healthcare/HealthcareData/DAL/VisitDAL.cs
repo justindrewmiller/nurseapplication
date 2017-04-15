@@ -50,7 +50,7 @@ namespace HealthcareData.DAL
             }
         }
 
-        public static Visit GetVisit(string visitID)
+        public static Visit GetVisit(int visitID)
         {
             Visit visit = new Visit();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();

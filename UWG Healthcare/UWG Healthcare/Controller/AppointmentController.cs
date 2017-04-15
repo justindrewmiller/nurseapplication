@@ -16,5 +16,10 @@ namespace UWG_Healthcare.Controller
         {
             return AppointmentDAL.CreateAppointment(appointment);
         }
+
+        public Appointment GetAppointment(int apptID)
+        {
+            return AppointmentDAL.GetAppointment(apptID); 
+        }
     }
 }

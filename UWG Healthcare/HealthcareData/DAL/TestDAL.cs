@@ -10,7 +10,7 @@ namespace HealthcareData.DAL
 {
     public class TestDAL
     {
-        public static Test GetTest(String ApptID)
+        public static Test GetTest(int ApptID)
         {
             Test test = new Test();
 

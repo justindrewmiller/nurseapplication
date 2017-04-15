@@ -31,17 +31,17 @@ namespace UWG_Healthcare.Controller
             return InformationDAL.GetPatientTests(patientID);
         }
 
-        public static Appointment GetAppointment(string apptID)
+        public static Appointment GetAppointment(int apptID)
         {
             return AppointmentDAL.GetAppointment(apptID);
         }
 
-        public static Test GetTest(string apptID)
+        public static Test GetTest(int apptID)
         {
             return TestDAL.GetTest(apptID);
         }
 
-        public static Visit GetVisit(string apptID)
+        public static Visit GetVisit(int apptID)
         {
             return VisitDAL.GetVisit(apptID);
         }

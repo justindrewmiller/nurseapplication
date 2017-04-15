@@ -53,7 +53,7 @@ namespace HealthcareData.DAL
             return appointmentList;
         }
 
-        public static Appointment GetAppointment(String apptID)
+        public static Appointment GetAppointment(int apptID)
         {
             Appointment appointment = new Appointment();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();

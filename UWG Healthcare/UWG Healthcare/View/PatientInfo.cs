@@ -51,9 +51,7 @@ namespace UWG_Healthcare.View
                 {
                     MessageBox.Show("Please select a test!");
                 } else
-            {
-
-          
+            {    
             try
             {
                 string txtResult = lstTests.FocusedItem.SubItems[4].Text;
@@ -118,6 +116,7 @@ namespace UWG_Healthcare.View
                 cboAppointments.DataSource = appointments;
                 cboAppointments.DisplayMember = "apptDateTime";
                 cboAppointments.ValueMember = "ApptID";
+                cboAppointments.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -164,17 +163,17 @@ namespace UWG_Healthcare.View
 
         private void loadComboVisits()
         {
-            //try
-            //{
-            //    List<Visit> visits = InformationController.GetPatientVisits(this.patientID);
-            //    cboVisits.DataSource = visits;
-            //    cboVisits.DisplayMember = "Symptoms";
-            //    cboVisits.ValueMember = "VisitID";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
+            try
+            {
+                List<Visit> visits = InformationController.GetPatientVisits(this.patientID);
+                cboVisits.DataSource = visits;
+                cboVisits.DisplayMember = "Symptoms";
+                cboVisits.ValueMember = "VisitID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -205,13 +204,13 @@ namespace UWG_Healthcare.View
                 if (cboAppointments.ValueMember == "")
                 {
                     MessageBox.Show("No applicable appointment.", "No appointment selected");
-                } else if (apptDate.Date < DateTime.Now.Date)
-                    {
-                        MessageBox.Show("This date is in the past, you may not update it!");
+                } else if (apptDate.Date < DateTime.Now.Date ){
+                    MessageBox.Show("You may not change a date in the past!");
                 }
                 else
                 {
-                    CurrentAppointment currentApt = new CurrentAppointment(this.info, cboAppointments.ValueMember);
+                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                    CurrentAppointment currentApt = new CurrentAppointment(this.info, apptID);
                     currentApt.MdiParent = this.MdiParent;
                     currentApt.Show();
                     this.Close();
@@ -238,7 +237,8 @@ namespace UWG_Healthcare.View
                 }
                 else
                 {
-                    VisitInfo visitInfo = new VisitInfo(this.info, cboAppointments.ValueMember);
+                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                    VisitInfo visitInfo = new VisitInfo(this.info, apptID);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.Show();
                     this.Close();
@@ -265,5 +265,6 @@ namespace UWG_Healthcare.View
             }
 
         }
+
     }
 }
