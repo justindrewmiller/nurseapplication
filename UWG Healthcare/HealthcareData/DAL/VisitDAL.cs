@@ -17,7 +17,7 @@ namespace HealthcareData.DAL
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string insertStatement =
-                "INSERT Visits " +
+                "INSERT INTO Visits " +
                   "(ApptID, SysBP, DiaBP, BodyTemp, Pulse, Symptoms, NurseID, DiagnosesCode) " +
                 "VALUES (@ApptID, @SysBP, @DiaBP, @BodyTemp, @Pulse, @Symptoms, @NurseID, @DiagnosesCode)";
             SqlCommand insertCommand = new SqlCommand(insertStatement, connection);

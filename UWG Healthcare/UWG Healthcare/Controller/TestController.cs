@@ -16,5 +16,10 @@ namespace UWG_Healthcare.Controller
             return TestDAL.GetTests();
         }
 
+        public void OrderTest(int apptID, DateTime testDate, int testCode)
+        {
+            TestDAL.OrderTest(apptID, testDate, testCode); 
+        }
+
     }
 }

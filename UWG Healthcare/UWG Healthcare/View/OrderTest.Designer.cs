@@ -77,6 +77,7 @@
             this.btnOrder.TabIndex = 31;
             this.btnOrder.Text = "Order Test";
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // label2
             // 

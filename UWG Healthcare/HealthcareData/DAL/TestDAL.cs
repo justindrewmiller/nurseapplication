@@ -13,7 +13,6 @@ namespace HealthcareData.DAL
         public static Test GetTest(int ApptID)
         {
             Test test = new Test();
-
             return test;
         }
 
@@ -48,6 +47,32 @@ namespace HealthcareData.DAL
                 connection.Close();
             }
             return testList;
+        }
+
+        public static void OrderTest(int apptID, DateTime testDate, int testCode)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string insertStatement =
+                "INSERT INTO TestResults " +
+                  "(TestCode, ApptID, TestDate) " +
+                "VALUES (@TestCode, @ApptID, @TestDate)";
+            SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
+            insertCommand.Parameters.AddWithValue("@TestCode", testCode);
+            insertCommand.Parameters.AddWithValue("@ApptID", apptID);
+            insertCommand.Parameters.AddWithValue("@TestDate", testDate);
+            try
+            {
+                connection.Open();
+                insertCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }

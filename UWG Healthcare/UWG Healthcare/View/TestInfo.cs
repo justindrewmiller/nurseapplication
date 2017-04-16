@@ -33,5 +33,10 @@ namespace UWG_Healthcare.View
             txtDate.Text = test.TestDate;
             txtTestName.Text = test.TestName; 
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

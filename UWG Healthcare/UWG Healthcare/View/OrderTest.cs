@@ -25,6 +25,7 @@ namespace UWG_Healthcare.View
             testController = new TestController();
             userID = info;
             lblUserName.Text = userID.userID;
+            this.appt = appt;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,6 +44,20 @@ namespace UWG_Healthcare.View
             }
 
             cmbAppt.Text = this.appt.apptDateTime; 
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                testController.OrderTest(appt.ApptID, dateTimePicker1.Value, int.Parse(cmbTests.SelectedValue.ToString())); 
+                MessageBox.Show("The test was successfully ordered.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }
