@@ -27,6 +27,7 @@ namespace UWG_Healthcare.View
             this.patientID = patientID;
         }
 
+        //this method adds results for a test
         private void btnTests_Click(object sender, EventArgs e)
         {
             //try
@@ -238,7 +239,7 @@ namespace UWG_Healthcare.View
                 else
                 {
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
-                    VisitInfo visitInfo = new VisitInfo(this.info, apptID);
+                    VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.Show();
                     this.Close();

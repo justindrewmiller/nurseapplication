@@ -24,9 +24,10 @@ namespace UWG_Healthcare.View
         private VisitsController visitsController;
         private AppointmentController apptController; 
         public Appointment appt;
-        public int apptID; 
+        public int apptID;
+        public string patientID; 
 
-        public VisitInfo(UserInfo info, int apptID)
+        public VisitInfo(UserInfo info, int apptID, string patientID)
         {
             InitializeComponent();
             visitsController = new VisitsController();
@@ -34,7 +35,8 @@ namespace UWG_Healthcare.View
             this.info = info;
             //this.visitID = visitID;
             lblUserName.Text = info.userID;
-            this.apptID = apptID; 
+            this.apptID = apptID;
+            this.patientID = patientID; 
             
         }
 
@@ -57,7 +59,8 @@ namespace UWG_Healthcare.View
             //    MessageBox.Show(ex.ToString());
             //}
 
-            txtAppointment.Text = appt.apptDateTime; 
+            txtAppointment.Text = appt.apptDateTime;
+            this.loadComboTests(); 
         }
 
         // Stores the information from textboxes and combo boxes into variables.
@@ -132,6 +135,42 @@ namespace UWG_Healthcare.View
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadComboTests()
+        {
+            //load the test information 
+            List<Test> testList;
+            try
+            {
+                testList = InformationController.GetPatientTests(this.patientID);
+
+                if (testList.Count > 0)
+                {
+                    Test test;
+                    for (int i = 0; i < testList.Count; i++)
+                    {
+                        test = testList[i];
+                        lstTests.Items.Add(test.TestCode.ToString());
+                        lstTests.Items[i].SubItems.Add(test.TestName);
+                        lstTests.Items[i].SubItems.Add(test.TestDate);
+                        lstTests.Items[i].SubItems.Add(test.ApptID);
+                        lstTests.Items[i].SubItems.Add(test.Result);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There are no test results");
+                    this.BeginInvoke(new MethodInvoker(Close));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                this.BeginInvoke(new MethodInvoker(Close));
+            }
+
+            lstTests.FullRowSelect = true;
         }
     }
 }
