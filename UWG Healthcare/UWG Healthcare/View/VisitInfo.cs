@@ -140,7 +140,7 @@ namespace UWG_Healthcare.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OrderTest orderTests = new OrderTest(info, this.appt);
+            OrderTest orderTests = new OrderTest(info, this.appt, this);
             orderTests.MdiParent = this.MdiParent;
             orderTests.Show();
         }
@@ -201,6 +201,11 @@ namespace UWG_Healthcare.View
             }
         }
 
+        public void PerformRefresh()
+        {
+            lstTests.Items.Clear();
+            this.loadComboTests();
+        }
 
     }
 }

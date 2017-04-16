@@ -42,7 +42,7 @@
             // 
             this.cmbTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTests.FormattingEnabled = true;
-            this.cmbTests.Location = new System.Drawing.Point(94, 140);
+            this.cmbTests.Location = new System.Drawing.Point(107, 140);
             this.cmbTests.Name = "cmbTests";
             this.cmbTests.Size = new System.Drawing.Size(258, 31);
             this.cmbTests.TabIndex = 0;
@@ -71,7 +71,7 @@
             // btnOrder
             // 
             this.btnOrder.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.Location = new System.Drawing.Point(245, 177);
+            this.btnOrder.Location = new System.Drawing.Point(258, 177);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(107, 37);
             this.btnOrder.TabIndex = 31;
@@ -94,7 +94,7 @@
             this.cmbAppt.Enabled = false;
             this.cmbAppt.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAppt.FormattingEnabled = true;
-            this.cmbAppt.Location = new System.Drawing.Point(94, 67);
+            this.cmbAppt.Location = new System.Drawing.Point(107, 67);
             this.cmbAppt.Name = "cmbAppt";
             this.cmbAppt.Size = new System.Drawing.Size(258, 31);
             this.cmbAppt.TabIndex = 33;
@@ -103,7 +103,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 104);
+            this.dateTimePicker1.Location = new System.Drawing.Point(107, 104);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(258, 30);
             this.dateTimePicker1.TabIndex = 34;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 234);
+            this.ClientSize = new System.Drawing.Size(393, 234);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.cmbAppt);
@@ -133,6 +133,7 @@
             this.Controls.Add(this.cmbTests);
             this.Name = "OrderTest";
             this.Text = "Order Test";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderTest_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

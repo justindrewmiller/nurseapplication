@@ -17,15 +17,24 @@ namespace UWG_Healthcare.View
     {
         private TestController testController;
         public UserInfo userID;
-        public Appointment appt; 
+        public Appointment appt;
+        VisitInfo _owner;
 
-        public OrderTest(UserInfo info, Appointment appt)
+        public OrderTest(UserInfo info, Appointment appt, VisitInfo owner)
         {
             InitializeComponent();
             testController = new TestController();
             userID = info;
             lblUserName.Text = userID.userID;
             this.appt = appt;
+
+            _owner = owner;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderTest_FormClosing);
+        }
+
+        private void OrderTest_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _owner.PerformRefresh();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,7 +52,8 @@ namespace UWG_Healthcare.View
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
 
-            cmbAppt.Text = this.appt.apptDateTime; 
+            cmbAppt.Text = this.appt.apptDateTime;
+            dateTimePicker1.MinDate = DateTime.Today;
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -53,11 +63,14 @@ namespace UWG_Healthcare.View
                 testController.OrderTest(appt.ApptID, dateTimePicker1.Value, int.Parse(cmbTests.SelectedValue.ToString())); 
                 MessageBox.Show("The test was successfully ordered.");
                 this.Close();
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+
     }
 }
