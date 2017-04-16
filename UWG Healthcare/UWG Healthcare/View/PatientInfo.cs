@@ -111,17 +111,27 @@ namespace UWG_Healthcare.View
 
         private void loadComboAppointments()
         {
+            List<Appointment> appointments;
             try
             {
-                List<Appointment> appointments = InformationController.GetPatientAppointments(this.patientID);
-                cboAppointments.DataSource = appointments;
-                cboAppointments.DisplayMember = "apptDateTime";
-                cboAppointments.ValueMember = "ApptID";
-                cboAppointments.SelectedIndex = 0;
+                appointments = InformationController.GetPatientAppointments(this.patientID);
+                if (appointments.Count > 0)
+                {
+                    cboAppointments.DataSource = appointments;
+                    cboAppointments.DisplayMember = "apptDateTime";
+                    cboAppointments.ValueMember = "ApptID";
+                    cboAppointments.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("There are no appointments");
+                    this.BeginInvoke(new MethodInvoker(Close));
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                this.BeginInvoke(new MethodInvoker(Close));
             }
         }
 
@@ -145,11 +155,6 @@ namespace UWG_Healthcare.View
                         lstTests.Items[i].SubItems.Add(test.ApptID);
                         lstTests.Items[i].SubItems.Add(test.Result);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("There are no test results");
-                    this.BeginInvoke(new MethodInvoker(Close));
                 }
             }
             catch (Exception ex)
@@ -179,11 +184,6 @@ namespace UWG_Healthcare.View
                         lstVisits.Items[i].SubItems.Add(visit.Symptoms);
                         lstVisits.Items[i].SubItems.Add(visit.DiagnosesName);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("There are no visit results");
-                    this.BeginInvoke(new MethodInvoker(Close));
                 }
             }
             catch (Exception ex)
