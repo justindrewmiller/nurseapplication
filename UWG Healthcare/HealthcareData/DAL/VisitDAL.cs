@@ -75,7 +75,7 @@ namespace HealthcareData.DAL
                     visit.Pulse = reader["Pulse"].ToString();
                     visit.Symptoms = reader["Symptoms"].ToString();
                     visit.NurseID = reader["NurseID"].ToString();
-                    visit.DiagnosesCode = reader["DiagnosesCode"].ToString();
+                    visit.DiagnosesCode = (int)reader["DiagnosesCode"];
                 }
                 else
                 {

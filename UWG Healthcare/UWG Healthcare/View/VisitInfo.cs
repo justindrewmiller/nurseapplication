@@ -45,6 +45,7 @@ namespace UWG_Healthcare.View
 
         private void VisitInfo_Load(object sender, EventArgs e)
         {
+
             appt = AppointmentController.GetAppointment(this.apptID);
             txtAppointment.Text = appt.apptDateTime; 
             this.loadComboTests();
@@ -80,13 +81,14 @@ namespace UWG_Healthcare.View
         // Stores the information from textboxes and combo boxes into variables.
         private void PutVisitData(Visit visit)
         {
+            visit.ApptID = this.apptID.ToString();
             visit.SysBP = txtSys.Text;
             visit.DiaBP = txtDia.Text;
             visit.BodyTemp = txtTemp.Text;
             visit.Pulse = txtPulse.Text;
             visit.Symptoms = txtSymptoms.Text;
             visit.NurseID = this.info.NurseID.ToString();
-            visit.DiagnosesCode = cboDiagnoses.Text;
+            visit.DiagnosesCode = (int)cboDiagnoses.SelectedValue;
         }
 
         private bool isValidData()

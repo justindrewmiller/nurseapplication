@@ -280,5 +280,10 @@ namespace UWG_Healthcare.View
 
         }
 
+        private void btnUpdateDiagnosis_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }
