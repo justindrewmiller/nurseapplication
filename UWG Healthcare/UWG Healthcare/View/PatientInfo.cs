@@ -122,11 +122,6 @@ namespace UWG_Healthcare.View
                     cboAppointments.ValueMember = "ApptID";
                     cboAppointments.SelectedIndex = 0;
                 }
-                else
-                {
-                    MessageBox.Show("There are no appointments");
-                    this.BeginInvoke(new MethodInvoker(Close));
-                }
             }
             catch (Exception ex)
             {
