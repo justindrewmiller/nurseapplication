@@ -34,13 +34,15 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbAppt = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbTests
             // 
             this.cmbTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTests.FormattingEnabled = true;
-            this.cmbTests.Location = new System.Drawing.Point(94, 115);
+            this.cmbTests.Location = new System.Drawing.Point(94, 140);
             this.cmbTests.Name = "cmbTests";
             this.cmbTests.Size = new System.Drawing.Size(258, 31);
             this.cmbTests.TabIndex = 0;
@@ -49,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 115);
+            this.label1.Location = new System.Drawing.Point(45, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 23);
             this.label1.TabIndex = 1;
@@ -58,18 +60,18 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(13, 9);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(181, 23);
+            this.lblUserName.Size = new System.Drawing.Size(188, 23);
             this.lblUserName.TabIndex = 30;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
             // btnOrder
             // 
             this.btnOrder.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrder.Location = new System.Drawing.Point(245, 161);
+            this.btnOrder.Location = new System.Drawing.Point(245, 177);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(107, 37);
             this.btnOrder.TabIndex = 31;
@@ -88,6 +90,7 @@
             // 
             // cmbAppt
             // 
+            this.cmbAppt.Enabled = false;
             this.cmbAppt.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAppt.FormattingEnabled = true;
             this.cmbAppt.Location = new System.Drawing.Point(94, 67);
@@ -95,11 +98,32 @@
             this.cmbAppt.Size = new System.Drawing.Size(258, 31);
             this.cmbAppt.TabIndex = 33;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(94, 104);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(258, 30);
+            this.dateTimePicker1.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 23);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Test Date:";
+            // 
             // OrderTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 210);
+            this.ClientSize = new System.Drawing.Size(366, 234);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.cmbAppt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnOrder);
@@ -122,5 +146,7 @@
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbAppt;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label3;
     }
 }

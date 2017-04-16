@@ -140,7 +140,7 @@ namespace UWG_Healthcare.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OrderTest orderTests = new OrderTest(info);
+            OrderTest orderTests = new OrderTest(info, this.appt);
             orderTests.MdiParent = this.MdiParent;
             orderTests.Show();
         }

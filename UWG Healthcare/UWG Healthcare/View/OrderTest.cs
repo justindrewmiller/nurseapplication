@@ -17,8 +17,9 @@ namespace UWG_Healthcare.View
     {
         private TestController testController;
         public UserInfo userID;
+        public Appointment appt; 
 
-        public OrderTest(UserInfo info)
+        public OrderTest(UserInfo info, Appointment appt)
         {
             InitializeComponent();
             testController = new TestController();
@@ -40,6 +41,8 @@ namespace UWG_Healthcare.View
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+
+            cmbAppt.Text = this.appt.apptDateTime; 
         }
     }
 }

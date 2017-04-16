@@ -79,7 +79,7 @@ namespace UWG_Healthcare.View
                     return;
                 }
                 this.currentApt.apptDateTime = dateTimePicker.Value.ToString();
-                this.currentApt.Reason = txtReason.ToString();
+                this.currentApt.Reason = txtReason.Text;
                 this.currentApt.DoctorID = (int)cboDoctor.SelectedValue;
                 try
                 {
