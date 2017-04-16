@@ -63,10 +63,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lstVisits = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // txtPhone
@@ -262,6 +262,7 @@
             // cboAppointments
             // 
             this.cboAppointments.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboAppointments.FormatString = "g";
             this.cboAppointments.FormattingEnabled = true;
             this.cboAppointments.Location = new System.Drawing.Point(157, 254);
             this.cboAppointments.Margin = new System.Windows.Forms.Padding(4);
@@ -429,6 +430,10 @@
             this.lstVisits.UseCompatibleStateImageBehavior = false;
             this.lstVisits.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "VisitID";
+            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "ApptDateTime";
@@ -443,11 +448,6 @@
             // 
             this.columnHeader8.Text = "Diagnoses";
             this.columnHeader8.Width = 153;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.DisplayIndex = 3;
-            this.columnHeader9.Text = "VisitID";
             // 
             // PatientInfo
             // 

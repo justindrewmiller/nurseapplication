@@ -40,6 +40,9 @@ namespace UWG_Healthcare.View
             dtpDateTime.MinDate = DateTime.Today;
             txtPatientName.Text = this.currentPatient.FullName;
 
+            dtpDateTime.Format = DateTimePickerFormat.Custom;
+            dtpDateTime.CustomFormat = "MM/dd/yyyy hh:mm";
+
         }
 
         // Loads the Doctor information into comboboxes

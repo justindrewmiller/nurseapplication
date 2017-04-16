@@ -47,6 +47,9 @@ namespace UWG_Healthcare.View
                 MessageBox.Show(ex.ToString());
             }
 
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm";
+
         }
 
         private void LoadComboBoxes()
