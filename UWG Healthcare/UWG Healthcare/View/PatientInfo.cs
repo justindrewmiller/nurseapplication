@@ -239,7 +239,7 @@ namespace UWG_Healthcare.View
                 else
                 {
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
-                    VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID);
+                    VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID, false);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.Show();
                     this.Close();

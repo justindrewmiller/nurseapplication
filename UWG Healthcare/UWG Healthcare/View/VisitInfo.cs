@@ -23,11 +23,12 @@ namespace UWG_Healthcare.View
         public Visit newVisit;
         private VisitsController visitsController;
         private AppointmentController apptController; 
-        public Appointment appt;
         public int apptID;
-        public string patientID; 
+        public string patientID;
+        public Appointment appt;
+        public bool flag; 
 
-        public VisitInfo(UserInfo info, int apptID, string patientID)
+        public VisitInfo(UserInfo info, int apptID, string patientID, bool flag)
         {
             InitializeComponent();
             visitsController = new VisitsController();
@@ -36,13 +37,25 @@ namespace UWG_Healthcare.View
             //this.visitID = visitID;
             lblUserName.Text = info.userID;
             this.apptID = apptID;
-            this.patientID = patientID; 
-            
+            this.patientID = patientID;
+            this.flag = flag;                    
         }
 
         private void VisitInfo_Load(object sender, EventArgs e)
         {
-            this.appt = AppointmentController.GetAppointment(apptID);
+            appt = AppointmentController.GetAppointment(this.apptID);
+            txtAppointment.Text = appt.apptDateTime; 
+            this.loadComboTests();
+
+            //hide the update button on whether or not they're checking in
+            if (flag == false)
+            {
+                btnUpdate.Visible = false; 
+            } else
+            {
+                btnUpdate.Visible = true;
+            }
+
             //try
             //{
             //    currentVisit = VisitDAL.GetVisit(this.visitID);
@@ -59,14 +72,11 @@ namespace UWG_Healthcare.View
             //    MessageBox.Show(ex.ToString());
             //}
 
-            txtAppointment.Text = appt.apptDateTime;
-            this.loadComboTests(); 
         }
 
         // Stores the information from textboxes and combo boxes into variables.
         private void PutVisitData(Visit visit)
         {
-            visit.ApptID = txtAppointment.Text;
             visit.SysBP = txtSys.Text;
             visit.DiaBP = txtDia.Text;
             visit.BodyTemp = txtTemp.Text;
@@ -172,5 +182,7 @@ namespace UWG_Healthcare.View
 
             lstTests.FullRowSelect = true;
         }
+
+
     }
 }

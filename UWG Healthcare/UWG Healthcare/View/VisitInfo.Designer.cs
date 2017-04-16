@@ -44,7 +44,6 @@
             this.lblDiagnosis = new System.Windows.Forms.Label();
             this.txtSymptoms = new System.Windows.Forms.RichTextBox();
             this.lblSymptoms = new System.Windows.Forms.Label();
-            this.txtAppointment = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtAppointment = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -230,17 +230,6 @@
             this.lblSymptoms.TabIndex = 19;
             this.lblSymptoms.Text = "Symptoms:";
             // 
-            // txtAppointment
-            // 
-            this.txtAppointment.Enabled = false;
-            this.txtAppointment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAppointment.Location = new System.Drawing.Point(209, 70);
-            this.txtAppointment.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAppointment.Name = "txtAppointment";
-            this.txtAppointment.Size = new System.Drawing.Size(516, 30);
-            this.txtAppointment.TabIndex = 10;
-            this.txtAppointment.Tag = "Appointment";
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,15 +304,24 @@
             this.columnHeader5.Text = "Result";
             this.columnHeader5.Width = 82;
             // 
+            // txtAppointment
+            // 
+            this.txtAppointment.Enabled = false;
+            this.txtAppointment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAppointment.Location = new System.Drawing.Point(209, 69);
+            this.txtAppointment.Name = "txtAppointment";
+            this.txtAppointment.Size = new System.Drawing.Size(516, 30);
+            this.txtAppointment.TabIndex = 46;
+            // 
             // VisitInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 540);
+            this.ClientSize = new System.Drawing.Size(869, 540);
+            this.Controls.Add(this.txtAppointment);
             this.Controls.Add(this.lstTests);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAppointment);
             this.Controls.Add(this.lblSymptoms);
             this.Controls.Add(this.txtSymptoms);
             this.Controls.Add(this.btnUpdate);
@@ -368,7 +366,6 @@
         private System.Windows.Forms.Label lblDiagnosis;
         private System.Windows.Forms.RichTextBox txtSymptoms;
         private System.Windows.Forms.Label lblSymptoms;
-        private System.Windows.Forms.TextBox txtAppointment;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
@@ -378,5 +375,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox txtAppointment;
     }
 }

@@ -56,7 +56,7 @@ namespace UWG_Healthcare.View
 
         private void btnVisit_Click(object sender, EventArgs e)
         {
-            VisitInfo newVisit = new VisitInfo(userID, 0, "0");
+            VisitInfo newVisit = new VisitInfo(userID, 0, "0", true);
             newVisit.MdiParent = this.MdiParent;
             newVisit.Show();
             this.Close();

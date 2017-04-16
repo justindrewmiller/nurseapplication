@@ -56,7 +56,7 @@
             // 
             this.txtReason.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReason.Location = new System.Drawing.Point(197, 185);
-            this.txtReason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReason.Margin = new System.Windows.Forms.Padding(4);
             this.txtReason.MaxLength = 200;
             this.txtReason.Name = "txtReason";
             this.txtReason.Size = new System.Drawing.Size(335, 133);
@@ -101,7 +101,7 @@
             // 
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(437, 346);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 37);
             this.btnClose.TabIndex = 15;
@@ -115,7 +115,7 @@
             this.cmbDoctorList.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctorList.FormattingEnabled = true;
             this.cmbDoctorList.Location = new System.Drawing.Point(197, 90);
-            this.cmbDoctorList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDoctorList.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDoctorList.Name = "cmbDoctorList";
             this.cmbDoctorList.Size = new System.Drawing.Size(337, 31);
             this.cmbDoctorList.TabIndex = 11;
@@ -124,9 +124,8 @@
             // dtpDateTime
             // 
             this.dtpDateTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateTime.Location = new System.Drawing.Point(197, 138);
-            this.dtpDateTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateTime.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateTime.Name = "dtpDateTime";
             this.dtpDateTime.Size = new System.Drawing.Size(335, 30);
             this.dtpDateTime.TabIndex = 12;
@@ -136,7 +135,7 @@
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(313, 346);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 37);
             this.btnSubmit.TabIndex = 14;
@@ -159,7 +158,7 @@
             // 
             this.txtPatientName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatientName.Location = new System.Drawing.Point(197, 45);
-            this.txtPatientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPatientName.Margin = new System.Windows.Forms.Padding(4);
             this.txtPatientName.Name = "txtPatientName";
             this.txtPatientName.ReadOnly = true;
             this.txtPatientName.Size = new System.Drawing.Size(335, 30);
@@ -181,7 +180,7 @@
             this.Controls.Add(this.lblDateTime);
             this.Controls.Add(this.lblDoctor);
             this.Controls.Add(this.lblPatientName);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateAppointment";
             this.Text = "Create Appointment";
             this.Load += new System.EventHandler(this.CreateAppointment_Load);
