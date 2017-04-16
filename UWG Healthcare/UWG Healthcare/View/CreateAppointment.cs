@@ -48,7 +48,7 @@ namespace UWG_Healthcare.View
             try
             {
                 List<Doctor> docList;
-                docList = doctorController.GetDoctors();
+                docList = DoctorController.GetDoctors();
                 cmbDoctorList.DataSource = docList;
                 cmbDoctorList.DisplayMember = "FullName";
                 cmbDoctorList.ValueMember = "DoctorID";
@@ -103,7 +103,7 @@ namespace UWG_Healthcare.View
                 this.PutIncidentData(newAppointment);
                 try
                 {
-                    newAppointment.ApptID = appointmentController.CreateAppointment(newAppointment);
+                    newAppointment.ApptID = AppointmentController.CreateAppointment(newAppointment);
                     MessageBox.Show("The appointment was successfully created.");
                     this.Close();
                 }

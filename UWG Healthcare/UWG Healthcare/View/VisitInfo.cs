@@ -40,7 +40,7 @@ namespace UWG_Healthcare.View
 
         private void VisitInfo_Load(object sender, EventArgs e)
         {
-            this.appt = apptController.GetAppointment(apptID);
+            this.appt = AppointmentController.GetAppointment(apptID);
             //try
             //{
             //    currentVisit = VisitDAL.GetVisit(this.visitID);

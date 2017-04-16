@@ -46,6 +46,42 @@ namespace HealthcareData.DAL
             }
         }
 
+        // Updates the Appointment table
+        public static bool UpdateAppointment(Appointment appointment)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string updateStatement =
+                "Update Appointment SET " +
+                   "PatientID = @PatientID, " +
+                   "DoctorID = @DoctorID, " +
+                   "apptDateTime = @apptDateTime, " +
+                   "Reason = @Reason " +
+                 "WHERE ApptID = @ApptID";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
+            updateCommand.Parameters.AddWithValue("@ApptID", appointment.ApptID);
+            updateCommand.Parameters.AddWithValue("@PatientID", appointment.PatientID);
+            updateCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
+            updateCommand.Parameters.AddWithValue("@apptDateTime", appointment.apptDateTime);
+            updateCommand.Parameters.AddWithValue("@Reason", appointment.Reason);
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public static List<Appointment> getAppointments(String patientID)
         {
             List<Appointment> appointmentList = new List<Appointment>();

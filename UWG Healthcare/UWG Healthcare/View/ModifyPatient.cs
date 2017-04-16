@@ -113,7 +113,7 @@ namespace UWG_Healthcare
         {
             try
             {
-                person = inController.GetPatient(personID);
+                person = PatientController.GetPatient(personID);
                 if (person == null)
                 {
 

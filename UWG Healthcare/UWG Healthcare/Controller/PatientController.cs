@@ -30,7 +30,7 @@ namespace UWG_Healthcare.Controller
         }
 
         // Gets the person based on personID
-        public Person GetPatient(int personID)
+        public static Person GetPatient(int personID)
         {
             return PatientDAL.GetPatient(personID);
         }

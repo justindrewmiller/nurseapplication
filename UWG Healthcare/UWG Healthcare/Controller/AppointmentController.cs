@@ -12,14 +12,19 @@ namespace UWG_Healthcare.Controller
     {
 
         // Creates the appointment
-        public int CreateAppointment(Appointment appointment)
+        public static int CreateAppointment(Appointment appointment)
         {
             return AppointmentDAL.CreateAppointment(appointment);
         }
 
-        public Appointment GetAppointment(int apptID)
+        public static Appointment GetAppointment(int apptID)
         {
             return AppointmentDAL.GetAppointment(apptID); 
         }
+
+        public static bool UpdateAppointment(Appointment appointment)
+        {
+            return AppointmentDAL.UpdateAppointment(appointment);
+        } 
     }
 }

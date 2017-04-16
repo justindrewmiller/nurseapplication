@@ -11,7 +11,7 @@ namespace UWG_Healthcare.Controller
     public class DoctorController
     {
         // Gets the Doctors list
-        public List<Doctor> GetDoctors()
+        public static List<Doctor> GetDoctors()
         {
             return DoctorDAL.GetDoctors();
         }
