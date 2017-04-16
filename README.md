@@ -10,8 +10,6 @@ This application is intended to be a Healthcare Database Management System.
 * Justin Miller
 
 ### This project will be developed using Agile Princples  ###
-
-* Scrum Master/Product Owner: Justin Miller
 * Development duties will be shared equally with all group members
 
 ### Who do I talk to? ###
