@@ -25,5 +25,8 @@ namespace HealthcareData.Model
         public string NurseID { get; set; }
 
         public string DiagnosesCode { get; set; }
+
+        public DateTime ApptDateTime { get; set; }
+        public string DiagnosesName { get; set; }
     }
 }

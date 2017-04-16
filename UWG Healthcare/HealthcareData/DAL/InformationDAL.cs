@@ -177,9 +177,10 @@ namespace HealthcareData.DAL
             List<Visit> visitList = new List<Visit>();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "SELECT v.VisitID, v.ApptID, v.SysBP, v.DiaBP, v.BodyTemp, v.Pulse, v.Symptoms, v.NurseID, v.DiagnosesCode " +
+                "SELECT v.VisitID, v.ApptID, a.ApptDateTime, v.SysBP, v.DiaBP, v.BodyTemp, v.Pulse, v.Symptoms, v.NurseID, v.DiagnosesCode, Diagnoses.DiagnosesName " +
                 "FROM Visits v JOIN Appointment a " +
                 "ON v.ApptID = a.ApptID " +
+                "LEFT OUTER JOIN Diagnoses on v.DiagnosesCode = Diagnoses.DiagnosesCode " +
                 "WHERE a.PatientID = @PatientID";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@PatientID", patientID);
@@ -194,6 +195,7 @@ namespace HealthcareData.DAL
                     Visit visit = new Visit();
                     visit.VisitID = (int)reader["VisitID"];
                     visit.ApptID = reader["ApptID"].ToString();
+                    visit.ApptDateTime = (DateTime)reader["ApptDateTime"];
                     visit.SysBP = reader["SysBP"].ToString();
                     visit.DiaBP = reader["DiaBP"].ToString();
                     visit.BodyTemp = reader["BodyTemp"].ToString();
@@ -201,6 +203,7 @@ namespace HealthcareData.DAL
                     visit.Symptoms = reader["Symptoms"].ToString();
                     visit.NurseID = reader["NurseID"].ToString();
                     visit.DiagnosesCode = reader["DiagnosesCode"].ToString();
+                    visit.DiagnosesName = reader["DiagnosesName"].ToString();
                     visitList.Add(visit);
                 }
 

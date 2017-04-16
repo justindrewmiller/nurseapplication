@@ -61,8 +61,12 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
-            this.cboVisits = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lstVisits = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // txtPhone
@@ -293,7 +297,7 @@
             // 
             this.lblTests.AutoSize = true;
             this.lblTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTests.Location = new System.Drawing.Point(19, 354);
+            this.lblTests.Location = new System.Drawing.Point(19, 413);
             this.lblTests.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTests.Name = "lblTests";
             this.lblTests.Size = new System.Drawing.Size(50, 23);
@@ -303,19 +307,19 @@
             // btnTests
             // 
             this.btnTests.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTests.Location = new System.Drawing.Point(689, 354);
+            this.btnTests.Location = new System.Drawing.Point(773, 413);
             this.btnTests.Margin = new System.Windows.Forms.Padding(4);
             this.btnTests.Name = "btnTests";
-            this.btnTests.Size = new System.Drawing.Size(120, 37);
+            this.btnTests.Size = new System.Drawing.Size(164, 37);
             this.btnTests.TabIndex = 25;
-            this.btnTests.Text = "Add Result";
+            this.btnTests.Text = "Add Test Result";
             this.btnTests.UseVisualStyleBackColor = true;
             this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
             // 
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(165, 498);
+            this.btnModify.Location = new System.Drawing.Point(155, 557);
             this.btnModify.Margin = new System.Windows.Forms.Padding(4);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(184, 41);
@@ -327,7 +331,7 @@
             // btnFinished
             // 
             this.btnFinished.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinished.Location = new System.Drawing.Point(357, 498);
+            this.btnFinished.Location = new System.Drawing.Point(347, 557);
             this.btnFinished.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinished.Name = "btnFinished";
             this.btnFinished.Size = new System.Drawing.Size(79, 41);
@@ -339,7 +343,7 @@
             // btnCrtAppointment
             // 
             this.btnCrtAppointment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrtAppointment.Location = new System.Drawing.Point(689, 298);
+            this.btnCrtAppointment.Location = new System.Drawing.Point(817, 254);
             this.btnCrtAppointment.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrtAppointment.Name = "btnCrtAppointment";
             this.btnCrtAppointment.Size = new System.Drawing.Size(120, 36);
@@ -357,9 +361,9 @@
             this.columnHeader4,
             this.columnHeader5});
             this.lstTests.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstTests.Location = new System.Drawing.Point(165, 354);
+            this.lstTests.Location = new System.Drawing.Point(157, 413);
             this.lstTests.Name = "lstTests";
-            this.lstTests.Size = new System.Drawing.Size(512, 137);
+            this.lstTests.Size = new System.Drawing.Size(607, 137);
             this.lstTests.TabIndex = 44;
             this.lstTests.UseCompatibleStateImageBehavior = false;
             this.lstTests.View = System.Windows.Forms.View.Details;
@@ -391,23 +395,13 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(513, 298);
+            this.button1.Location = new System.Drawing.Point(773, 301);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 36);
             this.button1.TabIndex = 45;
             this.button1.Text = "Update Diagnoses";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cboVisits
-            // 
-            this.cboVisits.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboVisits.FormattingEnabled = true;
-            this.cboVisits.Location = new System.Drawing.Point(157, 298);
-            this.cboVisits.Margin = new System.Windows.Forms.Padding(4);
-            this.cboVisits.Name = "cboVisits";
-            this.cboVisits.Size = new System.Drawing.Size(348, 31);
-            this.cboVisits.TabIndex = 46;
             // 
             // label1
             // 
@@ -420,13 +414,48 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Visits:";
             // 
+            // lstVisits
+            // 
+            this.lstVisits.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lstVisits.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstVisits.Location = new System.Drawing.Point(157, 301);
+            this.lstVisits.Name = "lstVisits";
+            this.lstVisits.Size = new System.Drawing.Size(605, 106);
+            this.lstVisits.TabIndex = 48;
+            this.lstVisits.UseCompatibleStateImageBehavior = false;
+            this.lstVisits.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ApptDateTime";
+            this.columnHeader6.Width = 156;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Symptoms";
+            this.columnHeader7.Width = 184;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Diagnoses";
+            this.columnHeader8.Width = 153;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.DisplayIndex = 3;
+            this.columnHeader9.Text = "VisitID";
+            // 
             // PatientInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 561);
+            this.ClientSize = new System.Drawing.Size(971, 611);
+            this.Controls.Add(this.lstVisits);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboVisits);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lstTests);
             this.Controls.Add(this.btnCrtAppointment);
@@ -499,7 +528,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cboVisits;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView lstVisits;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

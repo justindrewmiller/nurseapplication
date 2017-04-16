@@ -133,7 +133,6 @@ namespace UWG_Healthcare.View
             try
             {
                 testList = InformationController.GetPatientTests(this.patientID);
-
                 if (testList.Count > 0)
                 {
                     Test test;
@@ -164,17 +163,36 @@ namespace UWG_Healthcare.View
 
         private void loadComboVisits()
         {
+            
+            List<Visit> visitList;
             try
             {
-                List<Visit> visits = InformationController.GetPatientVisits(this.patientID);
-                cboVisits.DataSource = visits;
-                cboVisits.DisplayMember = "Symptoms";
-                cboVisits.ValueMember = "VisitID";
+                visitList = InformationController.GetPatientVisits(this.patientID);
+                if (visitList.Count > 0)
+                {
+                    Visit visit;
+                    for (int i = 0; i < visitList.Count; i++)
+                    {
+                        visit = visitList[i];
+                        lstVisits.Items.Add(visit.VisitID.ToString());
+                        lstVisits.Items[i].SubItems.Add(visit.ApptDateTime.ToString());
+                        lstVisits.Items[i].SubItems.Add(visit.Symptoms);
+                        lstVisits.Items[i].SubItems.Add(visit.DiagnosesName);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There are no visit results");
+                    this.BeginInvoke(new MethodInvoker(Close));
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                this.BeginInvoke(new MethodInvoker(Close));
             }
+
+            lstVisits.FullRowSelect = true;
         }
 
         private void btnModify_Click(object sender, EventArgs e)
