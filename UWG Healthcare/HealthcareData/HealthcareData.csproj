@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AppointmentDAL.cs" />
+    <Compile Include="DAL\DiagnosesDAL.cs" />
     <Compile Include="DAL\DoctorDAL.cs" />
     <Compile Include="DAL\HealthCareUWGDBConnection.cs" />
     <Compile Include="DAL\InformationDAL.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="DAL\VisitDAL.cs" />
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Appointment.cs" />
+    <Compile Include="Model\Diagnoses.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Nurse.cs" />
     <Compile Include="Model\Patient.cs" />

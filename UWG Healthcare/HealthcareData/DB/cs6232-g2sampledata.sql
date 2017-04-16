@@ -48,7 +48,10 @@ Insert into LabTests (TestCode, TestName) values (1, 'White Blood Cell (WBC)');
 Insert into LabTests (TestCode , TestName) values (2, 'Low Density Lipoproteins (LDL)');
 Insert into LabTests (TestCode, TestName) values (3, 'Hepatitis A'); 
 
-Insert into diagnoses (diagnosesCode, diagnosesName) values (1, 'Fish for hands'); 
+Insert into diagnoses (diagnosesCode, diagnosesName) values (1, 'Colitis'); 
+Insert into diagnoses (diagnosesCode, diagnosesName) values (2, 'Appendicitis'); 
+Insert into diagnoses (diagnosesCode, diagnosesName) values (3, 'Broken leg'); 
+Insert into diagnoses (diagnosesCode, diagnosesName) values (4, 'Angioid streaks'); 
 
 SET IDENTITY_INSERT Appointment ON
 

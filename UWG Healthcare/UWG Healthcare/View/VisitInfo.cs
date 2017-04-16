@@ -22,7 +22,8 @@ namespace UWG_Healthcare.View
         public Visit currentVisit;
         public Visit newVisit;
         private VisitsController visitsController;
-        private AppointmentController apptController; 
+        private AppointmentController apptController;
+        private DiagnosesController diagController;
         public int apptID;
         public string patientID;
         public Appointment appt;
@@ -32,7 +33,8 @@ namespace UWG_Healthcare.View
         {
             InitializeComponent();
             visitsController = new VisitsController();
-            apptController = new AppointmentController(); 
+            apptController = new AppointmentController();
+            diagController = new DiagnosesController(); 
             this.info = info;
             //this.visitID = visitID;
             lblUserName.Text = info.userID;
@@ -46,6 +48,7 @@ namespace UWG_Healthcare.View
             appt = AppointmentController.GetAppointment(this.apptID);
             txtAppointment.Text = appt.apptDateTime; 
             this.loadComboTests();
+            this.loadDiagnoses();
 
             //hide the update button on whether or not they're checking in
             if (flag == false)
@@ -83,7 +86,7 @@ namespace UWG_Healthcare.View
             visit.Pulse = txtPulse.Text;
             visit.Symptoms = txtSymptoms.Text;
             visit.NurseID = this.info.NurseID.ToString();
-            visit.DiagnosesCode = txtDiagnosis.Text;
+            visit.DiagnosesCode = cboDiagnoses.Text;
         }
 
         private bool isValidData()
@@ -93,7 +96,7 @@ namespace UWG_Healthcare.View
                 Validator.IsPresent(txtDia) &&
                 Validator.IsPresent(txtTemp) &&
                 Validator.IsPresent(txtSymptoms) &&
-                Validator.IsPresent(txtDiagnosis))
+                Validator.IsPresent(cboDiagnoses))
             {
                 return true;
 
@@ -181,6 +184,21 @@ namespace UWG_Healthcare.View
             }
 
             lstTests.FullRowSelect = true;
+        }
+
+        private void loadDiagnoses()
+        {
+            try
+            {
+                List<Diagnoses> diagnoses = diagController.GetDiagnosesList();
+                cboDiagnoses.DataSource = diagnoses;
+                cboDiagnoses.DisplayMember = "DiagnosesName";
+                cboDiagnoses.ValueMember = "DiagnosesCode";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
 

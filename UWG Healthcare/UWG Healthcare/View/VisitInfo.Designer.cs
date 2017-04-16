@@ -40,7 +40,6 @@
             this.lblTemp = new System.Windows.Forms.Label();
             this.lblPulse = new System.Windows.Forms.Label();
             this.txtPulse = new System.Windows.Forms.TextBox();
-            this.txtDiagnosis = new System.Windows.Forms.RichTextBox();
             this.lblDiagnosis = new System.Windows.Forms.Label();
             this.txtSymptoms = new System.Windows.Forms.RichTextBox();
             this.lblSymptoms = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtAppointment = new System.Windows.Forms.TextBox();
+            this.cboDiagnoses = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -186,17 +186,6 @@
             this.txtPulse.TabIndex = 14;
             this.txtPulse.Tag = "Pulse";
             // 
-            // txtDiagnosis
-            // 
-            this.txtDiagnosis.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiagnosis.Location = new System.Drawing.Point(209, 285);
-            this.txtDiagnosis.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDiagnosis.Name = "txtDiagnosis";
-            this.txtDiagnosis.Size = new System.Drawing.Size(516, 34);
-            this.txtDiagnosis.TabIndex = 16;
-            this.txtDiagnosis.Tag = "Diagnosis";
-            this.txtDiagnosis.Text = "";
-            // 
             // lblDiagnosis
             // 
             this.lblDiagnosis.AutoSize = true;
@@ -313,11 +302,21 @@
             this.txtAppointment.Size = new System.Drawing.Size(516, 30);
             this.txtAppointment.TabIndex = 46;
             // 
+            // cboDiagnoses
+            // 
+            this.cboDiagnoses.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDiagnoses.FormattingEnabled = true;
+            this.cboDiagnoses.Location = new System.Drawing.Point(209, 285);
+            this.cboDiagnoses.Name = "cboDiagnoses";
+            this.cboDiagnoses.Size = new System.Drawing.Size(516, 31);
+            this.cboDiagnoses.TabIndex = 47;
+            // 
             // VisitInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 540);
+            this.Controls.Add(this.cboDiagnoses);
             this.Controls.Add(this.txtAppointment);
             this.Controls.Add(this.lstTests);
             this.Controls.Add(this.button1);
@@ -326,7 +325,6 @@
             this.Controls.Add(this.txtSymptoms);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblDiagnosis);
-            this.Controls.Add(this.txtDiagnosis);
             this.Controls.Add(this.txtPulse);
             this.Controls.Add(this.lblPulse);
             this.Controls.Add(this.lblTemp);
@@ -362,7 +360,6 @@
         private System.Windows.Forms.Label lblTemp;
         private System.Windows.Forms.Label lblPulse;
         private System.Windows.Forms.TextBox txtPulse;
-        private System.Windows.Forms.RichTextBox txtDiagnosis;
         private System.Windows.Forms.Label lblDiagnosis;
         private System.Windows.Forms.RichTextBox txtSymptoms;
         private System.Windows.Forms.Label lblSymptoms;
@@ -376,5 +373,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.TextBox txtAppointment;
+        private System.Windows.Forms.ComboBox cboDiagnoses;
     }
 }
