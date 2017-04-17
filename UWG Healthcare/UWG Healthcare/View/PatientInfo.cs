@@ -282,7 +282,20 @@ namespace UWG_Healthcare.View
 
         private void btnUpdateDiagnosis_Click(object sender, EventArgs e)
         {
-            
+            if (txtFName.Text == "")
+            {
+                MessageBox.Show("No patient to modify visit.", "No patient selected");
+            }
+            else
+            {
+                String appointmentText = cboAppointments.Text;
+                int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
+                visitInfo.MdiParent = this.MdiParent;
+                visitInfo.Show();
+                this.Close();
+            }
+
 
         }
     }

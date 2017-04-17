@@ -50,16 +50,16 @@ namespace HealthcareData.DAL
             }
         }
 
-        public static Visit GetVisit(int visitID)
+        public static Visit GetVisit(int apptID)
         {
             Visit visit = new Visit();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
                 "SELECT v.VisitID, v.ApptID, v.SysBP, v.DiaBP, v.BodyTemp, v.Pulse, v.Symptoms, v.NurseID, v.DiagnosesCode " +
                 "FROM Visits v " +
-                "WHERE v.VisitID = @VisitID";
+                "WHERE v.ApptID = @ApptID";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-            selectCommand.Parameters.AddWithValue("@VisitID", visitID);
+            selectCommand.Parameters.AddWithValue("@ApptID", apptID);
             try
             {
                 connection.Open();
@@ -130,6 +130,57 @@ namespace HealthcareData.DAL
             return diagnoses;
         }
 
-       
+        //Updates the Visit information
+        public static bool UpdateVisit(Visit oldVisit, Visit newVisit)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string updateStatement =
+                "UPDATE Visit SET " +
+                  "SysBP = @NewSysBP, " +
+                  "DiaBP = @NewDiaBP, " +
+                  "BodyTemp = @NewBodyTemp, " +
+                  "Pulse = @NewPulse, " +
+                  "Symptoms = @NewSymptoms, " +
+                  "NurseID = @NurseID, " +
+                  "Diagnoses = @NewDiagnoses, " +
+                "WHERE VisitID = @OldVisitID";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
+            updateCommand.Parameters.AddWithValue("@NewSysBP", newVisit.SysBP);
+            updateCommand.Parameters.AddWithValue("@NewDiaBP", newVisit.DiaBP);
+            updateCommand.Parameters.AddWithValue("@NewBodyTemp", newVisit.BodyTemp);
+            updateCommand.Parameters.AddWithValue("@NewPulse", newVisit.Pulse);
+            updateCommand.Parameters.AddWithValue("@NewSymptoms", newVisit.Symptoms);
+            updateCommand.Parameters.AddWithValue("@NewNurseID", newVisit.NurseID);
+            updateCommand.Parameters.AddWithValue("@NewDiagnoses", newVisit.DiagnosesCode);
+
+            updateCommand.Parameters.AddWithValue("@OldVisitID", oldVisit.VisitID);
+
+            updateCommand.Parameters.AddWithValue("@OldSysBP", oldVisit.SysBP);
+            updateCommand.Parameters.AddWithValue("@OldDiaBP", oldVisit.DiaBP);
+            updateCommand.Parameters.AddWithValue("@OldBodyTemp", oldVisit.BodyTemp);
+            updateCommand.Parameters.AddWithValue("@OldPulse", oldVisit.Pulse);
+            updateCommand.Parameters.AddWithValue("@OldSymptoms", oldVisit.Symptoms);
+            updateCommand.Parameters.AddWithValue("@OldNurseID", oldVisit.NurseID);
+            updateCommand.Parameters.AddWithValue("@OldDiagnoses", oldVisit.DiagnosesCode);
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
     }
 }
