@@ -21,5 +21,10 @@ namespace UWG_Healthcare.Controller
             TestDAL.OrderTest(apptID, testDate, testCode); 
         }
 
+        public static bool UpdateTest(Test test)
+        {
+            return TestDAL.UpdateTest(test);
+        }
+
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UWG_Healthcare.Controller;
 
 namespace UWG_Healthcare.View
 {
@@ -36,7 +37,20 @@ namespace UWG_Healthcare.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.test.Result = txtResults.Text;
+                if (TestController.UpdateTest(this.test))
+                {
+                    MessageBox.Show("Test updated!");
+                }
+                else
+                    MessageBox.Show("Something went wrong with the update.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -74,5 +74,40 @@ namespace HealthcareData.DAL
                 connection.Close();
             }
         }
+
+        public static bool UpdateTest(Test test)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string updateStatement =
+                "Update Test SET " +
+                   "TestCode = @TestCode, " +
+                   "TestDate = @TestDate, " +
+                   "ApptID = @ApptID, " +
+                   "Result = @Result " +
+                 "WHERE ApptID = @ApptID " +
+                 "AND TestCode = @TestCode";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
+            updateCommand.Parameters.AddWithValue("@ApptID", test.ApptID);
+            updateCommand.Parameters.AddWithValue("@TestCode", test.TestCode);
+            updateCommand.Parameters.AddWithValue("@TestDate", test.TestDate);
+            updateCommand.Parameters.AddWithValue("@Result", test.Result);
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

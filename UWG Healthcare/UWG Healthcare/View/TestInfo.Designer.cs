@@ -44,10 +44,9 @@
             // btnFinished
             // 
             this.btnFinished.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinished.Location = new System.Drawing.Point(282, 247);
-            this.btnFinished.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFinished.Location = new System.Drawing.Point(212, 201);
             this.btnFinished.Name = "btnFinished";
-            this.btnFinished.Size = new System.Drawing.Size(70, 35);
+            this.btnFinished.Size = new System.Drawing.Size(52, 28);
             this.btnFinished.TabIndex = 0;
             this.btnFinished.Text = "Close";
             this.btnFinished.UseVisualStyleBackColor = true;
@@ -56,10 +55,9 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(16, 11);
-            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserName.Location = new System.Drawing.Point(12, 9);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(188, 23);
+            this.lblUserName.Size = new System.Drawing.Size(162, 19);
             this.lblUserName.TabIndex = 2;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
@@ -67,20 +65,19 @@
             // 
             this.txtPatientName.Enabled = false;
             this.txtPatientName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPatientName.Location = new System.Drawing.Point(138, 60);
-            this.txtPatientName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPatientName.Location = new System.Drawing.Point(104, 49);
             this.txtPatientName.Name = "txtPatientName";
-            this.txtPatientName.Size = new System.Drawing.Size(214, 30);
+            this.txtPatientName.ReadOnly = true;
+            this.txtPatientName.Size = new System.Drawing.Size(162, 26);
             this.txtPatientName.TabIndex = 3;
             // 
             // lblPatient
             // 
             this.lblPatient.AutoSize = true;
             this.lblPatient.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatient.Location = new System.Drawing.Point(16, 60);
-            this.lblPatient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPatient.Location = new System.Drawing.Point(12, 49);
             this.lblPatient.Name = "lblPatient";
-            this.lblPatient.Size = new System.Drawing.Size(114, 23);
+            this.lblPatient.Size = new System.Drawing.Size(92, 19);
             this.lblPatient.TabIndex = 4;
             this.lblPatient.Text = "Patient Name";
             // 
@@ -88,10 +85,9 @@
             // 
             this.lblTestName.AutoSize = true;
             this.lblTestName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTestName.Location = new System.Drawing.Point(40, 105);
-            this.lblTestName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTestName.Location = new System.Drawing.Point(30, 85);
             this.lblTestName.Name = "lblTestName";
-            this.lblTestName.Size = new System.Drawing.Size(90, 23);
+            this.lblTestName.Size = new System.Drawing.Size(73, 19);
             this.lblTestName.TabIndex = 5;
             this.lblTestName.Text = "Test Name";
             // 
@@ -99,19 +95,18 @@
             // 
             this.txtTestName.Enabled = false;
             this.txtTestName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTestName.Location = new System.Drawing.Point(138, 105);
-            this.txtTestName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTestName.Location = new System.Drawing.Point(104, 85);
             this.txtTestName.Name = "txtTestName";
-            this.txtTestName.Size = new System.Drawing.Size(214, 30);
+            this.txtTestName.ReadOnly = true;
+            this.txtTestName.Size = new System.Drawing.Size(162, 26);
             this.txtTestName.TabIndex = 6;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(138, 247);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Location = new System.Drawing.Point(104, 201);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(136, 35);
+            this.btnUpdate.Size = new System.Drawing.Size(102, 28);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update Result";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -121,10 +116,9 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(45, 152);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDate.Location = new System.Drawing.Point(34, 124);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(80, 23);
+            this.lblDate.Size = new System.Drawing.Size(66, 19);
             this.lblDate.TabIndex = 8;
             this.lblDate.Text = "Test Date";
             // 
@@ -132,37 +126,35 @@
             // 
             this.txtDate.Enabled = false;
             this.txtDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDate.Location = new System.Drawing.Point(138, 152);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDate.Location = new System.Drawing.Point(104, 124);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(214, 30);
+            this.txtDate.ReadOnly = true;
+            this.txtDate.Size = new System.Drawing.Size(162, 26);
             this.txtDate.TabIndex = 9;
             // 
             // lblResults
             // 
             this.lblResults.AutoSize = true;
             this.lblResults.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResults.Location = new System.Drawing.Point(28, 198);
-            this.lblResults.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblResults.Location = new System.Drawing.Point(21, 161);
             this.lblResults.Name = "lblResults";
-            this.lblResults.Size = new System.Drawing.Size(97, 23);
+            this.lblResults.Size = new System.Drawing.Size(80, 19);
             this.lblResults.TabIndex = 10;
             this.lblResults.Text = "Test Results";
             // 
             // txtResults
             // 
             this.txtResults.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResults.Location = new System.Drawing.Point(138, 198);
-            this.txtResults.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResults.Location = new System.Drawing.Point(104, 161);
             this.txtResults.Name = "txtResults";
-            this.txtResults.Size = new System.Drawing.Size(214, 30);
+            this.txtResults.Size = new System.Drawing.Size(162, 26);
             this.txtResults.TabIndex = 11;
             // 
             // TestInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 310);
+            this.ClientSize = new System.Drawing.Size(292, 252);
             this.Controls.Add(this.txtResults);
             this.Controls.Add(this.lblResults);
             this.Controls.Add(this.txtDate);
@@ -174,7 +166,6 @@
             this.Controls.Add(this.txtPatientName);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnFinished);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TestInfo";
             this.Text = "Test";
             this.Load += new System.EventHandler(this.Test_Load);
