@@ -173,11 +173,6 @@ namespace UWG_Healthcare.View
                         lstTests.Items[i].SubItems.Add(test.Result);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("There are no test results");
-                    this.BeginInvoke(new MethodInvoker(Close));
-                }
             }
             catch (Exception ex)
             {
