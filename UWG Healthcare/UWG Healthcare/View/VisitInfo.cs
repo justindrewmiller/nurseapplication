@@ -95,11 +95,16 @@ namespace UWG_Healthcare.View
         {
             if (Validator.IsPresent(txtAppointment) &&
                 Validator.IsPresent(txtSys) &&
+                Validator.IsNumbersOnly(txtSys) &&
                 Validator.IsPresent(txtDia) &&
+                Validator.IsNumbersOnly(txtDia) &&
                 Validator.IsPresent(txtTemp) &&
+                Validator.IsNumbersOnly(txtTemp) &&
+                Validator.IsPresent(txtPulse) &&
+                Validator.IsNumbersOnly(txtPulse) &&
                 Validator.IsPresent(txtSymptoms) &&
                 Validator.IsPresent(cboDiagnoses))
-            {
+                {
                 return true;
 
             }

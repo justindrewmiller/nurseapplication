@@ -36,7 +36,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSymptoms = new System.Windows.Forms.Label();
             this.txtSymptoms = new System.Windows.Forms.RichTextBox();
@@ -117,24 +116,13 @@
             this.columnHeader5.Text = "Result";
             this.columnHeader5.Width = 82;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(605, 275);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 28);
-            this.button1.TabIndex = 65;
-            this.button1.Text = "Order Tests";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(163, 281);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 19);
+            this.label1.Size = new System.Drawing.Size(43, 19);
             this.label1.TabIndex = 64;
             this.label1.Text = "Tests:";
             // 
@@ -193,7 +181,7 @@
             this.lblTemp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp.Location = new System.Drawing.Point(119, 136);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(89, 19);
+            this.lblTemp.Size = new System.Drawing.Size(90, 19);
             this.lblTemp.TabIndex = 54;
             this.lblTemp.Text = "Temperature:";
             // 
@@ -294,7 +282,6 @@
             this.Controls.Add(this.cboDiagnoses);
             this.Controls.Add(this.txtAppointment);
             this.Controls.Add(this.lstTests);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSymptoms);
             this.Controls.Add(this.txtSymptoms);
@@ -329,7 +316,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSymptoms;
         private System.Windows.Forms.RichTextBox txtSymptoms;

@@ -135,14 +135,14 @@ namespace HealthcareData.DAL
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string updateStatement =
-                "UPDATE Visit SET " +
+                "UPDATE Visits SET " +
                   "SysBP = @NewSysBP, " +
                   "DiaBP = @NewDiaBP, " +
                   "BodyTemp = @NewBodyTemp, " +
                   "Pulse = @NewPulse, " +
                   "Symptoms = @NewSymptoms, " +
-                  "NurseID = @NurseID, " +
-                  "Diagnoses = @NewDiagnoses, " +
+                  "NurseID = @NewNurseID, " +
+                  "DiagnosesCode = @NewDiagnoses " +
                 "WHERE VisitID = @OldVisitID";
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
             updateCommand.Parameters.AddWithValue("@NewSysBP", newVisit.SysBP);

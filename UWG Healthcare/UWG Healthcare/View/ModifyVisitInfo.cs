@@ -94,7 +94,9 @@ namespace UWG_Healthcare.View
             txtTemp.Text = visit.BodyTemp;
             txtPulse.Text = visit.Pulse;
             txtSymptoms.Text = visit.Symptoms;
-            cboDiagnoses.Text = visit.DiagnosesCode.ToString();
+            Diagnoses my = (Diagnoses)cboDiagnoses.Items[visit.DiagnosesCode-1];
+            cboDiagnoses.Text = my.DiagnosesName;
+
         }
 
         private void loadComboTests()
@@ -128,7 +130,7 @@ namespace UWG_Healthcare.View
             lstTests.FullRowSelect = true;
         }
 
-        private void loadDiagnoses()
+        public void loadDiagnoses()
         {
             try
             {
@@ -150,37 +152,34 @@ namespace UWG_Healthcare.View
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //{
-            //    if (isValidData())
-            //    {
-            //        Visit newVisit = new Visit();
-            //        newVisit.VisitID = visit.VisitID;
-            //        this.PutVisitData(newVisit);
-            //        try
-            //        {
-            //            if (!visitsController.UpdateVisit(visit, newVisit))
-            //            {
-            //                MessageBox.Show("Another user has updated or " +
-            //                    "deleted that patient.", "Database Error");
-            //                this.DialogResult = DialogResult.Retry;
-            //            }
-            //            else
-            //            {
-            //                person = newPerson;
-            //                MessageBox.Show("Patient was modified.", "Successful Modification");
-            //                PatientInfo newInfo = new PatientInfo(this.userID, person.PersonID.ToString());
-            //                newInfo.MdiParent = this.MdiParent;
-            //                newInfo.Show();
-            //                this.Close();
-            //            }
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            MessageBox.Show(ex.Message, ex.GetType().ToString());
-            //        }
+            {
+                if (isValidData())
+                {
+                    Visit newVisit = new Visit();
+                    newVisit.VisitID = visit.VisitID;
+                    this.PutVisitData(newVisit);
+                    try
+                    {
+                        if (!VisitsController.UpdateVisit(visit, newVisit))
+                        {
+                            MessageBox.Show("Another user has updated or " +
+                                "deleted that patient.", "Database Error");
+                            this.DialogResult = DialogResult.Retry;
+                        }
+                        else
+                        {
+                            visit = newVisit;
+                            MessageBox.Show("Visit was successfully modified.", "Successful Modification");
+                            this.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
 
-            //    }
-            //}
+                }
+            }
         }
 
         private void PutVisitData(Visit visit)
@@ -191,14 +190,18 @@ namespace UWG_Healthcare.View
             visit.Pulse = txtPulse.Text;
             visit.Symptoms = txtSymptoms.Text;
             visit.DiagnosesCode = (int)cboDiagnoses.SelectedValue;
-            visit.NurseID = userID.userID;
+            visit.NurseID = userID.NurseID.ToString();
         }
         private bool isValidData()
         {
             if (Validator.IsPresent(txtSys) &&
+                Validator.IsNumbersOnly(txtSys) &&
                 Validator.IsPresent(txtDia) &&
+                Validator.IsNumbersOnly(txtDia) &&
                 Validator.IsPresent(txtTemp) &&
+                Validator.IsNumbersOnly(txtTemp) &&
                 Validator.IsPresent(txtPulse) &&
+                Validator.IsNumbersOnly(txtPulse) &&
                 Validator.IsPresent(txtSymptoms) &&
                 Validator.IsPresent(cboDiagnoses))
             {

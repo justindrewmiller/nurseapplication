@@ -78,6 +78,25 @@ namespace HealthcareData.Model
             }
             return true;
         }
+
+        public static bool IsNumbersOnly(Control control)
+        {
+            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
+            {
+                TextBox textBox = (TextBox)control;
+                if (!Regex.IsMatch(textBox.Text, @"^[0-9]*$"))
+                {
+                    MessageBox.Show(textBox.Tag.ToString() + " must contain whole numbers only", Title);
+                    textBox.Focus();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return true;
+        }
         // Checks that the PhoneNum contains 10 digits
         public static bool IsValidPhonNum(Control control)
         {
