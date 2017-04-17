@@ -15,3 +15,12 @@ This application is intended to be a Healthcare Database Management System.
 ### Who do I talk to? ###
 
 * Any team member can be contacted about this application
+
+### Getting started ###
+
+Simply run the application and choose a user account to test
+
+Provided default accounts are...
+
+Default admin is Username: clark1 password: one
+Default nurse is Username: superman3 password: three
