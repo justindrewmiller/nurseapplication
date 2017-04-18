@@ -23,4 +23,4 @@ Simply run the application and choose a user account to test
 Provided default accounts are...
 
 Default admin is Username: clark1 password: one
-Default nurse is Username: superman3 password: three
+Default nurse is Username: superman1 password: three
