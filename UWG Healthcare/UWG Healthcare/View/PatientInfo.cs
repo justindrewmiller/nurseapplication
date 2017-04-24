@@ -292,6 +292,7 @@ namespace UWG_Healthcare.View
             {
                 CreateAppointment createAppt = new CreateAppointment(this.info, this.patient);
                 createAppt.MdiParent = this.MdiParent;
+                createAppt.FormClosing += new FormClosingEventHandler(this.CreateAppointment_FormClosing);
                 createAppt.Show();
             }
 
@@ -335,6 +336,21 @@ namespace UWG_Healthcare.View
                 txtZip.Text = this.patient.ZipCode;
                 txtState.Text = this.patient.State;
                 txtPhone.Text = this.patient.PhoneNum;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Invalid patient id. " +
+                   "Please try searching for the patient again.", "Patient Not Found");
+            }
+
+        }
+
+        private void CreateAppointment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                this.loadComboAppointments();
             }
             catch (Exception ex)
             {
