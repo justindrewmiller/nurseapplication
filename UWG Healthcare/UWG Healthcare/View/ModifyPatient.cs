@@ -81,9 +81,6 @@ namespace UWG_Healthcare
                         {
                             person = newPerson;
                             MessageBox.Show("Patient was modified.", "Successful Modification");
-                            PatientInfo newInfo = new PatientInfo(this.userID, person.PersonID.ToString());
-                            newInfo.MdiParent = this.MdiParent;
-                            newInfo.Show();
                             this.Close();
                         }
                     }

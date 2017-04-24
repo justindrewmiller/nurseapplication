@@ -70,7 +70,6 @@ namespace UWG_Healthcare.View
                     TestInfo testInfo = new TestInfo(this.info, this.patient, test);
                     testInfo.MdiParent = this.MdiParent;
                     testInfo.Show();
-                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -201,7 +200,6 @@ namespace UWG_Healthcare.View
                 ModifyPatient modifyInfo = new ModifyPatient(this.info, this.patient);
                 modifyInfo.MdiParent = this.MdiParent;
                 modifyInfo.Show();
-                this.Close();
             }
         }
 
@@ -227,7 +225,6 @@ namespace UWG_Healthcare.View
                     CurrentAppointment currentApt = new CurrentAppointment(this.info, apptID);
                     currentApt.MdiParent = this.MdiParent;
                     currentApt.Show();
-                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -255,7 +252,6 @@ namespace UWG_Healthcare.View
                     VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID, false);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.Show();
-                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -275,25 +271,30 @@ namespace UWG_Healthcare.View
                 CreateAppointment createAppt = new CreateAppointment(this.info, this.patient);
                 createAppt.MdiParent = this.MdiParent;
                 createAppt.Show();
-                this.Close();
             }
 
         }
 
         private void btnUpdateDiagnosis_Click(object sender, EventArgs e)
         {
-            if (txtFName.Text == "")
+            try
             {
-                MessageBox.Show("No patient to modify visit.", "No patient selected");
+                if (cboAppointments.ValueMember == "")
+                {
+                    MessageBox.Show("No applicable appointment.", "No appointment selected");
+                }
+                else
+                {
+                    String appointmentText = cboAppointments.Text;
+                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
+                    visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.Show();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                String appointmentText = cboAppointments.Text;
-                int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
-                ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
-                visitInfo.MdiParent = this.MdiParent;
-                visitInfo.Show();
-                this.Close();
+                MessageBox.Show(ex.ToString());
             }
 
 
