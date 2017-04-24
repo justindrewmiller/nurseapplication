@@ -18,13 +18,14 @@ namespace HealthcareData.DAL
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string insertStatement =
                 "INSERT Appointment " +
-                  "(PatientID, DoctorID, apptDateTime, Reason) " +
-                "VALUES (@PatientID, @DoctorID, @apptDateTime, @Reason)";
+                  "(PatientID, DoctorID, apptDateTime, Reason, IsCheckedIn) " +
+                "VALUES (@PatientID, @DoctorID, @apptDateTime, @Reason, @IsCheckedIn)";
             SqlCommand insertCommand = new SqlCommand(insertStatement, connection);
             insertCommand.Parameters.AddWithValue("@PatientID", appointment.PatientID);
             insertCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
             insertCommand.Parameters.AddWithValue("@apptDateTime", appointment.apptDateTime);
             insertCommand.Parameters.AddWithValue("@Reason", appointment.Reason);
+            insertCommand.Parameters.AddWithValue("@IsCheckedIn", appointment.isCheckedIn);
             try
             {
                 connection.Open();
@@ -56,6 +57,7 @@ namespace HealthcareData.DAL
                    "DoctorID = @DoctorID, " +
                    "apptDateTime = @apptDateTime, " +
                    "Reason = @Reason " +
+                   "IsCheckedIn = @IsCheckedIn " +
                  "WHERE ApptID = @ApptID";
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
             updateCommand.Parameters.AddWithValue("@ApptID", appointment.ApptID);
@@ -63,6 +65,37 @@ namespace HealthcareData.DAL
             updateCommand.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
             updateCommand.Parameters.AddWithValue("@apptDateTime", appointment.apptDateTime);
             updateCommand.Parameters.AddWithValue("@Reason", appointment.Reason);
+            updateCommand.Parameters.AddWithValue("@IsCheckedIn", appointment.isCheckedIn);
+            try
+            {
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        // Updates the Appointment table
+        public static bool appointmentCheckedIn(Appointment appointment)
+        {
+            SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
+            string updateStatement =
+                "Update Appointment SET " +
+                   "IsCheckedIn = @IsCheckedIn " +
+                 "WHERE ApptID = @ApptID";
+            SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
+            updateCommand.Parameters.AddWithValue("@ApptID", appointment.ApptID);
+            updateCommand.Parameters.AddWithValue("@IsCheckedIn", appointment.isCheckedIn);
             try
             {
                 connection.Open();
@@ -94,7 +127,7 @@ namespace HealthcareData.DAL
             Appointment appointment = new Appointment();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
-                "SELECT ApptID, PatientID, DoctorID, apptDateTime, Reason " +
+                "SELECT ApptID, PatientID, DoctorID, apptDateTime, Reason, IsCheckedIn " +
                 "FROM Appointment " +
                 "WHERE ApptID = @ApptID";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
@@ -112,6 +145,7 @@ namespace HealthcareData.DAL
                     appointment.DoctorID = (int)reader["DoctorID"];
                     appointment.apptDateTime = reader["apptDateTime"].ToString();
                     appointment.Reason = reader["Reason"].ToString();
+                    appointment.isCheckedIn = reader["IsCheckedIn"].ToString();
                 }
                 else
                 {

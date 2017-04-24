@@ -45,6 +45,9 @@ namespace UWG_Healthcare.View
 
         private void GetVisit(int apptID)
         {
+
+            Appointment appt = AppointmentController.GetAppointment(this.apptID);
+            DateTime apptDate = Convert.ToDateTime(appt.apptDateTime);
             try
             {
                 visit = VisitsController.GetVisit(apptID);
@@ -55,6 +58,20 @@ namespace UWG_Healthcare.View
                 }
                 else
                 {
+                    if(appt.isCheckedIn == "True" || apptDate != DateTime.Now.Date)
+                    {
+                        this.DisplayVisit();
+                        btnSubmit.Enabled = false;
+                        txtSys.Enabled = false;
+                        txtDia.Enabled = false;
+                        txtTemp.Enabled = false;
+                        txtPulse.Enabled = false;
+                        txtSymptoms.Enabled = false;
+                        cboDiagnoses.Enabled = false;
+
+                    }
+                    else
+                    {
                     this.DisplayVisit();
                     btnSubmit.Enabled = true;
                     txtSys.Enabled = true;
@@ -63,6 +80,8 @@ namespace UWG_Healthcare.View
                     txtPulse.Enabled = true;
                     txtSymptoms.Enabled = true;
                     cboDiagnoses.Enabled = true;
+                    }
+                    
                 }
             }
             catch (Exception ex)
@@ -199,6 +218,7 @@ namespace UWG_Healthcare.View
                 Validator.IsPresent(txtDia) &&
                 Validator.IsNumbersOnly(txtDia) &&
                 Validator.IsPresent(txtTemp) &&
+                Validator.IsDecimalNumbersOnly(txtTemp) &&
                 Validator.IsPresent(txtPulse) &&
                 Validator.IsNumbersOnly(txtPulse) &&
                 Validator.IsPresent(txtSymptoms) &&

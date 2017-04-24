@@ -26,5 +26,10 @@ namespace UWG_Healthcare.Controller
         {
             return AppointmentDAL.UpdateAppointment(appointment);
         } 
+
+        public static bool appointmentCheckedIn(Appointment appointment)
+        {
+            return AppointmentDAL.appointmentCheckedIn(appointment);
+        }
     }
 }

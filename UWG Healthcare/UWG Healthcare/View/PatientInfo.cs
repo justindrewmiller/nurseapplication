@@ -18,6 +18,8 @@ namespace UWG_Healthcare.View
         public UserInfo info;
         private Patient patient;
         private string patientID;
+        private AppointmentController apptController;
+
 
         public PatientInfo(UserInfo info, string patientID)
         {
@@ -25,6 +27,7 @@ namespace UWG_Healthcare.View
             this.info = info;
             lblUserName.Text = info.userID;
             this.patientID = patientID;
+            this.apptController = new AppointmentController();
         }
 
         //this method adds results for a test
@@ -237,6 +240,8 @@ namespace UWG_Healthcare.View
 
         private void btnVisits_Click(object sender, EventArgs e)
         {
+            Appointment appt = AppointmentController.GetAppointment(Convert.ToInt32(cboAppointments.SelectedValue));
+
             try
             {
                 DateTime apptDate = Convert.ToDateTime(cboAppointments.Text); 
@@ -247,6 +252,20 @@ namespace UWG_Healthcare.View
                 else if (apptDate.Date != DateTime.Now.Date)
                 {
                     MessageBox.Show("This date is not today, you may not check in!");
+                    String appointmentText = cboAppointments.Text;
+                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
+                    visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.Show();
+                }
+                else if(appt.isCheckedIn == "True" || appt.isCheckedIn == "1")
+                {
+                    MessageBox.Show("You have already checked in today");
+                    String appointmentText = cboAppointments.Text;
+                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
+                    visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.Show();
                 }
                 else
                 {
@@ -254,6 +273,7 @@ namespace UWG_Healthcare.View
                     VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID, false);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.Show();
+
                 }
             }
             catch (Exception ex)

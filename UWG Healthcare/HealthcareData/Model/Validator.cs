@@ -97,6 +97,25 @@ namespace HealthcareData.Model
             }
             return true;
         }
+
+        public static bool IsDecimalNumbersOnly(Control control)
+        {
+            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
+            {
+                TextBox textBox = (TextBox)control;
+                if (!Regex.IsMatch(textBox.Text, @"^[0-9]+(\.[0-9][0-9]?)?$"))
+                {
+                    MessageBox.Show(textBox.Tag.ToString() + " must contain numbers only and one decimal is allowed.", Title);
+                    textBox.Focus();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return true;
+        }
         // Checks that the PhoneNum contains 10 digits
         public static bool IsValidPhonNum(Control control)
         {

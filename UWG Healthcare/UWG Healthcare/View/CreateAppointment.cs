@@ -85,6 +85,7 @@ namespace UWG_Healthcare.View
             appointment.DoctorID = (int)cmbDoctorList.SelectedValue;
             appointment.apptDateTime = dtpDateTime.Text;
             appointment.Reason = txtReason.Text;
+            appointment.isCheckedIn = "False";
         }
 
 

@@ -21,6 +21,8 @@ namespace UWG_Healthcare.View
         //public string visitID;
         public Visit currentVisit;
         public Visit newVisit;
+        public Appointment currentAppt;
+        public Appointment newAppt;
         private VisitsController visitsController;
         private AppointmentController apptController;
         private DiagnosesController diagController;
@@ -91,6 +93,12 @@ namespace UWG_Healthcare.View
             visit.DiagnosesCode = (int)cboDiagnoses.SelectedValue;
         }
 
+        private void PutApptData(Appointment appointment)
+        {
+            appointment.ApptID = this.apptID;
+            appointment.isCheckedIn = "True";
+        }
+
         private bool isValidData()
         {
             if (Validator.IsPresent(txtAppointment) &&
@@ -99,6 +107,7 @@ namespace UWG_Healthcare.View
                 Validator.IsPresent(txtDia) &&
                 Validator.IsNumbersOnly(txtDia) &&
                 Validator.IsPresent(txtTemp) &&
+                Validator.IsDecimalNumbersOnly(txtTemp) &&
                 Validator.IsPresent(txtPulse) &&
                 Validator.IsNumbersOnly(txtPulse) &&
                 Validator.IsPresent(txtSymptoms) &&
@@ -122,12 +131,15 @@ namespace UWG_Healthcare.View
                     MessageBox.Show("Symptoms description should be more than 20 characters");
                     return;
                 }
+                newAppt = new Appointment();
                 newVisit = new Visit();
                 this.PutVisitData(newVisit);
+                this.PutApptData(newAppt);
                 try
                 {
                     //Inserts the Visit into the table and stores VisitID
                     newVisit.VisitID = visitsController.AddVisit(newVisit);
+                    AppointmentController.appointmentCheckedIn(newAppt);
                     MessageBox.Show("The visit was successfully added.");
                     this.Close();
                 }

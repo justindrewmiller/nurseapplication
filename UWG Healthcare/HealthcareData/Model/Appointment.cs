@@ -17,5 +17,7 @@ namespace HealthcareData.Model
         public string apptDateTime { get; set; }
 
         public string Reason { get; set; }
+
+        public string isCheckedIn { get; set; }
     }
 }
