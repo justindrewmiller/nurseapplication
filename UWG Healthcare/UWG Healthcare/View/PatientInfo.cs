@@ -199,7 +199,9 @@ namespace UWG_Healthcare.View
             {
                 ModifyPatient modifyInfo = new ModifyPatient(this.info, this.patient);
                 modifyInfo.MdiParent = this.MdiParent;
+                modifyInfo.FormClosing += new FormClosingEventHandler(this.ModifyPatient_FormClosing);
                 modifyInfo.Show();
+
             }
         }
 
@@ -299,5 +301,29 @@ namespace UWG_Healthcare.View
 
 
         }
+
+        private void ModifyPatient_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                this.patient = InformationController.CurrentPatientInfo(this.patientID);
+                txtFName.Text = this.patient.FName;
+                txtLName.Text = this.patient.LName;
+                txtSSN.Text = this.patient.SSN;
+                txtStreet.Text = this.patient.Street;
+                txtCity.Text = this.patient.City;
+                txtZip.Text = this.patient.ZipCode;
+                txtState.Text = this.patient.State;
+                txtPhone.Text = this.patient.PhoneNum;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Invalid patient id. " +
+                   "Please try searching for the patient again.", "Patient Not Found");
+            }
+
+        }
+
     }
 }
