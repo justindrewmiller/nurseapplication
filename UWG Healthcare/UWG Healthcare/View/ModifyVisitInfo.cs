@@ -199,7 +199,6 @@ namespace UWG_Healthcare.View
                 Validator.IsPresent(txtDia) &&
                 Validator.IsNumbersOnly(txtDia) &&
                 Validator.IsPresent(txtTemp) &&
-                Validator.IsNumbersOnly(txtTemp) &&
                 Validator.IsPresent(txtPulse) &&
                 Validator.IsNumbersOnly(txtPulse) &&
                 Validator.IsPresent(txtSymptoms) &&
@@ -212,6 +211,23 @@ namespace UWG_Healthcare.View
             {
                 return false;
             }
+        }
+
+
+        private void txtTemp_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && txtTemp.Text.IndexOf('.') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

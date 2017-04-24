@@ -213,6 +213,7 @@
             this.txtTemp.Size = new System.Drawing.Size(93, 26);
             this.txtTemp.TabIndex = 55;
             this.txtTemp.Tag = "Temperature";
+            this.txtTemp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTemp_KeyPress_1);
             // 
             // txtDia
             // 

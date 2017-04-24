@@ -124,6 +124,7 @@
             this.txtTemp.Size = new System.Drawing.Size(93, 26);
             this.txtTemp.TabIndex = 13;
             this.txtTemp.Tag = "Temperature";
+            this.txtTemp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTemp_KeyPress);
             // 
             // lblSysBP
             // 
@@ -230,7 +231,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(548, 265);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 28);
             this.button1.TabIndex = 21;
@@ -248,7 +249,7 @@
             this.columnHeader5});
             this.lstTests.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstTests.Location = new System.Drawing.Point(156, 265);
-            this.lstTests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstTests.Margin = new System.Windows.Forms.Padding(2);
             this.lstTests.Name = "lstTests";
             this.lstTests.Size = new System.Drawing.Size(389, 112);
             this.lstTests.TabIndex = 45;
@@ -284,7 +285,7 @@
             this.txtAppointment.Enabled = false;
             this.txtAppointment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAppointment.Location = new System.Drawing.Point(157, 56);
-            this.txtAppointment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAppointment.Margin = new System.Windows.Forms.Padding(2);
             this.txtAppointment.Name = "txtAppointment";
             this.txtAppointment.Size = new System.Drawing.Size(388, 26);
             this.txtAppointment.TabIndex = 46;
@@ -294,7 +295,7 @@
             this.cboDiagnoses.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDiagnoses.FormattingEnabled = true;
             this.cboDiagnoses.Location = new System.Drawing.Point(157, 232);
-            this.cboDiagnoses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboDiagnoses.Margin = new System.Windows.Forms.Padding(2);
             this.cboDiagnoses.Name = "cboDiagnoses";
             this.cboDiagnoses.Size = new System.Drawing.Size(388, 27);
             this.cboDiagnoses.TabIndex = 47;
