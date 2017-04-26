@@ -146,7 +146,7 @@
             this.cboPatients.FormattingEnabled = true;
             this.cboPatients.Location = new System.Drawing.Point(94, 206);
             this.cboPatients.Name = "cboPatients";
-            this.cboPatients.Size = new System.Drawing.Size(401, 27);
+            this.cboPatients.Size = new System.Drawing.Size(435, 27);
             this.cboPatients.TabIndex = 7;
             this.cboPatients.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.ComboBoxFormat);
             // 
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 303);
+            this.ClientSize = new System.Drawing.Size(564, 303);
             this.Controls.Add(this.cboPatients);
             this.Controls.Add(this.dtDOB);
             this.Controls.Add(this.txtLName);

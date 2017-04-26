@@ -15,7 +15,7 @@ namespace HealthcareData.DAL
         // ValidLogin returns true or false depending if the UserID and Password combination matches.
         public static bool ValidLogin(string UserID, string Password)
         {
-            Boolean isValid;
+            Boolean isValid = false;
 
             // Encryptes incoming password to SHA1 Hash
             String encryptedPassword = GetSHA1HashData(Password);
@@ -25,21 +25,33 @@ namespace HealthcareData.DAL
                "SELECT Username " +
                 "FROM UserInfo " +
                 "WHERE Username = @Username AND Password = @Password";
-            con.Open();
-            SqlCommand selectCommand = new SqlCommand(selectStatement, con);
-            selectCommand.Parameters.AddWithValue("@Username", UserID);
-            selectCommand.Parameters.AddWithValue("@Password", encryptedPassword);
-            SqlDataAdapter da = new SqlDataAdapter(selectCommand);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
+            try
             {
-                isValid = true;
+                con.Open();
+                SqlCommand selectCommand = new SqlCommand(selectStatement, con);
+                selectCommand.Parameters.AddWithValue("@Username", UserID);
+                selectCommand.Parameters.AddWithValue("@Password", encryptedPassword);
+                SqlDataAdapter da = new SqlDataAdapter(selectCommand);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 1)
+                {
+                    isValid = true;
+                }
+                else
+                {
+                    isValid = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                isValid = false;
+                throw ex;
             }
+            finally
+            {
+                con.Close();
+            }
+
             con.Close();
             return isValid;
         }

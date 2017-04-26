@@ -43,22 +43,21 @@ namespace UWG_Healthcare.View
             try
             {
                 if (Controller.HealthcareController.ValidLogin(UserName, Password))
-            {
-                ui = Controller.HealthcareController.GetUser(UserName, Password);
-                this.Visible = false;
-                MainContainer mc = new MainContainer(ui);
-                mc.Show();
-            } else
-            {
-                lblInvalid.Text = "Username or password was invalid";
+                {
+                    ui = Controller.HealthcareController.GetUser(UserName, Password);
+                    this.Visible = false;
+                    MainContainer mc = new MainContainer(ui);
+                    mc.Show();
+                } else
+                {
+                    lblInvalid.Text = "Username or password was invalid";
+                }
             }
-        }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-                this.BeginInvoke(new MethodInvoker(Close));
-            }
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    this.BeginInvoke(new MethodInvoker(Close));
+                }
         }
 
         private static string GetSHA1HashData(string data)
