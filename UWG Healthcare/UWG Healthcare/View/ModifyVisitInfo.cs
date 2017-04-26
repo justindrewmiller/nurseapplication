@@ -53,12 +53,11 @@ namespace UWG_Healthcare.View
                 visit = VisitsController.GetVisit(apptID);
                 if (visit == null)
                 {
-
                     this.visitDoesntExist();
                 }
                 else
                 {
-                    if(appt.isCheckedIn == "True" || apptDate != DateTime.Now.Date)
+                    if(appt.isCheckedIn == "False" || apptDate.Date > DateTime.Now.Date)
                     {
                         this.DisplayVisit();
                         btnSubmit.Enabled = false;
@@ -68,7 +67,6 @@ namespace UWG_Healthcare.View
                         txtPulse.Enabled = false;
                         txtSymptoms.Enabled = false;
                         cboDiagnoses.Enabled = false;
-
                     }
                     else
                     {
@@ -93,15 +91,22 @@ namespace UWG_Healthcare.View
         private void visitDoesntExist()
         {
             btnSubmit.Enabled = false;
-            txtAppointment.Text = "";
+            txtAppointment.Text = this.apptText;
             txtSys.Text = "";
             txtDia.Text = "";
             txtTemp.Text = "";
             txtPulse.Text = "";
             txtSymptoms.Text = "";
             cboDiagnoses.Text = "";
-            MessageBox.Show("No Visit found with this ID. " +
-            "Please try again.", "Visit Not Found");
+            btnSubmit.Enabled = false;
+            txtSys.Enabled = false;
+            txtDia.Enabled = false;
+            txtTemp.Enabled = false;
+            txtPulse.Enabled = false;
+            txtSymptoms.Enabled = false;
+            cboDiagnoses.Enabled = false;
+            MessageBox.Show("The patient has not or did not visit on this day. \n" +
+            "There is no information to be shown.", "Visit Not Found");
         }
 
         // Displays the visit information.
