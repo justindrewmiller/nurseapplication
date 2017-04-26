@@ -57,7 +57,7 @@ namespace UWG_Healthcare.View
                 }
                 else
                 {
-                    if(appt.isCheckedIn == "True" || apptDate != DateTime.Now.Date)
+                    if(appt.isCheckedIn == "False" || apptDate.Date > DateTime.Now.Date)
                     {
                         this.DisplayVisit();
                         btnSubmit.Enabled = false;
@@ -105,7 +105,7 @@ namespace UWG_Healthcare.View
             txtPulse.Enabled = false;
             txtSymptoms.Enabled = false;
             cboDiagnoses.Enabled = false;
-            MessageBox.Show("The patient did not visit on this day. \n" +
+            MessageBox.Show("The patient has not or did not visit on this day. \n" +
             "There is no information to be shown.", "Visit Not Found");
         }
 

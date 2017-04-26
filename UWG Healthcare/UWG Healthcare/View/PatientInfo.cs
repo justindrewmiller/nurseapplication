@@ -249,6 +249,10 @@ namespace UWG_Healthcare.View
                 {
                     MessageBox.Show("No applicable appointment.", "No appointment selected");
                 }
+                else if (appt.isCheckedIn == "False" && apptDate.Date < DateTime.Now.Date)
+                {
+                    MessageBox.Show("The patient did not visit, they missed the appointment!");
+                }
                 else if (apptDate.Date != DateTime.Now.Date)
                 {
                     MessageBox.Show("This date is not today, you may not check in!");
@@ -300,11 +304,18 @@ namespace UWG_Healthcare.View
 
         private void btnUpdateDiagnosis_Click(object sender, EventArgs e)
         {
+            Appointment appt = AppointmentController.GetAppointment(Convert.ToInt32(cboAppointments.SelectedValue));
+
             try
             {
+                DateTime apptDate = Convert.ToDateTime(cboAppointments.Text);
                 if (cboAppointments.ValueMember == "")
                 {
                     MessageBox.Show("No applicable appointment.", "No appointment selected");
+                }
+                else if (appt.isCheckedIn == "False" && apptDate.Date < DateTime.Now.Date)
+                {
+                    MessageBox.Show("The patient did not visit, they missed the appointment!");
                 }
                 else
                 {
