@@ -69,7 +69,7 @@ namespace UWG_Healthcare
         {
             try
             {
-                cboPatients.DataSource = patients;
+                cboPatients.DataSource = patients; 
                 cboPatients.DisplayMember = "FullName";
                 cboPatients.ValueMember = "PatientID";
             }
@@ -139,6 +139,14 @@ namespace UWG_Healthcare
                 this.Close();
             }
 
+        }
+
+        private void ComboBoxFormat(object sender, ListControlConvertEventArgs e)
+        {
+            string fullname = ((Patient)e.ListItem).FullName;
+            string ssn = ((Patient)e.ListItem).SSN;
+            string dob = ((Patient)e.ListItem).DOB;
+            e.Value = "Name: " + fullname + ", SSN: " + ssn + ", DOB: " + dob;
         }
     }
 }
