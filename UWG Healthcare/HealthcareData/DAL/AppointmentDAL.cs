@@ -56,7 +56,7 @@ namespace HealthcareData.DAL
                    "PatientID = @PatientID, " +
                    "DoctorID = @DoctorID, " +
                    "apptDateTime = @apptDateTime, " +
-                   "Reason = @Reason " +
+                   "Reason = @Reason, " +
                    "IsCheckedIn = @IsCheckedIn " +
                  "WHERE ApptID = @ApptID";
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);

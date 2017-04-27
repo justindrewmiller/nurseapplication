@@ -81,6 +81,7 @@ namespace UWG_Healthcare.View
                 this.currentApt.apptDateTime = dateTimePicker.Value.ToString();
                 this.currentApt.Reason = txtReason.Text;
                 this.currentApt.DoctorID = (int)cboDoctor.SelectedValue;
+                this.currentApt.isCheckedIn = "False";
                 try
                 {
                     if (AppointmentController.UpdateAppointment(this.currentApt))
