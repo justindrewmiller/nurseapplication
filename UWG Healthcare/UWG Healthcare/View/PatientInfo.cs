@@ -229,6 +229,7 @@ namespace UWG_Healthcare.View
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
                     CurrentAppointment currentApt = new CurrentAppointment(this.info, apptID);
                     currentApt.MdiParent = this.MdiParent;
+                    currentApt.FormClosing += new FormClosingEventHandler(this.UpdateAppointment_FormClosing);
                     currentApt.Show();
                 }
             }
@@ -358,6 +359,21 @@ namespace UWG_Healthcare.View
         }
 
         private void CreateAppointment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                this.loadComboAppointments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Invalid patient id. " +
+                   "Please try searching for the patient again.", "Patient Not Found");
+            }
+
+        }
+
+        private void UpdateAppointment_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
             {
