@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace HealthcareData.DAL
 {
+    // HealthCareUWGDBConnection class which handles the application's connection.
     class HealthCareUWGDBConnection
     {
+        // GetConnection sets the connectionString throughout the program.
         public static SqlConnection GetConnection()
         {
             string connectionString =

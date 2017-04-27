@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HealthcareData.Model
-{   // Class that is used to validate information.
+{   // Validator class is used to validate information throughout the applicatoin.
     public class Validator
     {
         private static string title = "Entry Error";
@@ -79,6 +79,7 @@ namespace HealthcareData.Model
             return true;
         }
 
+        // Checks that the information contains numbers only
         public static bool IsNumbersOnly(Control control)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
@@ -98,6 +99,7 @@ namespace HealthcareData.Model
             return true;
         }
 
+        // Checks that the information contains decimals numbers only.
         public static bool IsDecimalNumbersOnly(Control control)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
@@ -116,6 +118,7 @@ namespace HealthcareData.Model
             }
             return true;
         }
+
         // Checks that the PhoneNum contains 10 digits
         public static bool IsValidPhonNum(Control control)
         {
@@ -136,7 +139,7 @@ namespace HealthcareData.Model
             return true;
         }
 
-        // Checks that the PhoneNum contains 10 digits
+        // Checks that the Date of Birth has a valid format.
         public static bool IsValidDOB(Control control)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
@@ -156,7 +159,7 @@ namespace HealthcareData.Model
             return true;
         }
 
-
+        // Checks that the information is an integer.
         public static bool IsInt32(TextBox textBox)
         {
             try
