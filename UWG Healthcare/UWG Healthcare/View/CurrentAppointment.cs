@@ -40,6 +40,7 @@ namespace UWG_Healthcare.View
                 this.LoadComboBoxes();
                 txtPatientName.Text = PatientController.GetPatient(this.currentApt.PatientID).FName + " " + PatientController.GetPatient(this.currentApt.PatientID).LName;
                 dateTimePicker.Value = Convert.ToDateTime(this.currentApt.apptDateTime);
+                dateTimePicker.MinDate = DateTime.Today;
                 txtReason.Text = this.currentApt.Reason;
             }
             catch (Exception ex)
