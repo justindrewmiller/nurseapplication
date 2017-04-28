@@ -41,8 +41,10 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_mostPerformedTestsDuringDatesTableAdapter1 = new UWG_Healthcare.TestDataSetTableAdapters.sp_mostPerformedTestsDuringDatesTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
+            this.sp_mostPerformedTestsDuringDatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_mostPerformedTestsDuringDatesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingSource1
@@ -59,10 +61,9 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(13, 9);
-            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserName.Location = new System.Drawing.Point(10, 7);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(181, 23);
+            this.lblUserName.Size = new System.Drawing.Size(145, 19);
             this.lblUserName.TabIndex = 19;
             this.lblUserName.Text = "UserNamePlaceHolder";
             // 
@@ -70,18 +71,20 @@
             // 
             this.dtReportStart.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtReportStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtReportStart.Location = new System.Drawing.Point(114, 94);
+            this.dtReportStart.Location = new System.Drawing.Point(86, 76);
+            this.dtReportStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtReportStart.Name = "dtReportStart";
-            this.dtReportStart.Size = new System.Drawing.Size(117, 30);
+            this.dtReportStart.Size = new System.Drawing.Size(89, 26);
             this.dtReportStart.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 96);
+            this.label1.Location = new System.Drawing.Point(10, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 23);
+            this.label1.Size = new System.Drawing.Size(71, 19);
             this.label1.TabIndex = 21;
             this.label1.Text = "Start Date";
             // 
@@ -89,9 +92,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(250, 96);
+            this.label2.Location = new System.Drawing.Point(188, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 23);
+            this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 22;
             this.label2.Text = "End Date";
             // 
@@ -99,17 +103,19 @@
             // 
             this.dtReportEnd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtReportEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtReportEnd.Location = new System.Drawing.Point(336, 95);
+            this.dtReportEnd.Location = new System.Drawing.Point(252, 77);
+            this.dtReportEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtReportEnd.Name = "dtReportEnd";
-            this.dtReportEnd.Size = new System.Drawing.Size(117, 30);
+            this.dtReportEnd.Size = new System.Drawing.Size(89, 26);
             this.dtReportEnd.TabIndex = 23;
             // 
             // btnGenerate
             // 
             this.btnGenerate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(474, 93);
+            this.btnGenerate.Location = new System.Drawing.Point(356, 76);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(145, 36);
+            this.btnGenerate.Size = new System.Drawing.Size(109, 29);
             this.btnGenerate.TabIndex = 24;
             this.btnGenerate.Text = "Run Report";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -117,13 +123,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "MostPerformedData";
-            reportDataSource1.Value = this.bindingSource1;
+            reportDataSource1.Name = "TestDataSet1";
+            reportDataSource1.Value = this.sp_mostPerformedTestsDuringDatesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UWG_Healthcare.View.MostPerformedTests.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 148);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UWG_Healthcare.View.TestReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(9, 120);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1413, 531);
+            this.reportViewer1.Size = new System.Drawing.Size(1060, 432);
             this.reportViewer1.TabIndex = 25;
             // 
             // sp_mostPerformedTestsDuringDatesTableAdapter1
@@ -135,18 +142,24 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(12, 50);
+            this.label3.Location = new System.Drawing.Point(9, 41);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(889, 23);
+            this.label3.Size = new System.Drawing.Size(714, 19);
             this.label3.TabIndex = 26;
             this.label3.Text = " Show the most performed tests during the specified period of time for the tests " +
     "that were performed at least twice.";
             // 
+            // sp_mostPerformedTestsDuringDatesBindingSource
+            // 
+            this.sp_mostPerformedTestsDuringDatesBindingSource.DataMember = "sp_mostPerformedTestsDuringDates";
+            this.sp_mostPerformedTestsDuringDatesBindingSource.DataSource = this.testDataSet;
+            // 
             // CreateAdminReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 691);
+            this.ClientSize = new System.Drawing.Size(1082, 561);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnGenerate);
@@ -155,10 +168,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtReportStart);
             this.Controls.Add(this.lblUserName);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CreateAdminReport";
             this.Text = "Run Admin Report";
+            this.Load += new System.EventHandler(this.CreateAdminReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_mostPerformedTestsDuringDatesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +193,6 @@
         private TestDataSet testDataSet;
         private TestDataSetTableAdapters.sp_mostPerformedTestsDuringDatesTableAdapter sp_mostPerformedTestsDuringDatesTableAdapter1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource sp_mostPerformedTestsDuringDatesBindingSource;
     }
 }

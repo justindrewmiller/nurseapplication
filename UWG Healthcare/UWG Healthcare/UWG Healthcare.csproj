@@ -189,7 +189,6 @@
     <EmbeddedResource Include="View\ModifyVisitInfo.resx">
       <DependentUpon>ModifyVisitInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MostPerformedTests.rdlc" />
     <EmbeddedResource Include="View\OrderTest.resx">
       <DependentUpon>OrderTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +204,7 @@
     <EmbeddedResource Include="View\TestInfo.resx">
       <DependentUpon>TestInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\TestReport.rdlc" />
     <EmbeddedResource Include="View\VisitInfo.resx">
       <DependentUpon>VisitInfo.cs</DependentUpon>
     </EmbeddedResource>

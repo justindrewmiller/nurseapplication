@@ -44,5 +44,10 @@ namespace UWG_Healthcare.View
             this.sp_mostPerformedTestsDuringDatesTableAdapter1.Fill(this.testDataSet.sp_mostPerformedTestsDuringDates, dtReportStart.Value.Date, dtReportEnd.Value.Date);
             this.reportViewer1.RefreshReport();
         }
+
+        private void CreateAdminReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
