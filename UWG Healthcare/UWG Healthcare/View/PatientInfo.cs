@@ -261,6 +261,7 @@ namespace UWG_Healthcare.View
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
                     ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
                     visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
                     visitInfo.Show();
                 }
                 else if(appt.isCheckedIn == "True" || appt.isCheckedIn == "1")
@@ -270,6 +271,7 @@ namespace UWG_Healthcare.View
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
                     ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
                     visitInfo.MdiParent = this.MdiParent;
+ 
                     visitInfo.Show();
                 }
                 else
@@ -284,6 +286,21 @@ namespace UWG_Healthcare.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Visits_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                this.loadComboVisits();
+                this.loadComboTests();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Invalid patient id. " +
+                   "Please try searching for the patient again.", "Patient Not Found");
             }
         }
 
