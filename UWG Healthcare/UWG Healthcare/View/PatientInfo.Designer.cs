@@ -67,6 +67,8 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPhone
@@ -277,7 +279,7 @@
             // 
             this.lblTests.AutoSize = true;
             this.lblTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTests.Location = new System.Drawing.Point(14, 336);
+            this.lblTests.Location = new System.Drawing.Point(50, 450);
             this.lblTests.Name = "lblTests";
             this.lblTests.Size = new System.Drawing.Size(42, 19);
             this.lblTests.TabIndex = 42;
@@ -286,7 +288,7 @@
             // btnTests
             // 
             this.btnTests.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTests.Location = new System.Drawing.Point(580, 336);
+            this.btnTests.Location = new System.Drawing.Point(657, 450);
             this.btnTests.Name = "btnTests";
             this.btnTests.Size = new System.Drawing.Size(123, 30);
             this.btnTests.TabIndex = 25;
@@ -297,7 +299,7 @@
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(116, 453);
+            this.btnModify.Location = new System.Drawing.Point(118, 616);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(138, 33);
             this.btnModify.TabIndex = 22;
@@ -308,9 +310,9 @@
             // btnFinished
             // 
             this.btnFinished.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinished.Location = new System.Drawing.Point(260, 453);
+            this.btnFinished.Location = new System.Drawing.Point(278, 616);
             this.btnFinished.Name = "btnFinished";
-            this.btnFinished.Size = new System.Drawing.Size(59, 33);
+            this.btnFinished.Size = new System.Drawing.Size(72, 33);
             this.btnFinished.TabIndex = 21;
             this.btnFinished.Text = "Close";
             this.btnFinished.UseVisualStyleBackColor = true;
@@ -336,10 +338,10 @@
             this.columnHeader4,
             this.columnHeader5});
             this.lstTests.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstTests.Location = new System.Drawing.Point(118, 336);
-            this.lstTests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstTests.Location = new System.Drawing.Point(118, 450);
+            this.lstTests.Margin = new System.Windows.Forms.Padding(2);
             this.lstTests.Name = "lstTests";
-            this.lstTests.Size = new System.Drawing.Size(456, 112);
+            this.lstTests.Size = new System.Drawing.Size(523, 124);
             this.lstTests.TabIndex = 44;
             this.lstTests.UseCompatibleStateImageBehavior = false;
             this.lstTests.View = System.Windows.Forms.View.Details;
@@ -371,7 +373,7 @@
             // btnUpdateDiagnosis
             // 
             this.btnUpdateDiagnosis.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateDiagnosis.Location = new System.Drawing.Point(580, 245);
+            this.btnUpdateDiagnosis.Location = new System.Drawing.Point(657, 279);
             this.btnUpdateDiagnosis.Name = "btnUpdateDiagnosis";
             this.btnUpdateDiagnosis.Size = new System.Drawing.Size(123, 29);
             this.btnUpdateDiagnosis.TabIndex = 45;
@@ -383,7 +385,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 245);
+            this.label1.Location = new System.Drawing.Point(48, 283);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 19);
             this.label1.TabIndex = 47;
@@ -397,10 +399,10 @@
             this.columnHeader7,
             this.columnHeader8});
             this.lstVisits.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstVisits.Location = new System.Drawing.Point(118, 245);
-            this.lstVisits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstVisits.Location = new System.Drawing.Point(118, 279);
+            this.lstVisits.Margin = new System.Windows.Forms.Padding(2);
             this.lstVisits.Name = "lstVisits";
-            this.lstVisits.Size = new System.Drawing.Size(455, 87);
+            this.lstVisits.Size = new System.Drawing.Size(523, 135);
             this.lstVisits.TabIndex = 48;
             this.lstVisits.UseCompatibleStateImageBehavior = false;
             this.lstVisits.View = System.Windows.Forms.View.Details;
@@ -424,11 +426,31 @@
             this.columnHeader8.Text = "Diagnoses";
             this.columnHeader8.Width = 153;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(115, 254);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Select Visit For Update";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(115, 427);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 13);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Select Test to Add Result";
+            // 
             // PatientInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 496);
+            this.ClientSize = new System.Drawing.Size(943, 674);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lstVisits);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdateDiagnosis);
@@ -508,5 +530,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
