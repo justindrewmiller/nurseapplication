@@ -271,7 +271,7 @@ namespace UWG_Healthcare.View
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
                     ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
                     visitInfo.MdiParent = this.MdiParent;
- 
+                    visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
                     visitInfo.Show();
                 }
                 else
@@ -293,8 +293,7 @@ namespace UWG_Healthcare.View
         {
             try
             {
-                this.loadComboVisits();
-                this.loadComboTests();
+                this.Refresh();
             }
             catch (Exception ex)
             {
@@ -341,6 +340,7 @@ namespace UWG_Healthcare.View
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
                     ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
                     visitInfo.MdiParent = this.MdiParent;
+                    visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
                     visitInfo.Show();
                 }
             }
