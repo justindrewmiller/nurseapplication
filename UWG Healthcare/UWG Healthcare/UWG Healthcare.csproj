@@ -205,7 +205,6 @@
     <EmbeddedResource Include="View\TestInfo.resx">
       <DependentUpon>TestInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TestReport.rdlc" />
     <EmbeddedResource Include="View\VisitInfo.resx">
       <DependentUpon>VisitInfo.cs</DependentUpon>
     </EmbeddedResource>

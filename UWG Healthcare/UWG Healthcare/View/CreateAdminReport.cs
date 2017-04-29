@@ -21,6 +21,7 @@ namespace UWG_Healthcare.View
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+
             if (DateTime.Compare(dtReportStart.Value.Date, dtReportEnd.Value.Date) > 0)
             {
                 MessageBox.Show("Start date must not be before end date");
@@ -33,7 +34,14 @@ namespace UWG_Healthcare.View
             }
             else
             {
-                this.GetReport();
+                try
+                {
+                    this.GetReport();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("An error occured when generating report, please try again!"); 
+                }
             }
 
         }
