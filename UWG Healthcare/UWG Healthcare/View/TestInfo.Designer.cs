@@ -38,7 +38,7 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.lblResults = new System.Windows.Forms.Label();
-            this.txtResults = new System.Windows.Forms.TextBox();
+            this.txtResults = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnFinished
@@ -50,6 +50,7 @@
             this.btnFinished.TabIndex = 0;
             this.btnFinished.Text = "Close";
             this.btnFinished.UseVisualStyleBackColor = true;
+            this.btnFinished.Click += new System.EventHandler(this.btnFinished_Click);
             // 
             // lblUserName
             // 
@@ -87,7 +88,7 @@
             this.lblTestName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTestName.Location = new System.Drawing.Point(30, 85);
             this.lblTestName.Name = "lblTestName";
-            this.lblTestName.Size = new System.Drawing.Size(73, 19);
+            this.lblTestName.Size = new System.Drawing.Size(74, 19);
             this.lblTestName.TabIndex = 5;
             this.lblTestName.Text = "Test Name";
             // 
@@ -118,7 +119,7 @@
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(34, 124);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(66, 19);
+            this.lblDate.Size = new System.Drawing.Size(67, 19);
             this.lblDate.TabIndex = 8;
             this.lblDate.Text = "Test Date";
             // 
@@ -138,16 +139,20 @@
             this.lblResults.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResults.Location = new System.Drawing.Point(21, 161);
             this.lblResults.Name = "lblResults";
-            this.lblResults.Size = new System.Drawing.Size(80, 19);
+            this.lblResults.Size = new System.Drawing.Size(81, 19);
             this.lblResults.TabIndex = 10;
             this.lblResults.Text = "Test Results";
             // 
             // txtResults
             // 
-            this.txtResults.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResults.Location = new System.Drawing.Point(104, 161);
+            this.txtResults.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResults.FormattingEnabled = true;
+            this.txtResults.Items.AddRange(new object[] {
+            "abormal",
+            "normal"});
+            this.txtResults.Location = new System.Drawing.Point(108, 161);
             this.txtResults.Name = "txtResults";
-            this.txtResults.Size = new System.Drawing.Size(162, 26);
+            this.txtResults.Size = new System.Drawing.Size(158, 25);
             this.txtResults.TabIndex = 11;
             // 
             // TestInfo
@@ -186,6 +191,6 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label lblResults;
-        private System.Windows.Forms.TextBox txtResults;
+        private System.Windows.Forms.ComboBox txtResults;
     }
 }

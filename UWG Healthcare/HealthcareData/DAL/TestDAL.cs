@@ -10,12 +10,15 @@ namespace HealthcareData.DAL
 {
     public class TestDAL
     {
+        //return the test from the appointment ID
         public static Test GetTest(int ApptID)
         {
             Test test = new Test();
             return test;
         }
 
+
+        //get list of available tests
         public static List<Test> GetTests()
         {
 
@@ -49,6 +52,7 @@ namespace HealthcareData.DAL
             return testList;
         }
 
+        //submit an order for a test
         public static void OrderTest(int apptID, DateTime testDate, int testCode)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
@@ -75,17 +79,15 @@ namespace HealthcareData.DAL
             }
         }
 
+        //update the test result
         public static bool UpdateTest(Test test)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string updateStatement =
-                "Update Test SET " +
-                   "TestCode = @TestCode, " +
-                   "TestDate = @TestDate, " +
-                   "ApptID = @ApptID, " +
+                "Update TestResults SET " +
                    "Result = @Result " +
                  "WHERE ApptID = @ApptID " +
-                 "AND TestCode = @TestCode";
+                 "AND TestCode = @TestCode AND testDate = @TestDate ";
             SqlCommand updateCommand = new SqlCommand(updateStatement, connection);
             updateCommand.Parameters.AddWithValue("@ApptID", test.ApptID);
             updateCommand.Parameters.AddWithValue("@TestCode", test.TestCode);

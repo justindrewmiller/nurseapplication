@@ -37,20 +37,38 @@ namespace UWG_Healthcare.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            
+            if (txtResults.SelectedItem == null)
             {
-                this.test.Result = txtResults.Text;
-                if (TestController.UpdateTest(this.test))
-                {
-                    MessageBox.Show("Test updated!");
-                }
-                else
-                    MessageBox.Show("Something went wrong with the update.");
+                MessageBox.Show("Please select a test result!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    this.test.Result = txtResults.SelectedItem.ToString();
+                    if (TestController.UpdateTest(this.test))
+                    {
+                        MessageBox.Show("Test updated!");
+                        this.Close(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong with the update.");
+                    }
+                        
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
+
+        private void btnFinished_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
