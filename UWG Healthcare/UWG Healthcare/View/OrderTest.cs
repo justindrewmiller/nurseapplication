@@ -63,8 +63,6 @@ namespace UWG_Healthcare.View
                 testController.OrderTest(appt.ApptID, dateTimePicker1.Value, int.Parse(cmbTests.SelectedValue.ToString())); 
                 MessageBox.Show("The test was successfully ordered.");
                 this.Close();
-
-
             }
             catch (Exception ex)
             {

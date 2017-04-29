@@ -281,7 +281,7 @@
             this.lblTests.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTests.Location = new System.Drawing.Point(50, 450);
             this.lblTests.Name = "lblTests";
-            this.lblTests.Size = new System.Drawing.Size(42, 19);
+            this.lblTests.Size = new System.Drawing.Size(43, 19);
             this.lblTests.TabIndex = 42;
             this.lblTests.Text = "Tests:";
             // 
@@ -299,7 +299,7 @@
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(118, 616);
+            this.btnModify.Location = new System.Drawing.Point(119, 589);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(138, 33);
             this.btnModify.TabIndex = 22;
@@ -310,7 +310,7 @@
             // btnFinished
             // 
             this.btnFinished.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinished.Location = new System.Drawing.Point(278, 616);
+            this.btnFinished.Location = new System.Drawing.Point(279, 589);
             this.btnFinished.Name = "btnFinished";
             this.btnFinished.Size = new System.Drawing.Size(72, 33);
             this.btnFinished.TabIndex = 21;
@@ -429,18 +429,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(115, 254);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(115, 250);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 50;
             this.label3.Text = "Select Visit For Update";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(115, 427);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(115, 424);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 13);
+            this.label4.Size = new System.Drawing.Size(153, 17);
             this.label4.TabIndex = 51;
             this.label4.Text = "Select Test to Add Result";
             // 
@@ -448,7 +450,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 674);
+            this.ClientSize = new System.Drawing.Size(809, 639);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lstVisits);

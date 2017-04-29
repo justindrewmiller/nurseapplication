@@ -257,12 +257,12 @@ namespace UWG_Healthcare.View
                 else if (apptDate.Date != DateTime.Now.Date)
                 {
                     MessageBox.Show("This date is not today, you may not check in!");
-                    String appointmentText = cboAppointments.Text;
-                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
-                    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
-                    visitInfo.MdiParent = this.MdiParent;
-                    visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
-                    visitInfo.Show();
+                    //String appointmentText = cboAppointments.Text;
+                    //int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                    //ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
+                    //visitInfo.MdiParent = this.MdiParent;
+                    //visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
+                    //visitInfo.Show();
                 }
                 else if(appt.isCheckedIn == "True" || appt.isCheckedIn == "1")
                 {
@@ -283,9 +283,9 @@ namespace UWG_Healthcare.View
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("An error occured while trying to check in, please try again!");
             }
         }
 
