@@ -31,9 +31,7 @@
               <Mapping SourceColumn="Normal" DataSetColumn="Normal" />
               <Mapping SourceColumn="Abnormal" DataSetColumn="Abnormal" />
               <Mapping SourceColumn="Age18to29" DataSetColumn="Age18to29" />
-              <Mapping SourceColumn="Age30to39" DataSetColumn="Age30to39" />
-              <Mapping SourceColumn="Age40to49" DataSetColumn="Age40to49" />
-              <Mapping SourceColumn="Age50to59" DataSetColumn="Age50to59" />
+              <Mapping SourceColumn="AllOtherAges" DataSetColumn="AllOtherAges" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -45,7 +43,7 @@
   <xs:element name="TestDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TestDataSet" msprop:Generator_UserDSName="TestDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="sp_mostPerformedTestsDuringDates" msprop:Generator_TableClassName="sp_mostPerformedTestsDuringDatesDataTable" msprop:Generator_TableVarName="tablesp_mostPerformedTestsDuringDates" msprop:Generator_RowChangedName="sp_mostPerformedTestsDuringDatesRowChanged" msprop:Generator_TablePropName="sp_mostPerformedTestsDuringDates" msprop:Generator_RowDeletingName="sp_mostPerformedTestsDuringDatesRowDeleting" msprop:Generator_RowChangingName="sp_mostPerformedTestsDuringDatesRowChanging" msprop:Generator_RowEvHandlerName="sp_mostPerformedTestsDuringDatesRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_mostPerformedTestsDuringDatesRowDeleted" msprop:Generator_RowClassName="sp_mostPerformedTestsDuringDatesRow" msprop:Generator_UserTableName="sp_mostPerformedTestsDuringDates" msprop:Generator_RowEvArgName="sp_mostPerformedTestsDuringDatesRowChangeEvent">
+        <xs:element name="sp_mostPerformedTestsDuringDates" msprop:Generator_TableClassName="sp_mostPerformedTestsDuringDatesDataTable" msprop:Generator_TableVarName="tablesp_mostPerformedTestsDuringDates" msprop:Generator_TablePropName="sp_mostPerformedTestsDuringDates" msprop:Generator_RowDeletingName="sp_mostPerformedTestsDuringDatesRowDeleting" msprop:Generator_RowChangingName="sp_mostPerformedTestsDuringDatesRowChanging" msprop:Generator_RowEvHandlerName="sp_mostPerformedTestsDuringDatesRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_mostPerformedTestsDuringDatesRowDeleted" msprop:Generator_UserTableName="sp_mostPerformedTestsDuringDates" msprop:Generator_RowChangedName="sp_mostPerformedTestsDuringDatesRowChanged" msprop:Generator_RowEvArgName="sp_mostPerformedTestsDuringDatesRowChangeEvent" msprop:Generator_RowClassName="sp_mostPerformedTestsDuringDatesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TestCode" msprop:Generator_ColumnVarNameInTable="columnTestCode" msprop:Generator_ColumnPropNameInRow="TestCode" msprop:Generator_ColumnPropNameInTable="TestCodeColumn" msprop:Generator_UserColumnName="TestCode" type="xs:int" />
@@ -62,9 +60,7 @@
               <xs:element name="Normal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNormal" msprop:Generator_ColumnPropNameInRow="Normal" msprop:Generator_ColumnPropNameInTable="NormalColumn" msprop:Generator_UserColumnName="Normal" type="xs:int" minOccurs="0" />
               <xs:element name="Abnormal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAbnormal" msprop:Generator_ColumnPropNameInRow="Abnormal" msprop:Generator_ColumnPropNameInTable="AbnormalColumn" msprop:Generator_UserColumnName="Abnormal" type="xs:int" minOccurs="0" />
               <xs:element name="Age18to29" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge18to29" msprop:Generator_ColumnPropNameInRow="Age18to29" msprop:Generator_ColumnPropNameInTable="Age18to29Column" msprop:Generator_UserColumnName="Age18to29" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Age30to39" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge30to39" msprop:Generator_ColumnPropNameInRow="Age30to39" msprop:Generator_ColumnPropNameInTable="Age30to39Column" msprop:Generator_UserColumnName="Age30to39" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Age40to49" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge40to49" msprop:Generator_ColumnPropNameInRow="Age40to49" msprop:Generator_ColumnPropNameInTable="Age40to49Column" msprop:Generator_UserColumnName="Age40to49" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Age50to59" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge50to59" msprop:Generator_ColumnPropNameInRow="Age50to59" msprop:Generator_ColumnPropNameInTable="Age50to59Column" msprop:Generator_UserColumnName="Age50to59" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AllOtherAges" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAllOtherAges" msprop:Generator_ColumnPropNameInRow="AllOtherAges" msprop:Generator_ColumnPropNameInTable="AllOtherAgesColumn" msprop:Generator_UserColumnName="AllOtherAges" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

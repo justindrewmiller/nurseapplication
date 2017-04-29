@@ -295,11 +295,7 @@ namespace UWG_Healthcare {
             
             private global::System.Data.DataColumn columnAge18to29;
             
-            private global::System.Data.DataColumn columnAge30to39;
-            
-            private global::System.Data.DataColumn columnAge40to49;
-            
-            private global::System.Data.DataColumn columnAge50to59;
+            private global::System.Data.DataColumn columnAllOtherAges;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -400,25 +396,9 @@ namespace UWG_Healthcare {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Age30to39Column {
+            public global::System.Data.DataColumn AllOtherAgesColumn {
                 get {
-                    return this.columnAge30to39;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Age40to49Column {
-                get {
-                    return this.columnAge40to49;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Age50to59Column {
-                get {
-                    return this.columnAge50to59;
+                    return this.columnAllOtherAges;
                 }
             }
             
@@ -459,7 +439,7 @@ namespace UWG_Healthcare {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public sp_mostPerformedTestsDuringDatesRow Addsp_mostPerformedTestsDuringDatesRow(int TestCode, string TestName, int NumberofTests, int AllNumberofTests, decimal PercentofTotal, int Normal, int Abnormal, decimal Age18to29, decimal Age30to39, decimal Age40to49, decimal Age50to59) {
+            public sp_mostPerformedTestsDuringDatesRow Addsp_mostPerformedTestsDuringDatesRow(int TestCode, string TestName, int NumberofTests, int AllNumberofTests, decimal PercentofTotal, int Normal, int Abnormal, decimal Age18to29, decimal AllOtherAges) {
                 sp_mostPerformedTestsDuringDatesRow rowsp_mostPerformedTestsDuringDatesRow = ((sp_mostPerformedTestsDuringDatesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TestCode,
@@ -470,9 +450,7 @@ namespace UWG_Healthcare {
                         Normal,
                         Abnormal,
                         Age18to29,
-                        Age30to39,
-                        Age40to49,
-                        Age50to59};
+                        AllOtherAges};
                 rowsp_mostPerformedTestsDuringDatesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_mostPerformedTestsDuringDatesRow);
                 return rowsp_mostPerformedTestsDuringDatesRow;
@@ -503,9 +481,7 @@ namespace UWG_Healthcare {
                 this.columnNormal = base.Columns["Normal"];
                 this.columnAbnormal = base.Columns["Abnormal"];
                 this.columnAge18to29 = base.Columns["Age18to29"];
-                this.columnAge30to39 = base.Columns["Age30to39"];
-                this.columnAge40to49 = base.Columns["Age40to49"];
-                this.columnAge50to59 = base.Columns["Age50to59"];
+                this.columnAllOtherAges = base.Columns["AllOtherAges"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -527,12 +503,8 @@ namespace UWG_Healthcare {
                 base.Columns.Add(this.columnAbnormal);
                 this.columnAge18to29 = new global::System.Data.DataColumn("Age18to29", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAge18to29);
-                this.columnAge30to39 = new global::System.Data.DataColumn("Age30to39", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAge30to39);
-                this.columnAge40to49 = new global::System.Data.DataColumn("Age40to49", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAge40to49);
-                this.columnAge50to59 = new global::System.Data.DataColumn("Age50to59", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAge50to59);
+                this.columnAllOtherAges = new global::System.Data.DataColumn("AllOtherAges", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAllOtherAges);
                 this.columnTestCode.AllowDBNull = false;
                 this.columnTestName.MaxLength = 200;
                 this.columnNumberofTests.ReadOnly = true;
@@ -541,9 +513,7 @@ namespace UWG_Healthcare {
                 this.columnNormal.ReadOnly = true;
                 this.columnAbnormal.ReadOnly = true;
                 this.columnAge18to29.ReadOnly = true;
-                this.columnAge30to39.ReadOnly = true;
-                this.columnAge40to49.ReadOnly = true;
-                this.columnAge50to59.ReadOnly = true;
+                this.columnAllOtherAges.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -816,52 +786,18 @@ namespace UWG_Healthcare {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Age30to39 {
+            public decimal AllOtherAges {
                 get {
                     try {
-                        return ((decimal)(this[this.tablesp_mostPerformedTestsDuringDates.Age30to39Column]));
+                        return ((decimal)(this[this.tablesp_mostPerformedTestsDuringDates.AllOtherAgesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Age30to39\' in table \'sp_mostPerformedTestsDuringDates\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AllOtherAges\' in table \'sp_mostPerformedTestsDuringDates\' i" +
+                                "s DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablesp_mostPerformedTestsDuringDates.Age30to39Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Age40to49 {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablesp_mostPerformedTestsDuringDates.Age40to49Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Age40to49\' in table \'sp_mostPerformedTestsDuringDates\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_mostPerformedTestsDuringDates.Age40to49Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Age50to59 {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablesp_mostPerformedTestsDuringDates.Age50to59Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Age50to59\' in table \'sp_mostPerformedTestsDuringDates\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablesp_mostPerformedTestsDuringDates.Age50to59Column] = value;
+                    this[this.tablesp_mostPerformedTestsDuringDates.AllOtherAgesColumn] = value;
                 }
             }
             
@@ -951,38 +887,14 @@ namespace UWG_Healthcare {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAge30to39Null() {
-                return this.IsNull(this.tablesp_mostPerformedTestsDuringDates.Age30to39Column);
+            public bool IsAllOtherAgesNull() {
+                return this.IsNull(this.tablesp_mostPerformedTestsDuringDates.AllOtherAgesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAge30to39Null() {
-                this[this.tablesp_mostPerformedTestsDuringDates.Age30to39Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAge40to49Null() {
-                return this.IsNull(this.tablesp_mostPerformedTestsDuringDates.Age40to49Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAge40to49Null() {
-                this[this.tablesp_mostPerformedTestsDuringDates.Age40to49Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAge50to59Null() {
-                return this.IsNull(this.tablesp_mostPerformedTestsDuringDates.Age50to59Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAge50to59Null() {
-                this[this.tablesp_mostPerformedTestsDuringDates.Age50to59Column] = global::System.Convert.DBNull;
+            public void SetAllOtherAgesNull() {
+                this[this.tablesp_mostPerformedTestsDuringDates.AllOtherAgesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1153,9 +1065,7 @@ namespace UWG_Healthcare.TestDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Normal", "Normal");
             tableMapping.ColumnMappings.Add("Abnormal", "Abnormal");
             tableMapping.ColumnMappings.Add("Age18to29", "Age18to29");
-            tableMapping.ColumnMappings.Add("Age30to39", "Age30to39");
-            tableMapping.ColumnMappings.Add("Age40to49", "Age40to49");
-            tableMapping.ColumnMappings.Add("Age50to59", "Age50to59");
+            tableMapping.ColumnMappings.Add("AllOtherAges", "AllOtherAges");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

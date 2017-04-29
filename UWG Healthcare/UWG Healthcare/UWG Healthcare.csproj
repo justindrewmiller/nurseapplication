@@ -156,6 +156,7 @@
     <Compile Include="View\VisitInfo.Designer.cs">
       <DependentUpon>VisitInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AdminTestReport.rdlc" />
     <EmbeddedResource Include="View\CreateAdminReport.resx">
       <DependentUpon>CreateAdminReport.cs</DependentUpon>
     </EmbeddedResource>

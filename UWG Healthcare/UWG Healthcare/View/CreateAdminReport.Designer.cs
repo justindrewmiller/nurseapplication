@@ -30,8 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sp_mostPerformedTestsDuringDatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new UWG_Healthcare.TestDataSet();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblUserName = new System.Windows.Forms.Label();
             this.dtReportStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,21 +42,25 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sp_mostPerformedTestsDuringDatesTableAdapter1 = new UWG_Healthcare.TestDataSetTableAdapters.sp_mostPerformedTestsDuringDatesTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
-            this.sp_mostPerformedTestsDuringDatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_mostPerformedTestsDuringDatesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // bindingSource1
+            // sp_mostPerformedTestsDuringDatesBindingSource
             // 
-            this.bindingSource1.DataMember = "sp_mostPerformedTestsDuringDates";
-            this.bindingSource1.DataSource = this.testDataSet;
+            this.sp_mostPerformedTestsDuringDatesBindingSource.DataMember = "sp_mostPerformedTestsDuringDates";
+            this.sp_mostPerformedTestsDuringDatesBindingSource.DataSource = this.testDataSet;
             // 
             // testDataSet
             // 
             this.testDataSet.DataSetName = "TestDataSet";
             this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "sp_mostPerformedTestsDuringDates";
+            this.bindingSource1.DataSource = this.testDataSet;
             // 
             // lblUserName
             // 
@@ -72,7 +77,7 @@
             this.dtReportStart.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtReportStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtReportStart.Location = new System.Drawing.Point(86, 76);
-            this.dtReportStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtReportStart.Margin = new System.Windows.Forms.Padding(2);
             this.dtReportStart.Name = "dtReportStart";
             this.dtReportStart.Size = new System.Drawing.Size(89, 26);
             this.dtReportStart.TabIndex = 20;
@@ -104,7 +109,7 @@
             this.dtReportEnd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtReportEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtReportEnd.Location = new System.Drawing.Point(252, 77);
-            this.dtReportEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtReportEnd.Margin = new System.Windows.Forms.Padding(2);
             this.dtReportEnd.Name = "dtReportEnd";
             this.dtReportEnd.Size = new System.Drawing.Size(89, 26);
             this.dtReportEnd.TabIndex = 23;
@@ -113,7 +118,7 @@
             // 
             this.btnGenerate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerate.Location = new System.Drawing.Point(356, 76);
-            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(109, 29);
             this.btnGenerate.TabIndex = 24;
@@ -123,12 +128,12 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "TestDataSet1";
+            reportDataSource1.Name = "TestDataSetAdmin";
             reportDataSource1.Value = this.sp_mostPerformedTestsDuringDatesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UWG_Healthcare.View.TestReport.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UWG_Healthcare.View.AdminTestReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(9, 120);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(1060, 432);
             this.reportViewer1.TabIndex = 25;
@@ -150,11 +155,6 @@
             this.label3.Text = " Show the most performed tests during the specified period of time for the tests " +
     "that were performed at least twice.";
             // 
-            // sp_mostPerformedTestsDuringDatesBindingSource
-            // 
-            this.sp_mostPerformedTestsDuringDatesBindingSource.DataMember = "sp_mostPerformedTestsDuringDates";
-            this.sp_mostPerformedTestsDuringDatesBindingSource.DataSource = this.testDataSet;
-            // 
             // CreateAdminReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,13 +168,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtReportStart);
             this.Controls.Add(this.lblUserName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateAdminReport";
             this.Text = "Run Admin Report";
             this.Load += new System.EventHandler(this.CreateAdminReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_mostPerformedTestsDuringDatesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
