@@ -109,9 +109,7 @@
             this.btnVisit.Size = new System.Drawing.Size(202, 27);
             this.btnVisit.TabIndex = 8;
             this.btnVisit.Text = "Routine Check Up Visit";
-            this.btnVisit.UseVisualStyleBackColor = true;
-            this.btnVisit.Click += new System.EventHandler(this.btnVisit_Click);
-            // 
+            this.btnVisit.UseVisualStyleBackColor = true;            // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

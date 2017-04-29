@@ -237,7 +237,7 @@
             // 
             this.lblAppointment.AutoSize = true;
             this.lblAppointment.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointment.Location = new System.Drawing.Point(14, 210);
+            this.lblAppointment.Location = new System.Drawing.Point(14, 215);
             this.lblAppointment.Name = "lblAppointment";
             this.lblAppointment.Size = new System.Drawing.Size(99, 19);
             this.lblAppointment.TabIndex = 36;
@@ -248,7 +248,7 @@
             this.cboAppointments.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAppointments.FormatString = "g";
             this.cboAppointments.FormattingEnabled = true;
-            this.cboAppointments.Location = new System.Drawing.Point(118, 206);
+            this.cboAppointments.Location = new System.Drawing.Point(118, 211);
             this.cboAppointments.Name = "cboAppointments";
             this.cboAppointments.Size = new System.Drawing.Size(284, 27);
             this.cboAppointments.TabIndex = 18;
@@ -256,7 +256,7 @@
             // btnAppointments
             // 
             this.btnAppointments.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppointments.Location = new System.Drawing.Point(517, 206);
+            this.btnAppointments.Location = new System.Drawing.Point(517, 211);
             this.btnAppointments.Name = "btnAppointments";
             this.btnAppointments.Size = new System.Drawing.Size(90, 29);
             this.btnAppointments.TabIndex = 23;
@@ -267,7 +267,7 @@
             // btnVisits
             // 
             this.btnVisits.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisits.Location = new System.Drawing.Point(418, 206);
+            this.btnVisits.Location = new System.Drawing.Point(418, 211);
             this.btnVisits.Name = "btnVisits";
             this.btnVisits.Size = new System.Drawing.Size(90, 28);
             this.btnVisits.TabIndex = 24;
@@ -321,7 +321,7 @@
             // btnCrtAppointment
             // 
             this.btnCrtAppointment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrtAppointment.Location = new System.Drawing.Point(613, 206);
+            this.btnCrtAppointment.Location = new System.Drawing.Point(613, 211);
             this.btnCrtAppointment.Name = "btnCrtAppointment";
             this.btnCrtAppointment.Size = new System.Drawing.Size(90, 29);
             this.btnCrtAppointment.TabIndex = 43;

@@ -29,9 +29,10 @@ namespace UWG_Healthcare.View
         public int apptID;
         public string patientID;
         public Appointment appt;
-        public bool flag; 
+        public bool flag;
+        PatientInfo _owner;
 
-        public VisitInfo(UserInfo info, int apptID, string patientID, bool flag)
+        public VisitInfo(UserInfo info, int apptID, string patientID, bool flag, PatientInfo owner)
         {
             InitializeComponent();
             visitsController = new VisitsController();
@@ -42,7 +43,15 @@ namespace UWG_Healthcare.View
             lblUserName.Text = info.userID;
             this.apptID = apptID;
             this.patientID = patientID;
-            this.flag = flag;                    
+            this.flag = flag;
+
+            _owner = owner;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VisitInfo_FormClosing);
+        }
+
+        private void VisitInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _owner.PerformRefresh();
         }
 
         private void VisitInfo_Load(object sender, EventArgs e)
@@ -163,11 +172,6 @@ namespace UWG_Healthcare.View
             orderTests.Show();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loadComboTests()
         {
             //load the test information 
@@ -233,6 +237,11 @@ namespace UWG_Healthcare.View
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

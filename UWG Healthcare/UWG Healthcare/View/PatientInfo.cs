@@ -277,7 +277,7 @@ namespace UWG_Healthcare.View
                 else
                 {
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
-                    VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID, false);
+                    VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID, false, this);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.Show();
 
@@ -403,6 +403,14 @@ namespace UWG_Healthcare.View
                    "Please try searching for the patient again.", "Patient Not Found");
             }
 
+        }
+
+        public void PerformRefresh()
+        {
+            lstTests.Items.Clear();
+            lstVisits.Items.Clear();
+            this.loadComboTests();
+            this.loadComboVisits();
         }
 
     }
