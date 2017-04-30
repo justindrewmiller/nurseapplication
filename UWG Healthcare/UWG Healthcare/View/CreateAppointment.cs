@@ -103,6 +103,13 @@ namespace UWG_Healthcare.View
                     MessageBox.Show("Reason should be longer than 10 characters.");
                     return;
                 }
+                else if (dtpDateTime.Value < DateTime.Now)
+                {
+                    MessageBox.Show("You can not create an appointment for the past!");
+                    return; 
+                }
+                else
+                {
                 newAppointment = new Appointment();
                 this.PutIncidentData(newAppointment);
                 try
@@ -114,6 +121,7 @@ namespace UWG_Healthcare.View
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
                 }
 
             }
