@@ -123,6 +123,9 @@ namespace UWG_Healthcare.View
                     cboAppointments.DisplayMember = "apptDateTime";
                     cboAppointments.ValueMember = "ApptID";
                     cboAppointments.SelectedIndex = 0;
+                } else
+                {
+                    cboAppointments.DataSource = null; 
                 }
             }
             catch (Exception ex)
@@ -181,7 +184,7 @@ namespace UWG_Healthcare.View
                         lstVisits.Items[i].SubItems.Add(visit.Symptoms);
                         lstVisits.Items[i].SubItems.Add(visit.DiagnosesName);
                     }
-                }
+                } 
             }
             catch (Exception ex)
             {
@@ -281,6 +284,7 @@ namespace UWG_Healthcare.View
                 {
                     int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
                     VisitInfo visitInfo = new VisitInfo(this.info, apptID, this.patientID, false, this);
+                    visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.Show();
 
@@ -296,6 +300,7 @@ namespace UWG_Healthcare.View
         {
             try
             {
+                this.loadComboAppointments();
                 lstTests.Items.Clear();
                 lstVisits.Items.Clear();
                 this.loadComboTests();
@@ -414,7 +419,7 @@ namespace UWG_Healthcare.View
         {
             try
             {
-                this.loadComboAppointments();
+                this.loadComboAppointments();  
             }
             catch (Exception ex)
             {
@@ -427,6 +432,7 @@ namespace UWG_Healthcare.View
 
         public void PerformRefresh()
         {
+            this.loadComboAppointments();
             lstTests.Items.Clear();
             lstVisits.Items.Clear();
             this.loadComboTests();
