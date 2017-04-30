@@ -485,6 +485,7 @@
             this.Controls.Add(this.lblfname);
             this.Name = "PatientInfo";
             this.Text = "Patient Information";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PatientInfo_FormClosing);
             this.Load += new System.EventHandler(this.PatientInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

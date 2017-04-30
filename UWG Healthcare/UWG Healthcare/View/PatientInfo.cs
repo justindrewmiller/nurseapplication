@@ -210,6 +210,9 @@ namespace UWG_Healthcare.View
 
         private void btnFinished_Click(object sender, EventArgs e)
         {
+            SearchPatient sp = new SearchPatient(info);
+            sp.MdiParent = this.MdiParent;
+            sp.Show();
             this.Close();
         }
 
@@ -413,5 +416,11 @@ namespace UWG_Healthcare.View
             this.loadComboVisits();
         }
 
+        private void PatientInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SearchPatient sp = new SearchPatient(info);
+            sp.MdiParent = this.MdiParent;
+            sp.Show();
+        }
     }
 }
