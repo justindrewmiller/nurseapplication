@@ -50,16 +50,16 @@ namespace HealthcareData.DAL
             }
         }
 
-        public static Visit GetVisit(int apptID)
+        public static Visit GetVisit(int visitID)
         {
             Visit visit = new Visit();
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
             string selectStatement =
                 "SELECT v.VisitID, v.ApptID, v.SysBP, v.DiaBP, v.BodyTemp, v.Pulse, v.Symptoms, v.NurseID, v.DiagnosesCode " +
                 "FROM Visits v " +
-                "WHERE v.ApptID = @ApptID";
+                "WHERE v.VisitID = @VisitID";
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
-            selectCommand.Parameters.AddWithValue("@ApptID", apptID);
+            selectCommand.Parameters.AddWithValue("@VisitID", visitID);
             try
             {
                 connection.Open();

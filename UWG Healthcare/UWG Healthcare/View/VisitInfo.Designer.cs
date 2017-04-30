@@ -230,7 +230,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(548, 265);
+            this.button1.Location = new System.Drawing.Point(677, 265);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 28);
@@ -251,7 +251,7 @@
             this.lstTests.Location = new System.Drawing.Point(156, 265);
             this.lstTests.Margin = new System.Windows.Forms.Padding(2);
             this.lstTests.Name = "lstTests";
-            this.lstTests.Size = new System.Drawing.Size(389, 112);
+            this.lstTests.Size = new System.Drawing.Size(508, 112);
             this.lstTests.TabIndex = 45;
             this.lstTests.UseCompatibleStateImageBehavior = false;
             this.lstTests.View = System.Windows.Forms.View.Details;
@@ -304,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 439);
+            this.ClientSize = new System.Drawing.Size(769, 439);
             this.Controls.Add(this.cboDiagnoses);
             this.Controls.Add(this.txtAppointment);
             this.Controls.Add(this.lstTests);

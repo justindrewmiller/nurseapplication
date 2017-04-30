@@ -269,13 +269,13 @@ namespace UWG_Healthcare.View
                 }
                 else if(appt.isCheckedIn == "True" || appt.isCheckedIn == "1")
                 {
-                    MessageBox.Show("You have already checked in today");
-                    String appointmentText = cboAppointments.Text;
-                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
-                    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
-                    visitInfo.MdiParent = this.MdiParent;
-                    visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
-                    visitInfo.Show();
+                    MessageBox.Show("You have already checked in today!");
+                    //String appointmentText = cboAppointments.Text;
+                    //int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                    //ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, this.patientID, false);
+                    //visitInfo.MdiParent = this.MdiParent;
+                    //visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
+                    //visitInfo.Show();
                 }
                 else
                 {
@@ -324,28 +324,42 @@ namespace UWG_Healthcare.View
 
         private void btnUpdateDiagnosis_Click(object sender, EventArgs e)
         {
-            Appointment appt = AppointmentController.GetAppointment(Convert.ToInt32(cboAppointments.SelectedValue));
-
+            //Appointment appt = AppointmentController.GetAppointment(Convert.ToInt32(cboAppointments.SelectedValue));
+             
             try
             {
-                DateTime apptDate = Convert.ToDateTime(cboAppointments.Text);
-                if (cboAppointments.ValueMember == "")
+                if (!(lstVisits.SelectedItems.Count > 0))
                 {
-                    MessageBox.Show("No applicable appointment.", "No appointment selected");
-                }
-                else if (appt.isCheckedIn == "False" && apptDate.Date < DateTime.Now.Date)
-                {
-                    MessageBox.Show("The patient did not visit, they missed the appointment!");
+                    MessageBox.Show("Please select a visit to update!");
                 }
                 else
                 {
-                    String appointmentText = cboAppointments.Text;
-                    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
-                    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
+                    string apptDateTime = lstVisits.FocusedItem.SubItems[1].Text; 
+                    int visitID = int.Parse(lstVisits.FocusedItem.SubItems[0].Text);
+                    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, visitID, this.patientID, false, apptDateTime);
                     visitInfo.MdiParent = this.MdiParent;
                     visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
                     visitInfo.Show();
                 }
+
+                //DateTime apptDate = Convert.ToDateTime(cboAppointments.Text);
+                //if (cboAppointments.ValueMember == "")
+                //{
+                //    MessageBox.Show("No applicable appointment.", "No appointment selected");
+                //}
+                //else if (appt.isCheckedIn == "False" && apptDate.Date < DateTime.Now.Date)
+                //{
+                //    MessageBox.Show("The patient did not visit, they missed the appointment!");
+                //}
+                //else
+                //{
+                //    String appointmentText = cboAppointments.Text;
+                //    int apptID = int.Parse(cboAppointments.SelectedValue.ToString());
+                //    ModifyVisitInfo visitInfo = new ModifyVisitInfo(this.info, apptID, appointmentText, this.patientID, false);
+                //    visitInfo.MdiParent = this.MdiParent;
+                //    visitInfo.FormClosing += new FormClosingEventHandler(this.Visits_FormClosing);
+                //    visitInfo.Show();
+                //}
             }
             catch (Exception ex)
             {

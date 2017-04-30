@@ -19,20 +19,20 @@ namespace UWG_Healthcare.View
         public AppointmentController apptController;
         public DiagnosesController diagController;
         public string patientID;
-        public int apptID;
+        public int visitID;
         public string apptText;
         public Visit visit;
 
-        public ModifyVisitInfo(UserInfo info, int apptID, string AppointmentText, string patientID, bool flag)
+        public ModifyVisitInfo(UserInfo info, int visitID, string patientID, bool flag, string apptDateTime)
         {
-            this.apptID = apptID;
-            this.apptText = AppointmentText;
+            this.visitID = visitID;
             this.patientID = patientID;
             InitializeComponent();
             visitsController = new VisitsController();
             apptController = new AppointmentController();
             diagController = new DiagnosesController();
             userID = info;
+            this.apptText = apptDateTime;
             lblUserName.Text = userID.userID;
         }
 
@@ -40,47 +40,48 @@ namespace UWG_Healthcare.View
         {
             this.loadComboTests();
             this.loadDiagnoses();
-            this.GetVisit(this.apptID);
+            this.GetVisit(this.visitID);
         }
 
-        private void GetVisit(int apptID)
+        private void GetVisit(int visitID)
         {
 
-            Appointment appt = AppointmentController.GetAppointment(this.apptID);
-            DateTime apptDate = Convert.ToDateTime(appt.apptDateTime);
+            //Appointment appt = AppointmentController.GetAppointment(this.apptID);
+            //DateTime apptDate = Convert.ToDateTime(appt.apptDateTime);
             try
             {
-                visit = VisitsController.GetVisit(apptID);
-                if (visit == null)
-                {
-                    this.visitDoesntExist();
-                }
-                else
-                {
-                    if(appt.isCheckedIn == "False" || apptDate.Date > DateTime.Now.Date)
-                    {
-                        this.DisplayVisit();
-                        btnSubmit.Enabled = false;
-                        txtSys.Enabled = false;
-                        txtDia.Enabled = false;
-                        txtTemp.Enabled = false;
-                        txtPulse.Enabled = false;
-                        txtSymptoms.Enabled = false;
-                        cboDiagnoses.Enabled = false;
-                    }
-                    else
-                    {
-                    this.DisplayVisit();
-                    btnSubmit.Enabled = true;
-                    txtSys.Enabled = true;
-                    txtDia.Enabled = true;
-                    txtTemp.Enabled = true;
-                    txtPulse.Enabled = true;
-                    txtSymptoms.Enabled = true;
-                    cboDiagnoses.Enabled = true;
-                    }
+                visit = VisitsController.GetVisit(visitID);
+                this.DisplayVisit(); 
+                //if (visit == null)
+                //{
+                //    this.visitDoesntExist();
+                //}
+                //else
+                //{
+                    //if(appt.isCheckedIn == "False" || apptDate.Date > DateTime.Now.Date)
+                    //{
+                    //    this.DisplayVisit();
+                    //    btnSubmit.Enabled = false;
+                    //    txtSys.Enabled = false;
+                    //    txtDia.Enabled = false;
+                    //    txtTemp.Enabled = false;
+                    //    txtPulse.Enabled = false;
+                    //    txtSymptoms.Enabled = false;
+                    //    cboDiagnoses.Enabled = false;
+                    //}
+                    //else
+                    //{
+                    //this.DisplayVisit();
+                    //btnSubmit.Enabled = true;
+                    //txtSys.Enabled = true;
+                    //txtDia.Enabled = true;
+                    //txtTemp.Enabled = true;
+                    //txtPulse.Enabled = true;
+                    //txtSymptoms.Enabled = true;
+                    //cboDiagnoses.Enabled = true;
+                    //}
                     
-                }
+                //}
             }
             catch (Exception ex)
             {
@@ -88,26 +89,26 @@ namespace UWG_Healthcare.View
             }
         }
 
-        private void visitDoesntExist()
-        {
-            btnSubmit.Enabled = false;
-            txtAppointment.Text = this.apptText;
-            txtSys.Text = "";
-            txtDia.Text = "";
-            txtTemp.Text = "";
-            txtPulse.Text = "";
-            txtSymptoms.Text = "";
-            cboDiagnoses.Text = "";
-            btnSubmit.Enabled = false;
-            txtSys.Enabled = false;
-            txtDia.Enabled = false;
-            txtTemp.Enabled = false;
-            txtPulse.Enabled = false;
-            txtSymptoms.Enabled = false;
-            cboDiagnoses.Enabled = false;
-            MessageBox.Show("The patient has not or did not visit on this day. \n" +
-            "There is no information to be shown.", "Visit Not Found");
-        }
+        //private void visitDoesntExist()
+        //{
+        //    btnSubmit.Enabled = false;
+        //    txtAppointment.Text = this.apptText;
+        //    txtSys.Text = "";
+        //    txtDia.Text = "";
+        //    txtTemp.Text = "";
+        //    txtPulse.Text = "";
+        //    txtSymptoms.Text = "";
+        //    cboDiagnoses.Text = "";
+        //    btnSubmit.Enabled = false;
+        //    txtSys.Enabled = false;
+        //    txtDia.Enabled = false;
+        //    txtTemp.Enabled = false;
+        //    txtPulse.Enabled = false;
+        //    txtSymptoms.Enabled = false;
+        //    cboDiagnoses.Enabled = false;
+        //    MessageBox.Show("The patient has not or did not visit on this day. \n" +
+        //    "There is no information to be shown.", "Visit Not Found");
+        //}
 
         // Displays the visit information.
         private void DisplayVisit()
