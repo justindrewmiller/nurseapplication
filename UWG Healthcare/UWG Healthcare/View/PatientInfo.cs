@@ -70,7 +70,7 @@ namespace UWG_Healthcare.View
                     test.TestDate = lstTests.FocusedItem.SubItems[2].Text;
                     test.TestName = lstTests.FocusedItem.SubItems[1].Text;
                     test.ApptID = lstTests.FocusedItem.SubItems[3].Text;
-                    TestInfo testInfo = new TestInfo(this.info, this.patient, test);
+                    TestInfo testInfo = new TestInfo(this.info, this.patient, test, this);
                     testInfo.MdiParent = this.MdiParent;
                     testInfo.Show();
                 }

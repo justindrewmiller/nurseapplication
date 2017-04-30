@@ -179,7 +179,6 @@ namespace UWG_Healthcare.View
             try
             {
                 testList = InformationController.GetPatientTests(this.patientID);
-
                 if (testList.Count > 0)
                 {
                     Test test;

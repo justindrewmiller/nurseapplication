@@ -328,6 +328,7 @@
             this.Controls.Add(this.lblUserName);
             this.Name = "VisitInfo";
             this.Text = "Visit Information";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VisitInfo_FormClosing);
             this.Load += new System.EventHandler(this.VisitInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

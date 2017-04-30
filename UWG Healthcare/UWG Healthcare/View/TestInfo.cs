@@ -17,15 +17,24 @@ namespace UWG_Healthcare.View
 
         public UserInfo info;
         private Patient patient;
-        private Test test; 
+        private Test test;
+        PatientInfo _owner; 
 
-        public TestInfo(UserInfo info, Patient patient, Test test)
+        public TestInfo(UserInfo info, Patient patient, Test test, PatientInfo owner)
         {
             InitializeComponent();
             this.info = info;
             lblUserName.Text = info.userID;
             this.patient = patient;
-            this.test = test; 
+            this.test = test;
+
+            _owner = owner;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TestInfo_FormClosing);
+        }
+
+        private void TestInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _owner.PerformRefresh();
         }
 
         private void Test_Load(object sender, EventArgs e)
