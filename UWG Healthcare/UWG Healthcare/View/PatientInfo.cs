@@ -296,7 +296,10 @@ namespace UWG_Healthcare.View
         {
             try
             {
-                this.Refresh();
+                lstTests.Items.Clear();
+                lstVisits.Items.Clear();
+                this.loadComboTests();
+                this.loadComboVisits();
             }
             catch (Exception ex)
             {

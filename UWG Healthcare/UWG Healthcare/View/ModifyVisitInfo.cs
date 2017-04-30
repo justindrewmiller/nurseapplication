@@ -177,34 +177,34 @@ namespace UWG_Healthcare.View
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            {
-                if (isValidData())
-                {
-                    Visit newVisit = new Visit();
-                    newVisit.VisitID = visit.VisitID;
-                    this.PutVisitData(newVisit);
-                    try
-                    {
-                        if (!VisitsController.UpdateVisit(visit, newVisit))
-                        {
-                            MessageBox.Show("Another user has updated or " +
-                                "deleted that patient.", "Database Error");
-                            this.DialogResult = DialogResult.Retry;
-                        }
-                        else
-                        {
-                            visit = newVisit;
-                            MessageBox.Show("Visit was successfully modified.", "Successful Modification");
-                            this.Close();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, ex.GetType().ToString());
-                    }
 
+            if (isValidData())
+            {
+                Visit newVisit = new Visit();
+                newVisit.VisitID = visit.VisitID;
+                this.PutVisitData(newVisit);
+                try
+                {
+                    if (!VisitsController.UpdateVisit(visit, newVisit))
+                    {
+                        MessageBox.Show("Another user has updated or " +
+                            "deleted that patient.", "Database Error");
+                        this.DialogResult = DialogResult.Retry;
+                    }
+                    else
+                    {
+                        visit = newVisit;
+                        MessageBox.Show("Visit was successfully modified.", "Successful Modification");
+                        this.Close();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+
             }
+
         }
 
         private void PutVisitData(Visit visit)
