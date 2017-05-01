@@ -51,7 +51,11 @@ namespace HealthcareData.DAL
             }
         }
 
-        // Updates the Appointment table
+        /// <summary>
+        /// Updates the Update Appointment table
+        /// </summary>
+        /// <param name="appointment">appointment that is to be updated</param>
+        /// <returns>true or false depending on if the appointment updated sucessfully</returns>
         public static bool UpdateAppointment(Appointment appointment)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();
@@ -89,7 +93,11 @@ namespace HealthcareData.DAL
             }
         }
 
-        // Updates the Appointment table
+        /// <summary>
+        /// updates an appointment that it is updated correctly
+        /// </summary>
+        /// <param name="appointment">appointment to be updated</param>
+        /// <returns>true or false depending on if updated correctly</returns>
         public static bool appointmentCheckedIn(Appointment appointment)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();

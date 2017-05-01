@@ -92,7 +92,6 @@ namespace UWG_Healthcare
         {
             this.stripLabel = new ToolStripLabel(lblUserID.Text);
             menuStrip1.Items.Add(this.stripLabel);
-            this.stripLabel.Alignment = 
 
         }
 
