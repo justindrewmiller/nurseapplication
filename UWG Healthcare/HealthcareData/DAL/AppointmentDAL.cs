@@ -12,7 +12,11 @@ namespace HealthcareData.DAL
     public class AppointmentDAL
     {
 
-        // Inserts into the Appointment table
+        /// <summary>
+        /// This method inserts a new Appointment defined by the user into the SQL database
+        /// </summary>
+        /// <param name="appointment">Appointment object that will be created</param>
+        /// <returns>integer ApptID </returns>
         public static int CreateAppointment(Appointment appointment)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();

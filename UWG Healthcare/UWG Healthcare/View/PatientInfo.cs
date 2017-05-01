@@ -239,9 +239,9 @@ namespace UWG_Healthcare.View
                     currentApt.Show();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("No applicable appointment.", "No appointment selected");
             }
         }
 
