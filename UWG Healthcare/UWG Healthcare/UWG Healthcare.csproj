@@ -100,12 +100,6 @@
     <Compile Include="View\MainContainer.Designer.cs">
       <DependentUpon>MainContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MenuScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MenuScreen.Designer.cs">
-      <DependentUpon>MenuScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ModifyPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,9 +165,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainContainer.resx">
       <DependentUpon>MainContainer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MenuScreen.resx">
-      <DependentUpon>MenuScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ModifyPatient.resx">
       <DependentUpon>ModifyPatient.cs</DependentUpon>
