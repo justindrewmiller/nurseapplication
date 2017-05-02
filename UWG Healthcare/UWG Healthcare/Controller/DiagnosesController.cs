@@ -11,6 +11,7 @@ namespace UWG_Healthcare.Controller
     public class DiagnosesController
     {
 
+        //returns a list of the diagnoses
         public List<Diagnoses> GetDiagnosesList()
         {
             return DiagnosesDAL.GetDiagnosesList(); 

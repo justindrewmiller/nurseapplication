@@ -13,6 +13,11 @@ namespace HealthcareData.DAL
     public class PatientDAL
     {
         
+        /// <summary>
+        /// Creates a patient list based on the DOB of the patient
+        /// </summary>
+        /// <param name="DOB">DOB used to search</param>
+        /// <returns>list of patient objects</returns>
         public static List<Patient> SearchPatientByDOB(string DOB)
         {
             List<Patient> patientList = new List<Patient>();
@@ -68,7 +73,13 @@ namespace HealthcareData.DAL
             }
             return patientList;
         }
-
+        
+        /// <summary>
+        /// Creates a list of patients based on a full name and last name
+        /// </summary>
+        /// <param name="FName">Patiens first name</param>
+        /// <param name="LName">Patients last name</param>
+        /// <returns>List of patients</returns>
         public static List<Patient> SearchPatientByFullName(string FName, string LName)
         {
             List<Patient> patientList = new List<Patient>();
@@ -126,6 +137,12 @@ namespace HealthcareData.DAL
             return patientList;
         }
 
+        /// <summary>
+        /// Creates a patient list based on the patients last name and dob
+        /// </summary>
+        /// <param name="DOB">DOB used</param>
+        /// <param name="LName">last name used</param>
+        /// <returns>List of Patient objects</returns>
         public static List<Patient> SearchPatientByLastNameAndDOB(string DOB, string LName)
         {
             List<Patient> patientList = new List<Patient>();
@@ -184,7 +201,10 @@ namespace HealthcareData.DAL
 
         }
 
-        // Gets the the doctor objects
+        /// <summary>
+        /// Gets a list of all patients from the sql database
+        /// </summary>
+        /// <returns>a list of patients</returns>
         public static List<Patient> GetPatients()
         {
             List<Patient> patientList = new List<Patient>();
@@ -230,6 +250,11 @@ namespace HealthcareData.DAL
             return patientList;
         }
 
+    /// <summary>
+    /// adds a patient to the database
+    /// </summary>
+    /// <param name="patient">the patient that will be added</param>
+    /// <returns>integer that will be used as a response control</returns>
     public static int AddPatient(Patient patient)
         {
             SqlConnection connection = HealthCareUWGDBConnection.GetConnection();

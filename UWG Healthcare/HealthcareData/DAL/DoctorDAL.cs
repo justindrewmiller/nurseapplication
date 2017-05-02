@@ -10,7 +10,10 @@ namespace HealthcareData.DAL
 {
     public class DoctorDAL
     {
-        // Gets the the doctor objects
+        /// <summary>
+        /// gets a list of the Doctors from the SQL database
+        /// </summary>
+        /// <returns>list of Doctor objects</returns>
         public static List<Doctor> GetDoctors()
         {
             List<Doctor> docList = new List<Doctor>();

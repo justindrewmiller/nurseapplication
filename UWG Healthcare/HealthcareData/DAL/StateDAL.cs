@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace HealthcareData.DAL
 {
+
+    /// <summary>
+    /// Class for creating a static list of the states
+    /// </summary>
     public static class StateDAL
     {
 
@@ -68,11 +72,19 @@ namespace HealthcareData.DAL
             states.Add(new US_State("WY", "Wyoming"));
         }
 
+        /// <summary>
+        /// Gets the states
+        /// </summary>
+        /// <returns>a list of states</returns>
         public static List<US_State> GetStates()
         {
             return states;
         }
 
+        /// <summary>
+        /// creates an array of the abbreviated states
+        /// </summary>
+        /// <returns>a string array</returns>
         public static string[] Abbreviations()
         {
             List<string> abbrevList = new List<string>(states.Count);
@@ -83,6 +95,10 @@ namespace HealthcareData.DAL
             return abbrevList.ToArray();
         }
 
+        /// <summary>
+        /// creates an array of the state names
+        /// </summary>
+        /// <returns>a string array</returns>
         public static string[] Names()
         {
             List<string> nameList = new List<string>(states.Count);
@@ -93,6 +109,10 @@ namespace HealthcareData.DAL
             return nameList.ToArray();
         }
 
+        /// <summary>
+        /// returns the array of states
+        /// </summary>
+        /// <returns>array of states</returns>
         public static US_State[] States()
         {
             return states.ToArray();

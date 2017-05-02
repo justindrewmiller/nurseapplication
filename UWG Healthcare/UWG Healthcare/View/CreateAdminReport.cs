@@ -13,12 +13,14 @@ namespace UWG_Healthcare.View
 {
     public partial class CreateAdminReport : Form
     {
+        //Intializes the components for the form
         public CreateAdminReport(UserInfo info)
         {
             InitializeComponent();
             lblUserName.Text = info.userID;
         }
 
+        //generates the report based on the date information in the form
         private void btnGenerate_Click(object sender, EventArgs e)
         {
 
@@ -46,6 +48,7 @@ namespace UWG_Healthcare.View
 
         }
 
+        //helper method that fills the table with the table data
         private void GetReport()
         {
 
@@ -53,9 +56,5 @@ namespace UWG_Healthcare.View
             this.reportViewer1.RefreshReport();
         }
 
-        private void CreateAdminReport_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

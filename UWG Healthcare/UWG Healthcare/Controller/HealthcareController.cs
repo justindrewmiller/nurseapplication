@@ -13,11 +13,13 @@ namespace UWG_Healthcare.Controller
     public class HealthcareController
     {
 
+        //checks if login is valid
         public static bool ValidLogin(string UserName, string Password)
         {
             return UsersDAL.ValidLogin(UserName, Password);
         }
 
+        //gets the user info based on the username and their password
         public static UserInfo GetUser(string UserName, string Password)
         {
             return UsersDAL.GetUser(UserName, Password);

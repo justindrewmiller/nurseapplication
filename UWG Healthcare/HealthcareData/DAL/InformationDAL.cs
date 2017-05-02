@@ -13,6 +13,11 @@ namespace HealthcareData.DAL
     public class InformationDAL
     {
 
+        /// <summary>
+        /// Gets the current patient info based on the patient id
+        /// </summary>
+        /// <param name="patientID">the id of the patient whose information is being retrieved</param>
+        /// <returns>patient object with requested patient information</returns>
         public static Patient CurrentPatientInfo(string patientID)
         {
             Patient patient = new Patient();
@@ -72,6 +77,11 @@ namespace HealthcareData.DAL
             return patient;
         }
 
+        /// <summary>
+        /// Gets a list of patient appointments based on the patient id submitted
+        /// </summary>
+        /// <param name="patientID">the patient ID that will be used to search for the appointments</param>
+        /// <returns>list of appointment objects</returns>
         public static List<Appointment> GetPatientAppointments(string patientID)
         {
             List<Appointment> appointmentList = new List<Appointment>();
@@ -121,6 +131,11 @@ namespace HealthcareData.DAL
             return appointmentList;
         }
 
+        /// <summary>
+        /// Gets a list of tests based on the patient id
+        /// </summary>
+        /// <param name="patientID">patient id that will be used to search for tests</param>
+        /// <returns>list of test objects</returns>
         public static List<Test> GetPatientTests(string patientID)
         {
             List<Test> testList = new List<Test>();
@@ -172,6 +187,11 @@ namespace HealthcareData.DAL
             return testList;
         }
 
+        /// <summary>
+        /// Gets a list of visits based on patient id
+        /// </summary>
+        /// <param name="patientID">patient id used to search for patients</param>
+        /// <returns>list of visit objects</returns>
         public static List<Visit> GetPatientVisits(string patientID)
         {
             List<Visit> visitList = new List<Visit>();

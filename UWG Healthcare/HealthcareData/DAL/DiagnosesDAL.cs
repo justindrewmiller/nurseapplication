@@ -10,6 +10,10 @@ namespace HealthcareData.DAL
 {
     public class DiagnosesDAL
     {
+        /// <summary>
+        /// Gets a list holding the diagnoses held in the sql database
+        /// </summary>
+        /// <returns>List of Diagnoses objects</returns>
         public static List<Diagnoses> GetDiagnosesList()
         {
 

@@ -50,6 +50,11 @@ namespace HealthcareData.DAL
             }
         }
 
+        /// <summary>
+        /// Gets the visit based on the visit id
+        /// </summary>
+        /// <param name="visitID">visit id used to find the visit</param>
+        /// <returns>a visit object</returns>
         public static Visit GetVisit(int visitID)
         {
             Visit visit = new Visit();
@@ -94,6 +99,11 @@ namespace HealthcareData.DAL
             return visit;
         }
 
+        /// <summary>
+        /// Gets the diagnoses based on the diagnoses code
+        /// </summary>
+        /// <param name="diagnosesCode"> diagnoses code to use for finding the string</param>
+        /// <returns>a string</returns>
         public static string GetDiagnoses(string diagnosesCode)
         {
             string diagnoses = "";

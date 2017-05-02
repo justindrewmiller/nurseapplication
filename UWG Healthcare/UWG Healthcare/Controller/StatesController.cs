@@ -11,6 +11,7 @@ namespace UWG_Healthcare.Controller
     class StatesController
     {
 
+        //returns a list of the states
         public List<US_State> GetStates()
         {
             return StateDAL.GetStates();

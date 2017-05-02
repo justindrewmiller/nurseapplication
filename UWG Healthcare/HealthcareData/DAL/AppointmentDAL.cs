@@ -127,13 +127,11 @@ namespace HealthcareData.DAL
             }
         }
 
-        public static List<Appointment> getAppointments(String patientID)
-        {
-            List<Appointment> appointmentList = new List<Appointment>();
-
-            return appointmentList;
-        }
-
+        /// <summary>
+        /// Gets an appointment based on the appointment ID
+        /// </summary>
+        /// <param name="apptID">appoint id that will be used to get the appointment</param>
+        /// <returns>Appointment object based on the requested appointment</returns>
         public static Appointment GetAppointment(int apptID)
         {
             Appointment appointment = new Appointment();
