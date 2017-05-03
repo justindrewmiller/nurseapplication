@@ -171,7 +171,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateAdminReport";
             this.Text = "Run Admin Report";
-            this.Load += new System.EventHandler(this.CreateAdminReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sp_mostPerformedTestsDuringDatesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
